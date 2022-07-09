@@ -4,6 +4,43 @@
 ## iptables
 [Wikipedia](https://en.wikipedia.org/wiki/Iptables)
 
+A series of **rules** makes up a **chain**. The kernel reads the chain from top to bottom, using the first rule that matches. A set of chains makes up a **table**.
+
+List all tables:  
+`sudo cat /proc/net/ip_tables_names`
+```
+security  
+raw  
+nat  
+mangle  
+filter
+```
+
+List all rules:  
+`sudo iptables-save`  
+or
+```sh
+su
+iptables -vL -t filter
+iptables -vL -t nat
+iptables -vL -t mangle
+iptables -vL -t raw
+iptables -vL -t security
+```
+
+You'll normally work primarily with a single table named **filter** that controls basic packet flow. There are three basic chains in the filter table:
+- INPUT for incoming packets
+- OUTPUT for outgoing packets
+- FORWARD for routed packets
+
+判断使用的 iptalbes 是否是基于 nftables 的：
+```sh
+$ iptables -V
+iptables v1.8.4 (legacy)
+$ iptables -V
+iptables v1.8.4 (nf_tables)
+```
+
 - Listing
 
   ```sh
@@ -58,6 +95,35 @@ But why isn't this built-in?
 [linux - How to check multiple list from IPSet in IPTables with a single rule? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/511814/how-to-check-multiple-list-from-ipset-in-iptables-with-a-single-rule)
 
 [Traffic shaping with iptables, ipset and tc (--match-set and --set-mark) - Server Fault](https://serverfault.com/questions/845949/traffic-shaping-with-iptables-ipset-and-tc-match-set-and-set-mark)
+
+## nftables
+ [^nft-wiki]
+
+nftables has been available since Linux kernel 3.13 released on 2014-01-19.
+- CentOS 8 (2019-09-24)
+- Debian 10 (2019-07-06)
+	- Ubuntu 21.10 (2021-10-14)
+
+List all rules:  
+`nft list ruleset`
+
+[^nft-wiki]: [nftables - Wikipedia](https://en.wikipedia.org/wiki/Nftables)
+
+### Grammar
+<!--t28-->
+[Man page of NFT](https://www.netfilter.org/projects/nftables/manpage.html)
+
+## CLI
+### firewalld
+[firewalld - Wikipedia](https://en.wikipedia.org/wiki/Firewalld)
+
+![](images/README/firewalld.webp)
+
+- 为什么 firewalld 添加的 rule 在 iptables 中看不到？  
+  因为用的是 nftables。
+
+## Uncomplicated Firewall
+[Uncomplicated Firewall - Wikipedia](https://en.wikipedia.org/wiki/Uncomplicated_Firewall)
 
 ## Libraries
 Rust:
