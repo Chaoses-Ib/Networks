@@ -9,7 +9,7 @@
 
 ## ISPs in different regions
 ### Mainland China
-[^china-sjlleo-2][^china-sjlleo][^china-deepdarkfantastic]
+[^china-sjlleo]
 - China Telecom (CT, 中国电信)
   - CTGNet (AS23764)
     - CTGNet Global Internet Access (CTGNet GIA)
@@ -28,7 +28,9 @@
 - China Education and Research Network (CERNET, 教育网, AS4538)
 - China Science and Technology Network (CSTNET, 科技网, AS7497)
 
-[^china-deepdarkfantastic]: [国内主流网络运营商国际连接线路简谈 - 知乎](https://zhuanlan.zhihu.com/p/64467370)
+Quality: CN2 GIA > CUII Backbone (AS9929) > CU Backbone (AS4837) > CN2 GT > CT Backbone (AS4134) [^china-quality]
+
+[^china-quality]: [CN2 GIA＞AS9929＞CN2 GT＞AS4837,这个排名靠谱吗 - 全球主机交流论坛](https://hostloc.com/thread-953685-1-1.html)
 
 ### Hong Kong, China
 - CMI (AS58453)
@@ -40,9 +42,9 @@
 - Telstra
 - CHT
 
-Quality[^china-sjlleo-2]:
-- China Telecom Backbone (AS4134): CUG > CMI > Telstra > others
-- China Unicom Backbone (AS4837): CUG > CMI > PCCW > CHT > HKBN/WTT > HKT > others
+Quality[^china-sjlleo]:
+- CT Backbone (AS4134): CUG > CMI > Telstra > others
+- CU Backbone (AS4837): CUG > CMI > PCCW > CHT > HKBN/WTT > HKT > others
 - CMI (AS58453): CMI > CUG > SingTel > HKIX > NTT > HKBN/WTT > others
 
 ### Taiwan, China
@@ -54,5 +56,4 @@ Quality[^china-sjlleo-2]:
 - IIJ
 - KDDI
 
-[^china-sjlleo-2]: [国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996)
-[^china-sjlleo]: [细数国内到国际的各种线路（VPS国际线路大全） - 知乎](https://zhuanlan.zhihu.com/p/161029409)
+[^china-sjlleo]: [sjlleo/local-ISPs-to-CN: Network connectivity between your local ISPs and China / 您的本地运营商和中国的网络互联情况](https://github.com/sjlleo/local-ISPs-to-CN/blob/main/report_zh_CN.md) ([国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996))
