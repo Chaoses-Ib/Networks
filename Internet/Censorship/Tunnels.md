@@ -19,17 +19,28 @@
   - [Xray](https://github.com/XTLS/Xray-core)  
     Supported protocols: HTTP, SOCKS, Shadowsocks, VMess, VLESS, Trojan
 
+  Administrative tools:
+  - [v2ray-agent](https://github.com/mack-a/v2ray-agent)
+  - [233boy/v2ray](https://github.com/233boy/v2ray/tree/master)
+  - [Xray 基于 Nginx 的 VLESS + XTLS 一键安装脚本](https://github.com/wulabing/Xray_onekey)
+  - [V2Ray 基于 Nginx 的 vmess+ws+tls 一键安装脚本](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)
+
 Shadowsocks-only:
 - [Shadowsocks](https://shadowsocks.org/)
+  
+  Administrative tools:
+  - [网络跳越一键脚本](https://github.com/hijkpw/scripts/tree/master)
+    - [hijk.sh](https://github.com/Miuzarte/hijk.sh)
+      ```sh
+      bash <(curl -sL https://raw.githubusercontent.com/Miuzarte/hijk.sh/main/Fixed/ss.sh)
+      ```
 
 Trojan-only:
 - [Trojan](https://github.com/trojan-gfw/trojan)
 - [Trojan-Go](https://github.com/p4gefau1t/trojan-go)
 
-Administrative tools:
-- [v2ray-agent](https://github.com/mack-a/v2ray-agent)
-- [233boy/v2ray](https://github.com/233boy/v2ray/tree/master)
-- [hijk.sh](https://github.com/Miuzarte/hijk.sh)
+Performance comparison:
+- [Xray/v2ray/trojan/shadowsocks 性能测试](https://github.com/badO1a5A90/Performance)
 
 ## Clients
 - [Clash: A rule-based tunnel in Go](https://github.com/Dreamacro/clash)  
