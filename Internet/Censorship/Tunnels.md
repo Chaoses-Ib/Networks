@@ -50,5 +50,10 @@ Performance comparison:
   - [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)
   - [Clash for Android](https://github.com/Kr328/ClashForAndroid)
 
+## Subscription
 Subscription converters:
-- [在线订阅转换工具 (sub.v1.mk)](https://sub.v1.mk/)
+- [subconverter](https://github.com/tindy2013/subconverter)
+  - [sub-web](https://sub-web.netlify.app/) ([GitHub](https://github.com/CareyWang/sub-web))
+    - [sub-web-modify (sub.v1.mk)](https://sub.v1.mk/) ([GitHub](https://github.com/youshandefeiyang/sub-web-modify))
+    - [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io/)
+  - [stilleshan/subweb](https://sub.ops.ci/) ([GitHub](https://github.com/stilleshan/subweb))
