@@ -11,6 +11,7 @@
   - ShadowsocksR (SSR)
 - [VMess](https://www.v2ray.com/developer/protocols/vmess.html)  
 - [VLESS](https://xtls.github.io/config/features/vless.html)  
+- [Hysteria](https://github.com/HyNetwork/hysteria/wiki/Protocol)
 - [Tor](https://github.com/torproject/torspec/blob/main/tor-spec.txt)
 
 ## Servers
@@ -39,8 +40,12 @@ Trojan-only:
 - [Trojan](https://github.com/trojan-gfw/trojan)
 - [Trojan-Go](https://github.com/p4gefau1t/trojan-go)
 
+Hysteria-only:
+- [Hysteria](https://github.com/HyNetwork/hysteria)
+
 Performance comparison:
 - [Xray/v2ray/trojan/shadowsocks 性能测试](https://github.com/badO1a5A90/Performance)
+- [垃圾小鸡的福音---------hysteria协议 - 1024社区](https://1024.day/d/1063)
 
 ## Clients
 - [Clash: A rule-based tunnel in Go](https://github.com/Dreamacro/clash)  
@@ -49,6 +54,9 @@ Performance comparison:
   GUIs:
   - [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)
   - [Clash for Android](https://github.com/Kr328/ClashForAndroid)
+
+Hysteria-only:
+- [Hysteria](https://github.com/HyNetwork/hysteria)
 
 ## Subscription
 Subscription converters:
