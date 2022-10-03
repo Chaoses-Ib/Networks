@@ -13,10 +13,11 @@
 - [VLESS](https://xtls.github.io/config/features/vless.html)  
 - [Hysteria](https://github.com/HyNetwork/hysteria/wiki/Protocol)
 - [Tor](https://github.com/torproject/torspec/blob/main/tor-spec.txt)
+- MTProto (Telegram only)
 
 ## Servers
 - [V2Ray](https://github.com/v2fly/v2ray-core)  
-  Supported protocols: HTTP, SOCKS, Shadowsocks, VMess, VLESS, Trojan
+  Supported protocols: HTTP, SOCKS, Shadowsocks, VMess, VLESS, Trojan, MTProto
   - [Xray](https://github.com/XTLS/Xray-core)  
     Supported protocols: HTTP, SOCKS, Shadowsocks, VMess, VLESS, Trojan
 
@@ -42,6 +43,17 @@ Trojan-only:
 
 Hysteria-only:
 - [Hysteria](https://github.com/HyNetwork/hysteria)
+
+MTProto-only:
+- [mtg](https://github.com/9seconds/mtg)
+- [Async MTProto Proxy](https://github.com/alexbers/mtprotoproxy)
+- [Erlang mtproto proxy](https://github.com/seriyps/mtproto_proxy)
+- [MTProxy](https://github.com/TelegramMessenger/MTProxy) (offcial)
+- Administrative tools
+  - [MTProxyTLS 一键安装绿色脚本](https://github.com/ellermister/mtproxy)
+  - [MTProto Proxy Auto Installer](https://github.com/HirbodBehnam/MTProtoProxyInstaller)
+  - [MTProxy v2 One-Click Installation](https://github.com/missuo/MTProxy)
+  - [mtg-dist](https://github.com/cutelua/mtg-dist)
 
 Performance comparison:
 - [Xray/v2ray/trojan/shadowsocks 性能测试](https://github.com/badO1a5A90/Performance)
