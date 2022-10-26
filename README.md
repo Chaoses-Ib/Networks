@@ -1,11 +1,15 @@
 # Network
-## Internet
+## [Internet](Internet/README.md)
+- [Forwarding](Internet/Forwarding.md)
 - [IPv4](Internet/IPv4/README.md)
   - [Addressing](Internet/IPv4/Addressing.md)
   - [Routing](Internet/IPv4/Routing.md)
 - [IPv6](Internet/IPv6/README.md)
+- [Dynamic Host Configuration Protocol](Internet/DHCP/README.md)
 - [Internet Service Providers](Internet/Internet%20Service%20Providers.md)
-- [Domain Names](Internet/Domain%20Names.md)
+- [Domain Name System](Internet/DNS/README.md)
+  - [Domain Names](Internet/DNS/Domain%20Names.md)
+  - [DNS Spoofing](Internet/DNS/DNS%20Spoofing.md)
 
 ### [Censorship](Internet/Censorship/README.md)
 Anti-censorship technologies:
@@ -22,3 +26,6 @@ Anti-censorship technologies:
 
 Python:
 - [socket](Transport/Python/socket.md)
+
+## Application
+- [Hypertext Transfer Protocol](Application/HTTP/README.md)
