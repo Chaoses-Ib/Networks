@@ -14,6 +14,7 @@
 - [Internet Service Providers](Internet/Internet%20Service%20Providers.md)
 - [Domain Name System](Internet/DNS/README.md)
   - [Domain Names](Internet/DNS/Domain%20Names.md)
+  - [Reverse DNS Lookup](Internet/DNS/Reverse%20DNS%20Lookup.md)
   - [DNS Spoofing](Internet/DNS/DNS%20Spoofing.md)
 
 ### [Censorship](Internet/Censorship/README.md)
