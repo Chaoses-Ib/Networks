@@ -10,6 +10,8 @@
   - [Addressing](Internet/IPv4/Addressing.md)
   - [Routing](Internet/IPv4/Routing.md)
 - [IPv6](Internet/IPv6/README.md)
+- [Internet Control Message Protocol](Internet/ICMP/README.md)
+  - [Echo and Echo Reply](Internet/ICMP/Echo.md)
 - [Dynamic Host Configuration Protocol](Internet/DHCP/README.md)
 - [Internet Service Providers](Internet/Internet%20Service%20Providers.md)
 - [Domain Name System](Internet/DNS/README.md)
