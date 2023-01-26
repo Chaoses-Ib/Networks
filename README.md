@@ -38,5 +38,9 @@ Python:
 ## Application
 - [Hypertext Transfer Protocol](Application/HTTP/README.md)
 
+## Telephone
+- [Short Message Service](Telephone/SMS.md)
+- [Telephone Services](Telephone/Services.md)
+
 ## Security
 - [Metasploit](Security/Metasploit/README.md)
