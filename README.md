@@ -23,6 +23,7 @@
 Anti-censorship technologies:
 - [Tunnels](Internet/Censorship/Tunnels.md)
 - [Services](Internet/Censorship/Services.md)
+- [Clash](Internet/Censorship/Clash.md)
 
 ## [Transport](Transport/README.md)
 - [Reliable Data Transfer](Transport/Reliable%20Data%20Transfer.md)
