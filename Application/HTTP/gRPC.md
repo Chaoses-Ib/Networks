@@ -12,6 +12,10 @@ Supported channels:
 
 [Awesome gRPC: A curated list of useful resources for gRPC](https://github.com/grpc-ecosystem/awesome-grpc)
 
+## Sessions
+gRPC is stateless. gRPC services are transient.
+- [Does gRPC support client-server sessions? · Issue #946 · grpc/grpc-dotnet](https://github.com/grpc/grpc-dotnet/issues/946)
+
 ## Implementations
 [Various gRPC benchmarks](https://github.com/LesnyRumcajs/grpc_bench)
 
