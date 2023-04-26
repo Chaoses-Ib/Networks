@@ -1,0 +1,4 @@
+# Passive Optical Network
+[Wikipedia](https://en.wikipedia.org/wiki/Passive_optical_network)
+
+A **passive optical network (PON)** is a fiber-optic telecommunications technology for delivering broadband network access to end-customers. Its architecture implements a point-to-multipoint topology in which a single optical fiber serves multiple endpoints by using unpowered (passive) **fiber optic splitters** to divide the fiber bandwidth among the endpoints. Passive optical networks are often referred to as the last mile between an Internet service provider (ISP) and its customers. Many fiber ISPs prefer this technology.

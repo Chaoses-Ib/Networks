@@ -1,6 +1,13 @@
 # Network
 - [Internet of Things](IoT/README.md)
 
+## [Physical](Physical/README.md)
+- [Twisted-pair Cables](Physical/Coaxial%20Cables.md)
+- [Coaxial Cables](Physical/Coaxial%20Cables.md)
+- [Fiber-optic Communication](Physical/Fiber-optic/README.md)
+  - [Passive Optical Network](Physical/Fiber-optic/Passive%20Optical%20Network.md)
+- [Radio Communication](Physical/Radio/README.md)
+
 ## [Link](Link/README.md)
 - [Link-layer Address](Link/Link-layer%20Address.md)
 - [Multiple Access Protocols](Link/MAC/README.md)
@@ -23,12 +30,10 @@
   - [Domain Names](Internet/DNS/Domain%20Names.md)
   - [Reverse DNS Lookup](Internet/DNS/Reverse%20DNS%20Lookup.md)
   - [DNS Spoofing](Internet/DNS/DNS%20Spoofing.md)
-
-### [Censorship](Internet/Censorship/README.md)
-Anti-censorship technologies:
-- [Tunnels](Internet/Censorship/Tunnels.md)
-- [Services](Internet/Censorship/Services.md)
-- [Clash](Internet/Censorship/Clash.md)
+- [Internet Censorship](Internet/Censorship/README.md)
+  - [Tunnels](Internet/Censorship/Tunnels.md)
+  - [Services](Internet/Censorship/Services.md)
+  - [Clash](Internet/Censorship/Clash.md)
 
 ## [Transport](Transport/README.md)
 - [Reliable Data Transfer](Transport/Reliable%20Data%20Transfer.md)
