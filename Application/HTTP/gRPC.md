@@ -16,6 +16,15 @@ Supported channels:
 gRPC is stateless. gRPC services are transient.
 - [Does gRPC support client-server sessions? · Issue #946 · grpc/grpc-dotnet](https://github.com/grpc/grpc-dotnet/issues/946)
 
+## Bidirectional streaming
+gRPC 只支持单向调用，不过 bidirectional streaming 可以作为双向调用的一种间接实现，例如：
+
+```proto
+service FullDuplex {
+    rpc WaitRequests(stream ClientResponse) returns (stream ServerRequest);
+}
+```
+
 ## Implementations
 [Various gRPC benchmarks](https://github.com/LesnyRumcajs/grpc_bench)
 
