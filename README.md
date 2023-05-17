@@ -7,6 +7,9 @@
 - [Fiber-optic Communication](Physical/Fiber-optic/README.md)
   - [Passive Optical Network](Physical/Fiber-optic/Passive%20Optical%20Network.md)
 - [Radio Communication](Physical/Radio/README.md)
+  - [LTE-M](Physical/Radio/LTE-M.md)
+  - [Narrowband Internet of Things](Physical/Radio/NB-IoT.md)
+  - [LoRa](Physical/Radio/LoRa.md)
 
 ## [Link](Link/README.md)
 - [Link-layer Address](Link/Link-layer%20Address.md)
