@@ -12,11 +12,37 @@ Telegram:
 ## China
 [大灣區預付卡](https://www.1888.com.mo/help/detail?tabCode=DXYW04)
 
+[在国外怎么开通移动的国际漫游？ - 知乎](https://www.zhihu.com/question/34584624)
+
+[中国电信国际及港澳台漫游业务资费标准](https://www.189.cn/gs/support/tariff/mobile/32066.html)
+
 ## United States
 [美国电话卡指南](https://ussimguide.com/)
 
 ## United Kingdom
+## giffgaff
 [英国 Giffgaff 电话卡使用报告 - TSBBLOG](https://tsb2blog.com/giffgaff-sim-card)
+
+[英国手机卡 giffgaff 2023 激活与使用指南](https://mp.weixin.qq.com/s/XfZ65VRpGFO5LrANgrRmNg)
+
+[Roaming charges](https://www.giffgaff.com/roaming-charges):
+- USA/Canada/Japan/China/Hong Kong
+
+  Item | Price
+  --- | ---
+  Data | 20p/MB (~1.7元/MB)
+  Calls & voicemail | £1/min (~8.7元/min)
+  Receiving calls | £1/min (~8.7元/min)
+  Sending texts | 30p (~2.6元)
+
+- Taiwan
+
+  Item | Price
+  --- | ---
+  Data | £5/MB (~43元/MB)
+  Calls & voicemail | £1/min (~8.7元/min)
+  Receiving calls | £1/min (~8.7元/min)
+  Sending texts | 30p (~2.6元)
 
 ## New Zealand
 [Skinny](https://www.skinny.co.nz/):

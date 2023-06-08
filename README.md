@@ -52,11 +52,12 @@ Python:
 ## Application
 - [Sessions](Application/Sessions.md)
 - [Hypertext Transfer Protocol](Application/HTTP/README.md)
-  - [gRPC](Application/HTTP/gRPC.md)
+  - [Representational State Transfer](Application/HTTP/REST.md)
 - [Secure Shell](Application/SSH/README.md)
 - [Peer-to-peer](Application/P2P/README.md)
   - [BitTorrent](Application/P2P/BitTorrent.md)
   - [→Distributed Hash Table](https://github.com/Chaoses-Ib/ConcurrentComputing/blob/main/Distributed/Distributed%20Hash%20Table.md)
+- [→Remote Procedure Calls](https://github.com/Chaoses-Ib/ConcurrentComputing/blob/main/Distributed/RPC/README.md)
 - [Download](Application/Download.md)
 - [File Sharing](Application/File%20Sharing.md)
 
