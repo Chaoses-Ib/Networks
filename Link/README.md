@@ -1,4 +1,6 @@
 # Link Layer
+[Data link layer - Wikipedia](https://en.wikipedia.org/wiki/Data_link_layer), [Link layer - Wikipedia](https://en.wikipedia.org/wiki/Link_layer).
+
 The **link layer** is the group of methods and communications protocols confined to the link that a host is physically connected to. The link is the physical and logical network component used to interconnect hosts or nodes in the network and a link protocol is a suite of methods and standards that operate only between adjacent network nodes of a network segment.[^wiki]
 
 ## Services
