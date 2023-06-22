@@ -31,7 +31,8 @@ Price comparison:
 - [Compare Prices of All Top-Level Domains | TLD List](https://tld-list.com/)
 - [Domain Availability and Price Comparison](https://www.domcomp.com/)
 
-[^free-iyideng]: [2022年最好的免费域名注册平台网站大全（长期更新，建议收藏） - 一灯不是和尚](https://iyideng.net/welfare/best-free-domain-name-registration-platform.html)
+## Lookup
+- [域名查询 (feifanju.com)](https://lab.feifanju.com/domain-query/)
 
 ## Transfers
 > Your registrar _may_ deny a transfer request in the following limited circumstances:
@@ -56,4 +57,6 @@ Price comparison:
 > 
 > [^icann-faq]
 
+
+[^free-iyideng]: [2022年最好的免费域名注册平台网站大全（长期更新，建议收藏） - 一灯不是和尚](https://iyideng.net/welfare/best-free-domain-name-registration-platform.html)
 [^icann-faq]: [FAQs for Registrants: Transferring Your Domain Name - ICANN](https://www.icann.org/resources/pages/name-holder-faqs-2017-10-10-en)

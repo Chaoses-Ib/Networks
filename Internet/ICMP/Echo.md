@@ -42,6 +42,16 @@ Linux (iputils) | Windows
 
 通过 ping 数据包可以推测出来源机器是 Windows 还是 Linux，如果是 Linux，系统位数是 32 位还是 64 位。
 
+## Tools
+Online:
+
+Name | Map | IP address statistics
+--- | --- | ---
+[ITDOG](https://www.itdog.cn/ping/) | ✔️ | ✔️
+[Ping查询 - IPIP](https://tools.ipip.net/newping.php) | ✔️ |
+[Ping.Sx](https://ping.sx/ping) | | 
+[ping.pe](https://ping.pe/) | | 
+
 ## Ping of death
 A **ping of death** is a type of attack on a computer system that involves sending a malformed or otherwise malicious ping to a computer.
 
