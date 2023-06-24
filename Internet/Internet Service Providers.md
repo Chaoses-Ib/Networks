@@ -56,4 +56,15 @@ Quality[^china-sjlleo]:
 - IIJ
 - KDDI
 
+## Servers
+Name | 混合拨号
+--- | ---
+[91VPS](https://www.91vps.com/) | ✔️
+[纵横数据 动态拨号VPS服务器](https://www.zndata.com/dtvps/103.html) | ✔️
+[拨号云 动态拨号VPS](https://www.bohaovps.com/product/bohaovps.html) | ✔️
+[蚂蚁VPS](https://www.mayivps.com/) | ✔️
+[米安网络](https://www.miandns.com/) | ✔️
+[飞网](https://www.fwvps.com/) | ✔️
+
+
 [^china-sjlleo]: [sjlleo/local-ISPs-to-CN: Network connectivity between your local ISPs and China / 您的本地运营商和中国的网络互联情况](https://github.com/sjlleo/local-ISPs-to-CN/blob/main/report_zh_CN.md) ([国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996))

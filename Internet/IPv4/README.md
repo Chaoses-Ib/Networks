@@ -1,8 +1,6 @@
 # IPv4
 **Internet Protocol version 4 (IPv4)** is the fourth version of the Internet Protocol (IP). It is one of the core protocols of standards-based internetworking methods in the Internet and other packet-switched networks.[^wiki]
 
-[^wiki]: [IPv4 - Wikipedia](https://en.wikipedia.org/wiki/IPv4)
-
 ## RFC
 - [RFC 791 - Internet Protocol](https://datatracker.ietf.org/doc/html/rfc791)
 
@@ -61,4 +59,6 @@
 - Source Address, Destination Address
 - Options
 
+
+[^wiki]: [IPv4 - Wikipedia](https://en.wikipedia.org/wiki/IPv4)
 [^topdown]: Computer Networking：A Top-Down Approach
