@@ -31,8 +31,10 @@
   - [233boy/v2ray](https://github.com/233boy/v2ray/tree/master)
   - [Xray 基于 Nginx 的 VLESS + XTLS 一键安装脚本](https://github.com/wulabing/Xray_onekey)
   - [V2Ray 基于 Nginx 的 vmess+ws+tls 一键安装脚本](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)
-  - REALITY
-    - [BoxXt/installReality: Reality 小白一键安装脚本](https://github.com/BoxXt/installReality)
+
+- [sing-box: The universal proxy platform](https://github.com/SagerNet/sing-box)
+  - [BoxXt/installReality: Reality 小白一键安装脚本](https://github.com/BoxXt/installReality)
+  - [sing-REALITY-Box: One click REALITY installer on sing-box core](https://github.com/deathline94/sing-REALITY-Box)
 
 Shadowsocks-only:
 - [Shadowsocks](https://shadowsocks.org/)
