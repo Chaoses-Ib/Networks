@@ -67,3 +67,6 @@ Shop | Price
 [木然GV原生代注](https://t.me/gvzhuanyi) | 50
 [谷姐靓号网](https://www.goojie.eu/1.html) | 65
 [诚信商铺](https://qsbl.pw/buy/12) | 70
+
+## [TextNow](https://www.textnow.com/)
+[申请TextNow美国虚拟手机号码的详细图文教程 - 蓝点网](https://www.landiannews.com/archives/37967.html)

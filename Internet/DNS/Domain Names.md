@@ -18,10 +18,12 @@ Registrars:
   - [爱名网](https://www.22.cn/)
 
 Free[^free-iyideng]:
-- [Freenom](https://www.freenom.com/)  
+- [Freenom](https://www.freenom.com/)
+  
   .tk, .ml, .ga, .cf, .gq
 - [.me](https://nc.me/)
-- [names.co.uk](https://www.names.co.uk/)  
+- [names.co.uk](https://www.names.co.uk/)
+  
   .uk, .co.uk
 - [.gw.to](http://gw.to/)
 - [.pp.ua](http://pp.ua/)
@@ -58,5 +60,5 @@ Price comparison:
 > [^icann-faq]
 
 
-[^free-iyideng]: [2022年最好的免费域名注册平台网站大全（长期更新，建议收藏） - 一灯不是和尚](https://iyideng.net/welfare/best-free-domain-name-registration-platform.html)
+[^free-iyideng]: [2023年最好的免费域名注册平台网站大全（长期更新，建议收藏） - 一灯不是和尚](https://iyideng.net/welfare/best-free-domain-name-registration-platform.html)
 [^icann-faq]: [FAQs for Registrants: Transferring Your Domain Name - ICANN](https://www.icann.org/resources/pages/name-holder-faqs-2017-10-10-en)
