@@ -1,7 +1,13 @@
 # [Clash](https://github.com/Dreamacro/clash)
+[Documentation](https://dreamacro.github.io/clash/)
+
 [深入理解Clash配置文件 -- 月下博客](https://ssrvps.org/archives/9988)
 
 [zuluion/Clash-Template-Config: 自用Clash配置文件模板](https://github.com/zuluion/Clash-Template-Config)
+
+## Proxy groups
+`url-test`:
+- [→Captive portal detection](../Captive%20Portal.md#detection)
 
 ## [Premium](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features)
 Premium core is proprietary. It has the following additional features:

@@ -36,6 +36,7 @@
   - [Domain Names](Internet/DNS/Domain%20Names.md)
   - [Reverse DNS Lookup](Internet/DNS/Reverse%20DNS%20Lookup.md)
   - [DNS Spoofing](Internet/DNS/DNS%20Spoofing.md)
+- [Captive Portal](Internet/Captive%20Portal.md)
 - [Internet Censorship](Internet/Censorship/README.md)
   - [Tunnels](Internet/Censorship/Tunnels.md)
   - [Services](Internet/Censorship/Services.md)

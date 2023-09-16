@@ -34,6 +34,7 @@
 
 - [sing-box: The universal proxy platform](https://github.com/SagerNet/sing-box)
   - [BoxXt/installReality: Reality 小白一键安装脚本](https://github.com/BoxXt/installReality)
+    - [sbox-reality: 基于 Sing-box 内核的 VLESS Reality 协议脚本](https://github.com/Misaka-blog/sbox-reality)
   - [sing-REALITY-Box: One click REALITY installer on sing-box core](https://github.com/deathline94/sing-REALITY-Box)
 
 Shadowsocks-only:
