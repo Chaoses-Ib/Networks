@@ -1,4 +1,4 @@
-# [Clash](https://github.com/Dreamacro/clash)
+# ~~[Clash](https://github.com/Dreamacro/clash)~~
 [Documentation](https://dreamacro.github.io/clash/)
 
 [深入理解Clash配置文件 -- 月下博客](https://ssrvps.org/archives/9988)
@@ -9,7 +9,7 @@
 `url-test`:
 - [→Captive portal detection](../Captive%20Portal.md#detection)
 
-## [Premium](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features)
+## ~~[Premium](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features)~~
 Premium core is proprietary. It has the following additional features:
 - gvisor/system stack TUN device on macOS, Linux and Windows ([ref](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#tun-device))
 - Policy routing with [Scripts](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#script)
@@ -27,7 +27,7 @@ Rule sets:
 
 [本文主要是教你怎么定制一下自己的ACL或者clash规则](https://gist.github.com/Teraflopst/d53f1dbc3dcc350154c1beba03290a4b)
 
-## [Clash.Meta](https://github.com/MetaCubeX/Clash.Meta)
+## [Clash.Meta](https://github.com/MetaCubeX/mihomo/tree/Alpha)
 [Clash.Meta Docs](https://wiki.metacubex.one/)
 
 [配置详解](https://wiki.metacubex.one/config/)
@@ -38,11 +38,15 @@ Rule sets:
 [支持 Clash.Meta 的工具](https://wiki.metacubex.one/client/)
 
 Desktop:
-- [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)
-  - 内存占用约 240 MiB。
-- [Clash Verge: A Clash GUI based on tauri. Supports Windows, macOS and Linux.](https://github.com/zzzgydi/clash-verge)
+- ~~[Clash Verge: A Clash GUI based on tauri. Supports Windows, macOS and Linux.](https://github.com/zzzgydi/clash-verge)~~
   - 内存占用约 40 MiB。
+  
+  Forks:
+  - [Clash Verge Rev: Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)](https://github.com/clash-verge-rev/clash-verge-rev)
+  - [Clash Nyanpasu: Clash Nyanpasu! (∠・ω< )⌒☆​](https://github.com/keiko233/clash-nyanpasu)
+- ~~[Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)~~
+  - 内存占用约 240 MiB。
 
 Android:
-- [Clash for Android](https://github.com/Kr328/ClashForAndroid)
-- [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
+- ~~[Clash for Android](https://github.com/Kr328/ClashForAndroid)~~
+- ~~[Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)~~

@@ -37,6 +37,8 @@
     - [sbox-reality: 基于 Sing-box 内核的 VLESS Reality 协议脚本](https://github.com/Misaka-blog/sbox-reality)
   - [sing-REALITY-Box: One click REALITY installer on sing-box core](https://github.com/deathline94/sing-REALITY-Box)
 
+- [Hiddify-Manager: multi-user anti-filtering panel, with an effortless installation and supporting more than 20 protocols to circumvent filtering plus the telegram proxy.](https://github.com/hiddify/Hiddify-Manager)
+
 Shadowsocks-only:
 - [Shadowsocks](https://shadowsocks.org/)
   
@@ -73,6 +75,14 @@ Performance comparison:
 - [Clash](Clash.md)
   
   Supported protocols: HTTP(S), SOCKS5, Shadowsocks(R), VMess, Trojan, Snell
+
+- [Hiddify-Next: Multi-platform auto-proxy client, supporting Sing-box, X-ray, TUIC, Hysteria, Reality, Trojan, SSH etc. It's an open-source, secure and ad-free.](https://github.com/hiddify/hiddify-next)
+
+- [Leaf: A versatile and efficient proxy framework with nice features suitable for various use cases.](https://github.com/eycorsican/leaf)
+  - [Maple: A lightweight Universal Windows proxy app based on https://github.com/eycorsican/leaf](https://github.com/YtFlow/Maple)
+
+- [YtFlowCore: A modern proxy framework, core of YtFlow.](https://github.com/YtFlow/YtFlowCore)
+  - [YtFlowApp: A network proxy running on Universal Windows Platform, powered by YtFlowCore.](https://github.com/YtFlow/YtFlowApp)
 
 Hysteria-only:
 - [Hysteria](https://github.com/HyNetwork/hysteria)
