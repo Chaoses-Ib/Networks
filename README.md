@@ -1,4 +1,4 @@
-# Network
+# Networks
 - [Internet of Things](IoT/README.md)
 
 ## [Physical](Physical/README.md)
@@ -60,6 +60,9 @@ Python:
 - [Sessions](Application/Sessions.md)
 - [Hypertext Transfer Protocol](Application/HTTP/README.md)
   - [Representational State Transfer](Application/HTTP/REST.md)
+  - [Libraries](Application/HTTP/Libraries/README.md)
+- [WebSocket](Application/WS/README.md)
+  - [Libraries](Application/WS/Libraries/README.md)
 - [Secure Shell](Application/SSH/README.md)
 - [Peer-to-peer](Application/P2P/README.md)
   - [BitTorrent](Application/P2P/BitTorrent.md)
