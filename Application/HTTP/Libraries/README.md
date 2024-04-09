@@ -10,6 +10,8 @@
 - [aiohttp: Asynchronous HTTP client/server framework for asyncio and Python](https://github.com/aio-libs/aiohttp)
 
   [The aiohttp Request Lifecycle](https://docs.aiohttp.org/en/latest/http_request_lifecycle.html)
+  - `ClientSession` supports `base_url`, but only absolute URLs without path part are supported.
+  - [Shouldn't `session.close()` be a sync function? - Issue #7118](https://github.com/aio-libs/aiohttp/issues/7118)
 
 - [HTTPX: A next generation HTTP client for Python. 🦋](https://github.com/encode/httpx/)
 
