@@ -168,5 +168,15 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 另一方可能同时会将 ACK 和 FIN 合并到一起发送。
 
+## 粘包
+> TCP 是基于字节流的协议
+> 你发两次数据，比如 {1, 2} 和 {3, 4}
+> 客户端一定会收到 1, 2, 3, 4
+> 但是可能是 {1, 2}{3, 4}，可能是 {1}{2, 3, 4}，可能是 {1, 2, 3, 4}
+> 分包就是为了防止粘到一起 或者被割开
+
+[怎么解决TCP网络传输「粘包」问题？ - 知乎](https://www.zhihu.com/question/20210025)
+
+
 [^wiki]: [Transmission Control Protocol - Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 [^topdown]: Computer Networking：A Top-Down Approach

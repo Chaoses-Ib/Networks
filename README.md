@@ -51,6 +51,7 @@
 - [Transmission Control Protocol](Transport/TCP/README.md)
   - [Congestion Control](Transport/TCP/Congestion%20Control.md)
   - [SYN Flood Attack](Transport/TCP/SYN%20Flood%20Attack.md)
+- [QUIC](Transport/QUIC/README.md)
 - [Transport Layer Security](Transport/TLS/README.md)
   - [Proxies](Transport/TLS/Proxies.md)
 
