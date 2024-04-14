@@ -42,6 +42,7 @@
   - [Tunnels](Internet/Censorship/Tunnels.md)
   - [Services](Internet/Censorship/Services.md)
   - [Clash](Internet/Censorship/Clash.md)
+- [Geolocation](Internet/Geolocation/README.md)
 
 ## [Transport](Transport/README.md)
 - [Ports](Transport/Ports.md)
