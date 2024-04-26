@@ -73,6 +73,7 @@ Python:
 - [→Remote Procedure Calls](https://github.com/Chaoses-Ib/ConcurrentComputing/blob/main/Distributed/RPC/README.md)
 - [Download](Application/Download.md)
 - [File Sharing](Application/File%20Sharing.md)
+- [Search Engines](Application/Search/README.md)
 
 ## Telephone
 - [Short Message Service](Telephone/SMS.md)
