@@ -29,7 +29,7 @@
 - [hyper: An HTTP library for Rust](https://github.com/hyperium/hyper)
   
   Servers:
-  - [axum: Ergonomic and modular web framework built with Tokio, Tower, and Hyper](https://github.com/tokio-rs/axum)
+  - [axum: Ergonomic and modular web framework built with Tokio, Tower, and Hyper](#axum)
     - Rusty
     - Relatively new (2021)
     - [Loco: 🚂 🦀 The one-person framework for Rust for side-projects and startups](https://github.com/loco-rs/loco)
@@ -57,3 +57,17 @@ Discussions:
 - 2024-01 [Which web framework should I choose? : r/rust](https://www.reddit.com/r/rust/comments/1ae0rei/which_web_framework_should_i_choose/)
 
 [HTTP server --- list of Rust libraries/crates // Lib.rs](https://lib.rs/web-programming/http-server)
+
+#### [axum](https://github.com/tokio-rs/axum)
+- `State` will be cloned for each request.
+
+  [Always store state in an `Arc` by davidpdrsn - Pull Request #1270 - tokio-rs/axum](https://github.com/tokio-rs/axum/pull/1270)
+
+  [Is State cloned for each request? - tokio-rs/axum - Discussion #1911](https://github.com/tokio-rs/axum/discussions/1911)
+
+  `router.with_state(Arc::new(state))`
+
+Middleware:
+- [tower-http: Tower middleware and utilities for HTTP clients and servers.](https://github.com/tower-rs/tower-http)
+
+[Community Projects](https://github.com/tokio-rs/axum/blob/main/ECOSYSTEM.md)
