@@ -9,7 +9,7 @@
 - [MaxMind GeoIP® Databases](https://www.maxmind.com/en/geoip-databases) (free and paid)
 
 - [纯真IP库](https://cz88.net/) (free and paid)
-  - 社区版
+  - [社区版](https://cz88.net/geo-public)
   
     > 纯真社区版IP库是免费的IP库，由超十万用户汇报纠错形成，我们不对其准确性做严格校验。
 
@@ -17,8 +17,11 @@
 
     - C: [erning/libqqwry](https://github.com/erning/libqqwry)
     - Rust: [rust-qqwry: rust实现的纯真IP库解析库，主要参考 https://github.com/erning/libqqwry.git](https://github.com/sybblow/rust-qqwry)
+  
+    Ip2region: [\[数据源更新\] 最新数据 - Issue #329](https://github.com/lionsoul2014/ip2region/issues/329)
 
 [Ip2region: A offline IP address manager framework and locator, support billions of data segments, ten microsecond searching performance. xdb engine implementation for many programming languages](https://github.com/lionsoul2014/ip2region)
+- C/C++ port 使用了 Linux headers，不能直接在 Windows 上使用。C++ port 还有查询 bug，部分 IP 的查询结果不正常。Rust port 是跨平台的。
 - [ip2region 1.2.4 发布，开源 IP 地址定位库 - OSCHINA - 中文开源技术交流社区](https://www.oschina.net/news/83725/ip2region-1-2-4)
 - [IP库-ip2region结构分析和实现](https://tech.qimao.com/ip2regionjie-gou-fen-xi-he-shi-xian/)
 - PHP: [zoujingli/ip2region: 准确率99.9%的ip地址定位库](https://github.com/zoujingli/ip2region)
