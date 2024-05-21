@@ -59,6 +59,25 @@ Price comparison:
 > 
 > [^icann-faq]
 
+## China
+国内注册的域名需要实名认证才能解析，同时国内服务器需要备案才能使用，备案需要实名认证的域名。
+- 国外注册域名的话就不能用国内服务器。
+- 用国外服务器不需要备案，但国内注册域名的话还是需要实名认证。
+
+History:
+- 2013-06 [注册域名是国内的好，还是国外的好啊 - V2EX](https://www.v2ex.com/t/70957)
+- 2014-10 [就算我新手吧，请问大家域名不放国内，放国外的原因？ - V2EX](https://cn.v2ex.com/t/139120?p=1)
+- 2018-01 [请教国外注册域名国内备案。 - V2EX](https://www.v2ex.com/t/419642)
+  - 备案需要实名认证的域名，但国外没有实名认证。
+- 2018-01 [国外域名怎么使用国内服务器，比如阿里云？ - V2EX](https://cn.v2ex.com/t/422870)
+  - 部分域名无法转入国内进行实名认证。
+- 2022-10 [国外买的域名可以用国内 dns 吗？ - V2EX](https://fast.v2ex.com/t/891461)
+- 2022-11 [关于国内域名和国外服务器 - V2EX](https://www.v2ex.com/t/894891)
+  - 不备案无法使用国内服务器。
+- 2023-06 [关于购买域名 - V2EX](https://origin.v2ex.com/t/950703)
+  - 国内注册的域名不实名认证无法解析。
+  - 使用国外服务器不需要备案。
+
 
 [^free-iyideng]: [2023年最好的免费域名注册平台网站大全（长期更新，建议收藏） - 一灯不是和尚](https://iyideng.net/welfare/best-free-domain-name-registration-platform.html)
 [^icann-faq]: [FAQs for Registrants: Transferring Your Domain Name - ICANN](https://www.icann.org/resources/pages/name-holder-faqs-2017-10-10-en)
