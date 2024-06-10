@@ -17,7 +17,7 @@
 - RPC URI-Tunneling
 - HTTP-based Type I
 - HTTP-based Type II
-- REST
+- [REST](REST.md)
 
 [authentication - What is an Endpoint? - Stack Overflow](https://stackoverflow.com/questions/2122604/what-is-an-endpoint)
 

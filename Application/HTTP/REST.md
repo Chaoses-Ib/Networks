@@ -14,3 +14,6 @@ The six guiding principles or constraints of the RESTful architecture are:
 - Code on demand (optional)
 
 [How to Design a REST API - Step by Step Guide](https://restfulapi.net/rest-api-design-tutorial-with-example/)
+
+## Servers
+- [typicode/json-server: Get a full fake REST API with zero coding in less than 30 seconds (seriously)](https://github.com/typicode/json-server)
