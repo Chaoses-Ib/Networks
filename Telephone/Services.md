@@ -19,11 +19,15 @@ Telegram:
 ## United States
 [美国电话卡指南](https://ussimguide.com/)
 
+[美国电话区号的小趣事儿 - 败家 / 手机卡 - 美卡论坛](https://www.uscardforum.com/t/topic/46610)
+
 ## United Kingdom
 ## giffgaff
 [英国 Giffgaff 电话卡使用报告 - TSBBLOG](https://tsb2blog.com/giffgaff-sim-card)
 
 [英国手机卡 giffgaff 2023 激活与使用指南](https://mp.weixin.qq.com/s/XfZ65VRpGFO5LrANgrRmNg)
+
+[手机卡评测 篇三：英国 神卡 giffgaff 如何保号\_运营商\_什么值得买](https://post.smzdm.com/p/apm8d3w0/)
 
 [Roaming charges](https://www.giffgaff.com/roaming-charges):
 - USA/Canada/Japan/China/Hong Kong
@@ -44,6 +48,19 @@ Telegram:
   Receiving calls | £1/min (~8.7元/min)
   Sending texts | 30p (~2.6元)
 
+Services:
+- [Balance notifications](https://www.giffgaff.com/profile/details#notifications)
+
+  > These are free messages we'll send you to let you know how much credit or data you have left.
+
+  发送短信后会立即通知。
+
+- [My usage statement | giffgaff](https://www.giffgaff.com/profile/usage-statement)
+  
+  隔天才会更新。
+
+- [Useful Network Shortcodes | giffgaff](https://www.giffgaff.com/help/articles/useful-network-shortcodes)
+
 ## New Zealand
 [Skinny](https://www.skinny.co.nz/):
 - [咔咔 Skinny](https://t.me/KakaSkinny)
@@ -55,6 +72,12 @@ Telegram:
 
 ## Google Voice
 [Google Voice 中文手册](https://help.gv.iosapp.icu/)
+
+[国内的虚拟号码不符心意？来试试 Google voice 吧 - 少数派](https://sspai.com/post/43786)
+
+保号:
+- [2023年 Google Voice 保号教程（长期或永久） - usd.fan](https://usd.fan/287.html)
+- [Google Voice 自动回复短信保号脚本 - 加密狗](https://jiami.dog/4149.html)
 
 Shop | Price
 --- | ---
