@@ -35,3 +35,15 @@ axum: [tower\_http::cors](https://docs.rs/tower-http/0.5.2/tower_http/cors/index
 - HTTP basic authentication ([Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication))
 
   `Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==`
+
+## Website availability testing
+Tools:
+- [Freshping](https://www.freshworks.com/website-monitoring/is-it-down/)
+  - Time: DNS, TCP, TLS, first byte
+- [OnlineOrNot](https://onlineornot.com/website-down-checker)
+  - Error code
+- China
+  - [ITDOG](https://www.itdog.cn/http/)
+
+## Website monitoring
+[Wikipedia](https://en.wikipedia.org/wiki/Website_monitoring)
