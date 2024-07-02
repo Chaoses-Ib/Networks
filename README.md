@@ -84,4 +84,5 @@ Python:
 - [Telephone Services](Telephone/Services.md)
 
 ## Security
+- [Rate Limiting](Security/Rate.md)
 - [Metasploit](Security/Metasploit/README.md)
