@@ -47,3 +47,38 @@ Tools:
 
 ## Website monitoring
 [Wikipedia](https://en.wikipedia.org/wiki/Website_monitoring)
+
+[awesome-checker-services: ✅ List of links to the various checkers out there on the web for sites, domains, security etc.](https://github.com/Brunty/awesome-checker-services)
+
+## Benchmarking
+- [k6: Load testing for engineering teams](https://k6.io/)
+  - JS scripts
+  - `scoop install k6`
+
+- [vegeta: HTTP load testing tool and library. It's over 9000!](https://github.com/tsenart/vegeta)
+
+- [bombardier: Fast cross-platform HTTP benchmarking tool written in Go](https://github.com/codesenberg/bombardier)
+
+- [oha: Ohayou(おはよう), HTTP load generator, inspired by rakyll/hey with tui animation.](https://github.com/hatoo/oha)
+
+- [wrk: Modern HTTP benchmarking tool](https://github.com/wg/wrk)
+  - Only `GET`
+  - OS: Linux
+  
+  Forks:
+  - [wrk2: A constant throughput, correct latency recording variant of wrk](https://github.com/giltene/wrk2)
+  - Rust
+    - [rewrk: A more modern http framework benchmarker supporting HTTP/1 and HTTP/2 benchmarks.](https://github.com/lnx-search/rewrk)
+    - [winrk](https://github.com/fomalhaut88/winrk)
+  - Go: [go-wrk: A HTTP benchmarking tool based in spirit on the excellent wrk tool](https://github.com/tsliwowicz/go-wrk)
+
+- [Locust: Write scalable load tests in plain Python 🚗💨](https://github.com/locustio/locust)
+  - Written in Python, possibly a bottleneck in benchmarking.
+
+    [Increase performance with a faster HTTP client --- Locust 2.29.1 documentation](https://docs.locust.io/en/stable/increase-performance.html)
+    > In a *best case* scenario (doing small requests inside a `while True`\-loop) a single Locust process (limited to one CPU core) can do around **16000 requests per second using FastHttpUser, and 4000 using HttpUser** (tested on a 2021 M1 MacBook Pro and Python 3.11)
+
+[awesome-http-benchmark: HTTP(S) benchmark tools, testing/debugging, & restAPI (RESTful)](https://github.com/denji/awesome-http-benchmark)
+
+History:
+- 2021-02 [Best way to benchmark and load test an api. : r/devops](https://www.reddit.com/r/devops/comments/llv5s7/best_way_to_benchmark_and_load_test_an_api/)
