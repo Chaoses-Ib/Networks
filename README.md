@@ -85,4 +85,6 @@ Python:
 
 ## Security
 - [Rate Limiting](Security/Rate.md)
+- [Firewalls](Security/Firewalls/README.md)
+  - [Windows](Security/Firewalls/Windows/README.md)
 - [Metasploit](Security/Metasploit/README.md)
