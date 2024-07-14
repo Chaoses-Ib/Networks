@@ -36,6 +36,27 @@ axum: [tower\_http::cors](https://docs.rs/tower-http/0.5.2/tower_http/cors/index
 
   `Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==`
 
+## Redirection
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
+- Permanent redirections
+  - 301 Moved Permanently (others ~→ GET)
+  - 308 Permanent Redirect
+- Temporary redirections
+  - 302 Found (others ~→ GET)
+  - 303 See Other (others → GET)
+  - 307 Temporary Redirect
+- Special redirections
+  - 300 Multiple Choices
+  - 304 Not Modified
+
+[A good way to redirect with a POST request? - Stack Overflow](https://stackoverflow.com/questions/2604530/a-good-way-to-redirect-with-a-post-request)
+- > The specification says that a 307 POST redirect needs to be at least acknowledged by the user. Alas, apparently no browser is sticking to the spec here. IE simply repeats the request (so it works for your purposes), but Firefox, Safari and Opera seem to discard the POST data. Hence, this technique is unfortunately unreliable. (2010)
+- > The 307 approach is fully supported in all browser and successfully redirects a submitted POST to a different location including the body. (2024)
+
+[Why doesn't HTTP have POST redirect? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/99894/why-doesnt-http-have-post-redirect)
+
+[Post/Redirect/Get - Wikipedia](https://en.wikipedia.org/wiki/Post/Redirect/Get)
+
 ## Website availability testing
 Tools:
 - [Freshping](https://www.freshworks.com/website-monitoring/is-it-down/)
