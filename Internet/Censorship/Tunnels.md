@@ -29,8 +29,13 @@
   - [v2ray-agent](https://github.com/mack-a/v2ray-agent)
     - [搭建最新的Vision和Reality防止VPS端口封禁 - mack-a](https://www.v2ray-agent.com/archives/1680104902581)
   - [233boy/v2ray](https://github.com/233boy/v2ray/tree/master)
+  - [multi-v2ray: v2ray/xray多用户管理部署程序](https://github.com/Jrohy/multi-v2ray)
+    - 流量统计
   - [Xray 基于 Nginx 的 VLESS + XTLS 一键安装脚本](https://github.com/wulabing/Xray_onekey)
   - [V2Ray 基于 Nginx 的 vmess+ws+tls 一键安装脚本](https://github.com/wulabing/V2Ray_ws-tls_bash_onekey)
+  - Web
+    - [x-ui: 支持多协议多用户的 xray 面板](https://github.com/vaxilu/x-ui)
+      - [xray-ui](https://github.com/qist/xray-ui)
 
 - [sing-box: The universal proxy platform](https://github.com/SagerNet/sing-box)
   - [BoxXt/installReality: Reality 小白一键安装脚本](https://github.com/BoxXt/installReality)

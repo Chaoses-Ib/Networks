@@ -43,6 +43,7 @@ Desktop:
   
   Forks:
   - [Clash Verge Rev: Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)](https://github.com/clash-verge-rev/clash-verge-rev)
+    - Logs 位于 `%APPDATA%\io.github.clash-verge-rev.clash-verge-rev\logs`，**不会**自动清理，会增大空间占用以及隐私泄露风险。可以调高 Log Level 来避免快速占用大量空间，或者直接调整为 Silent。
   - [Clash Nyanpasu: Clash Nyanpasu! (∠・ω< )⌒☆​](https://github.com/keiko233/clash-nyanpasu)
 - ~~[Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)~~
   - 内存占用约 240 MiB。
