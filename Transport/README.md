@@ -40,3 +40,6 @@
 [I hate ASIO and I can't be alone. : r/cpp](https://www.reddit.com/r/cpp/comments/p45ozj/i_hate_asio_and_i_cant_be_alone/)
 
 [Best C/C++ Network Library - Stack Overflow](https://stackoverflow.com/questions/118945/best-c-c-network-library)
+
+## Rust
+- [mio: Metal I/O library for Rust.](https://github.com/tokio-rs/mio)
