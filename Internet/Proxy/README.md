@@ -9,6 +9,32 @@
     - SOCKS4a
   - SOCKS5
 
+### Original clients
+- HTTP
+  - `X-Forwarded-For` ([Wikipedia](https://en.wikipedia.org/wiki/X-Forwarded-For))
+    ```http
+    X-Forwarded-For: client, proxy1, proxy2
+    ```
+    ```http
+    X-Forwarded-For: 203.0.113.195, 70.41.3.18, 150.172.238.178
+    X-Forwarded-For: 203.0.113.195
+    X-Forwarded-For: 2001:db8:85a3:8d3:1319:8a2e:370:7348
+    ```
+  - `X-Real-IP`
+  - `Forwarded`
+    ```http
+    Forwarded: for=192.0.2.60;proto=http;by=203.0.113.43
+    Forwarded: for="[2001:db8::1234]"
+    ```
+
+- PROXY protocol
+
+[Security 101: X-Forwarded-For vs. Forwarded vs PROXY | System Overlord](https://systemoverlord.com/2020/03/25/security-101-x-forwarded-for-vs-forwarded-vs-proxy.html)
+
+[http - Difference between X-Forwarded-For and X-Real-IP headers - Stack Overflow](https://stackoverflow.com/questions/72557636/difference-between-x-forwarded-for-and-x-real-ip-headers)
+
+[X-Real-IP should probably be preferred over X-Forwarded-For in \_extraClientIP directive? - Issue #1670 - akka/akka-http](https://github.com/akka/akka-http/issues/1670)
+
 ## Libraries
 - [Cloudflare/Pingora: A library for building fast, reliable and evolvable network services.](https://github.com/cloudflare/pingora)
 

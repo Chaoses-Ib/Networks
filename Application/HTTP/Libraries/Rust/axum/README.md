@@ -7,6 +7,10 @@
 
   `router.with_state(Arc::new(state))`
 
+- [The order of extractors](https://docs.rs/axum/latest/axum/extract/index.html#the-order-of-extractors)
+
+  > Extractors always run in the order of the function parameters that is from left to right. The request body is an asynchronous stream that can only be consumed once. Therefore you can only have one extractor that consumes the request body. axum enforces this by requiring such extractors to be the *last* argument your handler takes.
+
 IP:
 - [`Router::into_make_service_with_connect_info()`](https://docs.rs/axum/latest/axum/struct.Router.html#method.into_make_service_with_connect_info)
 - [axum-client-ip: A client IP address extractor for Axum](https://github.com/imbolc/axum-client-ip)

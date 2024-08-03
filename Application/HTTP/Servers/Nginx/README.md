@@ -33,6 +33,7 @@ Rust:
   - [nginx-config-mod: A command-line utility and a rust library to validate and make certain tweaks/rewrites of nginx configs](https://github.com/tailhook/nginx-config-mod) (discontinued)
 
 ## HTTP
+### [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
 - Trailing slashes
 
   [proxy - using trailing slashes in nginx configuration - Server Fault](https://serverfault.com/questions/607615/using-trailing-slashes-in-nginx-configuration)
@@ -52,6 +53,24 @@ Rust:
   ```
 
 [NGINX as a file server](https://www.yanxurui.cc/posts/server/2017-03-21-NGINX-as-a-file-server/)
+
+### [ngx_http_proxy_module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html)
+[NGINX Reverse Proxy | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)
+
+- `$remote_addr`
+
+  ```nginx
+  proxy_set_header X-Real-IP $remote_addr;
+  ```
+
+- `$proxy_add_x_forwarded_for`: `$http_x_forwarded_for,$remote_addr`
+
+  The "X-Forwarded-For" client request header field with the `$remote_addr` variable appended to it, separated by a comma. If the "X-Forwarded-For" field is not present in the client request header, the `$proxy_add_x_forwarded_for` variable is equal to the `$remote_addr` variable.
+
+[Nginx: reverse proxy passing client IP to the server - Server Fault](https://serverfault.com/questions/920030/nginx-reverse-proxy-passing-client-ip-to-the-server)
+
+### [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
+[http headers - NGinx `$proxy_add_x_forwarded_for` and `real_ip_header` - Stack Overflow](https://stackoverflow.com/questions/29279084/nginx-proxy-add-x-forwarded-for-and-real-ip-header)
 
 ## Security
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
