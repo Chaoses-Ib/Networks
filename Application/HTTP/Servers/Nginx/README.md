@@ -44,6 +44,13 @@ Rust:
   
   [Nginx location matches - Stack Overflow](https://stackoverflow.com/questions/5239131/nginx-location-matches)
 
+- SPA
+  ```nginx
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+  ```
+
 [NGINX as a file server](https://www.yanxurui.cc/posts/server/2017-03-21-NGINX-as-a-file-server/)
 
 ## Security
