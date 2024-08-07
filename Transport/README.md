@@ -43,3 +43,9 @@
 
 ## Rust
 - [mio: Metal I/O library for Rust.](https://github.com/tokio-rs/mio)
+  - [tokio::net](https://docs.rs/tokio/latest/tokio/net/index.html)
+
+Discussions:
+- [How to fake a connection refused in rust? - Stack Overflow](https://stackoverflow.com/questions/65828567/how-to-fake-a-connection-refused-in-rust)
+
+  > This is too bizarre a thing to want to do for a standard library to provide functions for it. I expect you'd have to use a low level system-specific API to achieve this.
