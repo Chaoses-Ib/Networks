@@ -27,6 +27,25 @@ Rule sets:
 
 [本文主要是教你怎么定制一下自己的ACL或者clash规则](https://gist.github.com/Teraflopst/d53f1dbc3dcc350154c1beba03290a4b)
 
+## Subscription user info
+- `Subscription-Userinfo`
+
+  [Quantumult/Extra Server Subscription Feature](https://github.com/crossutility/Quantumult/blob/master/extra-subscription-feature.md)
+
+- `# upload=455727941; download=6174315083; total=1073741824000; expire=1671815872;`
+
+  [URL Scheme | Clash for Windows 代理工具使用说明](https://docs.gtk.pw/contents/urlscheme.html)
+
+  [URL Schemes - Clash Verge Rev Docs](https://clash-verge-rev.github.io/guide/url_schemes.html)
+
+- 剩余流量不是通过解析节点名称实现的，例如 `剩余流量：100.00 GB`。
+
+订阅转换时将使用最后一个有效订阅的 `Subscription-Userinfo`。可以使用一些无效订阅来覆盖流量信息，例如：
+- 11.6KB/0B: `https://sublink.naiko.org/link/DJeNAh4ufS4LzbFY?clash=1`
+- 0B/200GB: `https://4gehpe.doggygo.top:8443/api/v1/client/55bcd67be9d0b1ac5cae7e2df09b3ca6`
+
+[Notebook](Clash.ipynb)
+
 ## [Clash.Meta](https://github.com/MetaCubeX/mihomo/tree/Alpha)
 [Clash.Meta Docs](https://wiki.metacubex.one/)
 
@@ -50,4 +69,12 @@ Desktop:
 
 Android:
 - ~~[Clash for Android](https://github.com/Kr328/ClashForAndroid)~~
-- ~~[Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)~~
+  - https://www.dropbox.com/scl/fi/ucgg9oom1a5bq24yzzykm/cfa-2.5.12-premium-universal-release.apk?rlkey=5h0hpluuyfxt0atnu0emcoql5&dl=0
+
+- [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
+  - https://t.me/coobackup/67
+  - https://alist.ips.ga/clients
+  - https://clashxhub.com/apps/cmfa-2.10.1-meta-universal-release.apk
+    - 未被微信屏蔽
+  - https://dl.haojichang.com/apps/ClashMetaForAndroid/
+    - https://dl.haojichang.com/apps/ClashMetaForAndroid/cmfa-2.10.0-meta-arm64-v8a-release.apk
