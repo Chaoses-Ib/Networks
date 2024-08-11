@@ -138,6 +138,69 @@ axum: [tower\_http::cors](https://docs.rs/tower-http/0.5.2/tower_http/cors/index
 
 [Post/Redirect/Get - Wikipedia](https://en.wikipedia.org/wiki/Post/Redirect/Get)
 
+## Tools
+CLI:
+- [cURL](https://curl.se/) ([Wikipedia](https://en.wikipedia.org/wiki/CURL), [GitHub](https://github.com/curl/curl))
+  - [Hurl: run and test HTTP requests with plain text.](https://github.com/Orange-OpenSource/hurl)
+- [HTTPie CLI: 🥧 modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.](https://github.com/httpie/cli)
+- [httpYac: Command Line Interface for \*.http and \*.rest files. Connect with http, gRPC, WebSocket and MQTT](https://github.com/AnWeber/httpyac)
+
+GUI:
+- Edge DevTools: Network Console
+  - Formats: Network Console, Postman JSON
+
+  [Network Console - a Microsoft Edge feature with lots of potential - DEV Community](https://dev.to/estruyf/network-console-a-microsoft-edge-feature-with-lots-of-potential-2hf)
+
+- Python + Requests + Jupyter Notebook
+  - [Ipyrest: An emerging widget for exploring RESTful APIs in Jupyter notebooks.](https://github.com/deeplook/ipyrest) (discontinued)
+
+- VS Code
+  - [REST Client](https://github.com/Huachao/vscode-restclient)
+  - [httpYac - Yet another Client: Quickly and easily send REST, Soap, GraphQL, GRPC, MQTT and WebSocket requests directly within Visual Studio Code](https://github.com/AnWeber/vscode-httpyac)
+  - Thunder Client
+
+- [Postman](https://www.postman.com/) ([Wikipedia](https://en.wikipedia.org/wiki/Postman_(software)))
+  - Protocols
+    - HTTP
+      - REST
+      - GraphQL
+    - gRPC
+    - WebSocket
+      - Socket.IO
+    - MQTT
+- [Hoppscotch: Open source API development ecosystem](https://github.com/hoppscotch/hoppscotch)
+  - HTTP
+    - REST
+    - GraphQL
+  - WebSocket
+    - Socket.IO
+  - MQTT
+- [Insomnia: The open-source, cross-platform API client for GraphQL, REST, WebSockets, SSE and gRPC. With Cloud, Local and Git storage.](https://github.com/Kong/insomnia)
+- [Bruno: Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)](https://github.com/usebruno/bruno)
+- [Apifox: API 文档、调试、Mock、测试一体化协作平台。拥有接口文档管理、接口调试、Mock、自动化测试等功能，接口开发、测试、联调效率，提升 10 倍。最好用的接口文档管理工具，接口自动化测试工具。](https://apifox.com/)
+  - Postman + Swagger + Mock + JMeter
+
+[20 Postman alternatives you should know about - July 2024 Review](https://testfully.io/blog/top-5-postman-alternatives/)
+
+[API Testing Showdown: Postman vs Pytest. Part 1 | by Nikita Belkovskiy | Exness Tech Blog | Medium](https://medium.com/exness-blog/api-testing-showdown-postman-vs-pytest-part-1-919a3a21a085)
+
+Discussions:
+- 2023-07 [Good alternative to postman ? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/152ew7v/good_alternative_to_postman/)
+- 2023-07 [Looking for a Postman alternative : r/softwaretesting](https://www.reddit.com/r/softwaretesting/comments/14ze0g9/looking_for_a_postman_alternative/)
+- 2023-09 [求 postman 的替代品， Windows 系统 - V2EX](https://www.v2ex.com/t/975795)
+- 2024-01 [Postman alternative that does not suck with feature bloat : r/webdev](https://www.reddit.com/r/webdev/comments/199m3g3/postman_alternative_that_does_not_suck_with/)
+
+## HTTP capturing
+- [mitmproxy: An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers.](https://github.com/mitmproxy/mitmproxy)
+
+Tools:
+- Chromium DevTools
+- Wireshark: [Hyper\_Text\_Transfer\_Protocol - Wireshark Wiki](https://wiki.wireshark.org/Hyper_Text_Transfer_Protocol)
+- [Fiddler: Web Debugging Proxy and Troubleshooting Tools](https://www.telerik.com/fiddler)
+- [Reqable](https://reqable.com/) (Chinese)
+  - Fiddler + Charles + Postman
+  - Flutter
+
 ## Website availability testing
 Tools:
 - [Freshping](https://www.freshworks.com/website-monitoring/is-it-down/)
