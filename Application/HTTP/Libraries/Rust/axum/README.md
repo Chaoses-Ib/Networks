@@ -16,7 +16,6 @@ IP:
 - [axum-client-ip: A client IP address extractor for Axum](https://github.com/imbolc/axum-client-ip)
 
 [Community Projects](https://github.com/tokio-rs/axum/blob/main/ECOSYSTEM.md)
-- [axum-login: 🪪 User identification, authentication, and authorization for Axum.](https://github.com/maxcountryman/axum-login)
 - [axum-limit: This crate provides an efficient rate limiting mechanism using token buckets, specifically designed for asynchronous web applications with a strong focus on extractor-based rate limits.](https://github.com/gengteng/axum-limit)
 
 [axum-server: High level server designed to be used with axum framework.](https://github.com/programatik29/axum-server)

@@ -112,10 +112,7 @@ axum: [tower\_http::cors](https://docs.rs/tower-http/0.5.2/tower_http/cors/index
 - ~~[Support for CORS preflight requests - Issue #106 - tokio-rs/axum](https://github.com/tokio-rs/axum/issues/106)~~
 - [Axum router rejecting CORS OPTIONS preflight with 405 even with CorsLayer - Stack Overflow](https://stackoverflow.com/questions/73498537/axum-router-rejecting-cors-options-preflight-with-405-even-with-corslayer)
 
-## Authentication
-- HTTP basic authentication ([Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication))
-
-  `Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==`
+## [→Authentication](https://github.com/Chaoses-Ib/InformationSecurity/tree/main/Access%20Control/Authentication/Tokens#http-basic-authentication)
 
 ## Redirection
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
