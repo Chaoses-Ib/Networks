@@ -114,6 +114,53 @@ axum: [tower\_http::cors](https://docs.rs/tower-http/0.5.2/tower_http/cors/index
 
 ## [→Authentication](https://github.com/Chaoses-Ib/InformationSecurity/tree/main/Access%20Control/Authentication/Tokens#http-basic-authentication)
 
+## Cookies
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+```http
+Set-Cookie: <cookie-name>=<cookie-value>
+```
+e.g.
+```http
+HTTP/2.0 200 OK
+Content-Type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+
+[page content]
+```
+```http
+GET /sample_page.html HTTP/2.0
+Host: www.example.org
+Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+```
+
+Cookies are mainly used for three purposes:
+- **Session management**: User sign-in status, shopping cart contents, game scores, or any other user session-related details that the server needs to remember.
+- **Personalization**: User preferences such as display language and UI theme.
+- **Tracking**: Recording and analyzing user behavior.
+
+[Cookies vs local storage - what to use when?](https://punits.dev/jargon-free-intros/cookies-vs-local-storage/) ([r/webdev](https://www.reddit.com/r/webdev/comments/12ipjr5/cookies_vs_local_storage_what_to_use_when/))
+
+[html - Local Storage vs Cookies - Stack Overflow](https://stackoverflow.com/questions/3220660/local-storage-vs-cookies)
+
+- Local storage 不能跨域
+
+  [javascript - Use localStorage across subdomains - Stack Overflow](https://stackoverflow.com/questions/4026479/use-localstorage-across-subdomains)
+
+  [javascript - How to share localstorage among different subdomains? - Stack Overflow](https://stackoverflow.com/questions/59997063/how-to-share-localstorage-among-different-subdomains)
+
+Discussions:
+- 2020-07 [现在还有用 cookies 吗 - V2EX](https://v2ex.com/t/692155)
+- 2023-11 [Are cookies really safer than local/session storage? : r/webdev](https://www.reddit.com/r/webdev/comments/17shju0/are_cookies_really_safer_than_localsession_storage/)
+
+[Clearing all cookies with JavaScript - Stack Overflow](https://stackoverflow.com/questions/179355/clearing-all-cookies-with-javascript)
+
+Browsers:
+- Edge: `edge://settings/siteData`
+
+某些网站的 cookies 可高达几百 MB。
+
 ## Redirection
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
 - Permanent redirections
