@@ -108,9 +108,49 @@ Content-Type: text/plain
 ### Cross-Origin Resource Sharing (CORS)
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
+[小 Tips：Chrome 91 版本 Cookie Same-Site 前端本地开发解决方案 - Issue #11 - jecyu/naluduo233.github.io](https://github.com/jecyu/naluduo233.github.io/issues/11)
+
+Headers:
+- [Access-Control-Allow-Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin)
+
+  > For requests *without credentials*, the literal value "`*`" can be specified as a wildcard; the value tells browsers to allow requesting code from any origin to access the resource. Attempting to use the wildcard with credentials [results in an error](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSNotSupportingCredentials).
+
+- [Access-Control-Allow-Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers)
+
+  > The value "`*`" only counts as a special wildcard value for requests without credentials (requests without HTTP cookies or HTTP authentication information). In requests with credentials, it is treated as the literal header name "`*`" without special semantics. Note that the [`Authorization`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header can't be wildcarded and always needs to be listed explicitly.
+
+Cookies:
+- [Get Ready for New `SameSite=None; Secure` Cookie Settings  |  Google Search Central Blog  |  Google for Developers](https://developers.google.com/search/blog/2020/01/get-ready-for-new-samesitenone-secure)
+  - HTTPS
+- Axios: [`withCredentials`](https://axios-http.com/docs/req_config)
+
+  `withCredentials` indicates whether or not cross-site Access-Control requests should be made using credentials. `false` by default.
+
+  [Make Axios send cookies in its requests automatically - Stack Overflow](https://stackoverflow.com/questions/43002444/make-axios-send-cookies-in-its-requests-automatically)
+
+  [Cookie not set when localhost web app accesses remote API - Stack Overflow](https://stackoverflow.com/questions/56372570/cookie-not-set-when-localhost-web-app-accesses-remote-api)
+
+  [Can not send cookie back from client, tried many ways - Issue #4907 - axios/axios](https://github.com/axios/axios/issues/4907)
+
+Proxies:
+- Vite: [`server.proxy`](https://vitejs.dev/config/server-options#server-proxy)
+- Nginx
+  ```nginx
+  proxy_hide_header 'Access-Control-Allow-Origin';
+  if ($http_origin ~* (https?://localhost(:[0-9]+)?)) {
+      add_header 'Access-Control-Allow-Origin' $http_origin;
+      add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH';
+      add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+      add_header 'Access-Control-Allow-Credentials' 'true';
+  }
+  ```
+  [How to enable CORS in Nginx proxy server? - Stack Overflow](https://stackoverflow.com/questions/45986631/how-to-enable-cors-in-nginx-proxy-server)
+
 axum: [tower\_http::cors](https://docs.rs/tower-http/0.5.2/tower_http/cors/index.html)
 - ~~[Support for CORS preflight requests - Issue #106 - tokio-rs/axum](https://github.com/tokio-rs/axum/issues/106)~~
 - [Axum router rejecting CORS OPTIONS preflight with 405 even with CorsLayer - Stack Overflow](https://stackoverflow.com/questions/73498537/axum-router-rejecting-cors-options-preflight-with-405-even-with-corslayer)
+
+[有 CORS 还需要 CSRF token 吗？ - V2EX](https://www.v2ex.com/t/1054508)
 
 ## [→Authentication](https://github.com/Chaoses-Ib/InformationSecurity/tree/main/Access%20Control/Authentication/Tokens#http-basic-authentication)
 
