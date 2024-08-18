@@ -1,5 +1,19 @@
 # Ports
+## Port numbers
 [List of TCP and UDP port numbers - Wikipedia](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
+
+> The port numbers in the range from 0 to 1023 (0 to 210 − 1) are the well-known ports or system ports. They are used by system processes that provide widely used types of network services. On Unix-like operating systems, a process must execute with superuser privileges to be able to bind a network socket to an IP address using one of the well-known ports.
+
+[Port Number Database Search - WintelGuy.com](https://wintelguy.com/port-search/)
+
+[请教大佬们，高位端口安全性高？ - V2EX](https://www.v2ex.com/t/847273)
+- [nmap/nmap-services](https://raw.githubusercontent.com/nmap/nmap/master/nmap-services)
+
+[端口映射 3389 到 5 位端口，一直在被爆破，怎么防护可以兼顾安全性跟便捷性？ - V2EX](https://v2ex.com/t/944163)
+
+[解决 Hyper-V 端口占用问题 | Cassius's Blog](https://www.yuweihung.com/posts/2021/hyper-v-reserved-port/)
+
+[RouterOS 端口扫描防御 | 華鳥風月](https://blog.9-ch.com/post/homelab-ros-anti-scan/)
 
 ## Ephemeral ports
 [Wikipedia](https://en.wikipedia.org/wiki/Ephemeral_port)
