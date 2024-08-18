@@ -36,7 +36,7 @@
 [X-Real-IP should probably be preferred over X-Forwarded-For in \_extraClientIP directive? - Issue #1670 - akka/akka-http](https://github.com/akka/akka-http/issues/1670)
 
 ## Libraries
-- [Cloudflare/Pingora: A library for building fast, reliable and evolvable network services.](https://github.com/cloudflare/pingora)
+- [→Pingora](Pingora.md)
 
 ## Tools
 HTTP:
