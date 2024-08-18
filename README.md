@@ -68,6 +68,7 @@ Python:
       - [axum](Application/HTTP/Libraries/Rust/axum/README.md)
   - [Servers](Application/HTTP/Servers/README.md)
     - [Nginx](Application/HTTP/Servers/Nginx/README.md)
+    - [Caddy](Application/HTTP/Servers/Caddy/README.md)
 - [WebSocket](Application/WS/README.md)
   - [Libraries](Application/WS/Libraries/README.md)
 - [Secure Shell](Application/SSH/README.md)

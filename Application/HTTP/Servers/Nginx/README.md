@@ -20,6 +20,10 @@
 
 [Installing Nginx on Windows --- A Step-by-Step Guide | by Chandramathi Muthuraj | Medium](https://medium.com/@chandramuthuraj/installing-nginx-on-windows-a-step-by-step-guide-6750575c63e2)
 
+`scoop install nginx`
+
+4.5 MiB.
+
 ## Modules
 [NGINX Modules](https://www.f5.com/pdf/product-overview/2019-04-24-NGINX-Modules-datasheet.pdf)
 

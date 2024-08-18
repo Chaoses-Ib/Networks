@@ -12,7 +12,7 @@
 
 - Microsoft Internet Information Services ([Wikipedia](https://en.wikipedia.org/wiki/Internet_Information_Services))
 
-- [Caddy: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS](https://github.com/caddyserver/caddy)
+- [→Caddy](Caddy/README.md)
 
   - 2020-07 [Caddy vs Nginx: How Do These Web Servers / Reverse Proxies Compare? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/hur1hx/caddy_vs_nginx_how_do_these_web_servers_reverse/)
 
