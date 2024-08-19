@@ -6,6 +6,8 @@
 
 [Windows support - Issue #342 - cloudflare/pingora](https://github.com/cloudflare/pingora/issues/342)
 
+[pingap: A reverse proxy like nginx, built on pingora, simple and efficient.](https://github.com/vicanso/pingap)
+
 [River: A Reverse Proxy Application based on the pingora library from Cloudflare.](https://github.com/memorysafety/river) (inactive)
 
 ## HTTP

@@ -11,6 +11,7 @@ Rust:
 Tools:
 - [Fail2Ban: Daemon to ban hosts that cause multiple authentication errors](https://github.com/fail2ban/fail2ban) ([Wikipedia](https://en.wikipedia.org/wiki/Fail2ban))
   - OS: Linux
+  - [Adapting fail2ban for nginx](https://forum.nginx.org/read.php?11,223078,247238)
 - [IPBan: Since 2011, IPBan is the worlds most trusted, free security software to block hackers and botnets. With both Windows and Linux support, IPBan has your dedicated or cloud server protected. Upgrade to IPBan Pro today and get a discount. Learn more at ↓](https://github.com/digitalruby/ipban)
   - OS: Windows Server 2016 or newer
   - [IPBan Pro](https://ipban.com/) (paid)

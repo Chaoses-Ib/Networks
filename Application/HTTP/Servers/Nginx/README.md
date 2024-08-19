@@ -1,7 +1,9 @@
 # Nginx
-[Wikipedia](https://en.wikipedia.org/wiki/Nginx)
+[Wikipedia](https://en.wikipedia.org/wiki/Nginx), [GitHub](https://github.com/nginx/nginx)
 
 [Beginner's Guide](https://nginx.org/en/docs/beginners_guide.html)
+
+[agentzh's Nginx Tutorials (version 2020.03.19)](https://openresty.org/download/agentzh-nginx-tutorials-en.html)
 
 [Nginx Cheatsheet](https://techbeats.blog/nginx-cheatsheet)
 
@@ -15,6 +17,7 @@
 [nginx for Windows](https://nginx.org/en/docs/windows.html)
 
 - > Only the `select()` and `poll()` (1.15.9) connection processing methods are currently used, so high performance and scalability should not be expected.
+  - [hello, nginx for windows problem with multithreading : r/nginx](https://www.reddit.com/r/nginx/comments/1adqgmw/hello_nginx_for_windows_problem_with/)
 - > The UDP proxy functionality is not supported.
 - > nginx/Windows uses the directory where it has been run as the prefix for relative paths in the configuration.
 
@@ -23,6 +26,15 @@
 `scoop install nginx`
 
 4.5 MiB.
+
+## CLI
+[Command-line parameters](https://nginx.org/en/docs/switches.html)
+
+[Controlling NGINX Processes at Runtime | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/basic-functionality/runtime-control/)
+
+[Controlling nginx](https://nginx.org/en/docs/control.html)
+
+On Windows, Nginx can start multiple instances, but `quit` can only quit the last instance.
 
 ## Modules
 [NGINX Modules](https://www.f5.com/pdf/product-overview/2019-04-24-NGINX-Modules-datasheet.pdf)
@@ -33,8 +45,51 @@ Rust:
 - [nginx-rs: Nginx module written in Rust](https://github.com/dcoles/nginx-rs) (discontinued)
 
 ## Configs
+- [misc-conf: Nom parser for nginx/apache configuration](https://github.com/metaworm/misc-conf)
 - [nginx-config: An (unofficial) nginx configuration parser](https://github.com/tailhook/nginx-config) (discontinued)
   - [nginx-config-mod: A command-line utility and a rust library to validate and make certain tweaks/rewrites of nginx configs](https://github.com/tailhook/nginx-config-mod) (discontinued)
+- [webserver-config: A Rust crate for generating configuration files for web servers.](https://git.codespace.cz/oohost/webserver-config)
+
+Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成配置。
+
+### Variables
+[Alphabetical index of variables](https://nginx.org/en/docs/varindex.html)
+
+[Is there a proper way to use nginx variables to make sections of the configuration shorter, using them as macros for making parts of configuration work as templates?](https://nginx.org/en/docs/faq/variables_in_config.html)
+> Variables should not be used as template macros. Variables are evaluated in the run-time during the processing of each request, so they are rather costly compared to plain static configuration. Using variables to store static strings is also a bad idea. Instead, a macro expansion and "include" directives should be used to generate configs more easily and it can be done with the external tools, e.g. sed + make or any other common template mechanism.
+
+[Using variables in Nginx location rules - Stack Overflow](https://stackoverflow.com/questions/15416957/using-variables-in-nginx-location-rules)
+
+### Environment variables
+- [`env`](https://nginx.org/en/docs/ngx_core_module.html#env)
+
+- `envsubst`
+
+  [Using Environment Variables in Nginx Config File | Baeldung on Linux](https://www.baeldung.com/linux/nginx-config-environment-variables)
+
+  [XAMPPRocky/eve: A utility to easily search and replace with environment variables.](https://github.com/XAMPPRocky/eve) (discontinued)
+
+- `set_by_lua`
+
+  [Environment variables in nginx config - Kristian Glass - Do I Smell Burning?](https://blog.doismellburning.co.uk/environment-variables-in-nginx-config/)
+
+- `perl_set`
+
+- Docker: [Using environment variables in nginx configuration (new in 1.19)](https://github.com/docker-library/docs/tree/master/nginx#using-environment-variables-in-nginx-configuration-new-in-119)
+
+[nginx: use environment variables - Stack Overflow](https://stackoverflow.com/questions/21866477/nginx-use-environment-variables)
+
+### Templates
+[Understanding Config Templates | NGINX Documentation](https://docs.nginx.com/nginx-management-suite/nim/about/templates/config-templates/)
+
+## [ngx_core_module](https://nginx.org/en/docs/ngx_core_module.html)
+- `daemon`
+
+  [webserver - What is the difference between nginx daemon on/off option? - Stack Overflow](https://stackoverflow.com/questions/25970711/what-is-the-difference-between-nginx-daemon-on-off-option)
+
+  `off` on Windows.
+
+- [`include`](https://nginx.org/en/docs/ngx_core_module.html#include)
 
 ## HTTP
 ### [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
@@ -75,6 +130,24 @@ Rust:
 
 ### [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
 [http headers - NGinx `$proxy_add_x_forwarded_for` and `real_ip_header` - Stack Overflow](https://stackoverflow.com/questions/29279084/nginx-proxy-add-x-forwarded-for-and-real-ip-header)
+
+### [ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
+[Rate Limiting with NGINX -- NGINX Community Blog](https://blog.nginx.org/blog/rate-limiting-nginx)
+
+## Lua
+[Lua | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/dynamic-modules/lua/)
+
+- [OpenResty: A dynamic web platform based on NGINX and LuaJIT](https://openresty.org/)
+  - [lua-nginx-module: Embed the Power of Lua into NGINX HTTP servers](https://github.com/openresty/lua-nginx-module)
+
+  [Pushing Nginx to its limit with Lua](https://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua)
+
+## Logs
+- [rhit: A nginx log explorer](https://github.com/Canop/rhit)
+- [logutil: A Rust-based tool designed to analyze Nginx access logs](https://github.com/s00d/logutil)
+- [ngxav-rs: A 100% Rust Rewrite of Nginx Log Stats, a full-featured NGINX log parser and searcher with 10+ Search Refiners](https://github.com/qpxdesign/ngxav-rs/)
+- [access\_log\_parser: A library of Rust parsers for reading access logs in a strongly-typed way](https://github.com/dmikusa/access_log_parser)
+- [pff: "Ban Not Fail" PoC](https://github.com/dmilith/pff)
 
 ## Security
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
