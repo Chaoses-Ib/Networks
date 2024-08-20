@@ -34,5 +34,20 @@
 ## Ws2_32.dll
 [wine/dlls/ws2\_32/socket.c at master - wine-mirror/wine](https://github.com/wine-mirror/wine/blob/master/dlls/ws2_32/socket.c)
 
+## Processes
+[Does Windows take care of closing sockets when processes exit? - Super User](https://superuser.com/questions/375604/does-windows-take-care-of-closing-sockets-when-processes-exit)
+
+### Handle inheritance
+[`CreateProcess`](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa) with `bInheritHandles` set to `TRUE` will inherit the sockets of the parent process.
+- But the inherited sockets are not visible in the handle list and the socket list of the child process.
+- For `netstat`, the sockets are listed under the PID of the parent process, with the name "System" if the parent process died.
+
+[How do you free up a port being held open by dead process? - Server Fault](https://serverfault.com/questions/181015/how-do-you-free-up-a-port-being-held-open-by-dead-process)
+> What may be happening is that your process had a TCP port open when it crashed or otherwise exited without explicitly closing it. Normally the OS cleans up these sorts of things, but only when the process record goes away. While the process may not appear to be running any more, there is at least one thing that can keep a record of it around, in order to prevent reuse of its PID. This is the existence of a child process that is not detached from the parent.
+>
+> If your program spawned any processes while it was running, try killing them. That should cause its process record to be freed and the TCP port to be cleaned up. Apparently windows does this when the record is released not when the process exits as I would have expected.
+
+[→Handle inheritance](https://github.com/Chaoses-Ib/Windows/blob/main/Kernel/Objects/README.md#handle-inheritance)
+
 
 [^winter]: Windows Internals v6

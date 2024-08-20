@@ -18,6 +18,9 @@
 ## Libraries
 ### C++
 - [Boost.Asio](https://github.com/boostorg/asio)
+  - `acceptor::async_accept()` will *silently fail* if the port is already in use. Only `acceptor::bind()` will throw an exception.
+
+    [AcceptEx (winsock) and sub-processes hangs byte sending to client - Issue #665 - chriskohlhoff/asio](https://github.com/chriskohlhoff/asio/issues/665)
 
   Lifetime (`shared_ptr`) issues:
   - [Why is `boost::asio::async_write` causing a crash? - Stack Overflow](https://stackoverflow.com/questions/18537788/why-is-boostasioasync-write-causing-a-crash)
