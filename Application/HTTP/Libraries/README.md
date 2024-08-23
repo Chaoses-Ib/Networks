@@ -1,7 +1,7 @@
 # HTTP Libraries
-## C++
-- [Boost.Beast: HTTP and WebSocket built on Boost.Asio in C++11](https://github.com/boostorg/beast)
-- [cpp-netlib: The C++ Network Library Project -- cross-platform, standards compliant networking library.](https://github.com/cpp-netlib/cpp-netlib)
+## [→C++](C++/README.md)
+
+## [→Rust](Rust/README.md)
 
 ## Python
 ### Clients

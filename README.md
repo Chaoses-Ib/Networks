@@ -65,6 +65,7 @@ Python:
 - [Hypertext Transfer Protocol](Application/HTTP/README.md)
   - [Representational State Transfer](Application/HTTP/REST.md)
   - [Libraries](Application/HTTP/Libraries/README.md)
+    - [C++](Application/HTTP/Libraries/C++/README.md)
     - [Rust](Application/HTTP/Libraries/Rust/README.md)
       - [axum](Application/HTTP/Libraries/Rust/axum/README.md)
   - [Servers](Application/HTTP/Servers/README.md)
