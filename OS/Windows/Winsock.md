@@ -25,6 +25,10 @@
 - [wbenny/KSOCKET: KSOCKET provides a very basic example how to make a network connections in the Windows Driver by using WSK](https://github.com/wbenny/KSOCKET) (discontinued)
   - [mingw-w64-ksocket: Windows Kernel <-> User mode socket communication made for "Mingw64 Driver Plus Plus".](https://github.com/utoni/mingw-w64-ksocket)
 
+Rust:
+- [hussein-aitlahcen/windows-kernel-rs: Windows Kernel Driver library for Rust developers](https://github.com/hussein-aitlahcen/windows-kernel-rs) (discontinued)
+- [carlos-al/windows-kernel-rs](https://github.com/carlos-al/windows-kernel-rs)
+
 ## Ntdll.dll
 [x86matthew - NTSockets - Downloading a file via HTTP using the NtCreateFile and NtDeviceIoControlFile syscalls](https://www.x86matthew.com/view_post?id=ntsockets)
 
