@@ -177,6 +177,10 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 [怎么解决TCP网络传输「粘包」问题？ - 知乎](https://www.zhihu.com/question/20210025)
 
+[TCP 粘包？ 到底有没有粘包？ - V2EX](https://www.v2ex.com/t/1067508#reply27)
+
+不过 TCP 断开连接时有通知，如果每条消息都使用独立连接，也可以将 TCP 用作基于包的协议，尽管开销很大。 
+
 
 [^wiki]: [Transmission Control Protocol - Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 [^topdown]: Computer Networking：A Top-Down Approach
