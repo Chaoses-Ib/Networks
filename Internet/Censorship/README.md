@@ -1,16 +1,34 @@
 # Internet Censorship
+[Wikipedia](https://en.wikipedia.org/wiki/Internet_censorship)
+
 **Internet censorship** is the control or suppression of what can be accessed, published, or viewed on the Internet enacted by regulators, or on their own initiative. Individuals and organizations may engage in self-censorship for moral, religious, or business reasons, to conform to societal norms, due to intimidation, or out of fear of legal or other consequences.[^wiki]
 
 [^wiki]: [Internet censorship - Wikipedia](https://en.wikipedia.org/wiki/Internet_censorship)
 
 [Net4People BBS: Forum for discussing Internet censorship circumvention](https://github.com/net4people/bbs)
 
-## Tools
+## Content suppression methods
+[Wikipedia](https://en.wikipedia.org/wiki/Internet_censorship#Content_suppression_methods)
+
+- Protocol
+  - TCP
+- Port
+  - 22, 80, 443, 3389
+- IP address
+- Domain name
+
+[拯救被墙的服务器 - XTrojan黑科技](https://xtrojan.org/bgfw/recovery-blocked-ip.html)
+
+### Tools
 - [域名是否被墙查询 (gfwck.xyz)](https://www.gfwck.xyz/)
 - [Website Visibility in China by WebSitePulse](https://www.websitepulse.com/tools/china-firewall-test)
 - ~~[检测网站是否被墙](https://www.checkgfw.com/)~~
 
-## Anti-censorship technologies
+## Circumvention
+[Wikipedia](https://en.wikipedia.org/wiki/Internet_censorship_circumvention)
+
+Internet censorship circumvention, anti-censorship
+
 - [Tunnels](Tunnels.md)
 
 See also [Awesome anti-censorship](https://github.com/danoctavian/awesome-anti-censorship).

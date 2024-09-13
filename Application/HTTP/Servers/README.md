@@ -20,6 +20,8 @@
 
 - [Swindon: An HTTP edge (frontend) server with smart websockets support](https://github.com/swindon-rs/swindon) (discontinued)
 
+- Python: [http.server](../Libraries/README.md#servers)
+
 History:
 - 2017-02 [Nginx like webserver implemented in rust - community - The Rust Programming Language Forum](https://users.rust-lang.org/t/nginx-like-webserver-implemented-in-rust/9624)
 - 2018-12 [Can a Rust web server beat nginx in serving static files? : r/rust](https://www.reddit.com/r/rust/comments/a82w9b/can_a_rust_web_server_beat_nginx_in_serving/)
