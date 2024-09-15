@@ -265,6 +265,19 @@ Responses are grouped in five classes:
 
 [http - How to redirect to a login page, but only when the browser is navigating to a page - Stack Overflow](https://stackoverflow.com/questions/61331315/how-to-redirect-to-a-login-page-but-only-when-the-browser-is-navigating-to-a-pa)
 
+## Extensions
+[httpwg/http-extensions: Draft HTTP Extension Specifications](https://github.com/httpwg/http-extensions)
+
+### RFC 2774
+[HTTP Extension Framework](https://www.w3.org/Protocols/HTTP/ietf-http-ext/)
+
+[RFC 2774 - An HTTP Extension Framework](https://datatracker.ietf.org/doc/html/rfc2774)
+
+Actual applications?
+
+[102893 - Support HTTP Extensions (RFC 2774)](https://bugzilla.mozilla.org/show_bug.cgi?id=102893)
+> over taken by events - this experimental standard never saw industry pickup and is not intermediary safe. h2 has its own mechanism, which we will support as needed. (2015-11)
+
 ## Tools
 CLI:
 - [cURL](https://curl.se/) ([Wikipedia](https://en.wikipedia.org/wiki/CURL), [GitHub](https://github.com/curl/curl))
