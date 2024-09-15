@@ -193,6 +193,45 @@ Browsers:
 
 某些网站的 cookies 可高达几百 MB。
 
+## Conditional requests
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Conditional_requests)
+
+[ETag - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)
+
+- [If-Match](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match)
+
+## Status codes
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status), [Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+
+[RFC 9110: HTTP Semantics](https://httpwg.org/specs/rfc9110.html#status.codes)
+
+[Hypertext Transfer Protocol (HTTP) Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+
+Responses are grouped in five classes:
+- `1xx`: [Informational responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#information_responses)
+- `2xx`: [Successful responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#successful_responses)
+- `3xx`: [→Redirection](#redirection)
+- `4xx`: [Client error responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
+  - [412 Precondition Failed](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412)
+  - [418 I'm a teapot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418)
+
+    [error handling - Is 418 "I'm a teapot" really an HTTP response code? - Stack Overflow](https://stackoverflow.com/questions/52340027/is-418-im-a-teapot-really-an-http-response-code)
+
+  - [422 Unprocessable Content](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/422)
+    - Clients that receive a `422` response should expect that repeating the request without modification will fail with the same error.
+  - [423 Locked](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/423)
+  - [424 Failed Dependency](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/424)
+  - [428 Precondition Required](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/428)
+
+  [rest - 400 vs 422 response to POST of data - Stack Overflow](https://stackoverflow.com/questions/16133923/400-vs-422-response-to-post-of-data)
+
+- `5xx`: [Server error responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)
+  - [510 Not Extended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510)
+
+[HTTP status code for server configuration problem - Stack Overflow](https://stackoverflow.com/questions/68559540/http-status-code-for-server-configuration-problem)
+
+[rest - Which HTTP status code means "Not Ready Yet, Try Again Later"? - Stack Overflow](https://stackoverflow.com/questions/9794696/which-http-status-code-means-not-ready-yet-try-again-later)
+
 ## Redirection
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
 - Permanent redirections
@@ -206,6 +245,10 @@ Browsers:
   - 300 Multiple Choices
   - 304 Not Modified
 
+[Redirection messages](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#redirection_messages)
+
+[HTTP Redirections explained](https://http.dev/redirects)
+
 [A good way to redirect with a POST request? - Stack Overflow](https://stackoverflow.com/questions/2604530/a-good-way-to-redirect-with-a-post-request)
 - > The specification says that a 307 POST redirect needs to be at least acknowledged by the user. Alas, apparently no browser is sticking to the spec here. IE simply repeats the request (so it works for your purposes), but Firefox, Safari and Opera seem to discard the POST data. Hence, this technique is unfortunately unreliable. (2010)
 - > The 307 approach is fully supported in all browser and successfully redirects a submitted POST to a different location including the body. (2024)
@@ -213,6 +256,14 @@ Browsers:
 [Why doesn't HTTP have POST redirect? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/99894/why-doesnt-http-have-post-redirect)
 
 [Post/Redirect/Get - Wikipedia](https://en.wikipedia.org/wiki/Post/Redirect/Get)
+
+[javascript - redirect after a fetch post call - Stack Overflow](https://stackoverflow.com/questions/39735496/redirect-after-a-fetch-post-call)
+- ~~`redirect: 'manual'`~~
+- [`Response.redirected`](https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected)
+  - Two requests
+- > In SPA apps, redirect responses are unlikely, maybe this is the reason why ajax vendors apply little attention to this functionality. See also these discussions: [here](https://github.com/whatwg/fetch/issues/763) [here](https://github.com/whatwg/fetch/issues/601)
+
+[http - How to redirect to a login page, but only when the browser is navigating to a page - Stack Overflow](https://stackoverflow.com/questions/61331315/how-to-redirect-to-a-login-page-but-only-when-the-browser-is-navigating-to-a-pa)
 
 ## Tools
 CLI:
