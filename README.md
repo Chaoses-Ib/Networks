@@ -64,6 +64,7 @@ Python:
 ## Application
 - [Sessions](Application/Sessions.md)
 - [Hypertext Transfer Protocol](Application/HTTP/README.md)
+  - [Request Methods](Application/HTTP/Methods.md)
   - [Representational State Transfer](Application/HTTP/REST.md)
   - [Libraries](Application/HTTP/Libraries/README.md)
     - [C++](Application/HTTP/Libraries/C++/README.md)

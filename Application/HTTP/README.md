@@ -6,14 +6,6 @@
   
 	大部分浏览器默认会建立 5~10 个并行连接
 
-## Request methods
-[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-
-### `OPTIONS`
-[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS)
-
-[→Cross-Origin Resource Sharing (CORS)](#cross-origin-resource-sharing-cors)
-
 ## Content
 [Content-Type - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
 ```http
