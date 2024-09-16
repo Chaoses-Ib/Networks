@@ -213,6 +213,9 @@ Responses are grouped in five classes:
 - `3xx`: [→Redirection](#redirection)
 - `4xx`: [Client error responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
   - [412 Precondition Failed](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/412)
+
+    [rest - When is it appropriate to respond with a HTTP 412 error? - Stack Overflow](https://stackoverflow.com/questions/5369480/when-is-it-appropriate-to-respond-with-a-http-412-error)
+
   - [418 I'm a teapot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418)
 
     [error handling - Is 418 "I'm a teapot" really an HTTP response code? - Stack Overflow](https://stackoverflow.com/questions/52340027/is-418-im-a-teapot-really-an-http-response-code)
