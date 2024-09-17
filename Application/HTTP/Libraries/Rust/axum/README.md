@@ -24,3 +24,6 @@ Static file servers:
 - [axum/examples/static-file-server at main - tokio-rs/axum](https://github.com/tokio-rs/axum/tree/main/examples/static-file-server)
 - [static-server: simple static file server written in Rust based on axum framework](https://github.com/ttys3/static-server)
 - [How to host SPA files and embed too with axum and rust-embed - Stack Overflow](https://stackoverflow.com/questions/73464479/how-to-host-spa-files-and-embed-too-with-axum-and-rust-embed)
+
+## API generators
+- 2023-04 [What is the best API generator for Axum? : r/rust](https://www.reddit.com/r/rust/comments/12fuwzs/what_is_the_best_api_generator_for_axum/)

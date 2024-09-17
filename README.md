@@ -69,6 +69,7 @@ Python:
   - [API](Application/HTTP/API/README.md)
     - [Representational State Transfer](Application/HTTP/API/REST.md)
     - [Webhooks](Application/HTTP/API/Webhooks.md)
+    - [OpenAPI](Application/HTTP/API/OpenAPI.md)
   - [Libraries](Application/HTTP/Libraries/README.md)
     - [C++](Application/HTTP/Libraries/C++/README.md)
     - [Rust](Application/HTTP/Libraries/Rust/README.md)
