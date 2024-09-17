@@ -84,18 +84,6 @@ Content-Type: text/plain
 ### Content negotiation
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
 
-## API
-[Classification of HTTP APIs](http://algermissen.io/classification_of_http_apis.html)
-- WS-\*
-- RPC URI-Tunneling
-- HTTP-based Type I
-- HTTP-based Type II
-- [REST](REST.md)
-
-[authentication - What is an Endpoint? - Stack Overflow](https://stackoverflow.com/questions/2122604/what-is-an-endpoint)
-
-[terminology - What is a web service endpoint? - Stack Overflow](https://stackoverflow.com/questions/9807382/what-is-a-web-service-endpoint)
-
 ## Access control
 ### Cross-Origin Resource Sharing (CORS)
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)

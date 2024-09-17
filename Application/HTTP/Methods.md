@@ -57,6 +57,16 @@ Discussions:
 
   > 参数写在url上一时爽，安全扫描就会哭
 
+- 2020-01 [同事说:后台接口不能使用除 post/get 之外的方法,path 里不能带参数 - V2EX](https://s.v2ex.com/t/634514)
+
+  > path 里不带参数 一时爽，nginx 日志分析火葬场
+
+  > 另外 path 里带参数，这种 url 确实便于理解，我以前也挺喜欢这种风格的。但对后端来说，有的框架不能匹配这种 url ；对于前端来说，不利于代码结构化。所以现在也放弃了 path 里带参数
+
+  > 如果你用了 RESTful 风格，那么需要整个 开发运维链路上的每个环节，都要支持完整的操作。但是实际上，很多系统只是支持简单的 GET 和 POST 协议。
+
+  [快速上手RPC风格请求体和签名机制\_阿里云SDK(Alibaba Cloud SDK)-阿里云帮助中心](https://help.aliyun.com/zh/sdk/product-overview/rpc-mechanism)
+
 - 2021-09 [如何看待：不遵循 restful\_api 设计，所有的 api 使用 POST 提交 - V2EX](https://www.v2ex.com/t/595188)
 
   > GET, PUT, DELETE 等会对参数转义，调试麻烦，而且浏览器对字符长度限制也比较大，  
