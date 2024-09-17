@@ -38,8 +38,42 @@ Discussions:
 - 2018-12 [为什么很少看到有人用 websocket？ - V2EX](https://www.v2ex.com/t/506933)
 - 2019-10 [flask 实现 web 页面展示异步任务的执行过程 - V2EX](https://v2ex.com/t/612070)
 
-## Server-sent events
+## Server-sent events (SSE)
+[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#event_stream_format)
+
 > 客户端发送一个请求，服务端就保持这个连接直到有一个新的消息已经准备好了，那么它将消息发送回客户端，同时仍然保持这个连接是打开，这样这个连接就可以用于另一个可用消息的发送。一旦准备好了一个新消息，通过同一初始连接发送回客户端。
+
+> The event stream is a simple stream of text data which must be encoded using UTF-8. Messages in the event stream are separated by a pair of newline characters. A colon as the first character of a line is in essence a comment, and is ignored.
+>
+> Each message consists of one or more lines of text listing the fields for that message. Each field is represented by the field name, followed by a colon, followed by the text data for that field's value. If a line doesn't contain a colon, the entire line is treated as the field name with an empty value string.
+
+Fields:
+- [`event`](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#event)
+
+  A string identifying the type of event described. If this is specified, an event will be dispatched on the browser to the listener for the specified event name; the website source code should use `addEventListener()` to listen for named events. The `onmessage` handler is called if no event name is specified for a message.
+
+- [`data`](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#data)
+
+  The data field for the message. When the `EventSource` receives multiple consecutive lines that begin with `data:`, [it concatenates them](https://html.spec.whatwg.org/multipage/#dispatchMessage), inserting a newline character between each one. Trailing newlines are removed.
+
+- [`id`](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#id)
+
+  The event ID to set the [`EventSource`](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) object's last event ID value.
+
+- [`retry`](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#retry)
+
+  The reconnection time. If the connection to the server is lost, the browser will wait for the specified time before attempting to reconnect. This must be an integer, specifying the reconnection time in milliseconds. If a non-integer value is specified, the field is ignored.
+
+```http
+event: userconnect
+data: {"username": "bobby", "time": "02:33:48"}
+
+data: Here's a system message of some kind that will get used
+data: to accomplish some task.
+
+event: usermessage
+data: {"username": "bobby", "time": "02:34:11", "text": "Hi everyone."}
+```
 
 [基于 SSE 协议实现任务进度条的实时显示------Vue2 + Spring Boot 实践一、引言 在 Web 应用开发中 - 掘金](https://juejin.cn/post/7332403912269856807)
 
@@ -76,10 +110,42 @@ Discussions:
   > Not a hard rule by any means, just my personal rule of thumb.
 
 ### Servers
-[axum::response::sse - Rust](https://docs.rs/axum/latest/x86_64-apple-darwin/axum/response/sse/index.html)
+Rust:
+- [axum::response::sse - Rust](https://docs.rs/axum/latest/x86_64-apple-darwin/axum/response/sse/index.html)
+  
+  [axum/examples/sse/src/main.rs at main - tokio-rs/axum](https://github.com/tokio-rs/axum/blob/main/examples/sse/src/main.rs)
+
+Python:
+- [boppreh/server-sent-events: Python library for Server-Sent-Events](https://github.com/boppreh/server-sent-events)
+
+JS:
+- [better-sse: ⬆ Dead simple, dependency-less, spec-compliant server-sent events implementation for Node, written in TypeScript.](https://github.com/MatthewWid/better-sse)
 
 ### Clients
-We can use SSE on the client side with the built-in [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource). However, nowadays people often choose to use a library, such as the popular [fetch-event-source](https://github.com/Azure/fetch-event-source), which is an SSE-compatible alternative to EventSource that provides additional features, such as custom headers, more advanced retry strategies, automatically closing the connection when browser is minimized, etc.
+JS:
+- [Using server-sent events - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+  
+  > We can use SSE on the client side with the built-in [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource). However, nowadays people often choose to use a library, such as the popular [fetch-event-source](https://github.com/Azure/fetch-event-source), which is an SSE-compatible alternative to EventSource that provides additional features, such as custom headers, more advanced retry strategies, automatically closing the connection when browser is minimized, etc.
+
+  [Can Server Sent Events (SSE) with EventSource pass parameter by POST - Stack Overflow](https://stackoverflow.com/questions/34261928/can-server-sent-events-sse-with-eventsource-pass-parameter-by-post)
+
+- [mpetazzoni/sse.js: A flexible Server-Sent Events EventSource polyfill for Javascript](https://github.com/mpetazzoni/sse.js)
+
+- [eventsource: EventSource client for Node.js and Browser (polyfill)](https://github.com/EventSource/eventsource)
+
+- React
+  - [react-hooks-sse: Subscribe to an SSE endpoint with React Hooks](https://github.com/samouss/react-hooks-sse)
+  - [server-push-hooks: 🔥 React hooks for Socket.io, SSE, WebSockets and more to come](https://github.com/mfrachet/server-push-hooks)
+  - [react-native-sse: Event Source implementation for React Native. Server-Sent Events (SSE) for iOS and Android 🚀](https://github.com/binaryminds/react-native-sse)
+- Vue
+  - [useEventSource | VueUse](https://vueuse.org/core/useEventSource/)
+  - [vue-sse: A Vue plugin for using Server-Sent Events (EventSource).](https://github.com/tserkov/vue-sse)
+- [sveltekit-sse: Server Sent Events with SvelteKit](https://github.com/razshare/sveltekit-sse)
+
+Python:
+- [sseclient: Pure-Python Server Side Events (SSE) client](https://github.com/mpetazzoni/sseclient)
+  - `pip install sseclient-py`
+- [requests-sse: server-sent events python client library based on requests](https://github.com/overcat/requests-sse)
 
 ## Push API
 [Push API](https://w3c.github.io/push-api/), [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Push_API)
