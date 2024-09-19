@@ -39,30 +39,55 @@ Content-Type: text/plain
 [Resumable File Uploads - Issue #1626 - whatwg/fetch](https://github.com/whatwg/fetch/issues/1626)
 
 [tus - resumable file uploads](https://tus.io/) ([GitHub](https://github.com/tus/tus-resumable-upload-protocol))
+- [Resumable File Upload Demo | tus.io](https://tus.io/demo)
+  - HTTP Traffic
+  - `https://tusd.tusdemo.net/files/`
+
+- File name
+
+  [About the file name - Issue #44 - tus/tusd](https://github.com/tus/tusd/issues/44)
+  > The reason why the tusd server generates random IDs for uploads instead of using the file's name is that the protocol does not force the client to tell the server the file name. This is a decision that has been made on purpose. However, we do understand that such information is sometimes crucial and therefore you are able to use the mechanics of meta data to pass it along. In this case the file name will be presented as meta data inside the `.info` object.
+
+  [I want original file extension, which i have uploaded - Issue #174 - tus/tusd](https://github.com/tus/tusd/issues/174)
+
 - [Protocol Extensions](https://tus.io/protocols/resumable-upload#protocol-extensions)
   - Creation
     - Response's `Location` depends request's `Host`
   - Expiration (unfinished uploads only)
+
 - Servers
   - Go: [tusd: Reference server implementation in Go of tus: the open protocol for resumable file uploads](https://github.com/tus/tusd)
     - 37 MiB
+    - Proxies
+      - [nginx.conf](https://github.com/tus/tusd/blob/main/examples/nginx.conf)
+      - `-behind-proxy` 不支持 `X-Forwarded-Port`
+      - [Wrong URL when new upload is created - Issue #136](https://github.com/tus/tusd/issues/136)
+        - [Add note about port of X-Forwarded-Host to nginx.conf example by Chaoses-Ib - Pull Request #1190](https://github.com/tus/tusd/pull/1190)
     - [Storage backends](https://tus.github.io/tusd/storage-backends/overview/)
+    - [FileInfo](https://pkg.go.dev/github.com/tus/tusd/pkg/handler#FileInfo)
+      - [hook.proto](https://github.com/tus/tusd/blob/eff0a435fcbba04edede33a80f69811588aaa0f5/pkg/hooks/grpc/proto/hook.proto#L35)
     - Download
       - `-disable-download`
       - Only files with `.info` can be downloaded.
   
+    [tusd v2: better hooks, network resilience and IETF protocol | tus.io](https://tus.io/blog/2023/09/20/tusd-200)
+
   - .NET: [tusdotnet: .NET server implementation of the Tus protocol for resumable file uploads. Read more at https://tus.io](https://github.com/tusdotnet/tusdotnet)
   
   - Rust
+    - tusd-types
     - Rocket: [Meteoritus: A tus server integration for Rocket framework](https://github.com/kallebysantos/meteoritus)
     - [rustus: TUS protocol implementation in Rust.](https://github.com/s3rius/rustus)
       - [Application examples? - Issue #139 - s3rius/rustus](https://github.com/s3rius/rustus/issues/139)
       - [Embedding in other programs - Issue #157 - s3rius/rustus](https://github.com/s3rius/rustus/issues/157)
       - [Implement expiration extension - Issue #13 - s3rius/rustus](https://github.com/s3rius/rustus/issues/13)
 
+  - JS: [tus-node-server: Node.js tus server, standalone or integrable in any framework, with disk, S3, and GGC stores.](https://github.com/tus/tus-node-server)
+
 - Clients
   - [tus-js-client: A pure JavaScript client for the tus resumable upload protocol](https://github.com/tus/tus-js-client)
   - [tus-py-client: A Python client for the tus resumable upload protocol](https://github.com/tus/tus-py-client) (`tuspy`, `tusclient`, [Notebook](tus.ipynb))
+    - requests / aiohttp
 
 [Resumable.js: A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads via the HTML5 File API.](https://github.com/23/resumable.js) (discontinued)
 

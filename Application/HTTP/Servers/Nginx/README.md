@@ -11,6 +11,8 @@
 
 [准备要做一个技术分享会，主题是 Nginx，大家平时遇到什么坑可以讨论一下吗 - V2EX](https://hk.v2ex.com/t/872148)
 
+[Avoiding the Top 10 NGINX Configuration Mistakes](https://www.f5.com/company/blog/nginx/avoiding-top-10-nginx-configuration-mistakes#no-keepalives)
+
 [Awesome Nginx: A curated list of awesome Nginx distributions, 3rd party modules, Active developers, etc.](https://github.com/agile6v/awesome-nginx)
 
 ## Windows
@@ -104,12 +106,42 @@ Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成�
   
   [Nginx location matches - Stack Overflow](https://stackoverflow.com/questions/5239131/nginx-location-matches)
 
+- [`root`](https://nginx.org/en/docs/http/ngx_http_core_module.html#root)
+
+  A path to the file is constructed by merely adding a URI to the value of the `root` directive. If a URI has to be modified, the [alias](https://nginx.org/en/docs/http/ngx_http_core_module.html#alias) directive should be used.
+
+  ```nginx
+  location /i/ {
+      # /i/top.gif → /data/w3/i/top.gif
+      root /data/w3;
+
+      # /i/top.gif → /data/w3/top.gif
+      alias /data/w3/;
+  }
+  ```
+
 - SPA
   ```nginx
   location / {
     try_files $uri $uri/ /index.html;
   }
   ```
+
+- Host names
+  - `$host`: In this order of precedence: host name from the request line, or host name from the `Host` request header field, or the server name matching a request.
+    - No port number: `Host: 1.2.3.4:5678` → `1.2.3.4`
+      - `$host:$server_post`
+  
+  - `$http_host`: The content of the HTTP `Host` header field, if it was present in the request.
+    - [docker - How to configure nginx X-Forwarded-Port to be the originally request port - Stack Overflow](https://stackoverflow.com/questions/60616564/how-to-configure-nginx-x-forwarded-port-to-be-the-originally-request-port)
+  
+  - `$server_name`: The `server_name` of the virtual host which processed the request, as it was defined in the nginx configuration. If a `server` contains multiple `server_name`s, only the first one will be present in this variable.
+  
+  - `$hostname`: `/etc/hostname`
+
+  [rewrite - What is the difference between Nginx variables $host, $http\_host, and $server\_name? - Server Fault](https://serverfault.com/questions/706438/what-is-the-difference-between-nginx-variables-host-http-host-and-server-na)
+
+  [nginx: the difference between `$host`, `$http_host` & `$hostname` and priorities of `$host` - TheDotProduct](https://www.thedotproduct.org/posts/nginx-the-difference-between-$host-$http_host-$hostname-and-priorities-of-$host.html)
 
 [NGINX as a file server](https://www.yanxurui.cc/posts/server/2017-03-21-NGINX-as-a-file-server/)
 
@@ -125,6 +157,10 @@ Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成�
 - `$proxy_add_x_forwarded_for`: `$http_x_forwarded_for,$remote_addr`
 
   The "X-Forwarded-For" client request header field with the `$remote_addr` variable appended to it, separated by a comma. If the "X-Forwarded-For" field is not present in the client request header, the `$proxy_add_x_forwarded_for` variable is equal to the `$remote_addr` variable.
+
+- Connections
+
+  [http - Why does nginx `proxy_pass` close my connection? - Stack Overflow](https://stackoverflow.com/questions/46771389/why-does-nginx-proxy-pass-close-my-connection)
 
 [Nginx: reverse proxy passing client IP to the server - Server Fault](https://serverfault.com/questions/920030/nginx-reverse-proxy-passing-client-ip-to-the-server)
 
@@ -143,6 +179,14 @@ Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成�
   [Pushing Nginx to its limit with Lua](https://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua)
 
 ## Logs
+[NGINX Access Logs and Error Logs | DigitalOcean](https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs)
+
+[Debugging NGINX | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/debugging/)
+```nginx
+error_log  logs/error.log  debug;
+```
+[linux - best way to debug nginx rewrite rules in config file? - Server Fault](https://serverfault.com/questions/333048/best-way-to-debug-nginx-rewrite-rules-in-config-file)
+
 - [rhit: A nginx log explorer](https://github.com/Canop/rhit)
 - [logutil: A Rust-based tool designed to analyze Nginx access logs](https://github.com/s00d/logutil)
 - [ngxav-rs: A 100% Rust Rewrite of Nginx Log Stats, a full-featured NGINX log parser and searcher with 10+ Search Refiners](https://github.com/qpxdesign/ngxav-rs/)

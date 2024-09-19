@@ -64,6 +64,7 @@ Python:
 ## Application
 - [Sessions](Application/Sessions.md)
 - [Hypertext Transfer Protocol](Application/HTTP/README.md)
+  - [Connections](Application/HTTP/Connections.md)
   - [Request Methods](Application/HTTP/Methods.md)
   - [Server Push](Application/HTTP/Push.md)
   - [API](Application/HTTP/API/README.md)
