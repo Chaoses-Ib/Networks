@@ -244,6 +244,19 @@ Responses are grouped in five classes:
 - `5xx`: [Server error responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)
   - [510 Not Extended](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/510)
 
+Application errors:
+- N/A Internal client error
+- 400 Bad Request
+  - Syntax error (wrong data format)
+- 422 Unprocessable Entity
+  - Semantic error (type mismatch)
+- 200 OK with an error code in JSON
+  - Logic error
+- 500 Internal Server Error
+- 503 Service Unavailable
+- [rest - What is the appropriate HTTP status code response for a general unsuccessful request (not an error)? - Stack Overflow](https://stackoverflow.com/questions/9381520/what-is-the-appropriate-http-status-code-response-for-a-general-unsuccessful-req)
+- [api design - What HTTP response code to use for failed POST request? - Stack Overflow](https://stackoverflow.com/questions/47269601/what-http-response-code-to-use-for-failed-post-request)
+
 [HTTP status code for server configuration problem - Stack Overflow](https://stackoverflow.com/questions/68559540/http-status-code-for-server-configuration-problem)
 
 [rest - Which HTTP status code means "Not Ready Yet, Try Again Later"? - Stack Overflow](https://stackoverflow.com/questions/9794696/which-http-status-code-means-not-ready-yet-try-again-later)
