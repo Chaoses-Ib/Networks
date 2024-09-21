@@ -185,6 +185,14 @@ Cookies are mainly used for three purposes:
 - **Personalization**: User preferences such as display language and UI theme.
 - **Tracking**: Recording and analyzing user behavior.
 
+Libraries:
+- [cookie-rs: HTTP cookie parsing and cookie jar management for Rust.](https://github.com/rwf2/cookie-rs)
+  - [axum\_extra::extract::cookie - Rust](https://docs.rs/axum-extra/latest/axum_extra/extract/cookie/index.html)
+- [biscotti: A Rust library for managing HTTP cookies.](https://github.com/LukeMathWalker/biscotti)
+
+  [biscotti, a new crate for HTTP cookies | Luca Palmieri](https://www.lpalmieri.com/posts/biscotti-http-cookies-in-rust/) ([r/rust](https://www.reddit.com/r/rust/comments/1bb7vtm/biscotti_a_new_crate_for_http_cookies/))
+- [cookie\_store: An implementation of RFC6265](https://github.com/pfernie/cookie_store)
+
 [Cookies vs local storage - what to use when?](https://punits.dev/jargon-free-intros/cookies-vs-local-storage/) ([r/webdev](https://www.reddit.com/r/webdev/comments/12ipjr5/cookies_vs_local_storage_what_to_use_when/))
 
 [html - Local Storage vs Cookies - Stack Overflow](https://stackoverflow.com/questions/3220660/local-storage-vs-cookies)

@@ -20,6 +20,19 @@
 
   Clients:
   - [reqwest: An easy and powerful Rust HTTP Client](https://github.com/seanmonstar/reqwest)
+    - Async/Sync
+    - [reqwest-middleware: Wrapper around reqwest to allow for client middleware chains.](https://github.com/TrueLayer/reqwest-middleware)
+      - [reqwest-retry](https://crates.io/crates/reqwest-retry)
+      - [reqwest-tracing](https://crates.io/crates/reqwest-tracing)
+  - [ureq: A simple, safe HTTP client](https://github.com/algesten/ureq)
+    - Sync
+  - [curl-rust: Rust bindings to libcurl](https://github.com/alexcrichton/curl-rust)
+  - [attohttpc: Rust lightweight HTTP 1.1 client](https://github.com/sbstp/attohttpc)
+    - Sync
+  - [isahc: The practical HTTP client that is fun to use.](https://github.com/sagebind/isahc)
+    - Sync/Async
+
+  [HTTP client - Categories - crates.io: Rust Package Registry](https://crates.io/categories/web-programming::http-client)
 
 - [tiny-http: Low level HTTP server library in Rust](https://github.com/tiny-http/tiny-http)
 
@@ -28,6 +41,9 @@ Discussions:
 - 2023-04 [Which Web Framework do people recommend for Rust in 2023? : r/rust](https://www.reddit.com/r/rust/comments/12jhxi2/which_web_framework_do_people_recommend_for_rust/)
 - 2023-12 [Which web framework do you use in Rust? : r/rust](https://www.reddit.com/r/rust/comments/18ogwtl/which_web_framework_do_you_use_in_rust/)
 - 2024-01 [Which web framework should I choose? : r/rust](https://www.reddit.com/r/rust/comments/1ae0rei/which_web_framework_should_i_choose/)
+
+Clients:
+- 2020-01 [Smoke-testing Rust HTTP clients. Back in 2014 I was fetching frontpages... | by Sergey "Shnatsel" Davidoff | Medium](https://shnatsel.medium.com/smoke-testing-rust-http-clients-b8f2ee5db4e6) ([r/rust](https://www.reddit.com/r/rust/comments/epoloy/ive_smoketested_rust_http_clients_heres_what_i/))
 
 [Rust web framework comparison](https://github.com/flosse/rust-web-framework-comparison#server-frameworks)
 
