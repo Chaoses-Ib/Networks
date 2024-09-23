@@ -17,7 +17,11 @@
 - IP address
 - Domain name
 
+[从 GFW 原理到翻墙原理和协议 | EdNovas 的小站](https://ednovas.xyz/2022/06/25/gfw/#GFW%E7%9A%84%E5%8E%9F%E7%90%86)
+
 [拯救被墙的服务器 - XTrojan黑科技](https://xtrojan.org/bgfw/recovery-blocked-ip.html)
+
+[OpenGFW: A flexible, easy-to-use, open source implementation of GFW (Great Firewall of China) on Linux](https://github.com/apernet/OpenGFW)
 
 ### Tools
 - [域名是否被墙查询 (gfwck.xyz)](https://www.gfwck.xyz/)
