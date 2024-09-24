@@ -4,6 +4,20 @@
 ## Record types
 [List of DNS record types - Wikipedia](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
 
+### CNAME records
+[Why CNAME/MX/NS targets require a "dot" | DNSControl](https://docs.dnscontrol.org/language-reference/why-the-dot)
+
+Some DNS control panels add the final dot automatically.
+- AWS Route 53
+
+  [domain name system - AWS Route 53 CNAME - dot at end of target value or not? - Server Fault](https://serverfault.com/questions/861134/aws-route-53-cname-dot-at-end-of-target-value-or-not)
+  > A trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Amazon Route 53 treats *www.example.com* (without a trailing dot) and *www.example.com.* (with a trailing dot) as identical.
+
+- 阿里云
+
+Tools:
+- [CNAME Lookup - MxToolbox](https://mxtoolbox.com/CNAMELookup.aspx)
+
 ### TXT records
 [Wikipedia](https://en.wikipedia.org/wiki/TXT_record)
 
@@ -27,6 +41,41 @@ The design goal of DNS over QUIC (DoQ) is to provide DNS privacy with minimum la
 
 [^DoQ-APNIC]: [A first look at DNS over QUIC | APNIC Blog](https://blog.apnic.net/2022/03/29/a-first-look-at-dns-over-quic/)
 [^DoQ-V2EX-1]: [有没有用 DoQ 的 - V2EX](https://www.v2ex.com/t/844822#reply4)
+
+## Subdomain discovery
+- Brute force enumeration
+- Server
+  - [Reverse DNS lookup](Reverse%20DNS%20Lookup.md)
+  - Certificates
+    - [→Certificate Transparency]()
+  - Port scan
+- Search engines
+  - `site:example.com`
+- WHOIS databse
+
+[Subdomain enumeration tools and techniques](https://www.ceeyu.io/resources/blog/subdomain-enumeration-tools-and-techniques)
+
+Tools:
+- [BBOT: A recursive internet scanner for hackers.](https://github.com/blacklanternsecurity/bbot)
+
+  [How it Works - BBOT Docs](https://www.blacklanternsecurity.com/bbot/Dev/how_it_works/)
+
+- [OneForAll: OneForAll是一款功能强大的子域收集工具](https://github.com/shmilylty/OneForAll)
+
+- [dnsub: 一款好用且强大的子域名扫描工具](https://github.com/yunxu1/dnsub) (discontinued)
+
+- [reconbulk: Automated Subdomain Enumeration and Scanning Tool](https://github.com/TaurusOmar/reconbulk) (discontinued)
+
+- [knock: Knock Subdomain Scan](https://github.com/guelfoweb/knock)
+  - Brute force enumeration
+  - Certificates
+
+- [lijiejie/subDomainsBrute: A fast sub domain brute tool for pentesters](https://github.com/lijiejie/subDomainsBrute) (discontinued)
+  - Brute force enumeration
+  - Certificates
+
+- [ksubdomain: 无状态子域名爆破工具](https://github.com/knownsec/ksubdomain) (discontinued)
+  - Brute force enumeration
 
 ## Windows
 [Domain Name System - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/dns/dns-start-page)
