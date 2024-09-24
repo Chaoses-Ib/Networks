@@ -1,6 +1,10 @@
 # C++
 - [libcurl](https://github.com/curl/curl)
   - [curl-for-win: Reproducible curl binaries for Linux, macOS and Windows](https://github.com/curl/curl-for-win)
+    - 即使不开 TLS 也会依赖 crypt32, advapi32, bcrypt
+
+      ![](images/README/curl-imports.png)
+
   - [cpr: C++ Requests: Curl for People, a spiritual port of Python Requests.](https://github.com/libcpr/cpr)
     - C++17
     - Optional OpenSSL, WinSSL, DarwinSSL, Mbed TLS
@@ -46,6 +50,10 @@
 - [cpp-netlib: The C++ Network Library Project -- cross-platform, standards compliant networking library.](https://github.com/cpp-netlib/cpp-netlib)
 
 - [Qihoo360/evpp: A modern C++ network library for developing high performance network services in TCP/UDP/HTTP protocols.](https://github.com/Qihoo360/evpp)
+
+Embedded:
+- [FreeRTOS/coreHTTP: Client implementation of a subset of HTTP 1.1 protocol designed for embedded devices.](https://github.com/FreeRTOS/coreHTTP)
+- [httpc: HTTP client for embedded use - supports redirects and resume.](https://github.com/howerj/httpc)
 
 Windows:
 - [microsoft/WinHttpPAL: WinHttpPAL is a C++ library which implements WinHttp API for POSIX systems using libcurl](https://github.com/microsoft/WinHttpPAL)

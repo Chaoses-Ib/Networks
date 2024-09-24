@@ -1,40 +1,51 @@
 # Rust
-- [hyper: An HTTP library for Rust](https://github.com/hyperium/hyper)
-  
-  Servers:
-  - [axum: Ergonomic and modular web framework built with Tokio, Tower, and Hyper](axum/README.md)
-    - Rusty
-    - Relatively new (2021)
-    - [Loco: 🚂 🦀 The one-person framework for Rust for side-projects and startups](https://github.com/loco-rs/loco)
-  - [actix-web: Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust.](https://github.com/actix/actix-web)
-  - [Rocket: A web framework for Rust.](https://github.com/rwf2/Rocket)
-    - Maintenance issue
-  - [warp: A super-easy, composable, web server framework for warp speeds.](https://github.com/seanmonstar/warp)
-  - [tide: Fast and friendly HTTP server framework for async Rust](https://github.com/http-rs/tide)
-  - [poem: A full-featured and easy-to-use web framework with the Rust programming language.](https://github.com/poem-web/poem)
-    - Relatively new (2021)
-  - [salvo: A powerful web framework built with a simplified design.](https://github.com/salvo-rs/salvo)
-    - Chinese
-  - [Thruster: A fast, middleware based, web framework written in Rust](https://github.com/thruster-rs/Thruster)
-  - [pavex: An easy-to-use Rust framework for building robust and performant APIs](https://github.com/LukeMathWalker/pavex)
+- [http: Rust HTTP types](https://github.com/hyperium/http/tree/master)
 
   Clients:
-  - [reqwest: An easy and powerful Rust HTTP Client](https://github.com/seanmonstar/reqwest)
-    - Async/Sync
-    - [reqwest-middleware: Wrapper around reqwest to allow for client middleware chains.](https://github.com/TrueLayer/reqwest-middleware)
-      - [reqwest-retry](https://crates.io/crates/reqwest-retry)
-      - [reqwest-tracing](https://crates.io/crates/reqwest-tracing)
   - [ureq: A simple, safe HTTP client](https://github.com/algesten/ureq)
     - Sync
-  - [curl-rust: Rust bindings to libcurl](https://github.com/alexcrichton/curl-rust)
   - [attohttpc: Rust lightweight HTTP 1.1 client](https://github.com/sbstp/attohttpc)
     - Sync
   - [isahc: The practical HTTP client that is fun to use.](https://github.com/sagebind/isahc)
     - Sync/Async
 
-  [HTTP client - Categories - crates.io: Rust Package Registry](https://crates.io/categories/web-programming::http-client)
+  Libraries:
+  - [hyper: An HTTP library for Rust](https://github.com/hyperium/hyper)
+    - http1: httpparse, http2: h2
+    - [No\_std Support for HTTP - help - The Rust Programming Language Forum](https://users.rust-lang.org/t/no-std-support-for-http/16040)
+  
+    Servers:
+    - [axum: Ergonomic and modular web framework built with Tokio, Tower, and Hyper](axum/README.md)
+      - Rusty
+      - Relatively new (2021)
+      - [Loco: 🚂 🦀 The one-person framework for Rust for side-projects and startups](https://github.com/loco-rs/loco)
+    - [actix-web: Actix Web is a powerful, pragmatic, and extremely fast web framework for Rust.](https://github.com/actix/actix-web)
+    - [Rocket: A web framework for Rust.](https://github.com/rwf2/Rocket)
+      - Maintenance issue
+    - [warp: A super-easy, composable, web server framework for warp speeds.](https://github.com/seanmonstar/warp)
+    - [tide: Fast and friendly HTTP server framework for async Rust](https://github.com/http-rs/tide)
+    - [poem: A full-featured and easy-to-use web framework with the Rust programming language.](https://github.com/poem-web/poem)
+      - Relatively new (2021)
+    - [salvo: A powerful web framework built with a simplified design.](https://github.com/salvo-rs/salvo)
+      - Chinese
+    - [Thruster: A fast, middleware based, web framework written in Rust](https://github.com/thruster-rs/Thruster)
+    - [pavex: An easy-to-use Rust framework for building robust and performant APIs](https://github.com/LukeMathWalker/pavex)
+
+    Clients:
+    - [reqwest: An easy and powerful Rust HTTP Client](https://github.com/seanmonstar/reqwest)
+      - Async/Sync
+      - [reqwest-middleware: Wrapper around reqwest to allow for client middleware chains.](https://github.com/TrueLayer/reqwest-middleware)
+        - [reqwest-retry](https://crates.io/crates/reqwest-retry)
+        - [reqwest-tracing](https://crates.io/crates/reqwest-tracing)
+
+- [curl-rust: Rust bindings to libcurl](https://github.com/alexcrichton/curl-rust)
+
+- [httparse: A push parser for the HTTP 1.x protocol in Rust.](https://github.com/seanmonstar/httparse/tree/master)
+  - [reqwless: Rust async HTTP client for embedded/no\_std](https://github.com/drogue-iot/reqwless/tree/main)
 
 - [tiny-http: Low level HTTP server library in Rust](https://github.com/tiny-http/tiny-http)
+
+[HTTP client - Categories - crates.io: Rust Package Registry](https://crates.io/categories/web-programming::http-client)
 
 Discussions:
 - 2020-09 [Async web server libraries? : r/rust](https://www.reddit.com/r/rust/comments/ix6o6u/async_web_server_libraries/)
