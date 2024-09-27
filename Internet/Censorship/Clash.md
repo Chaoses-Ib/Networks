@@ -9,6 +9,54 @@
 `url-test`:
 - [→Captive portal detection](../Captive%20Portal.md#detection)
 
+## Proxy providers
+- `proxy-providers`
+- path 相同时 providers 可能会互相覆盖
+- ~~Clash Meta For Android 旧版本需要手动指定 path ([#124](https://github.com/MetaCubeX/ClashMetaForAndroid/issues/124))~~
+
+```yaml
+# Mihomo 格式的节点或支持 *ray 的分享格式
+proxy-providers:
+  provider1:
+    type: http # http 的 path 可空置，默认储存路径为 homedir 的 proxies 文件夹，文件名为 url 的 md5
+    url: "url"
+    interval: 3600
+    path: ./provider1.yaml # 默认只允许存储在 mihomo 的 Home Dir，如果想存储到任意位置，添加环境变量 SKIP_SAFE_PATH_CHECK=1
+    proxy: DIRECT
+    header:
+      User-Agent:
+      - "Clash/v1.18.0"
+      - "mihomo/1.18.3"
+      # Accept:
+      # - 'application/vnd.github.v3.raw'
+      # Authorization:
+      # - 'token 1231231'
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: https://cp.cloudflare.com/generate_204
+      # expected-status: 204 # 当健康检查返回状态码与期望值不符时，认为节点不可用
+    override: # 覆写节点加载时的一些配置项
+      skip-cert-verify: true
+      udp: true
+      # down: "50 Mbps"
+      # up: "10 Mbps"
+      # dialer-proxy: proxy
+      # interface-name: tailscale0
+      # routing-mark: 233
+      # ip-version: ipv4-prefer
+      # additional-prefix: "[provider1]"
+      # additional-suffix: "test"
+  test:
+    type: file
+    path: /test.yaml
+    health-check:
+      enable: true
+      interval: 36000
+      url: https://cp.cloudflare.com/generate_204
+```
+
 ## ~~[Premium](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features)~~
 Premium core is proprietary. It has the following additional features:
 - gvisor/system stack TUN device on macOS, Linux and Windows ([ref](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#tun-device))
@@ -50,6 +98,7 @@ Rule sets:
 [Clash.Meta Docs](https://wiki.metacubex.one/)
 
 [配置详解](https://wiki.metacubex.one/config/)
+- [完整实例](https://github.com/MetaCubeX/mihomo/blob/Meta/docs/config.yaml)
 
 [配置示例](https://wiki.metacubex.one/example/)
 
@@ -72,6 +121,7 @@ Android:
   - https://www.dropbox.com/scl/fi/ucgg9oom1a5bq24yzzykm/cfa-2.5.12-premium-universal-release.apk?rlkey=5h0hpluuyfxt0atnu0emcoql5&dl=0
 
 - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
+  - F-Droid
   - https://t.me/coobackup/67
   - https://alist.ips.ga/clients
   - https://clashxhub.com/apps/cmfa-2.10.1-meta-universal-release.apk
