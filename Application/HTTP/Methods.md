@@ -1,6 +1,9 @@
 # Request Methods
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 
+- `SameSite=Lax` (default) cookies will be sent for cross-site `GET` requests with user interaction
+- Logs
+
 Discussions:
 - 2022-02 ["一把梭：REST API 全用 POST" | 酷 壳 - CoolShell](https://coolshell.cn/articles/22173.html)
 

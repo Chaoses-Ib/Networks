@@ -113,6 +113,9 @@ Content-Type: text/plain
 ### Cross-Origin Resource Sharing (CORS)
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
+- Origin: protocol + domain + port
+- Site: protocol + effective top-level domain
+
 [小 Tips：Chrome 91 版本 Cookie Same-Site 前端本地开发解决方案 - Issue #11 - jecyu/naluduo233.github.io](https://github.com/jecyu/naluduo233.github.io/issues/11)
 
 Headers:
@@ -125,8 +128,16 @@ Headers:
   > The value "`*`" only counts as a special wildcard value for requests without credentials (requests without HTTP cookies or HTTP authentication information). In requests with credentials, it is treated as the literal header name "`*`" without special semantics. Note that the [`Authorization`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) header can't be wildcarded and always needs to be listed explicitly.
 
 Cookies:
-- [Get Ready for New `SameSite=None; Secure` Cookie Settings  |  Google Search Central Blog  |  Google for Developers](https://developers.google.com/search/blog/2020/01/get-ready-for-new-samesitenone-secure)
-  - HTTPS
+- Site: protocol + effective top-level domain
+  - `Strict`: Must be the same site
+  - `Lax`: `GET` + user interaction
+  - `None`
+
+    [Get Ready for New `SameSite=None; Secure` Cookie Settings  |  Google Search Central Blog  |  Google for Developers](https://developers.google.com/search/blog/2020/01/get-ready-for-new-samesitenone-secure)
+    - HTTPS
+
+  [Bypassing SameSite cookie restrictions | Web Security Academy](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions)
+  
 - Axios: [`withCredentials`](https://axios-http.com/docs/req_config)
 
   `withCredentials` indicates whether or not cross-site Access-Control requests should be made using credentials. `false` by default.
@@ -197,11 +208,33 @@ Libraries:
 
 [html - Local Storage vs Cookies - Stack Overflow](https://stackoverflow.com/questions/3220660/local-storage-vs-cookies)
 
-- Local storage 不能跨域
+- Cookies can be `HttpOnly` and `Secure`
+
+- Cookies can be used on requests issued by browsers instead of JS
+  - 图片鉴权
+
+- Cookies cannot be bound to a port, while local storage must be bound to a port.
+  - `token{port}`
+  
+  [security - Are HTTP cookies port specific? - Stack Overflow](https://stackoverflow.com/questions/1612177/are-http-cookies-port-specific)
+
+  [Cookies, Ports and Subdomains | Node Security](https://node-security.com/posts/cookies-ports-and-subdomains/)
+
+  [Cannot run two applications on localhost (with different ports) in same browser - Issue #17593 - vaadin/flow](https://github.com/vaadin/flow/issues/17593)
+
+  [google chrome - How to keep logged in on both web:ports? - Super User](https://superuser.com/questions/1684899/how-to-keep-logged-in-on-both-webports)
+
+  [469287 - Cookies security problem: same domain but different ports](https://bugzilla.mozilla.org/show_bug.cgi?id=469287)
+
+  [Cookies are not set when port differs on the same domain - Issue #199 - JakeChampion/fetch](https://github.com/JakeChampion/fetch/issues/199)
+
+- Local storage cannot cross origin
 
   [javascript - Use localStorage across subdomains - Stack Overflow](https://stackoverflow.com/questions/4026479/use-localstorage-across-subdomains)
 
   [javascript - How to share localstorage among different subdomains? - Stack Overflow](https://stackoverflow.com/questions/59997063/how-to-share-localstorage-among-different-subdomains)
+
+- Local storage can only be deleted by JS
 
 Discussions:
 - 2020-07 [现在还有用 cookies 吗 - V2EX](https://v2ex.com/t/692155)
