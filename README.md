@@ -68,6 +68,7 @@ Python:
   - [Connections](Application/HTTP/Connections.md)
   - [Request Methods](Application/HTTP/Methods.md)
   - [Server Push](Application/HTTP/Push.md)
+  - [Security](Application/HTTP/Security.md)
   - [API](Application/HTTP/API/README.md)
     - [Representational State Transfer](Application/HTTP/API/REST.md)
     - [Webhooks](Application/HTTP/API/Webhooks.md)
