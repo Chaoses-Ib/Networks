@@ -7,6 +7,9 @@ Rust:
   - [governor: A rate-limiting library for Rust (f.k.a. ratelimit\_meter)](https://github.com/boinkor-net/governor)
 - [rhythm: Rate limiting crate in rust](https://github.com/edmundselliot/rhythm)
 
+## Servers
+- [→Nginx](../Application/HTTP/Servers/Nginx/README.md#rate-limiting)
+
 ## Response-dependent rate limiting
 Tools:
 - [Fail2Ban: Daemon to ban hosts that cause multiple authentication errors](https://github.com/fail2ban/fail2ban) ([Wikipedia](https://en.wikipedia.org/wiki/Fail2ban))

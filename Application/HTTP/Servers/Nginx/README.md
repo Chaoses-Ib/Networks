@@ -7,7 +7,11 @@
 
 [Nginx Cheatsheet](https://techbeats.blog/nginx-cheatsheet)
 
-[Nginx 入门教程](https://xuexb.github.io/learn-nginx/)
+Books:
+- [NGINX Cookbook @Derek DeJonghe](https://www.oreilly.com/library/view/nginx-cookbook-2nd/9781098126230/)
+  - [NGINX实战指南 | nginx-cookbook](https://lzqwebsoft.gitbook.io/nginx-cookbook)
+- [Nginx 入门教程](https://xuexb.github.io/learn-nginx/)
+- [hiyang/NGINX - 看云](https://www.kancloud.cn/hiyang/nginx/364780)
 
 [准备要做一个技术分享会，主题是 Nginx，大家平时遇到什么坑可以讨论一下吗 - V2EX](https://hk.v2ex.com/t/872148)
 
@@ -40,6 +44,8 @@ On Windows, Nginx can start multiple instances, but `quit` can only quit the las
 
 ## Modules
 [NGINX Modules](https://www.f5.com/pdf/product-overview/2019-04-24-NGINX-Modules-datasheet.pdf)
+
+[NGINX Extras](https://nginx-extras.getpagespeed.com/)
 
 ### Bindings
 Rust:
@@ -167,9 +173,6 @@ Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成�
 ### [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
 [http headers - NGinx `$proxy_add_x_forwarded_for` and `real_ip_header` - Stack Overflow](https://stackoverflow.com/questions/29279084/nginx-proxy-add-x-forwarded-for-and-real-ip-header)
 
-### [ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
-[Rate Limiting with NGINX -- NGINX Community Blog](https://blog.nginx.org/blog/rate-limiting-nginx)
-
 ## Lua
 [Lua | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/dynamic-modules/lua/)
 
@@ -195,3 +198,27 @@ error_log  logs/error.log  debug;
 
 ## Security
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
+
+### Rate limiting
+- [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
+  - `limit_rate`, `limit_except`
+- [ngx_http_limit_conn_module](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html)
+  - `limit_conn`, `limit_zone`
+- [ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
+  - `limit_req`
+
+  [Rate Limiting with NGINX -- NGINX Community Blog](https://blog.nginx.org/blog/rate-limiting-nginx)
+
+[Limiting Access to Proxied HTTP Resources | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/security-controls/controlling-access-proxied-http/)
+
+[How to Limit Network Bandwidth in NGINX Web Server](https://www.tecmint.com/nginx-bandwidth-limit/)
+
+[Nginx - 限制并发、限制访问速率、限制流量 - hukey - 博客园](https://www.cnblogs.com/hukey/p/10498544.html#4.%20limit_rate%20%E6%A0%B9%E6%8D%AE%20ip%20%E9%99%90%E5%88%B6%E6%B5%81%E9%87%8F)
+
+[Nginx 中的两种限流方式|nginx, limit\_req,limit\_conn,白名单|cyj](https://chenyongjun.vip/articles/81)
+
+- [traffic-accounting-nginx-module: Monitor the incoming and outgoing traffic metrics in realtime for NGINX](https://github.com/Lax/traffic-accounting-nginx-module)
+  - [dvershinin/traffic-accounting-nginx-module: Monitor the incoming and outgoing traffic metrics in realtime for NGINX](https://github.com/dvershinin/traffic-accounting-nginx-module/tree/master)
+- [bigplum/Nginx-limit-traffic-rate-module: Limiting rate by given variables(like $request\_uri, $remote\_addr, etc..).](https://github.com/bigplum/Nginx-limit-traffic-rate-module) (discontinued)
+
+  > Limit_traffic_rate module provides a method to limit the total download rate by client IP or download URL, even there are several connections.
