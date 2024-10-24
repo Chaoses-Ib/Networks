@@ -46,10 +46,15 @@ HTTP:
 - [Weldr: A HTTP 1.1 proxy written in Rust using tokio.](https://github.com/hjr3/weldr) (discontinued)
 
 ## Services
-Name | HTTP | SOCKS
---- | --- | ---
-[站大爷](https://www.zdaye.com/) | ✔️ | ✔️
-[Proxy-Tools.com](https://cn.proxy-tools.com/) | ✔️ | ✔️
+Name | HTTP | SOCKS | Comment
+--- | --- | --- | ---
+[站大爷](https://www.zdaye.com/) | ✔️ | ✔️3~6min 700元/mo, 2~48h 2500元/mo
+[Proxy-Tools.com](https://cn.proxy-tools.com/) | ✔️ | ✔️ | 免费
+[Proxy-Seller.com](https://proxy-seller.com/zh/) | ✔️ | ✔️~$1/IP
+[亿牛云](https://www.16yun.cn/help/ss_detail/) | ✔️400+元/mo | | 延迟低
+[66代理](http://www.66daili.cn/) | ✔️80元/mo | 定制 | 带宽大
+~~蘑菇代理~~ | | | 带宽大
+~~梦代理~~ |
 [亮数据](https://www.bright.cn/proxy-types)
 
 See also [ISP servers](../Internet%20Service%20Providers.md#servers).

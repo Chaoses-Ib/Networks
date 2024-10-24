@@ -66,5 +66,14 @@ Name | 混合拨号
 [米安网络](https://www.miandns.com/) | ✔️
 [飞网](https://www.fwvps.com/) | ✔️
 
+或者任何按量计费的 VPS、IP（弹性公网IP）：
+- 天翼云
+  
+  一个服务器只能绑20条线
+
+  [24年7月最新IP搭建教程，配合一键脚本，5分钟轻松学会，300MB独享网速 - 哔哩哔哩](https://www.bilibili.com/video/BV1Zm421V7Ve)
+
+- 阿里云
+
 
 [^china-sjlleo]: [sjlleo/local-ISPs-to-CN: Network connectivity between your local ISPs and China / 您的本地运营商和中国的网络互联情况](https://github.com/sjlleo/local-ISPs-to-CN/blob/main/report_zh_CN.md) ([国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996))
