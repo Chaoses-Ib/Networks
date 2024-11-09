@@ -231,6 +231,12 @@ Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成�
 
   [http - Why does nginx `proxy_pass` close my connection? - Stack Overflow](https://stackoverflow.com/questions/46771389/why-does-nginx-proxy-pass-close-my-connection)
 
+- Buffering
+  - [`proxy_buffering off;`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering)
+  - `X-Accel-Buffering: no`
+
+    [SSE response taking a long time - IE, what am I doing wrong? - tokio-rs/axum - Discussion #2694](https://github.com/tokio-rs/axum/discussions/2694)
+
 [Nginx: reverse proxy passing client IP to the server - Server Fault](https://serverfault.com/questions/920030/nginx-reverse-proxy-passing-client-ip-to-the-server)
 
 ### [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)

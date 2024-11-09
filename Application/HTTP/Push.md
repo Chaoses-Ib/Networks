@@ -13,7 +13,7 @@
 
   > 客户端发送一个请求到服务端，如果服务端没有新的数据，就保持住这个连接直到有数据。一旦服务端有了数据（消息）给客户端，它就使用这个连接发送数据给客户端，接着连接关闭。
 
-- [→Server-sent events](#server-sent-events)
+- [→Server-sent events](#server-sent-events-sse)
 
   > 客户端发送一个请求，服务端就保持这个连接直到有一个新的消息已经准备好了，那么它将消息发送回客户端，同时仍然保持这个连接是打开，这样这个连接就可以用于另一个可用消息的发送。一旦准备好了一个新消息，通过同一初始连接发送回客户端。
 
@@ -97,6 +97,10 @@ Cons:
 - WebSockets support bidirectional (full-duplex) communication. That said, SSE *could* be used in conjunction with AJAX if bidirectional communication is needed. WebSockets are often said to be the simpler option in those cases, but I think such generalizations can be misleading, as it largely depends on the type of application, how it's designed and the technologies used.
 
 - > In practice since everything that can be done with SSE can also be done with Websockets, Websockets is getting a lot more attention and love, and many more browsers support Websockets than SSE.
+
+- > Since SSE is fully in HTTP, it's more subject to being mucked with by various middleware layers, browser caching, proxies, etc.
+  - Nginx: [proxy_buffering](Servers/Nginx/README.md#ngx_http_proxy_module)
+  - [Server side events buffered until connection close? - tokio-rs/axum - Discussion #2891](https://github.com/tokio-rs/axum/discussions/2891)
 
 Discussions:
 - 2023-11 [Websockets VS Server Sent Events : r/ExperiencedDevs](https://www.reddit.com/r/ExperiencedDevs/comments/1845vtf/websockets_vs_server_sent_events/)
