@@ -25,3 +25,8 @@ Tools:
 Discussions:
 - 2021-09 [Is there a fail2ban alternative for Windows? : r/jellyfin](https://www.reddit.com/r/jellyfin/comments/plfjc9/is_there_a_fail2ban_alternative_for_windows/)
 - 2024-02 [Anyway of having something similar to fail2ban for a window cw control server? : r/msp](https://www.reddit.com/r/msp/comments/1azvdqu/anyway_of_having_something_similar_to_fail2ban/)
+
+## Distributed rate limiting
+单点 rate limiting 很好实现，多点就比较麻烦了，每个模块都要记录 IP，在调用其它模块时传递，其它模块还要限制来源或者添加 token 来避免伪造。直接使用内部 token 来绕过 limit 更简单一些，但是总 rate limit 是各点 rate limit 之和。
+
+Nginx: [ngx_http_realip_module](../Application/HTTP/Servers/Nginx/README.md#ngx_http_realip_module)

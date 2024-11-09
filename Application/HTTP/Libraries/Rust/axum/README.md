@@ -25,6 +25,10 @@ Router:
 
   > This works similarly to [`Router::layer`](https://docs.rs/axum/latest/axum/struct.Router.html#method.layer "method axum::Router::layer") except the middleware will only run if the request matches a route. This is useful for middleware that return early (such as authorization) which might otherwise convert a `404 Not Found` into a `401 Unauthorized`.
 
+- [Best way to implement an hostname based router? - tokio-rs/axum - Discussion #934](https://github.com/tokio-rs/axum/discussions/934)
+
+  [Enable/Disable routes based on host - tokio-rs/axum - Discussion #928](https://github.com/tokio-rs/axum/discussions/928)
+
 IP:
 - [`Router::into_make_service_with_connect_info()`](https://docs.rs/axum/latest/axum/struct.Router.html#method.into_make_service_with_connect_info)
 - [axum-client-ip: A client IP address extractor for Axum](https://github.com/imbolc/axum-client-ip)

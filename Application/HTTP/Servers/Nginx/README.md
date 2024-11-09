@@ -171,7 +171,24 @@ Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成�
 [Nginx: reverse proxy passing client IP to the server - Server Fault](https://serverfault.com/questions/920030/nginx-reverse-proxy-passing-client-ip-to-the-server)
 
 ### [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
+> This module is not built by default, it should be enabled with the `--with-http_realip_module` configuration parameter.
+
+```nginx
+set_real_ip_from  192.168.1.0/24;
+set_real_ip_from  192.168.2.1;
+set_real_ip_from  2001:0db8::/32;
+real_ip_header    X-Forwarded-For;
+real_ip_recursive on;
+```
+
+- `set_real_ip_from address | CIDR | unix:;` 
+
+- `geo` also has a `proxy` parameter
+
 [http headers - NGinx `$proxy_add_x_forwarded_for` and `real_ip_header` - Stack Overflow](https://stackoverflow.com/questions/29279084/nginx-proxy-add-x-forwarded-for-and-real-ip-header)
+
+### [ngx_http_geo_module](https://nginx.org/en/docs/http/ngx_http_geo_module.html)
+> The `ngx_http_geo_module` module creates variables with values depending on the client IP address.
 
 ## Lua
 [Lua | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/dynamic-modules/lua/)
