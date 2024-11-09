@@ -19,6 +19,64 @@ Books:
 
 [Awesome Nginx: A curated list of awesome Nginx distributions, 3rd party modules, Active developers, etc.](https://github.com/agile6v/awesome-nginx)
 
+## Build
+[Building nginx from Sources](https://nginx.org/en/docs/configure.html)
+- `This module is not built by default.` *27
+
+  Even `ngx_http_ssl_module`...
+
+[ci-self-hosted/.github/workflows/nginx-buildbot.yml at main - nginx/ci-self-hosted](https://github.com/nginx/ci-self-hosted/blob/main/.github/workflows/nginx-buildbot.yml)
+- Self-host, many local dependencies, unreproducible
+  - `shell: C:\Tools\msys64\msys2_shell.cmd -defterm -no-start -where . -full-path -shell bash.exe -Eeo pipefail -x '{0}'`
+  - `mkdir C:/TEMP/`: `mkdir: cannot create directory 'C:/TEMP/': File exists`
+  - `auto/configure: No such file or directory`
+  - ...
+
+[linux - Cross compiling nginx-1.0.11 - Stack Overflow](https://stackoverflow.com/questions/8922311/cross-compiling-nginx-1-0-11)
+
+[nginxinc/docker-nginx: Official NGINX Dockerfiles](https://github.com/nginxinc/docker-nginx)
+
+[jirutka/nginx-binaries: Nginx and njs binaries for Linux (x86\_64, aarch64, ppc64le), macOS and Windows. Linux binaries are static so works on every Linux.](https://github.com/jirutka/nginx-binaries)
+- Windows: myfreeer/nginx-build-msys2
+
+Windows:
+```sh
+nginx version: nginx/1.27.2
+built by cl 16.00.30319.01 for 80x86
+built with OpenSSL 3.0.15 3 Sep 2024
+TLS SNI support enabled
+configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= --conf-path=conf/nginx.conf --pid-path=logs/nginx.pid --http-log-path=logs/access.log --error-log-path=logs/error.log --sbin-path=nginx.exe --http-client-body-temp-path=temp/client_body_temp --http-proxy-temp-path=temp/proxy_temp --http-fastcgi-temp-path=temp/fastcgi_temp --http-scgi-temp-path=temp/scgi_temp --http-uwsgi-temp-path=temp/uwsgi_temp --with-cc-opt=-DFD_SETSIZE=1024 --with-pcre=objs.msvc8/lib/pcre2-10.39 --with-zlib=objs.msvc8/lib/zlib-1.3.1 --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_sub_module --with-http_dav_module --with-http_stub_status_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_random_index_module --with-http_secure_link_module --with-http_slice_module --with-mail --with-stream --with-stream_realip_module --with-stream_ssl_preread_module --with-openssl=objs.msvc8/lib/openssl-3.0.15 --with-openssl-opt='no-asm no-tests -D_WIN32_WINNT=0x0501' --with-http_ssl_module --with-mail_ssl_module --with-stream_ssl_module
+```
+- [Building nginx on the Win32 platform with Visual C](https://nginx.org/en/docs/howto_build_on_win32.html)
+- [Building nginx with addtional modules on Windows](https://gist.github.com/sweetlilmre/43b0c05e17f9fb0aacab0381d1db0fe7)
+- [myfreeer/nginx-build-msys2](https://github.com/myfreeer/nginx-build-msys2)
+  - AppVeyor
+- `nginx windows pcre zlib openssl configure language:yaml`
+
+## Distributions
+- [nginx-rtmp-module: NGINX-based Media Streaming Server](https://github.com/arut/nginx-rtmp-module)
+  - GitHub CI/CD: [elijahr2411/nginx-rtmp-module](https://github.com/elijahr2411/nginx-rtmp-module)
+
+- [Zestginx: A modern, performant, and secure NGINX distribution packed with features.](https://github.com/ZestProjects/zestginx) (discontinued)
+
+  > Some, but not all, of Zestginx's improvements over NGINX include:
+  > 
+  > - Dynamic Record Sizing for SSL/TLS.
+  > - HTTP/2 HPACK Compression
+  > - HTTP/3 support via Quiche.
+  > - IO\_Uring as the AIO backend.
+  > - OCSP support for BoringSSL.
+  > - Quiet handshake rejection for SNI mismatches.
+  > 
+  > As well as the above, Zestginx's prebuilds come with a few other changes such as:
+  > 
+  > - Brotli compression support for NGINX.
+  > - Cloudflare's Zlib for faster GZip.
+  > - PCRE JIT for improved RegEx performance.
+  > - ZStandard compression support for NGINX.
+  > 
+  > Zestginx's wiki also contains suggestions for your NGINX configuration.
+
 ## Windows
 [nginx for Windows](https://nginx.org/en/docs/windows.html)
 
@@ -32,6 +90,11 @@ Books:
 `scoop install nginx`
 
 4.5 MiB.
+- LZMA2: 1.26 MiB
+
+Services:
+- [winginx: Nginx installer and service behaviour for windows.](https://github.com/InvGate/winginx)
+- [xiangyuecn/Nginx-Windows-Service-Manager: Nginx Windows服务安装和管理器](https://github.com/xiangyuecn/Nginx-Windows-Service-Manager)
 
 ## CLI
 [Command-line parameters](https://nginx.org/en/docs/switches.html)
