@@ -285,6 +285,40 @@ error_log  logs/error.log  debug;
 ## Security
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
 
+### HTTPS
+[Module ngx\_http\_ssl\_module](https://nginx.org/en/docs/http/ngx_http_ssl_module.html)
+
+[Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html)
+
+```nginx
+worker_processes auto;
+
+http {
+    server {
+        server_name         www.example.com;
+
+        listen       80;
+        listen       443 ssl;
+
+        keepalive_timeout   70;
+
+        ssl_certificate      www.example.com.crt.pem;
+        ssl_certificate_key  www.example.com.key.pem;
+
+        # ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+        # ssl_ciphers  HIGH:!aNULL:!MD5;
+        # ssl_prefer_server_ciphers  off;
+
+        # Default: none
+        ssl_session_cache    shared:SSL:10m;
+        # Default: 5m
+        ssl_session_timeout  10m;
+    }
+}
+```
+
+[nginx HTTPS serving with same config as HTTP - Server Fault](https://serverfault.com/questions/10854/nginx-https-serving-with-same-config-as-http)
+
 ### Rate limiting
 - [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
   - `limit_rate`, `limit_except`
