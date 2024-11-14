@@ -28,6 +28,8 @@ Cookies are mainly used for three purposes:
 - **Tracking**: Recording and analyzing user behavior.
 
 Cookies vs local storage:
+- Local storage 没法实现禁止 JS 访问、失效、静态资源鉴权、跨域这些，虽然不用处理 cookies 跨端口的坑了
+
 - Cookies can be `HttpOnly` and `Secure`
 
 - Cookies can be used on requests issued by browsers instead of JS
@@ -55,6 +57,11 @@ Cookies vs local storage:
   [javascript - How to share localstorage among different subdomains? - Stack Overflow](https://stackoverflow.com/questions/59997063/how-to-share-localstorage-among-different-subdomains)
 
 - Local storage can only be deleted by JS
+  - Or [`sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
+
+    > Opening a page in a new tab or window creates a new session with the value of the top-level browsing context, which differs from how session cookies work.
+
+    [javascript - browser sessionStorage. share between tabs? - Stack Overflow](https://stackoverflow.com/questions/20325763/browser-sessionstorage-share-between-tabs)
 
 [Cookies vs local storage - what to use when?](https://punits.dev/jargon-free-intros/cookies-vs-local-storage/) ([r/webdev](https://www.reddit.com/r/webdev/comments/12ipjr5/cookies_vs_local_storage_what_to_use_when/))
 
@@ -74,10 +81,24 @@ Discussions:
     - HTTPS
 
   [Bypassing SameSite cookie restrictions | Web Security Academy](https://portswigger.net/web-security/csrf/bypassing-samesite-restrictions)
-  
-- Axios: [`withCredentials`](https://axios-http.com/docs/req_config)
 
-  `withCredentials` indicates whether or not cross-site Access-Control requests should be made using credentials. `false` by default.
+- [`XMLHttpRequest.withCredentials`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials)
+
+  `withCredentials` indicates whether or not cross-site `Access-Control` requests should be made using credentials. `false` by default.
+  - This never affects same-origin requests.
+
+  Does `withCredentials` affect cross-origin requests or just cross-site requests?
+  - [XMLHttpRequest withCredentials option has an impact on same-site/cross-origin requests - Issue #20441 - mdn/content](https://github.com/mdn/content/issues/20441)
+    - [fix: update XmlHttpRequest withCredentials documentation by AtofStryker - Pull Request #20486 - mdn/content](https://github.com/mdn/content/pull/20486)
+  - [cookies - why is XMLHttpRequest.withCredentials necessary even for same site Ajax requests - Stack Overflow](https://stackoverflow.com/questions/40725317/why-is-xmlhttprequest-withcredentials-necessary-even-for-same-site-ajax-requests)
+
+  [javascript - Cookies are not included when using withCredentials in XMLHttpRequest - Stack Overflow](https://stackoverflow.com/questions/57289396/cookies-are-not-included-when-using-withcredentials-in-xmlhttprequest)
+
+  [674397 - XMLHttpRequest does not send Cookie: header even when withCredentials = true \[CORS\]](https://bugzilla.mozilla.org/show_bug.cgi?id=674397)
+
+  [Cross-origin XMLHTTPRequest.withCredentials = false without CORS?](https://groups.google.com/a/chromium.org/g/chromium-discuss/c/uT3lYl7CAC0)
+
+- Axios: [`withCredentials`](https://axios-http.com/docs/req_config)
 
   [Make Axios send cookies in its requests automatically - Stack Overflow](https://stackoverflow.com/questions/43002444/make-axios-send-cookies-in-its-requests-automatically)
 
@@ -85,7 +106,15 @@ Discussions:
 
   [Can not send cookie back from client, tried many ways - Issue #4907 - axios/axios](https://github.com/axios/axios/issues/4907)
 
+[Ajax Battle: XMLHttpRequest vs. the Fetch API | Hacker News](https://news.ycombinator.com/item?id=31084264)
+
 See also [CORS](#cross-origin-resource-sharing-cors).
+
+### Domains
+- `Domain`
+- `HostOnly`
+
+[Transform P3 P4 P5 vulnerabilities to P1 | Centre d'expertises en cybersécurité](https://www.acceis.fr/transform-p3-p4-p5-vulnerabilities-to-p1/)
 
 ### Libraries
 - [cookie-rs: HTTP cookie parsing and cookie jar management for Rust.](https://github.com/rwf2/cookie-rs)
@@ -96,6 +125,27 @@ See also [CORS](#cross-origin-resource-sharing-cors).
 - [cookie\_store: An implementation of RFC6265](https://github.com/pfernie/cookie_store)
 
 ### Web browsers
+`HttpOnly`:
+- Server redirection
+  - Tight coupling with routing
+  - Not pure static anymore
+
+- Request
+  - Block page rendering
+
+- Set another cookie
+  - By client
+    - Tight coupling with cookie expiration config
+  - By server
+
+  Same site different port problem
+
+- Try to override cookie
+
+Discussions:
+- [Check if httponly cookie exists in Javascript - Stack Overflow](https://stackoverflow.com/questions/9353630/check-if-httponly-cookie-exists-in-javascript)
+- [How to check for user authentication when using httponly session-cookies : r/vuejs](https://www.reddit.com/r/vuejs/comments/w3j3me/how_to_check_for_user_authentication_when_using/)
+
 [Clearing all cookies with JavaScript - Stack Overflow](https://stackoverflow.com/questions/179355/clearing-all-cookies-with-javascript)
 
 Browsers:
