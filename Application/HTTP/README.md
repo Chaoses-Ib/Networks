@@ -1,10 +1,18 @@
-# Hypertext Transfer Protocol
-[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+# Hypertext Transfer Protocol (HTTP)
+[Wikipedia](https://en.wikipedia.org/wiki/HTTP), [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 
 - HTTP 是无状态协议，但可以通过 cookie 保存状态
 - 默认使用持续连接，但也可使用非持续连接
   
 	大部分浏览器默认会建立 5~10 个并行连接
+
+## Versions
+### HTTP/1
+> The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web.
+
+### [→HTTP/2](HTTP2.md)
+
+### [→HTTP/3](HTTP3.md)
 
 ## Content
 [Content-Type - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)
@@ -58,11 +66,16 @@ Content-Type: text/plain
 - Servers
   - Go: [tusd: Reference server implementation in Go of tus: the open protocol for resumable file uploads](https://github.com/tus/tusd)
     - 37 MiB
-    - Proxies
+    - [Proxies](https://tus.github.io/tusd/getting-started/configuration/#proxies)
       - [nginx.conf](https://github.com/tus/tusd/blob/main/examples/nginx.conf)
       - `-behind-proxy` 不支持 `X-Forwarded-Port`
       - [Wrong URL when new upload is created - Issue #136](https://github.com/tus/tusd/issues/136)
         - [Add note about port of X-Forwarded-Host to nginx.conf example by Chaoses-Ib - Pull Request #1190](https://github.com/tus/tusd/pull/1190)
+      - Caddy: [Tusd behind Caddy Webserver? - Issue #444](https://github.com/tus/tusd/issues/444)
+    - [HTTP/2](https://tus.github.io/tusd/getting-started/configuration/#http2)
+    - HTTP/3
+      - [tus over QUIC - Issue #857](https://github.com/tus/tusd/issues/857)
+        - > So I tested upload-speed with Safari and Chrome but it was almost the same speed.
     - [Storage backends](https://tus.github.io/tusd/storage-backends/overview/)
     - [FileInfo](https://pkg.go.dev/github.com/tus/tusd/pkg/handler#FileInfo)
       - [hook.proto](https://github.com/tus/tusd/blob/eff0a435fcbba04edede33a80f69811588aaa0f5/pkg/hooks/grpc/proto/hook.proto#L35)

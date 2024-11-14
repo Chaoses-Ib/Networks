@@ -54,6 +54,8 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 - `nginx windows pcre zlib openssl configure language:yaml`
 
 ## Distributions
+- [The Tengine Web Server](https://tengine.taobao.org/)
+
 - [nginx-rtmp-module: NGINX-based Media Streaming Server](https://github.com/arut/nginx-rtmp-module)
   - GitHub CI/CD: [elijahr2411/nginx-rtmp-module](https://github.com/elijahr2411/nginx-rtmp-module)
 
@@ -91,6 +93,10 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 
 4.5 MiB.
 - LZMA2: 1.26 MiB
+
+Distributions:
+- Kitty: [nginx for Windows](http://nginx-win.ecsds.eu/)
+- Kevin Worthington: [Nginx for Windows - 32-bit and 64-bit - free, easy-to-use setup packages](https://kevinworthington.com/nginx-for-windows/)
 
 Services:
 - [winginx: Nginx installer and service behaviour for windows.](https://github.com/InvGate/winginx)
@@ -259,6 +265,8 @@ real_ip_recursive on;
 ### [ngx_http_geo_module](https://nginx.org/en/docs/http/ngx_http_geo_module.html)
 > The `ngx_http_geo_module` module creates variables with values depending on the client IP address.
 
+### [→HTTP/2](../../HTTP2.md#nginx)
+
 ## Lua
 [Lua | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/dynamic-modules/lua/)
 
@@ -283,6 +291,7 @@ error_log  logs/error.log  debug;
 - [pff: "Ban Not Fail" PoC](https://github.com/dmilith/pff)
 
 ## Security
+- `Server: nginx/1.27.0`
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
 
 ### HTTPS

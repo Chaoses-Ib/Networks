@@ -65,11 +65,13 @@ Python:
 
 ## Application
 - [Sessions](Application/Sessions.md)
-- [Hypertext Transfer Protocol](Application/HTTP/README.md)
+- [Hypertext Transfer Protocol (HTTP)](Application/HTTP/README.md)
   - [Connections](Application/HTTP/Connections.md)
   - [Request Methods](Application/HTTP/Methods.md)
   - [Server Push](Application/HTTP/Push.md)
   - [Security](Application/HTTP/Security.md)
+  - [HTTP/2](Application/HTTP/HTTP2.md)
+  - [HTTP/3](Application/HTTP/HTTP3.md)
   - [API](Application/HTTP/API/README.md)
     - [Representational State Transfer](Application/HTTP/API/REST.md)
     - [Webhooks](Application/HTTP/API/Webhooks.md)
