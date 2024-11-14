@@ -32,6 +32,13 @@ Quality: CN2 GIA > CUII Backbone (AS9929) > CU Backbone (AS4837) > CN2 GT > CT B
 
 [^china-quality]: [CN2 GIA＞AS9929＞CN2 GT＞AS4837,这个排名靠谱吗 - 全球主机交流论坛](https://hostloc.com/thread-953685-1-1.html)
 
+#### 家宽
+[家宽建站的几种方式](https://www.opshub.cn/2023-08-23/family-network-336.html)
+
+- 2023-06 [家宽建站方案 - V2EX](https://www.v2ex.com/t/950624)
+- 2023-07 [家宽套cdn建站可行性](https://www.nodeseek.com/post-14238-1)
+- 2023-11 [家里联通宽带部署服务 套 cloudflare 的 CDN 然后路由器防火墙里选择只能 cf 的 ip 入站 会不会安全些 - V2EX](https://v2ex.com/t/991153)
+
 ### Hong Kong, China
 - CMI (AS58453)
 - CUG (AS10099)
