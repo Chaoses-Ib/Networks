@@ -79,9 +79,25 @@ Content-Type: text/plain
     - [Storage backends](https://tus.github.io/tusd/storage-backends/overview/)
     - [FileInfo](https://pkg.go.dev/github.com/tus/tusd/pkg/handler#FileInfo)
       - [hook.proto](https://github.com/tus/tusd/blob/eff0a435fcbba04edede33a80f69811588aaa0f5/pkg/hooks/grpc/proto/hook.proto#L35)
+      - `finishUploadIfComplete()`: `!info.SizeIsDeferred && info.Offset == info.Size`
+        - But `Offset` becomes `0` after finish?
     - Download
       - `-disable-download`
       - Only files with `.info` can be downloaded.
+    - Hooks
+      - Files
+      - HTTP
+      - gRPC: Bad interface, all in one `InvokeHook`
+      - Plugin
+    - Security
+
+      tusd 只内置了对 `-max-size` 的限制，涉及到具体用户的限制需要通过 `pre-create` hook 实现。对于总和型限制，需要记录每份上传的信息，此时通过 `FileInfoChanges.id` 指定创建 ID 更方便于建立关联。
+      
+      但 `pre-create` hook 只能限制新建 upload，无法限制 PATCH 已创建的 upload。`post-receive` hook 虽然可以实现限制只有特定用户才可以 PATCH upload，但是是定时触发的，难以统计上传流量。
+
+      也就是说 tusd 可以限制只有特定用户可以创建和上传 upload，以及上传的总大小，但是无法限制上传流量。只能避免非法用户上传和合法用户占用存储空间，但无法避免合法用户占用上传带宽、流量和硬盘 IO，顶多只能通过限时来进行弥补。
+
+      - [Deferred upload length can bypass upload size limit - Issue #1032 - tus/tusd](https://github.com/tus/tusd/issues/1032)
   
     [tusd v2: better hooks, network resilience and IETF protocol | tus.io](https://tus.io/blog/2023/09/20/tusd-200)
 

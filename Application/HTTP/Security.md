@@ -118,7 +118,9 @@ See also [CORS](#cross-origin-resource-sharing-cors).
 
 ### Libraries
 - [cookie-rs: HTTP cookie parsing and cookie jar management for Rust.](https://github.com/rwf2/cookie-rs)
+  - [`split_parse()`](https://docs.rs/cookie/latest/cookie/struct.Cookie.html#method.split_parse)
   - [axum\_extra::extract::cookie - Rust](https://docs.rs/axum-extra/latest/axum_extra/extract/cookie/index.html)
+    - [`from_headers()`](https://docs.rs/axum-extra/latest/axum_extra/extract/cookie/struct.CookieJar.html#method.from_headers)
 - [biscotti: A Rust library for managing HTTP cookies.](https://github.com/LukeMathWalker/biscotti)
 
   [biscotti, a new crate for HTTP cookies | Luca Palmieri](https://www.lpalmieri.com/posts/biscotti-http-cookies-in-rust/) ([r/rust](https://www.reddit.com/r/rust/comments/1bb7vtm/biscotti_a_new_crate_for_http_cookies/))
