@@ -1,6 +1,15 @@
 # Domain Name System
 [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System)
 
+## Subdomains
+### `www` subdomain
+Discussions:
+- 2009-10 [domain name - What is the purpose of the WWW subdomain? - Super User](https://superuser.com/questions/60006/what-is-the-purpose-of-the-www-subdomain)
+- 2012-09 [www vs using root domain : r/webdev](https://www.reddit.com/r/webdev/comments/10ajc6/www_vs_using_root_domain/)
+- 2024-02 [domain name system - Is it better to redirect root to www or www to root? - Server Fault](https://serverfault.com/questions/1153285/is-it-better-to-redirect-root-to-www-or-www-to-root)
+
+[5个方法将不带www的根域名301重定向到www主域名 - 米发](https://www.mfpad.com/blog/forwarding-naked-domain-to-www-domain)
+
 ## Record types
 [List of DNS record types - Wikipedia](https://en.wikipedia.org/wiki/List_of_DNS_record_types)
 
