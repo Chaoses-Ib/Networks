@@ -74,6 +74,25 @@ sudo ping -f -s 65507 10.0.0.1
 
 在测试环境中 `ping -f -s 65507` 达到了 736 Mb/s 的攻击流量，接近 100 MB/s 的带宽上限。
 
+## Fake RTT
+- [Pong: Fake ping times.](https://github.com/m-ou-se/pong)
+
+  > Turns out that most ping implementations don't remember the timestamps at which they sent the pings. Instead, they store the timestamp in the payload in the ping packet, and expect it to be the same in the reply. I made a program that changes the payload, faking lower ping times.
+
+- [RFC 6921 - Design Considerations for Faster-Than-Light (FTL) Communication](https://datatracker.ietf.org/doc/html/rfc6921)
+
+  [RFC 9564 - Faster Than Light Speed Protocol (FLIP)](https://datatracker.ietf.org/doc/html/rfc9564)
+
+  [Show HN: Faster-than-light ping (April Fools') | Hacker News](https://news.ycombinator.com/item?id=39892821)
+  - `ping ftlping.net`
+
+  对 ITDOG 等工具无效。
+
+Discussions:
+- 2022-11 [如何借助代理实现服务器的低延迟访问 - V2EX](https://v2ex.com/t/894865)
+
+  > 机场可能拦截查询请求返回一个很低的假延时
+
 
 [^ping-wiki]: [ping (networking utility) - Wikipedia](https://en.wikipedia.org/wiki/Ping_(networking_utility))
 [^death-wiki]: [Ping of death - Wikipedia](https://en.wikipedia.org/wiki/Ping_of_death)
