@@ -81,10 +81,12 @@ Servers:
   - `scoop install hysteria`
   - [速度测试 - Hysteria 2](https://v2.hysteria.network/zh/docs/advanced/Speed-Test/)
   - [端口跳跃 - Hysteria 2](https://v2.hysteria.network/zh/docs/advanced/Port-Hopping/)
+  - Windows 上可能因为操作 conhost 导致阻塞
 
 Clients:
 - [Hysteria](https://github.com/HyNetwork/hysteria)
 - Clash.Meta
+  - 兼容性不太好，Clash 本身 / Tun 模式都可能导致连接失败，可以使用官方 Hysteria 进行排错
 
 Discussions:
 - 2022-04 [使用 Hysteria 的感受 - V2EX](https://www.v2ex.com/t/844842)
