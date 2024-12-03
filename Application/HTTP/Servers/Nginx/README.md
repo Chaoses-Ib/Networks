@@ -55,6 +55,7 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 
 ## Distributions
 - [The Tengine Web Server](https://tengine.taobao.org/)
+  - 阿里云 CDN
 
 - [nginx-rtmp-module: NGINX-based Media Streaming Server](https://github.com/arut/nginx-rtmp-module)
   - GitHub CI/CD: [elijahr2411/nginx-rtmp-module](https://github.com/elijahr2411/nginx-rtmp-module)

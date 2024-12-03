@@ -7,6 +7,9 @@
 
 [^topdown]: *Computer Networking: A Top-Down Approach*
 
+[个人 Blog，1MB 的带宽够用么？ - V2EX](https://www.v2ex.com/t/145711)
+> 一般来讲1wpv以内，图片用外链，1mbps只有高峰期略卡，再多就不知道了
+
 ## ISPs in different regions
 ### Mainland China
 [^china-sjlleo]
