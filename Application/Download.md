@@ -15,10 +15,50 @@
 
   [multithreading - How to multithread a download in client-side javascript - Stack Overflow](https://stackoverflow.com/questions/49907569/how-to-multithread-a-download-in-client-side-javascript)
 
+## Libraries
+Rust:
+- [downloader: Simple HTTP/HTTPS file downloader crate.](https://github.com/hunger/downloader)
+  - Largest recent downloads (86,355)
+
+- [cargo-binstall/binstalk-downloader](https://github.com/cargo-bins/cargo-binstall/tree/main/crates/binstalk-downloader)
+
+- [manic: Rust download library](https://github.com/x0f5c3/manic) (inactive)
+  - Progress reporting
+
+- [rhtdl: reliable http downloads that do the right thing by default - Codeberg.org](https://codeberg.org/binarycat/rhtdl)
+  - Automatically resume downloads using the `Range` header in the case of an error
+  - Stalled download timeouts
+  - Detection of mid-air collisions
+  - Logging
+  - Progress reporting
+  - Not on crates.io
+
+  [Rhtdl: Reliable HTTP download - code review - The Rust Programming Language Forum](https://users.rust-lang.org/t/rhtdl-reliable-http-download/120503)
+
+- [http-downloader: 用 Rust 写的支持多线程与断点续传的 HTTP 下载库](https://github.com/ycysdf/http-downloader)
+  - 下载速度追踪
+  - 下载速度限制
+
+- [ml-downloader: Simple blocking downloader based on reqwest](https://github.com/malaire/ml-downloader)
+
+- [bic-potato/download\_rs: 一个简单的文件下载库](https://github.com/bic-potato/download_rs)
+
+- [siwi-download: file downloader](https://github.com/rs-videos/siwi-download)
+
+- [rust-cached-path: 🦀 Rust utility for accessing both local and remote files through a unified interface](https://github.com/epwalsh/rust-cached-path)
+  - Sync
+- [data\_downloader: A simple way to download files in Rust](https://github.com/tillarnold/data_downloader)
+  - Sync
+
+[What is the fastest libary for downloading files (all sizes) from web? : r/rust](https://www.reddit.com/r/rust/comments/14a5fml/what_is_the_fastest_libary_for_downloading_files/)
+
 ## Download managers
 - [aria2](https://aria2.github.io/) ([GitHub](https://github.com/aria2/aria2))
 
   aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink. aria2 can be manipulated via built-in JSON-RPC and XML-RPC interfaces.
+
+Rust:
+- [rlget: RLget: Rust Parallel Download client](https://github.com/shockron22/rlget)
 
 ### [aria2](https://aria2.github.io/)
 [GitHub](https://github.com/aria2/aria2)
