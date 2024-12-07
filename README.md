@@ -98,6 +98,7 @@ Python:
 ## OS
 - [Windows](OS/Windows/README.md)
   - [Windows Sockets (Winsock)](OS/Windows/Winsock.md)
+- [Windows Subsystem for Linux (WSL)](OS/WSL/README.md)
 
 ## Telephone
 - [Short Message Service](Telephone/SMS.md)
