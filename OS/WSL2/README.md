@@ -1,4 +1,4 @@
-# Windows Subsystem for Linux (WSL)
+# Windows Subsystem for Linux 2 (WSL2)
 ## Bridge mode
 `%USERPROFILE%\.wslconfig`:
 ```ini
