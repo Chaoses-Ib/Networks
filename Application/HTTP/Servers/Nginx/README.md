@@ -19,6 +19,8 @@ Books:
 
 [Awesome Nginx: A curated list of awesome Nginx distributions, 3rd party modules, Active developers, etc.](https://github.com/agile6v/awesome-nginx)
 
+[h5bp/server-configs-nginx: Nginx HTTP server boilerplate configs](https://github.com/h5bp/server-configs-nginx)
+
 ## Build
 [Building nginx from Sources](https://nginx.org/en/docs/configure.html)
 - `This module is not built by default.` *27
@@ -54,6 +56,27 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 - `nginx windows pcre zlib openssl configure language:yaml`
 
 ## Distributions
+- Ubuntu
+  ```sh
+  nginx version: nginx/1.18.0 (Ubuntu)
+  built with OpenSSL 3.0.2 15 Mar 2022
+  TLS SNI support enabled
+  configure arguments: --with-cc-opt='-g -O2 -ffile-prefix-map=/build/nginx-dSlJVq/nginx-1.18.0=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -fPIC -Wdate-time -D_FORTIFY_SOURCE=2' --with-ld-opt='-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -Wl,-z,now -fPIC' --prefix=/usr/share/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/run/nginx.pid --modules-path=/usr/lib/nginx/modules --http-client-body-temp-path=/var/lib/nginx/body --http-fastcgi-temp-path=/var/lib/nginx/fastcgi --http-proxy-temp-path=/var/lib/nginx/proxy --http-scgi-temp-path=/var/lib/nginx/scgi --http-uwsgi-temp-path=/var/lib/nginx/uwsgi --with-compat --with-debug --with-pcre-jit --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-http_auth_request_module --with-http_v2_module --with-http_dav_module --with-http_slice_module --with-threads --add-dynamic-module=/build/nginx-dSlJVq/nginx-1.18.0/debian/modules/http-geoip2 --with-http_addition_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module
+  ```
+  - Default paths require root permissions
+    - `--conf-path=/etc/nginx/nginx.conf`
+    - `--prefix=/usr/share/nginx`
+    - `--modules-path=/usr/lib/nginx/modules`
+    - `--http-log-path=/var/log/nginx/access.log`
+    - `--error-log-path=/var/log/nginx/error.log`
+    - `--lock-path=/var/lock/nginx.lock`
+    - `--pid-path=/run/nginx.pid`
+    - `--http-client-body-temp-path=/var/lib/nginx/body`
+    - `--http-fastcgi-temp-path=/var/lib/nginx/fastcgi`
+    - `--http-proxy-temp-path=/var/lib/nginx/proxy`
+    - `--http-scgi-temp-path=/var/lib/nginx/scgi`
+    - `--http-uwsgi-temp-path=/var/lib/nginx/uwsgi`
+
 - [The Tengine Web Server](https://tengine.taobao.org/)
   - 阿里云 CDN
 
@@ -129,6 +152,93 @@ Rust:
 - [webserver-config: A Rust crate for generating configuration files for web servers.](https://git.codespace.cz/oohost/webserver-config)
 
 Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成配置。
+
+Ubuntu:
+```nginx
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+        # server_names_hash_bucket_size 64;
+        # server_name_in_redirect off;
+
+        include /etc/nginx/mime.types;
+        default_type application/octet-stream;
+
+        ##
+        # SSL Settings
+        ##
+
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+        ssl_prefer_server_ciphers on;
+
+        ##
+        # Logging Settings
+        ##
+
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+        ##
+        # Gzip Settings
+        ##
+
+        gzip on;
+
+        # gzip_vary on;
+        # gzip_proxied any;
+        # gzip_comp_level 6;
+        # gzip_buffers 16 8k;
+        # gzip_http_version 1.1;
+        # gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        ##
+        # Virtual Host Configs
+        ##
+
+        include /etc/nginx/conf.d/*.conf;
+        include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+#       # See sample authentication script at:
+#       # http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#       # auth_http localhost/auth.php;
+#       # pop3_capabilities "TOP" "USER";
+#       # imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#       server {
+#               listen     localhost:110;
+#               protocol   pop3;
+#               proxy      on;
+#       }
+#
+#       server {
+#               listen     localhost:143;
+#               protocol   imap;
+#               proxy      on;
+#       }
+#}
+```
 
 ### Variables
 [Alphabetical index of variables](https://nginx.org/en/docs/varindex.html)
@@ -292,6 +402,12 @@ error_log  logs/error.log  debug;
 - [pff: "Ban Not Fail" PoC](https://github.com/dmilith/pff)
 
 ## Security
+- [`user`](https://nginx.org/en/docs/ngx_core_module.html#user)
+
+  Default: `user nobody nobody;`
+
+  [linux - Nginx displaying failed (13: Permission denied) when trying to access new site - Server Fault](https://serverfault.com/questions/947301/nginx-displaying-failed-13-permission-denied-when-trying-to-access-new-site)
+
 - `Server: nginx/1.27.0`
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
 
