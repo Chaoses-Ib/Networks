@@ -3,6 +3,9 @@
 
 屏蔽所有协议时会表现为 blackhole，不会响应 TCP 的 SYN。
 
+## Hyper-V firewall
+[Hyper-V firewall | Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/windows-firewall/hyper-v-firewall)
+
 ## Libraries
 Rust:
 - [winfw-rs: Bindings for Windows Firewall from Rust](https://github.com/marirs/winfw-rs)

@@ -1,4 +1,6 @@
 # Linux
+[Linux disable firewall command - nixCraft](https://www.cyberciti.biz/faq/linux-disable-firewall-command/)
+
 ## iptables
 [Wikipedia](https://en.wikipedia.org/wiki/Iptables)
 
