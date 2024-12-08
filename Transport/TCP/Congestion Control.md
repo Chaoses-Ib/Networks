@@ -1,4 +1,6 @@
 # Congestion Control
+[Wikipedia](https://en.wikipedia.org/wiki/TCP_congestion_control)
+
 - 发送方如何感知拥塞？
   
   端到端拥塞控制：超时 / 接收到 3 个冗余 ACK
@@ -38,6 +40,103 @@
 当收到一个新 ACK，将 cwnd 设为 ssthresh，转移到拥塞避免状态。
 
 一旦发生超时，与慢启动状态执行相同操作。
+
+## Algorithms
+Linux:
+- BIC is used by default in Linux kernels 2.6.8 through 2.6.18. (August 2004 -- September 2006)
+- CUBIC is used by default in Linux kernels since version 2.6.19. (November 2006)
+- PRR is incorporated in Linux kernels to improve loss recovery since version 3.2. (January 2012)
+- BBRv1 is incorporated in Linux kernels to enable model-based congestion control since version 4.9. (December 2016)
+
+Windows:
+```pwsh
+> Get-NetTCPSetting | Select SettingName, CongestionProvider
+
+SettingName      CongestionProvider
+-----------      ------------------
+Automatic
+InternetCustom   CUBIC
+DatacenterCustom CUBIC
+Compat           NewReno
+Datacenter       CUBIC
+Internet         CUBIC
+```
+
+### BBR
+[Wikipedia](https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR), [GitHub](https://github.com/google/bbr)
+
+[When to use and not use BBR | APNIC Blog](https://blog.apnic.net/2020/01/10/when-to-use-and-not-use-bbr/)
+
+[SMB Performance fixed by switching TCP congestion algo to BBR : r/homelab](https://www.reddit.com/r/homelab/comments/17iwe0v/smb_performance_fixed_by_switching_tcp_congestion/)
+> In real work the differences are quite marked. I did a lot of work on Mobile network optimisation, we had a 25% increase in data goodput (payload) across the network by implementing a proxy, that's the equivalent of millions of $ of investment, or if you are looking at throughput a sustained 2% packet loss makes a 1G link run at about ~50mbps, with BBR you ignore (the packet gets sent but you don't throttle back) so you still get near enough 1Gbps
+
+[Google's BBRv3 TCP Congestion Control Showing Great Results, Will Be Upstreamed To Linux - Phoronix](https://www.phoronix.com/news/Google-BBRv3-Linux)
+> Google found BBRv3 to have a 12% reduction in the packet re-transmit rate and a slight latency improvement.
+>
+> Google engineers plan to propose mainlining BBRv3 into the Linux kernel TCP/networking code in August. The plan is to upgrade the BBR module to the v3 code from v1.
+
+Queuing disciplines:
+- [Linux Kernel-Tuning \[defect.ch - Wiki\]](https://wiki.defect.ch/os/linux/kernel-tuning)
+
+  > You will find a lot of instructions which set “net.core.default_qdisc” to “fq”. The reason is, the first implementation was specifically designed for fq and you can still find references in the source code:
+  > 
+  > > NOTE: BBR might be used with the fq qdisc (“man tc-fq”) with pacing enabled, otherwise TCP stack falls back to an internal pacing using one high resolution timer per TCP socket and may use more resources.
+  > 
+  > According to the official documentation, BBR doesn't require fq anymore. It also works with fq_codel for example.
+  > 
+  > > This means that there is no longer a strict requirement to install the “fq” qdisc to use BBR. Any qdisc will work, though “fq” performs better for highly-loaded servers.
+
+- [Can I use BBR with `fq_codel`?](https://groups.google.com/g/bbr-dev/c/4jL4ropdOV8)
+
+  > BBR will run well with fq_codel only after linux-4.13
+
+  > It can be said that BBR "runs well" with fq_codel in linux 4.9, in the sense of achieving high throughput. But, as Eric points out, the problem is that without some sort of pacing BBR will inject too many packets into the network too quickly. In that sense, BBR without pacing does not run well.
+  > 
+  > Without pacing in place, BBR would behave like the "BDP-scale line-rate burst" approach mentioned in that section. And beyond that, BBR without pacing keeps more packets in flight than the algorithm intends (because the algorithm periodically uses lower pacing rates to drain packets out of the bottleneck queue).
+
+- [BBR and FQ As new Defaults - Feature requests - VyOS Forums](https://forum.vyos.io/t/bbr-and-fq-as-new-defaults/12344)
+
+  > “sch_fq is for TCP servers, fq_codel for routers” - Eric Dumazet (who is the author of both).
+
+- What about `pfifo_fast`?
+
+- `sysctl net.core.default_qdisc`
+
+Linux:
+```conf
+CONFIG_TCP_CONG_BBR=y
+CONFIG_DEFAULT_TCP_CONG="bbr"
+```
+```sh
+# cat /proc/sys/net/ipv4/tcp_congestion_control
+cubic
+​# echo "bbr" > /proc/sys/net/ipv4/tcp_congestion_control
+# cat /proc/sys/net/ipv4/tcp_congestion_control
+bbr
+```
+- Permission denied: `sudo su`
+- `echo: write error: No such file or directory`: Not supported
+  - WSL2
+
+  [how to enable BBR? - Porteus](https://forum.porteus.org/viewtopic.php?t=10807)
+
+[Increase Linux Internet speed with TCP BBR congestion control - nixCraft](https://www.cyberciti.biz/cloud-computing/increase-your-linux-server-internet-speed-with-tcp-bbr-congestion-control/)
+
+[Linux Kernel-Tuning \[defect.ch - Wiki\]](https://wiki.defect.ch/os/linux/kernel-tuning)
+
+Windows 11 22H2:
+```pwsh
+netsh int tcp set supplemental Template=Internet CongestionProvider=bbr2
+netsh int tcp set supplemental Template=Datacenter CongestionProvider=bbr2
+netsh int tcp set supplemental Template=Compat CongestionProvider=bbr2
+netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=bbr2
+netsh int tcp set supplemental Template=InternetCustom CongestionProvider=bbr2
+
+Get-NetTCPSetting | Select SettingName, CongestionProvider
+```
+
+WSL1:
+- [Ubuntu on Windows WSL does not have tcp congestion. - Issue #1061 - esnet/iperf](https://github.com/esnet/iperf/issues/1061)
 
 ## 吞吐量
 $$\begin{align} \\
