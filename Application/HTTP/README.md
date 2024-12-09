@@ -98,7 +98,9 @@ Content-Type: text/plain
       也就是说 tusd 可以限制只有特定用户可以创建和上传 upload，以及上传的总大小，但是无法限制上传流量。只能避免非法用户上传和合法用户占用存储空间，但无法避免合法用户占用上传带宽、流量和硬盘 IO，顶多只能通过限时来进行弥补。
 
       - [Deferred upload length can bypass upload size limit - Issue #1032 - tus/tusd](https://github.com/tus/tusd/issues/1032)
-  
+    
+    - Windows 上可能因为操作 conhost 导致阻塞
+
     [tusd v2: better hooks, network resilience and IETF protocol | tus.io](https://tus.io/blog/2023/09/20/tusd-200)
 
   - .NET: [tusdotnet: .NET server implementation of the Tus protocol for resumable file uploads. Read more at https://tus.io](https://github.com/tusdotnet/tusdotnet)
@@ -245,6 +247,7 @@ CLI:
   - [Hurl: run and test HTTP requests with plain text.](https://github.com/Orange-OpenSource/hurl)
 - [HTTPie CLI: 🥧 modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.](https://github.com/httpie/cli)
 - [httpYac: Command Line Interface for \*.http and \*.rest files. Connect with http, gRPC, WebSocket and MQTT](https://github.com/AnWeber/httpyac)
+- wget
 
 GUI:
 - Edge DevTools: Network Console

@@ -19,12 +19,14 @@ The data plane functions of the network layer are the per-router functions in th
 When a packet arrives at a router’s input link, the router must move the packet to the appropriate output link.[^topdown]
 
 ## Control plane
-The control plane functions of the network laye are the network-wide logic that controls how a datagram is routed among routers along an end-to-end path from the source host to the destination host. [^topdown]
+The control plane functions of the network layer are the network-wide logic that controls how a datagram is routed among routers along an end-to-end path from the source host to the destination host. [^topdown]
 
 ### Routing
 The network layer must determine the route or path taken by packets as they flow from a sender to a receiver.[^topdown]
 
 ## Tools
+- [lent: The FLExible Network Tester](https://flent.org/) ([GitHub](https://github.com/tohojo/flent))
+
 - [查看我的 IP 地址 | 查询本机 IP 地址及归属地 | 查看 DNS 出口 IP | 查看递归 DNS 信息 | 测试 CDN 命中节点 | Sukka | https://ip.skk.moe](https://ip.skk.moe/)
 
 

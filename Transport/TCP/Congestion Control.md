@@ -75,7 +75,9 @@ Internet         CUBIC
 >
 > Google engineers plan to propose mainlining BBRv3 into the Linux kernel TCP/networking code in August. The plan is to upgrade the BBR module to the v3 code from v1.
 
-Queuing disciplines:
+[BBR and FQ As new Defaults - Feature requests - VyOS Forums](https://forum.vyos.io/t/bbr-and-fq-as-new-defaults/12344)
+
+[Queuing disciplines](../../Internet/Forwarding/Scheduling.md):
 - [Linux Kernel-Tuning \[defect.ch - Wiki\]](https://wiki.defect.ch/os/linux/kernel-tuning)
 
   > You will find a lot of instructions which set “net.core.default_qdisc” to “fq”. The reason is, the first implementation was specifically designed for fq and you can still find references in the source code:
@@ -94,13 +96,7 @@ Queuing disciplines:
   > 
   > Without pacing in place, BBR would behave like the "BDP-scale line-rate burst" approach mentioned in that section. And beyond that, BBR without pacing keeps more packets in flight than the algorithm intends (because the algorithm periodically uses lower pacing rates to drain packets out of the bottleneck queue).
 
-- [BBR and FQ As new Defaults - Feature requests - VyOS Forums](https://forum.vyos.io/t/bbr-and-fq-as-new-defaults/12344)
-
-  > “sch_fq is for TCP servers, fq_codel for routers” - Eric Dumazet (who is the author of both).
-
 - What about `pfifo_fast`?
-
-- `sysctl net.core.default_qdisc`
 
 Linux:
 ```conf
