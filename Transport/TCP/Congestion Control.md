@@ -134,6 +134,32 @@ Get-NetTCPSetting | Select SettingName, CongestionProvider
 WSL1:
 - [Ubuntu on Windows WSL does not have tcp congestion. - Issue #1061 - esnet/iperf](https://github.com/esnet/iperf/issues/1061)
 
+### [Brutal](https://github.com/apernet/tcp-brutal)
+[Hakcer News](https://news.ycombinator.com/item?id=38164574)
+
+> Kernel version 4.9 or later is required, version 5.8 or later is recommended. **If your kernel version is earlier than 5.8, only IPv4 is supported.** [(lack of exported symbol `tcpv6_prot`)](https://github.com/torvalds/linux/commit/6abde0b241224347cd88e2ae75902e07f55c42cb#diff-8b341e52e57c996bc4f294087ab526ac0b1c3c47e045557628cc24277cbfda0dR2124)
+> 
+> **⚠️ Warning** For systems with kernel versions lower than 4.13, you MUST manually enable fq pacing (`tc qdisc add dev eth0 root fq pacing`), otherwise TCP Brutal will not work properly.
+
+> An important aspect to understand about TCP Brutal's rate setting is that it applies to each individual connection. **This makes it suitable only for protocols that support multiplexing (mux), which allows a client to consolidate all proxy connections into a single TCP connection.** For protocols that require a separate connection for each proxy connection, using TCP Brutal will overwhelm the receiver if multiple connections are active at the same time.
+
+[tcp-brutal与udp-brutal - Issue #3 - apernet/tcp-brutal](https://github.com/apernet/tcp-brutal/issues/3)
+> 个人使用感受，在同样的线路上跑tcp brutal没有udp brutal效果明显。tcp brutal速度不稳定也达不到设定速度
+
+[都 2024 年了，该更新翻墙技术了](https://keakon.top/2024/01/12/%E9%83%BD2024%E5%B9%B4%E4%BA%86%EF%BC%8C%E8%AF%A5%E6%9B%B4%E6%96%B0%E7%BF%BB%E5%A2%99%E6%8A%80%E6%9C%AF%E4%BA%86)
+> 我试了下只在服务端开启，也能使下载速度从约 10KB/s 提升到约 2MB/s。
+
+Nginx: [brutal-nginx: Using TCP Brutal congestion control algorithm in NGINX](https://github.com/sduoduo233/brutal-nginx)
+```nginx
+# NGX_HTTP_MAIN_CONF|NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_CONF_FLAG
+
+tcp_brutal on;
+# Send rate in bytes per second
+tcp_brutal_rate 1048576;
+```
+
+[sing-box TCP Brutal配置-荒岛](https://lala.im/8902.html)
+
 ## 吞吐量
 $$\begin{align} \\
 \text{连接平均吞吐量}
