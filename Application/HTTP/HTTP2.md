@@ -31,6 +31,9 @@
 
 [Benchmarking HTTP/2 vs. HTTP/1.1: Results Not as Expected : r/node](https://www.reddit.com/r/node/comments/1cemrgp/benchmarking_http2_vs_http11_results_not_as/)
 
+[Why Turning on HTTP/2 Was a Mistake](https://lucid.co/techblog/2019/04/10/why-turning-on-http2-was-a-mistake) ([Hacker News](https://news.ycombinator.com/item?id=19720962))
+- Request spikes
+
 ## Nginx
 [Module `ngx_http_v2_module`](https://nginx.org/en/docs/http/ngx_http_v2_module.html)
 ```nginx

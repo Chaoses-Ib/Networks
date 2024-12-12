@@ -134,6 +134,9 @@ Get-NetTCPSetting | Select SettingName, CongestionProvider
 WSL1:
 - [Ubuntu on Windows WSL does not have tcp congestion. - Issue #1061 - esnet/iperf](https://github.com/esnet/iperf/issues/1061)
 
+Discussions:
+- [为什么BBR完全没效果？-OPENWRT专版-恩山无线论坛](https://www.right.com.cn/forum/thread-567248-1-1.html)
+
 ### [Brutal](https://github.com/apernet/tcp-brutal)
 [Hakcer News](https://news.ycombinator.com/item?id=38164574)
 
