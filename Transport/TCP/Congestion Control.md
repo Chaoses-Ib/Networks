@@ -42,6 +42,18 @@
 一旦发生超时，与慢启动状态执行相同操作。
 
 ## Algorithms
+- Loss-based
+  - NewReno
+  - BIC
+    - CUBIC
+- Delay-based
+  - VegasCopa
+- Hybird (model-based)
+  - YeAH
+  - [BBR](#bbr)
+- Bandwidth-based
+  - [Brutal](#brutal)
+
 Linux:
 - BIC is used by default in Linux kernels 2.6.8 through 2.6.18. (August 2004 -- September 2006)
 - CUBIC is used by default in Linux kernels since version 2.6.19. (November 2006)
@@ -138,6 +150,8 @@ Discussions:
 - [为什么BBR完全没效果？-OPENWRT专版-恩山无线论坛](https://www.right.com.cn/forum/thread-567248-1-1.html)
 
 ### [Brutal](https://github.com/apernet/tcp-brutal)
+[Hysteria 是多倍发包吗？ - Hysteria 2](https://hysteria.network/zh/docs/misc/Hysteria-Brutal/)
+
 [Hakcer News](https://news.ycombinator.com/item?id=38164574)
 
 > Kernel version 4.9 or later is required, version 5.8 or later is recommended. **If your kernel version is earlier than 5.8, only IPv4 is supported.** [(lack of exported symbol `tcpv6_prot`)](https://github.com/torvalds/linux/commit/6abde0b241224347cd88e2ae75902e07f55c42cb#diff-8b341e52e57c996bc4f294087ab526ac0b1c3c47e045557628cc24277cbfda0dR2124)

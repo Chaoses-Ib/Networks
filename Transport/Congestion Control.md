@@ -1,4 +1,6 @@
 # Congestion Control
+[Network congestion - Wikipedia](https://en.wikipedia.org/wiki/Network_congestion)
+
 拥塞网络的代价[^topdown]：
 - 当分组的到达速率接近链路容量时，分组会经历巨大的排队延迟
 - 发送方必须执行重传以补偿因缓存溢出而丢弃的分组
@@ -10,7 +12,8 @@
 - End-to-end congestion control（端到端拥塞控制）  
   端系统通过对网络的观察来推断拥塞。
 
-  - [TCP](Congestion%20Control.md)
+  - [TCP](TCP/Congestion%20Control.md)
+  - [QUIC](QUIC/Congestion.md)
 - Network-assisted congestion control（网络辅助的拥塞控制）  
   路由器向发送方提供拥塞状态反馈。
 

@@ -6,11 +6,7 @@
 > As of February 2024, it is now used on 30.9% of websites and is supported by most web browsers, i.e. (at least partially) supported by 97% of users.
 
 ## Libraries
-C++:
-- [XQUIC Library released by Alibaba is a cross-platform implementation of QUIC and HTTP/3 protocol.](https://github.com/alibaba/xquic)
-
-Go:
-- [quic-go: A QUIC implementation in pure Go](https://github.com/quic-go/quic-go)
+[→QUIC libraries](../../Transport/QUIC/README.md#libraries)
 
 ## Servers
 ### Nginx
