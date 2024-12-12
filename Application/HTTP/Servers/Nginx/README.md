@@ -78,7 +78,16 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
     - `--http-uwsgi-temp-path=/var/lib/nginx/uwsgi`
 
 - [The Tengine Web Server](https://tengine.taobao.org/)
+  - HTTP/3: [→ngx\_http\_xquic\_module](../../HTTP3.md#nginx)
+  - XUDP: [mod_xudp](https://tengine.taobao.org/document_cn/xudp_cn.html)
+  - 异步打印日志及自动回滚: [ngx_log_pipe](https://tengine.taobao.org/document_cn/ngx_log_pipe_cn.html)
+  - [本地DNS缓存](https://tengine.taobao.org/document_cn/core_cn.html)
+  - [ngx\_http\_limit\_req\_module](https://tengine.taobao.org/document_cn/http_limit_req_cn.html)
+  - Tengine-Ingress: 配置动态无损生效
+  - 部分文档只有中文
   - 阿里云 CDN
+
+  [编译和安装](https://tengine.taobao.org/document_cn/install_cn.html)
 
 - [nginx-rtmp-module: NGINX-based Media Streaming Server](https://github.com/arut/nginx-rtmp-module)
   - GitHub CI/CD: [elijahr2411/nginx-rtmp-module](https://github.com/elijahr2411/nginx-rtmp-module)
