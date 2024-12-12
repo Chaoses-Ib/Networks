@@ -1,6 +1,23 @@
 # Hostnames
 [Wikipedia](https://en.wikipedia.org/wiki/Hostname)
 
+## localhost
+[Wikipedia](https://en.wikipedia.org/wiki/Localhost)
+
+```hosts
+127.0.0.1    localhost
+::1          localhost
+```
+
+[Let 'localhost' be localhost.](https://datatracker.ietf.org/doc/html/draft-west-let-localhost-be-localhost-04) ([Hacker News](https://news.ycombinator.com/item?id=14949978))
+> Some genius at my company decided that ~180,000 Windows endpoints needed "localhost" removed from their hosts file, which has resulted in millions of requests per minute for localhost hitting our resolvers just to return 127.0.0.1.
+>
+> My guess is that it was some hack they tried to disable IPv6, but aside from the insane load it added to the DNS infrastructure, the other result is that if these machines talk to a malicious resolver, their traffic destined for the loopback interface could end up going anywhere and being captured by anyone.
+
+See also [IPv6 transition mismatch problem](IPv6/Transition/README.md#mismatch-problem).
+
+[sockets - What is the difference between 127.0.0.1 and localhost - Stack Overflow](https://stackoverflow.com/questions/7382602/what-is-the-difference-between-127-0-0-1-and-localhost)
+
 ## Linux
 - `/etc/hostname`
   - CLI: `hostname`

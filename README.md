@@ -26,6 +26,7 @@
   - [Addressing](Internet/IPv4/Addressing.md)
   - [Routing](Internet/IPv4/Routing.md)
 - [IPv6](Internet/IPv6/README.md)
+  - [IPv6 Transition Mechanisms](Internet/IPv6/Transition/README.md)
 - [Forwarding](Internet/Forwarding/README.md)
   - [Packet Scheduling](Internet/Forwarding/Scheduling.md)
 - [Internet Control Message Protocol](Internet/ICMP/README.md)

@@ -181,6 +181,9 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 不过 TCP 断开连接时有通知，如果每条消息都使用独立连接，也可以将 TCP 用作基于包的协议，尽管开销很大。 
 
+## Performance
+[TCP/IP performance known issues - Windows Server | Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/tcpip-performance-known-issues)
+
 
 [^wiki]: [Transmission Control Protocol - Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)
 [^topdown]: Computer Networking：A Top-Down Approach
