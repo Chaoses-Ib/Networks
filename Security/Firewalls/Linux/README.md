@@ -4,6 +4,27 @@
 ## iptables
 [Wikipedia](https://en.wikipedia.org/wiki/Iptables)
 
+- Listing
+
+  ```sh
+  iptables -nvL
+  iptables -t nat -nvL
+  ```
+  [iptables does not list rules i have created - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/1879/iptables-does-not-list-rules-i-have-created)
+
+- Clearing
+
+  [linux - best way to clear all iptables rules - Server Fault](https://serverfault.com/questions/200635/best-way-to-clear-all-iptables-rules)
+  ```sh
+  iptables -P INPUT ACCEPT
+  iptables -P FORWARD ACCEPT
+  iptables -P OUTPUT ACCEPT
+  iptables -t nat -F
+  iptables -t mangle -F
+  iptables -F
+  iptables -X
+  ```
+
 ### Persisting rules
 ```sh
 sudo apt install iptables-persistent
