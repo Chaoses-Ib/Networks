@@ -73,6 +73,13 @@ Compat           NewReno
 Datacenter       CUBIC
 Internet         CUBIC
 ```
+```pwsh
+netsh int tcp set supplemental Template=Internet CongestionProvider=cubic
+netsh int tcp set supplemental Template=Datacenter CongestionProvider=cubic
+netsh int tcp set supplemental Template=Compat CongestionProvider=newreno
+netsh int tcp set supplemental Template=DatacenterCustom CongestionProvider=cubic
+netsh int tcp set supplemental Template=InternetCustom CongestionProvider=cubic
+```
 
 ### BBR
 [Wikipedia](https://en.wikipedia.org/wiki/TCP_congestion_control#TCP_BBR), [GitHub](https://github.com/google/bbr)
@@ -86,6 +93,15 @@ Internet         CUBIC
 > Google found BBRv3 to have a 12% reduction in the packet re-transmit rate and a slight latency improvement.
 >
 > Google engineers plan to propose mainlining BBRv3 into the Linux kernel TCP/networking code in August. The plan is to upgrade the BBR module to the v3 code from v1.
+
+[BBR BBR2 BBR Plus的区别是什么？](https://www.nodeseek.com/post-91498-1)
+> 1. BBR就是官方版本的，速度不会有明显提升，但是丢包的时候会比传统算法表现好很多，不会下降太多速度
+> 2. 直接说BBR2其实有歧义，实际上有两个，一个指的是官方做的2，现在已经到3了还是多少，没看，另外一个是国人魔改过的，魔改的那个版本，断流特别严重，基本上无法使用
+> 3. BBRPLUS是另一个国人魔改的，速度会有明显提升，但是他改的那个逻辑有问题，每隔一段时间一定会断流，要等一段时间才能正常使用
+> 
+> 推荐你使用官方版本的，如果你非要速度快一些可以尝试自己改一下自己服务端当前内核版本的bbr的c代码里面判断拥塞和快速增长的那几个值，改完以后编译一下内核就能用了。
+
+[哪个BBR/BBR PLUS/BBR2加速脚本最快最好 最新脚本及设置详细评测 - 虾皮路](https://www.xiapilu.com/web/web-tutorial/bbr-vs-plus-vs-bbr2.html)
 
 [BBR and FQ As new Defaults - Feature requests - VyOS Forums](https://forum.vyos.io/t/bbr-and-fq-as-new-defaults/12344)
 
@@ -132,7 +148,7 @@ bbr
 
 [Linux Kernel-Tuning \[defect.ch - Wiki\]](https://wiki.defect.ch/os/linux/kernel-tuning)
 
-Windows 11 22H2:
+Windows 11 22H2 (Windows Server 2025):
 ```pwsh
 netsh int tcp set supplemental Template=Internet CongestionProvider=bbr2
 netsh int tcp set supplemental Template=Datacenter CongestionProvider=bbr2
@@ -142,6 +158,21 @@ netsh int tcp set supplemental Template=InternetCustom CongestionProvider=bbr2
 
 Get-NetTCPSetting | Select SettingName, CongestionProvider
 ```
+- 24H2
+
+  [Windows 11 24H2 and BBR2 : r/Windows11](https://www.reddit.com/r/Windows11/comments/1h07kj5/windows_11_24h2_and_bbr2/)
+  > New 24H2 BBR2 bug is intermittent connectivity. Id get random `NS_BINDING_ABORT` errors on my Firefox. My Visual Studio Code Remote development plugin gets stuck at connecting with this error: `failed to set up socket for dynamic port forward to remote port =: proxy connection timed out.`. My Messenger (UWP) app is half broken (new messages aren't appearing)
+  > 
+  > Bugs since 23H2: Broken Hyper-V virtual machine connection.
+
+  > It breaks 'localhost' (the loopback interface) TCP traffic leading to slow or unresponsive connections within the same machine.
+  
+  [Cannot connect to projects in WSL after upgrading to Windows 11 24H2 if BBR2 is enabled - Issue #10540 - microsoft/vscode-remote-release](https://github.com/microsoft/vscode-remote-release/issues/10540#issuecomment-2524627462)
+  > 昨天把Win11升级到24H2了，记录一下升级后遇到的问题及解决方法：
+  > 1. VSCode WSL连接超时失败  
+  >    24H2的BBR2实现有问题，reset回CUBIC即可
+
+  HTTP SSE broken
 
 WSL1:
 - [Ubuntu on Windows WSL does not have tcp congestion. - Issue #1061 - esnet/iperf](https://github.com/esnet/iperf/issues/1061)
