@@ -147,8 +147,8 @@ JS:
 - [sveltekit-sse: Server Sent Events with SvelteKit](https://github.com/razshare/sveltekit-sse)
 
 Rust:
-- [reqwest-eventsource: Helper to build an Eventsource using reqwest](https://github.com/jpopesculian/reqwest-eventsource)
 - [eventsource-stream: A basic building block for building an Eventsource from a Stream of bytes array like objects](https://github.com/jpopesculian/eventsource-stream)
+  - [reqwest-eventsource: Helper to build an Eventsource using reqwest](https://github.com/jpopesculian/reqwest-eventsource)
 
 Python:
 - [sseclient: Pure-Python Server Side Events (SSE) client](https://github.com/mpetazzoni/sseclient)
