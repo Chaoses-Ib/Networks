@@ -23,6 +23,8 @@
 - 蓝易云
 - 火山云
 
+[请问一下各位大佬 融合CDN程序有吗 或者代理有系统的-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-684470-1-1.html)
+
 [V2EX › CDN](https://v2ex.com/go/cdn)
 
 Discussions:
@@ -276,8 +278,15 @@ Pricing:
 ## 蓝奏云
 - 阿里云
 - 0.15~0.06~0.02元/G
+
+  [融合云cdn的套路，大家使用的时候注意点-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-799540-1-1.html)
+
 - 上传: https://up.woozooo.com/html5up.php （阿里云杭州）
+  - [zaxtyson/LanZouCloud-CMD: 🚀 蓝奏云 CMD | 无限制上传](https://github.com/zaxtyson/LanZouCloud-CMD)
 - 下载: https://developer-oss.lanrar.com/file/? （阿里云杭州）
+  - [5ime/Lanzou\_API: 蓝奏云获取直链/蓝奏云直链解析](https://github.com/5ime/Lanzou_API)
+
+[有大佬用过蓝奏云的CDN吗？看起来价格还行。-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-639445-1-1.html)
 
 ## [火伞云](https://www.huosanyun.com/)
 > 火伞云代理国内厂商天翼云、火山云、阿里云、腾讯云、华为云、百度云等，国外厂商亚马逊、谷歌等
