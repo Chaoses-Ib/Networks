@@ -37,6 +37,7 @@
   - [Pingora](Internet/Proxy/Pingora.md)
 - [Application Acceleration](Internet/Acceleration.md)
 - [Content Delivery Networks](Internet/CDN/README.md)
+  - [China CDNs](Internet/CDN/China.md)
 - [Hostnames](Internet/Hostnames.md)
 - [Domain Name System](Internet/DNS/README.md)
   - [Domain Names](Internet/DNS/Domain%20Names.md)
