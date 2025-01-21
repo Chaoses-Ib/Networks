@@ -1,6 +1,8 @@
 # HTTP/3
 [Wikipedia](https://en.wikipedia.org/wiki/HTTP/3)
 
+[HTTP/3 explained](https://http3-explained.haxx.se/)
+
 [Accelerating UDP packet transmission for QUIC](https://blog.cloudflare.com/accelerating-udp-packet-transmission-for-quic/)
 
 > As of February 2024, it is now used on 30.9% of websites and is supported by most web browsers, i.e. (at least partially) supported by 97% of users.
@@ -30,9 +32,25 @@
 
 - [bilibili/nginx\_quic\_module](https://github.com/bilibili/nginx_quic_module)
 
-### Caddy
+### [Caddy](Servers/Caddy/README.md)
+Based on [quic-go](../../Transport/QUIC/README.md#libraries).
+
+[caddyhttp: Enable HTTP/3 by default by mholt - Pull Request #4707 - caddyserver/caddy](https://github.com/caddyserver/caddy/pull/4707) ([Hacker News](https://news.ycombinator.com/item?id=32768454))
+
+Not enabled with local cert?
+
 [Proposal: export more HTTP/3 related interfaces for caddy plugins to use - Issue #6017 - caddyserver/caddy](https://github.com/caddyserver/caddy/issues/6017)
 
 ## Tools
 - Chrome DevTools
 - [HTTP/3 Check](https://http3check.net/)
+
+  [Caddy not using http3 - Help - Caddy Community](https://caddy.community/t/caddy-not-using-http3/19555/16)
+  > That website is not reliable. They only try an older draft revision of the QUIC protocol. We’ve reached out to them in the past to ask them to fix it, but they still haven’t yet.
+
+- cURL: [HTTP/3 with curl](https://curl.se/docs/http3.html)
+  - `curl --http3-only`
+
+- wget: [Implement HTTP/3 support using QUIC (#553) - Issues - Wget / wget2 - GitLab](https://gitlab.com/gnuwget/wget2/-/issues/553)
+
+[V2: How to test HTTP/3 support? - Help - Caddy Community](https://caddy.community/t/v2-how-to-test-http-3-support/6490)

@@ -17,10 +17,13 @@ How similar are the congestion control of QUIC and TCP?
   - NeoReno
     - [RFC 9002 - QUIC Loss Detection and Congestion Control](https://datatracker.ietf.org/doc/rfc9002/)
 - Hybrid
-  - BBR
+  - [BBR](#bbr)
     - mBBR[^chouchliapinImprovingBBRCongestion2023]
 - Bandwidth-based
   - Brutal
+
+### BBR
+[BBR Congestion Control in QUIC and HTTP/3 ⋆ LiteSpeed Blog](https://blog.litespeedtech.com/2019/10/28/bbr-congestion-control-quic-http-3/)
 
 
 [^chouchliapinImprovingBBRCongestion2023]: Chouchliapin, A. (2023). Improving the BBR congestion control algorithm for QUIC.

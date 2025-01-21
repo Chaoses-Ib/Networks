@@ -13,6 +13,14 @@ C++:
 
 Go:
 - [quic-go: A QUIC implementation in pure Go](https://github.com/quic-go/quic-go)
+  - [Congestion control](https://quic-go.net/docs/quic/congestion-control/): CUBIC
+
+    [implement BBR congestion control - Issue #341 - quic-go/quic-go](https://github.com/quic-go/quic-go/issues/341)
+    - [implement BBRv3 - Issue #4565 - quic-go/quic-go](https://github.com/quic-go/quic-go/issues/4565)
+
+    [Pluggable congestion control - Issue #776 - quic-go/quic-go](https://github.com/quic-go/quic-go/issues/776)
+
+  Forks:
   - [apernet/quic-go at v0.48.1-mod-rename](https://github.com/apernet/quic-go/tree/v0.48.1-mod-rename)
     
     > It uses a fork of quic-go which implemented bbr congestion control, but most of the interfaces are the same as the original quic-go.
@@ -20,5 +28,7 @@ Go:
     [shall we use the quic of hysteria? - Issue #193 - go-gost/gost](https://github.com/go-gost/gost/issues/193)
     
   - [daeuniverse/quic-go: Modified quic-go for https://github.com/mzz2017/softwind](https://github.com/daeuniverse/quic-go)
+
+  Used by [Caddy](../../Application/HTTP/HTTP3.md#caddy)
 
 ## [→HTTP/3](../../Application/HTTP/HTTP3.md)

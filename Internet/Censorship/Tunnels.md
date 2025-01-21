@@ -85,6 +85,7 @@ Servers:
 
 Clients:
 - [Hysteria](https://github.com/HyNetwork/hysteria)
+  - [hysteria2-python: Python bindings for hysteria2.](https://github.com/LorenEteval/hysteria2-python)
 - Clash.Meta
   - 兼容性不太好，Clash 本身 / Tun 模式都可能导致连接失败，可以使用官方 Hysteria 进行排错
 
@@ -131,6 +132,7 @@ Discussions:
   - Web
     - [x-ui: 支持多协议多用户的 xray 面板](https://github.com/vaxilu/x-ui)
       - [xray-ui](https://github.com/qist/xray-ui)
+    - [V2bX: 一个基于多种内核的V2board节点服务端，修改自XrayR](https://github.com/wyx2685/V2bX)
 
 - [sing-box: The universal proxy platform](https://github.com/SagerNet/sing-box)
   - `scoop install sing-box`
@@ -140,10 +142,15 @@ Discussions:
 
 - [Hiddify-Manager: multi-user anti-filtering panel, with an effortless installation and supporting more than 20 protocols to circumvent filtering plus the telegram proxy.](https://github.com/hiddify/Hiddify-Manager)
 
+- [gost: GO Simple Tunnel - a simple tunnel written in golang](https://github.com/go-gost/gost)
+
 Trojan-only:
 - [Trojan](https://github.com/trojan-gfw/trojan) (discontinued)
   - `scoop install trojan`
 - [Trojan-Go](https://github.com/p4gefau1t/trojan-go) (discontinued)
+
+NaiveProxy-only:
+- [NaiveProxy Server: Caddy with forward proxy](https://github.com/jonssonyan/naive)
 
 MTProto-only:
 - [mtg](https://github.com/9seconds/mtg)

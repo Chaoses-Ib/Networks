@@ -30,6 +30,8 @@
   - [Has anybody used Boost ASIO with C++20 coroutine support in any real client/server apps? What wisdom can you share? : r/cpp](https://www.reddit.com/r/cpp/comments/u3igrf/has_anybody_used_boost_asio_with_c20_coroutine/)
   - [Talking Async](https://github.com/chriskohlhoff/talking-async)
 
+- [libhv: 🔥 比libevent/libuv/asio更易用的网络库。A c/c++ network library for developing TCP/UDP/SSL/HTTP/WebSocket/MQTT client/server.](https://github.com/ithewei/libhv)
+
 - [HP-Socket: High Performance TCP/UDP/HTTP Communication Component](https://github.com/ldcsaa/HP-Socket)
 
   Modes: `PUSH`, `PULL`, `PACK`
