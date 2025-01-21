@@ -1,6 +1,8 @@
 # Download
 [Wikipedia](https://en.wikipedia.org/wiki/Download)
 
+[Download.xlsx](Download.xlsx)
+
 ## Parallel downloading
 - [aria2](#aria2)
 - IDM (paid)

@@ -32,6 +32,7 @@
       - 2024-11 [CMI给所有普通线路晚高峰安排了QOS-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1363904-1-1.html)
       - 2024-11 [晚高峰的移动，非CMIN2的小鸡完全没法用了，单线程全部低于20Mbps](https://www.nodeseek.com/post-195648-1)
       - 2024-12 [dmit lax cmin2 晚高峰广东移动单线程大概能跑多少？](https://www.nodeseek.com/post-231423-1)
+      - > cmin2有点伪精品 其实就是高峰期等于闲时的4837 闲时其实差不多
   - China Mobile (AS9808)
 - China Education and Research Network (CERNET, 教育网, AS4538)
 - China Science and Technology Network (CSTNET, 科技网, AS7497)
@@ -63,6 +64,14 @@ Discussions:
   > 
   > 4837晚高峰稳定性较差、丢包率较高，并且它也不是被作为精品线路来卖的，签约单价很大程度上会决定线路的拥堵程度  
   > 而CMIN2和CN2GIA都是被作为精品线路来卖的，签约单价都比较高，晚高峰的稳定性也是难分伯仲的，至于长时间考验线路这个确实没办法，CMIN2毕竟是新出来对标CN2GIA的，但终究是拿来和CN2GIA竞争的，移动也没理由糟蹋这线路，只能说CN2GIA还是以前霸主当太久了，认知的改变是需要时间的
+
+- 2024-07 [有无懂哥科普线路4837、CMI、cn2、GIA、GT、cmin2、9929、cmi知识](https://www.nodeseek.com/post-137012-1)
+
+  > 普通线路一般是cmi 4837 163通过接入国外线路连接机器，美西一般能直连到美西peer，但香港这种就不一定了，特别是电信这种的，不买优化线路会给你绕美；且优先级较低，晚高峰丢包厉害
+  > 
+  > 优化线路一般是三大直接接入机房，高qos等级，美西优化不明显（便宜），但香港能做到直连（死贵），丢包多少取决于你投多少钱，据说高等级qos的163要比CN2GIA还要好
+  > 
+  > 精品线路那就是cn2gia 9929（老网，算是吧） cmin2了，香港基本上天价，我记得ctgcn2得 40刀每月每M吧，这个也有缺点，一是贵，二是国内路由奇葩，特别是电信，北方城市会有163到北京，cn2到上海再出国的奇葩路由，延迟不一定比优化线路低，主打一个稳。
 
 [^china-quality]: [CN2 GIA＞AS9929＞CN2 GT＞AS4837,这个排名靠谱吗 - 全球主机交流论坛](https://hostloc.com/thread-953685-1-1.html)
 

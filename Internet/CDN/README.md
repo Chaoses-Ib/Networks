@@ -8,6 +8,8 @@ A **content delivery network (content distribution network, CDN)** is a geograph
 
 [网站动态内容太多了， CDN 加速简直就是杯水车薪 - V2EX](https://www.v2ex.com/t/1086066)
 
+如果网站的访问频率很低，有可能导致缓存经常失效，需要回源，反而降低了访问速度。
+
 ## Services
 - [Cloudflare](#cloudflare)
 
@@ -29,18 +31,7 @@ China:
 
   > 免费额度：注册账号实名认证，每个月有 10G 的免费 HTTP 流量，因为不支持 HTTPS，因此忽略。另外还有 5 万次动态加速请求数。
 - 又拍云
-- 多吉云：腾讯云、阿里云、华为云、网宿等
-  - 免费：每月 20G（HTTP/HTTPS）、200万次
-  - 0.11元/G，境外 0.22元/G
-
-    怎么谈到原价的一半的？
-  - > 月流量超 5T 可联系客服免除 HTTPS 请求数费用
-  - [缓存规则配置](https://docs.dogecloud.com/cdn/manual-config-cache-rules)
-  - 流量封顶
-  - [IP 访问频率限制](https://docs.dogecloud.com/cdn/manual-config-ip-qps)
-  - DDoS 免单
-
-  [今年双十一你都买了什么云产品？多吉云给大家抽送 10 个 500GB 视频云、CDN 流量包 - V2EX](https://www.v2ex.com/t/1088918)
+- [→多吉云](#多吉云)
 - [缤纷云 Bitiful - 强大低成本的对象存储和CDN服务](https://www.bitiful.com/)
   - 免费：50GB 存储 + 30GB 流量/月 + 20 万次请求/月
   - 公益：提供 50G~5000G/月 的存储与流量支持
