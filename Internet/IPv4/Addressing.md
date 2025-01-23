@@ -41,6 +41,10 @@ CIDR notation | Address range
 172.16.0.0/12 | 172.16.0.0~172.31.255.255
 192.168.0.0/16 | 192.168.0.0~192.168.255.255
 
+## Libraries
+### JS
+- [ipaddr.js: IP address manipulation library in JavaScript](https://github.com/whitequark/ipaddr.js/)
+
 
 [^cidr-wiki]: [Classless Inter-Domain Routing - Wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
 [^private-wiki]: [Private network - Wikipedia](https://en.wikipedia.org/wiki/Private_network)
