@@ -25,6 +25,8 @@
 
 [为什么不应该用 SSL 翻墙](https://gist.github.com/clowwindy/5947691)
 
+需要有效 TLS 证书的协议能间接用作证书有效性监测。
+
 Discussions:
 - 2022-11 [又疯了一个 ip，🧱墙太可恶了 - V2EX](https://v2ex.com/t/895000)
 - 2023-01 [有使用hysteria被疯的兄弟吗？关于hysteria和naiveproxy-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1124064-1-1.html)
@@ -74,7 +76,7 @@ Discussions:
 
 ### [Hysteria](https://github.com/HyNetwork/hysteria/wiki/Protocol)
 - [Hysteria 是多倍发包吗？ - Hysteria 2](https://v2.hysteria.network/zh/docs/misc/Hysteria-Brutal/)
-- 需要域名
+- 需要域名、未过期的 TLS 证书
 
 Servers:
 - [Hysteria](https://github.com/HyNetwork/hysteria)

@@ -27,7 +27,5 @@ The network layer must determine the route or path taken by packets as they flow
 ## Tools
 - [lent: The FLExible Network Tester](https://flent.org/) ([GitHub](https://github.com/tohojo/flent))
 
-- [查看我的 IP 地址 | 查询本机 IP 地址及归属地 | 查看 DNS 出口 IP | 查看递归 DNS 信息 | 测试 CDN 命中节点 | Sukka | https://ip.skk.moe](https://ip.skk.moe/)
-
 
 [^topdown]: Computer Networking：A Top-Down Approach

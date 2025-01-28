@@ -22,6 +22,7 @@
 - [Virtual Private Networks](Link/VPN/README.md)
 
 ## [Internet](Internet/README.md)
+- [IP Addresses](Internet/Addresses.md)
 - [IPv4](Internet/IPv4/README.md)
   - [Addressing](Internet/IPv4/Addressing.md)
   - [Routing](Internet/IPv4/Routing.md)
