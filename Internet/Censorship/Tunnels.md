@@ -88,8 +88,24 @@ Servers:
 Clients:
 - [Hysteria](https://github.com/HyNetwork/hysteria)
   - [hysteria2-python: Python bindings for hysteria2.](https://github.com/LorenEteval/hysteria2-python)
-- Clash.Meta
-  - 兼容性不太好，Clash 本身 / Tun 模式都可能导致连接失败，可以使用官方 Hysteria 进行排错
+- [Clash.Meta](https://wiki.metacubex.one/config/proxies/hysteria/)
+  - Cert verify problem
+  
+    Cert verify 至少在 Android 上的实现有问题，可通过 `skip-cert-verify: true` 跳过。
+
+    <details>
+
+    - 兼容性不太好，Clash 本身 / Tun 模式都可能导致连接失败，可以使用官方 Hysteria 进行排错
+    - Android: ["测速" 和 "代理集" 以及网络问题 - Discussion #305](https://github.com/MetaCubeX/ClashMetaForAndroid/discussions/305)
+  
+    [hysteria, 用户在首次链接的时候报WARNING\[TCP\] dial GENERAL (match Match()) to zerossl.crt.sectigo.com:80 error: CRYPTO\_ERROR (0x12a): x509: "USERTrust ECC Certification Authority" certificate is not standards compliant - Issue #265 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/265)
+    </details>
+- sing-box
+  - sing-box
+  - NekoBox for Android: 可跳过证书验证
+  - Hiddify-Next
+
+[第三方应用 - Hysteria 2](https://v2.hysteria.network/zh/docs/getting-started/3rd-party-apps/)
 
 Discussions:
 - 2022-04 [使用 Hysteria 的感受 - V2EX](https://www.v2ex.com/t/844842)
@@ -184,13 +200,27 @@ Windows:
   - Clash.Meta
     - Supported protocols: HTTP(S), SOCKS5, Shadowsocks(R), VMess, VLESS, Trojan, Snell, TUIC, Hysteria
 
+- sing-box
+
 - [Hiddify-Next: Multi-platform auto-proxy client, supporting Sing-box, X-ray, TUIC, Hysteria, Reality, Trojan, SSH etc. It's an open-source, secure and ad-free.](https://github.com/hiddify/hiddify-next)
+  - 配置格式: sing-box, Clash, Clash.Meta, V2Ray
+  - Flutter
+
+  [Migrate to singbox - hiddify/hiddify-app@684acc5](https://github.com/hiddify/hiddify-app/commit/684acc555db179594cdc13a67bdb65ce54590771)
 
 - [Leaf: A versatile and efficient proxy framework with nice features suitable for various use cases.](https://github.com/eycorsican/leaf)
   - [Maple: A lightweight Universal Windows proxy app based on https://github.com/eycorsican/leaf](https://github.com/YtFlow/Maple)
 
 - [YtFlowCore: A modern proxy framework, core of YtFlow.](https://github.com/YtFlow/YtFlowCore)
   - [YtFlowApp: A network proxy running on Universal Windows Platform, powered by YtFlowCore.](https://github.com/YtFlow/YtFlowApp)
+
+Android:
+- [NekoBox for Android: sing-box / universal proxy toolchain for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid)
+  - 配置格式: sing-box, Clash, Clash.Meta, v2rayN, SS (不支持 SSR)
+  - 可单独统计各节点的使用流量
+  - 可能出现测速跑不通，要实际用了才能测
+
+  [NB4A-配置 - MatsuriDayo](https://matsuridayo.github.io/nb4a-configuration/)
 
 ## Subscription
 Subscription converters:
@@ -200,3 +230,7 @@ Subscription converters:
     - [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io/)
   - [stilleshan/subweb](https://sub.ops.ci/) ([GitHub](https://github.com/stilleshan/subweb))
 - [JRQLS/ToClash](https://github.com/JRQLS/ToClash): SS
+
+sing-box:
+- [clash2singbox: 将 clash.meta 格式的配置文件或链接转换为 sing-box 格式](https://github.com/xmdhs/clash2singbox)
+  - [clash 订阅链接转 sing-box](https://clash2sfa.xmdhs.com/)
