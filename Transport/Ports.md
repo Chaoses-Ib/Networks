@@ -64,3 +64,32 @@ table inet hysteria_porthopping {
 
 [端口跳跃 - Hysteria 2](https://v2.hysteria.network/zh/docs/advanced/Port-Hopping/)
 > 中国用户有时报告运营商会阻断或限速 UDP 连接。不过，这些限制往往仅限单个端口。端口跳跃可用作此情况的解决方法。
+
+## Port leak
+- TCP port leak
+- UDP port leak
+
+  e.g. MSI.CentralServer v3.2024.1202.1
+
+## Port exhaustion
+- TCP port exhaustion
+- UDP port exhaustion
+  - DNS query fails
+
+    [\[BUG\] 打开tun模式一段时间后浏览器无法上网 - Issue #2398 - clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev/issues/2398)
+  - QQ CPU 占有率高
+
+```sh
+[UDP] dial DIRECT (match GeoIP/cn) 198.18.0.1:1234 --> 114.245.33.144:8000 error: listen udp :0: bind: An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full.
+```
+[c# - "An operation on a socket could not be performed because the system lacked sufficient buffer space or because a queue was full" - Stack Overflow](https://stackoverflow.com/questions/4415175/an-operation-on-a-socket-could-not-be-performed-because-the-system-lacked-suffi)
+
+Tools:
+- `netstat -anob`
+- System Informer
+
+[TCP/IP port exhaustion troubleshooting - Windows Client | Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/tcp-ip-port-exhaustion-troubleshooting)
+
+[Port Exhaustion and You (or, why the Netstat tool is your friend) | Microsoft Learn](https://learn.microsoft.com/en-us/archive/blogs/askds/port-exhaustion-and-you-or-why-the-netstat-tool-is-your-friend)
+
+[How to stop running out of ephemeral ports and start to love long-lived connections](https://blog.cloudflare.com/how-to-stop-running-out-of-ephemeral-ports-and-start-to-love-long-lived-connections/)
