@@ -105,6 +105,7 @@ Python:
 - [Linux](OS/Linux/README.md)
 - [Windows](OS/Windows/README.md)
   - [Windows Sockets (Winsock)](OS/Windows/Winsock.md)
+- [Hyper-V](OS/Hyper-V/README.md)
 - [Windows Subsystem for Linux 2 (WSL2)](OS/WSL2/README.md)
 
 ## Telephone
