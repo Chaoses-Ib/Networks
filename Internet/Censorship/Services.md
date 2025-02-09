@@ -9,6 +9,19 @@
 - [机场测速 \[SS/SSR/V2Ray\] 【移动】纯测速图 更新中](https://www.duyaoss.com/archives/1031/)
 
 ## List
+- [橘子TG代理白嫖频道 | MTProto｜节点｜VPN｜订阅｜资源分享 免费节点](https://t.me/juzibaipiao)
+  ```
+  Clash Verge/Shadowrocket/Nekobox/OpenClash订阅
+  https://clv.lshan.eu.org/2025/v9/c.yaml
+
+  V2rayN/V2rayNG/Shadowrocket订阅
+  https://clv.lshan.eu.org/2025/v9/v.txt
+
+
+  备用订阅链接（不到必要的时间不要使用）
+  https://d1.mk/xPv6wHv
+  ```
+
 - [CNIX（薯条）](https://support.dellcomputer.online/)
   
   [【中高端】薯条(CNIX):25元204.8G，全iplc/iepl国内顶尖机场，有游戏节点，晚高峰专线8K - 性价比机场测速](https://duangks.com/archives/32/)
