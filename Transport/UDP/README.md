@@ -21,7 +21,10 @@ None
 
   没想到还有这种狗事
 
-[wangyu-/udp2raw: A Tunnel which Turns UDP Traffic into Encrypted UDP/FakeTCP/ICMP Traffic by using Raw Socket](https://github.com/wangyu-/udp2raw)
+Circumvention:
+- UDP over TCP
+  - [udp2raw: A Tunnel which Turns UDP Traffic into Encrypted UDP/FakeTCP/ICMP Traffic by using Raw Socket](https://github.com/wangyu-/udp2raw)
+- [→Port hopping](../Ports/Hopping.md)
 
 ## UDP-based protocols
 - [DHCP](../../Internet/DHCP/README.md)

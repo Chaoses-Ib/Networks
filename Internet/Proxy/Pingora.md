@@ -7,6 +7,7 @@
 [Windows support - Issue #342 - cloudflare/pingora](https://github.com/cloudflare/pingora/issues/342)
 
 [pingap: A reverse proxy like nginx, built on pingora, simple and efficient.](https://github.com/vicanso/pingap)
+- [你好，这个项目支持4层tcp、udp代理吗？ - Issue #35](https://github.com/vicanso/pingap/issues/35)
 
 [River: A Reverse Proxy Application based on the pingora library from Cloudflare.](https://github.com/memorysafety/river) (inactive)
 

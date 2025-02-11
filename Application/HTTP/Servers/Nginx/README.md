@@ -118,6 +118,8 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 - > Only the `select()` and `poll()` (1.15.9) connection processing methods are currently used, so high performance and scalability should not be expected.
   - [hello, nginx for windows problem with multithreading : r/nginx](https://www.reddit.com/r/nginx/comments/1adqgmw/hello_nginx_for_windows_problem_with/)
 - > The UDP proxy functionality is not supported.
+
+  [dns - Error `nginx: [emerg] invalid parameter "udp" in /etc/nginx/sites-enabled/proxy` - Stack Overflow](https://stackoverflow.com/questions/74786396/error-nginx-emerg-invalid-parameter-udp-in-etc-nginx-sites-enabled-proxy)
 - > nginx/Windows uses the directory where it has been run as the prefix for relative paths in the configuration.
 
 [Installing Nginx on Windows --- A Step-by-Step Guide | by Chandramathi Muthuraj | Medium](https://medium.com/@chandramuthuraj/installing-nginx-on-windows-a-step-by-step-guide-6750575c63e2)

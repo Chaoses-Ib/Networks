@@ -39,32 +39,6 @@ HTTP/HTTPS:
 ### HTTP routing
 Nginx: [Nginx: How do I forward an HTTP request to another port? - Server Fault](https://serverfault.com/questions/536576/nginx-how-do-i-forward-an-http-request-to-another-port)
 
-## Port hopping
-```sh
-# IPv4
-sudo iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j REDIRECT --to-ports 443
-# IPv6
-sudo ip6tables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j REDIRECT --to-ports 443
-```
-[linux - iptables error: unknown option --dport - Server Fault](https://serverfault.com/questions/563033/iptables-error-unknown-option-dport)
-
-nftables:
-```nginx
-define INGRESS_INTERFACE="eth0"
-define PORT_RANGE=20000-50000
-define HYSTERIA_SERVER_PORT=443
-
-table inet hysteria_porthopping {
-  chain prerouting {
-    type nat hook prerouting priority dstnat; policy accept;
-    iifname $INGRESS_INTERFACE udp dport $PORT_RANGE counter redirect to :$HYSTERIA_SERVER_PORT
-  }
-}
-```
-
-[端口跳跃 - Hysteria 2](https://v2.hysteria.network/zh/docs/advanced/Port-Hopping/)
-> 中国用户有时报告运营商会阻断或限速 UDP 连接。不过，这些限制往往仅限单个端口。端口跳跃可用作此情况的解决方法。
-
 ## Port leak
 - TCP port leak
 - UDP port leak
