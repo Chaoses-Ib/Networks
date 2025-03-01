@@ -115,8 +115,16 @@ Desktop:
   
   Forks:
   - [Clash Verge Rev: Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)](https://github.com/clash-verge-rev/clash-verge-rev)
+    - Tauri v2
+    - 轻量模式: 655 MiB, 0.95% CPU → 153 MiB, 0.11% CPU
+      - [\[Feature\] 轻量模式加入托盘点击右键的上拉框 - Issue #2789](https://github.com/clash-verge-rev/clash-verge-rev/issues/2789)
+      - [\[Feature\] 增加一个轻量模式的快捷键 - Issue #2808](https://github.com/clash-verge-rev/clash-verge-rev/issues/2808)
     - Logs 位于 `%APPDATA%\io.github.clash-verge-rev.clash-verge-rev\logs`，**不会**自动清理，会增大空间占用以及隐私泄露风险。可以调高 Log Level 来避免快速占用大量空间，或者直接调整为 Silent。
+    - [clash-verge-rev/UPDATELOG.md](https://github.com/clash-verge-rev/clash-verge-rev/blob/dev/UPDATELOG.md)
+  
   - [Clash Nyanpasu: Clash Nyanpasu! (∠・ω< )⌒☆​](https://github.com/keiko233/clash-nyanpasu)
+    - Tauri v2, egui
+  
 - ~~[Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)~~
   - 内存占用约 240 MiB。
 
@@ -135,3 +143,7 @@ Android:
 
 - [FlClash: A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.](https://github.com/chen08209/FlClash)
   - Flutter
+
+## [ClashRS](https://github.com/Watfaq/clash-rs)
+- [known transports/protocols (unimplemented) - Issue #190 - Watfaq/clash-rs](https://github.com/Watfaq/clash-rs/issues/190)
+- [disable hysteria brutal algo? - Issue #716 - Watfaq/clash-rs](https://github.com/Watfaq/clash-rs/issues/716)
