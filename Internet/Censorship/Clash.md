@@ -148,5 +148,33 @@ Android:
   - Flutter
 
 ## [ClashRS](https://github.com/Watfaq/clash-rs)
+- Windows: 21.6 MiB
+  - `--no-default-features`: 14.5 MiB
+    ```rust
+    File  .text     Size Crate
+    13.2%  19.8%   1.9MiB clash_lib
+    10.1%  15.2%   1.5MiB std
+    6.1%   9.2% 904.4KiB tokio
+    3.0%   4.5% 442.7KiB h2
+    2.7%   4.0% 394.0KiB axum
+    2.6%   3.9% 389.4KiB rustls
+    2.0%   3.0% 295.7KiB tracing
+    1.8%   2.7% 269.1KiB regex_automata
+    1.5%   2.2% 216.8KiB quinn_proto
+    1.3%   2.0% 194.8KiB clap_builder
+    1.3%   2.0% 194.3KiB regex_syntax
+    1.2%   1.8% 175.0KiB serde_yaml
+    1.1%   1.7% 167.9KiB hyper
+    1.1%   1.6% 157.3KiB hickory_proto
+    1.1%   1.6% 156.3KiB hyper_util
+    1.0%   1.5% 145.1KiB hickory_server
+    0.9%   1.3% 131.3KiB aho_corasick
+    0.9%   1.3% 127.7KiB hashbrown
+    0.7%   1.1% 105.3KiB futures_util
+    0.6%   0.9%  86.4KiB quinn
+    11.5%  17.3%   1.7MiB And 174 more crates. Use -n N to show more.
+    66.5% 100.0%   9.6MiB .text section size, the file size is 14.5MiB
+    ```
+
 - [known transports/protocols (unimplemented) - Issue #190 - Watfaq/clash-rs](https://github.com/Watfaq/clash-rs/issues/190)
 - [disable hysteria brutal algo? - Issue #716 - Watfaq/clash-rs](https://github.com/Watfaq/clash-rs/issues/716)

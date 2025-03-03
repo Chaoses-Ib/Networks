@@ -100,6 +100,7 @@ Clients:
   
     [hysteria, 用户在首次链接的时候报WARNING\[TCP\] dial GENERAL (match Match()) to zerossl.crt.sectigo.com:80 error: CRYPTO\_ERROR (0x12a): x509: "USERTrust ECC Certification Authority" certificate is not standards compliant - Issue #265 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/265)
     </details>
+- ClashRS
 - sing-box
   - sing-box
   - NekoBox for Android: 可跳过证书验证
