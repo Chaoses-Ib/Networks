@@ -281,6 +281,27 @@ http {
 ### Templates
 [Understanding Config Templates | NGINX Documentation](https://docs.nginx.com/nginx-management-suite/nim/about/templates/config-templates/)
 
+### Inheritance
+[Understanding the Nginx Configuration Inheritance Model](https://blog.martinfjordvald.com/understanding-the-nginx-configuration-inheritance-model/)
+> The behaviour of an array directive is that if you define multiple directives in the same context you will add to the values, but if you define multiple directives in different contexts then the lower context will replace the higher context ones. This means that you need to sometimes double define a value if you want it present in multiple context.
+
+> Action directives are where it starts to get interesting. They are confined to one context and will never inherit downwards, they can however be specified in multiple contexts and in some cases will be executed for each context. The rewrite directive is an action directive that is allowed in server and location context where both contexts might be executed.
+>
+> Naturally, it’s not quite that simple. Within locations there are three possible contexts, a nested location, an if and limit_except. The behaviour of a directive is actually entirely up to the module that defines it. All the normal and array directives will inherit properly if they are allowed in that context. For action directives the story is a bit different. Generally they will not inherit into a nested location but it ultimately depends on how the module wants it to be and it can differ on a directive by directive basis. The nginx documentation is not of use here either so you’ll have to just try it and see if nginx complains.
+
+> The `try_files` directive is mostly like every other action directive mentioned above, the difference is that if placed in server context nginx actually creates a pseudo-location that is the least specific location possible. That means if a request matches a defined location the `try_files` directive will not be executed. This means that if you have location / defined then you have a location that matches every possible request and as such `try_files` will never actually execution. Therefore always place `try_files` in location context instead of server context if at all possible.
+
+- Nested locations
+
+  [Nested locations in nginx - Stack Overflow](https://stackoverflow.com/questions/34839823/nested-locations-in-nginx)
+  > The inner URLs are not relative to the outer URLs
+
+  [Nested Nginx location (prefix blocks in regex blocks) not working - Server Fault](https://serverfault.com/questions/496371/nested-nginx-location-prefix-blocks-in-regex-blocks-not-working)
+
+  [proxy\_pass & nested locations block : r/nginx](https://www.reddit.com/r/nginx/comments/7qck7g/proxy_pass_nested_locations_block/)
+
+  [configuration - Nginx Nested Location Priority - Stack Overflow](https://stackoverflow.com/questions/74140437/nginx-nested-location-priority)
+
 ## [ngx_core_module](https://nginx.org/en/docs/ngx_core_module.html)
 - `daemon`
 
