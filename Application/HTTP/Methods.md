@@ -103,6 +103,38 @@ Discussions:
 
   > 以前只用 GET 和 POST 是因为一些地方运营商屏蔽其他 method
 
+## `POST`
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+
+### Request body size limits
+- Nginx: 1 MiB, `client_max_body_size`
+
+  [Default nginx `client_max_body_size` - Stack Overflow](https://stackoverflow.com/questions/28476643/default-nginx-client-max-body-size/28476755#28476755)
+- axum: 2 MiB, [DefaultBodyLimit](https://docs.rs/axum/latest/axum/extract/struct.DefaultBodyLimit.html#method.max)
+- IIS: 28.6 MiB
+- 腾讯云 CDN: [32 MB](https://cloud.tencent.com/document/product/228/51855)
+- 阿里云 CDN: ?
+
+  [使用限制\_CDN(CDN)-阿里云帮助中心](https://help.aliyun.com/zh/cdn/product-overview/limits)
+- Cloudflare: 100 MiB
+
+  [Limits - Cloudflare Workers docs](https://developers.cloudflare.com/workers/platform/limits/#request-limits)
+
+  [Maximum Upload Size is limit? - Website, Application, Performance / DNS & Network - Cloudflare Community](https://community.cloudflare.com/t/maximum-upload-size-is-limit/418490)
+- IE: 2 GiB
+- Firefox: 2 GiB
+- Chromium: 4 GiB
+
+  [Is there a maximum size for content of an HTTP POST? - Server Fault](https://serverfault.com/questions/151090/is-there-a-maximum-size-for-content-of-an-http-post)
+
+  [javascript - Increase Maximum body size for the fetch api in chrome - Stack Overflow](https://stackoverflow.com/questions/51882961/increase-maximum-body-size-for-the-fetch-api-in-chrome)
+
+  [uploading file size limit - Google Chrome Community](https://support.google.com/chrome/thread/110232967/uploading-file-size-limit?hl=en)
+
+  [Chrome 80 seems to enforce a new limit on POST response size of around 300MB. Is this by design? - Chrome Enterprise & Education Community](https://support.google.com/chrome/a/thread/28233217/chrome-80-seems-to-enforce-a-new-limit-on-post-response-size-of-around-300mb-is-this-by-design?hl=en)
+
+[forms - Can HTTP POST be limitless? - Stack Overflow](https://stackoverflow.com/questions/2880722/can-http-post-be-limitless/55998160#55998160)
+
 ## `OPTIONS`
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS)
 
