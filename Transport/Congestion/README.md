@@ -12,8 +12,8 @@
 - End-to-end congestion control（端到端拥塞控制）  
   端系统通过对网络的观察来推断拥塞。
 
-  - [TCP](TCP/Congestion%20Control.md)
-  - [QUIC](QUIC/Congestion.md)
+  - [TCP](<../TCP/Congestion Control.md>)
+  - [QUIC](../QUIC/Congestion.md)
 - Network-assisted congestion control（网络辅助的拥塞控制）  
   路由器向发送方提供拥塞状态反馈。
 

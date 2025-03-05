@@ -3,6 +3,8 @@
 
 [深入理解Clash配置文件 -- 月下博客](https://ssrvps.org/archives/9988)
 
+[Clash 的一些高级用法 | 米白云使用教程](https://docs.mebi.me/docs/advanced-usage-for-clash)
+
 [zuluion/Clash-Template-Config: 自用Clash配置文件模板](https://github.com/zuluion/Clash-Template-Config)
 
 [MisakaNo の 小破站 / clash-meta - GitLab](https://gitlab.com/Misaka-blog/clash-meta)
@@ -119,6 +121,7 @@ Desktop:
     - 轻量模式: 655 MiB, 0.95% CPU → 153 MiB, 0.11% CPU
       - [\[Feature\] 轻量模式加入托盘点击右键的上拉框 - Issue #2789](https://github.com/clash-verge-rev/clash-verge-rev/issues/2789)
       - [\[Feature\] 增加一个轻量模式的快捷键 - Issue #2808](https://github.com/clash-verge-rev/clash-verge-rev/issues/2808)
+    - [希望可以在全局配置中添加 `prepend-rules` 规则 - Issue #1437](https://github.com/clash-verge-rev/clash-verge-rev/issues/1437)
     - Logs 位于 `%APPDATA%\io.github.clash-verge-rev.clash-verge-rev\logs`，**不会**自动清理，会增大空间占用以及隐私泄露风险。可以调高 Log Level 来避免快速占用大量空间，或者直接调整为 Silent。
     - [clash-verge-rev/UPDATELOG.md](https://github.com/clash-verge-rev/clash-verge-rev/blob/dev/UPDATELOG.md)
   
