@@ -9,6 +9,8 @@ Telegram:
 - [85.60×53.98 卡粉订阅/提醒](https://t.me/DocOfCard)
 - [Sim card 销售中心](https://t.me/Simcardshop1)
 
+[Cell Phone Number List Database for Mobile Marketing](https://www.cell-phone-list.net/)
+
 ## China
 [大灣區預付卡](https://www.1888.com.mo/help/detail?tabCode=DXYW04)
 
@@ -22,7 +24,9 @@ Telegram:
 [美国电话区号的小趣事儿 - 败家 / 手机卡 - 美卡论坛](https://www.uscardforum.com/t/topic/46610)
 
 ## United Kingdom
-## giffgaff
+[性价比最高的英国手机卡比较：Vodafone>GG>3UK>O2>EE>Lebara - 西柚主机论坛 - www.xiubbs.com](https://www.xiubbs.com/t-213-1-1.html)
+
+### giffgaff
 [英国 Giffgaff 电话卡使用报告 - TSBBLOG](https://tsb2blog.com/giffgaff-sim-card)
 
 [英国手机卡 giffgaff 2023 激活与使用指南](https://mp.weixin.qq.com/s/XfZ65VRpGFO5LrANgrRmNg)
@@ -60,6 +64,8 @@ Services:
   隔天才会更新。
 
 - [Useful Network Shortcodes | giffgaff](https://www.giffgaff.com/help/articles/useful-network-shortcodes)
+
+[giffgaff 避坑指南（吐血整理） - V2EX](https://v2ex.com/t/971919)
 
 ## New Zealand
 [Skinny](https://www.skinny.co.nz/):

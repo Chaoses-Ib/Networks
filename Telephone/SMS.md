@@ -18,7 +18,12 @@
 
   [SMS Codes (201907VASPricing.pdf)](https://www.virginmediabusiness.co.uk/pdf/OFCOM/201907VASPricing.pdf)
 
-  [Shortcode SMS](https://www.redsms.co.uk/site/shortcode-sms.html)
+  ~~[Shortcode SMS](https://www.redsms.co.uk/site/shortcode-sms.html)~~
+
+  [SMS Short Code - Use a Short code and keyword.](https://thesmsworks.co.uk/short-code-sms)
+
+  [Short codes and virtual mobile numbers | Dotdigital Help Centre](https://support.dotdigital.com/en/articles/8199152-short-codes-and-virtual-mobile-numbers)
+  - 87800: [Text messages | Barbican](https://www.barbican.org.uk/sms)
 
 ## SMS receiving services
 - [SMS-Activate](https://sms-activate.org/en) (支持支付宝)
