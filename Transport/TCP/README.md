@@ -168,6 +168,29 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 另一方可能同时会将 ACK 和 FIN 合并到一起发送。
 
+[c - Is there a way to detect that TCP socket has been closed by the remote peer, without reading from it? - Stack Overflow](https://stackoverflow.com/questions/17705239/is-there-a-way-to-detect-that-tcp-socket-has-been-closed-by-the-remote-peer-wit)
+
+### Reusing
+[linux - `tcp_tw_reuse` vs `tcp_tw_recycle` : Which to use (or both)? - Stack Overflow](https://stackoverflow.com/questions/6426253/tcp-tw-reuse-vs-tcp-tw-recycle-which-to-use-or-both)
+
+[Linux `tcp_tw_reuse = 2` --- how is this set and what is the significance? - General questions - VyOS Forums](https://forum.vyos.io/t/linux-tcp-tw-reuse-2-how-is-this-set-and-what-is-the-significance/5286)
+
+[linux - Why is `tcp_tw_reuse` turned off by default? - Stack Overflow](https://stackoverflow.com/questions/10937828/why-is-tcp-tw-reuse-turned-off-by-default)
+
+Windows:
+- [TcpTimedWaitDelay | Microsoft 学习 --- TcpTimedWaitDelay | Microsoft Learn](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc938217(v=technet.10)?redirectedfrom=MSDN)
+
+[windows - What are `CLOSE_WAIT` and `TIME_WAIT` states? - Super User](https://superuser.com/questions/173535/what-are-close-wait-and-time-wait-states)
+
+[Does Windows support tcp `TIME_WAIT` reuse? - Server Fault](https://serverfault.com/questions/760076/does-windows-support-tcp-time-wait-reuse)
+
+### Connection limit
+[TCP/IP concurrent connections - Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/482793/tcp-ip-concurrent-connections)
+
+[How to set to allow MaximumTCP connection in windows server 2016 - Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/495615/how-to-set-to-allow-maximumtcp-connection-in-windo)
+
+[asp.net mvc - Windows 10 Maximum TCP-IP Connection Limit - Stack Overflow](https://stackoverflow.com/questions/38832351/windows-10-maximum-tcp-ip-connection-limit)
+
 ## 粘包
 > TCP 是基于字节流的协议
 > 你发两次数据，比如 {1, 2} 和 {3, 4}
@@ -183,6 +206,22 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 ## Performance
 [TCP/IP performance known issues - Windows Server | Microsoft Learn](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/tcpip-performance-known-issues)
+
+[Regedit Tweaks For Better Network Speed? : r/pcmasterrace](https://www.reddit.com/r/pcmasterrace/comments/140kh2n/regedit_tweaks_for_better_network_speed/)
+
+## Fingerprinting
+[Wikipedia](https://en.wikipedia.org/wiki/TCP/IP_stack_fingerprinting)
+
+## Tools
+- Wireshark
+
+  [7.5. TCP Analysis](https://www.wireshark.org/docs/wsug_html_chunked/ChAdvTCPAnalysis.html)
+  - TCP conversation completeness
+
+- Windows
+  - Resource Monitor
+
+[windows - Open a test TCP connection to a specified IP/Port - Super User](https://superuser.com/questions/392509/open-a-test-tcp-connection-to-a-specified-ip-port)
 
 
 [^wiki]: [Transmission Control Protocol - Wikipedia](https://en.wikipedia.org/wiki/Transmission_Control_Protocol)

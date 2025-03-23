@@ -11,6 +11,8 @@ The malicious client can either simply not send the expected `ACK`, or by spoo
    send(IP(src=RandIP(), dst='10.0.0.8') / TCP(sport=RandShort(), dport=22, flags='S'), loop=1)
    ```
 
+[ACK-PSH-RST-SYN Flood | Knowledge Base | MazeBolt](https://kb.mazebolt.com/knowledgebase/ack-psh-rst-syn-flood/)
+
 ## Defenses
  [^linoxide]
 - Filtering
@@ -35,6 +37,16 @@ The malicious client can either simply not send the expected `ACK`, or by spoo
   ```
 - Hybrid approaches
 - Firewalls and proxies
+
+[云彩网络](https://www.7yc.com/):
+- 检测为攻击时会返回伪造的 SYN ACK，而不是忽略或 RST
+- 当客户端发送 SYN ECN CWR 时，伪造的 SYN ACK 会包含 ECN CWR，而真实的 Windows SYN ACK 只会包含 ECN
+
+  伪造的 SYN ACK window 为 8760，而真实的为 65535
+- 伪造的 SYN ACK 不含 options，而真实的 Options: (12 bytes), Maximum segment size, No-Operation (NOP), Window scale, No-Operation (NOP), No-Operation (NOP), SACK permitted
+- 伪造的 SYN ACK Conversation completeness 为 47，而真实的为 31
+
+[Windows 10 drops incoming TCP SYN packet for no reason - Microsoft Community](https://answers.microsoft.com/en-us/windows/forum/all/windows-10-drops-incoming-tcp-syn-packet-for-no/2245ca28-b82f-415a-8d4f-56afbf38b1a5?page=1)
 
 
 [^wiki]: [SYN flood - Wikipedia](https://en.wikipedia.org/wiki/SYN_flood)

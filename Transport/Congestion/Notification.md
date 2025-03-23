@@ -7,6 +7,23 @@
 
 > Passive support has existed in Ubuntu Linux since 12.04 and in Windows Server since 2012. Passive support in the most popular websites has increased from 8.5% in 2012 to over 70% in May 2017. Adoption across the Internet now requires clients to actively request ECN. In June 2015, Apple announced that ECN will be enabled by default on its supported and future products, to help drive the adoption of ECN signaling industry-wide.
 
+## TCP
+Flags:
+- ECN / ECE
+
+  > The ECN-Echo is sent to inform the other side of the TCP connection that it received an ECN notification from the network. This may trigger a TCP Slow Start. Like the CWR field, this is rarely seen in connections.
+
+- CWR (Congestion Window Reduced)
+
+  > Only used in TCP connections where Explicit Congestion Notification is used. Rarely seen in most TCP Conversations. ECN allows routers to inform the TCP endpoints that their transmit buffers are filling due to congestion. This allows the TCP endpoints to slow their data transmission to prevent packet loss. The CWR field is set by the sender to show that it received a TCP segment with the ECE flag set.
+
+[Wireshark Q&A](https://osqa-ask.wireshark.org/questions/57120/syn-ecn-cwr-packet-rst-packet/)
+> But ECN and CWR Bit sometimes causes problems with firewalls or older stacks. 
+
+[Is it normal to have packets with the CWR(Congestion Window Reduced) flag set frequently? : r/networking](https://www.reddit.com/r/networking/comments/hw327e/is_it_normal_to_have_packets_with_the/)
+
+[TCP flags. There are six original 1-bit control... | by CyberBruhArmy | LiveOnNetwork | Medium](https://medium.com/liveonnetwork/tcp-flags-4e2df36c1a9d)
+
 ## QUIC
 [ECN in QUIC - quicwg/base-drafts Wiki](https://github.com/quicwg/base-drafts/wiki/ECN-in-QUIC)
 
