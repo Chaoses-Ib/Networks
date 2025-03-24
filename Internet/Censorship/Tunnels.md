@@ -74,7 +74,7 @@ Discussions:
   > 用AEAD 插件simple-obfs 或者v2ray-plugin被封的概率要低太多
 - 2022-11 [小鸡全部被墙，原版ss已经末路了吗？-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1102924-1-1.html)
 
-### [Hysteria](https://github.com/HyNetwork/hysteria/wiki/Protocol)
+### [Hysteria](https://github.com/apernet/hysteria/blob/master/PROTOCOL.md)
 - [Hysteria 是多倍发包吗？ - Hysteria 2](https://v2.hysteria.network/zh/docs/misc/Hysteria-Brutal/)
 - 需要域名、未过期的 TLS 证书
 

@@ -11,6 +11,27 @@
 [→QUIC libraries](../../Transport/QUIC/README.md#libraries)
 
 ## Servers
+Rust:
+- [hyperium/h3](https://github.com/hyperium/h3)
+  - quinn, [s2n-quic](https://github.com/aws/s2n-quic/tree/main/quic/s2n-quic-h3), [msquic](https://github.com/masa-koz/msquic-async-rs/tree/main/h3-msquic-async), ~~[quiche](https://github.com/hyperium/h3/issues/147)~~
+  
+  [h3/docs/PROPOSAL.md](https://github.com/hyperium/h3/blob/9b028247dcefa6f6f323908135b98a958f1bf30d/docs/PROPOSAL.md#8-alternatives):
+  - The existing options (quiche-h3, neqo-h3, and quinn-h3) have some downsides.
+  - neqo and quiche are designed to be ignorant of IO, and are simple state machines. While this provides maximum flexibility, it still requires significant complexity for each user to plug into their application.
+  - All 3 of them have hard dependencies on their QUIC implementations, which conflicts with one of our main goals to allow users to bring their own QUIC implementation.
+
+C++:
+- Nginx
+- IIS
+- HAProxy
+- LiteSpeed Web Server
+- Nimble Streamer
+
+Go:
+- Caddy
+
+[Http3 implementation in rust : r/rust](https://www.reddit.com/r/rust/comments/pr71nk/http3_implementation_in_rust/)
+
 ### Nginx
 - [`ngx_http_v3_module`](https://nginx.org/en/docs/http/ngx_http_v3_module.html)
 
@@ -30,6 +51,10 @@
 - [→Tengine](Servers/Nginx/README.md#distributions): [ngx\_http\_xquic\_module](https://tengine.taobao.org/document/xquic.html)
   - `xquic_congestion_control`: `cubic` (default), `bbr`, `reno`
 
+- quiche
+
+  [Experiment with HTTP/3 using NGINX and quiche](https://blog.cloudflare.com/experiment-with-http-3-using-nginx-and-quiche/)
+
 - [bilibili/nginx\_quic\_module](https://github.com/bilibili/nginx_quic_module)
 
 ### [Caddy](Servers/Caddy/README.md)
@@ -43,13 +68,25 @@ Not enabled with local cert?
 
 ## Tools
 - Chrome DevTools
+
+  [http3 - Does Chrome support HTTP/3 over a port other than 443? - Stack Overflow](https://stackoverflow.com/questions/72411373/does-chrome-support-http-3-over-a-port-other-than-443)
+  > Chromium supports HTTP/3 only on UDP ports < 1024
+  > 
+  > Some shared unix systems may have user home directories (like `http://example.com/~mike`) which allow users to emit headers. This is a bad idea already, but with Alternate-Protocol, it provides the ability for a single user on a multi-user system to hijack the alternate protocol. These systems also enforce ports <1024 as restricted ports. So don't allow protocol upgrades to user-controllable ports.
+
+  [Convincing browsers to connect with HTTP/3 protocol : r/f5networks](https://www.reddit.com/r/f5networks/comments/18qq136/convincing_browsers_to_connect_with_http3_protocol/)
+
+  Doesn't support HTTP/3-only sites.
+
+- Firefox
+
 - [HTTP/3 Check](https://http3check.net/)
 
   [Caddy not using http3 - Help - Caddy Community](https://caddy.community/t/caddy-not-using-http3/19555/16)
   > That website is not reliable. They only try an older draft revision of the QUIC protocol. We’ve reached out to them in the past to ask them to fix it, but they still haven’t yet.
 
 - cURL: [HTTP/3 with curl](https://curl.se/docs/http3.html)
-  - `curl --http3-only`
+  - `curl --http3-only --insecure`
 
 - wget: [Implement HTTP/3 support using QUIC (#553) - Issues - Wget / wget2 - GitLab](https://gitlab.com/gnuwget/wget2/-/issues/553)
 
