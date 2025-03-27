@@ -17,6 +17,11 @@ Packet scheduling, packet scheduler, network scheduler, queueing discipline (qdi
 ## Fair queuing
 [Wikipedia](https://en.wikipedia.org/wiki/Fair_queuing)
 
+```sh
+cat /proc/sys/net/core/default_qdisc
+echo "fq" > /proc/sys/net/core/default_qdisc
+```
+
 [Please change default qdisc from `fq_codel` to `fq` - Issue #5090 - systemd/systemd](https://github.com/systemd/systemd/issues/5090)
 - [Change default default qdisc from `fq_codel` to `sch_fq` - Issue #9725 - systemd/systemd](https://github.com/systemd/systemd/issues/9725#issuecomment-413369212)
 
