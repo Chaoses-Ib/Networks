@@ -20,6 +20,8 @@
   
   The data received in the echo message must be returned in the echo reply message.
 
+Wireshark display filter: `icmp.type==8 || icmp.type==0`
+
 ## ping
 ping 是用于测试 IP 网络中主机可达性的网络管理工具，在绝大多数具有网络能力的操作系统上都可用。ping 的实现原理是通过向目标主机发送 ICMP echo 请求数据包，并等待 ICMP echo 响应，从而测量出 round trip time。因为实现原理与主动声纳相似，便取声纳的声音“ping”作为该工具的名字。[^ping-wiki]
 
