@@ -247,6 +247,14 @@ Pricing:
 - 域名验证
   - `_cdnauth` TXT 记录
 
+- OSS 回源
+  - 免费版（基础型）OSS 不支持 API 操作，尽管可以进行逆向
+    - https://player.dogecloud.com/js/ossuploader
+    - https://player.dogecloud.com/js/uploader
+  - 访问目录时会自动跳转到 `index.html`，但只支持 `/example/`，不支持 `/example`
+  - 不会自动追加 `.html` 后缀，通过回源路径改写也无法实现，即使按单个路径添加也不知为何不生效；直接上传无后缀文件又会无法在浏览器中识别，需要修改 `Content-Type` 为 `text/html`，但重新上传后又会被覆盖
+  - 404
+
 - 推广
 
   > 你的奖励
