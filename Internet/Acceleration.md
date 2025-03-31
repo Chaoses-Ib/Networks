@@ -1,4 +1,8 @@
 # Application Acceleration
+- How to know where is the bandwidth bottleneck in the route?
+
+  [Tool recommendation to find network bottleneck : r/sysadmin](https://www.reddit.com/r/sysadmin/comments/vd5kki/tool_recommendation_to_find_network_bottleneck/)
+
 [网络加速原理与方法：静态CDN、动态CDN、全站加速、GAAP、AIA、CLB跨地域部署_cdn动态加速和静态加速_邓大帅的博客 - CSDN博客](https://blog.csdn.net/deng_xj/article/details/109679797)
 
 ## Tools
@@ -20,6 +24,8 @@
   > 过户：需要买卖双方联系作者。收取5u手续费。包含[授权码重置、售后群tg换绑、更改绑定域名]等操作。
 
   [有没有人合租ny转发面板啊](https://www.nodeseek.com/post-295580-1)
+
+- 闲蛋面板
 
 ## Services
 ### China
@@ -57,6 +63,7 @@
     - > 可用性不高 速度也一般
   - 2025-01 [Ocent：TurboX，流量转发服务，有深港IEPL（电信、移动）、香港CMI、台湾Hinet节点，100GB月流量，100Mbps-1Gbps端口，季付20元-主机百科](https://zhujiwiki.com/38163/)
   - 2025-01 [Ocent 便宜深港流量转发服务Turbox增加电信入口，100G/100M/￥20一个季度起，最高1G带宽 | VPS收割者](https://www.idcoffer.com/archives/14762)
+  - 2025-03 [有么有人用过这个？ 感受如何？Ocent 深港（IPLC/IEPL）专线NAT VPS套餐增加了联通入口，实现电信、联通和移动三网接入，月付￥65.88起，350~400Mbps带宽可选，提供免费DNS解锁香港流媒体，10个TCP&UDP入口端口，独立HK IPV4/IPV6。](https://www.nodeseek.com/post-301462-1)
 
 - [哪吒转发](https://tunnel.nezha.tech)
   - IP 限制 10，连接数 100
@@ -75,6 +82,12 @@
   [【不收了】gorelay转发](https://www.nodeseek.com/post-289777-1)
   > 这个一坨，我都不想用 之前直接抽奖送了
 
+- [闲蛋面板-官方转发服务](https://xdmb.xyz/index.php/store/pf)
+
+  [流量转发 稳定的来 | 主题帖 - 梨园](https://forums.liyuans.com/thread/189)
+
+- [WikiHost](https://idc.wiki/exnetwork.php)
+
 - [zhuanfa.de](https://zhuanfa.de/)
   - IPv6 入口
 
@@ -87,6 +100,14 @@
 [求推荐个流量转发](https://www.nodeseek.com/post-290203-1)
 
 [各位鸡友，电信环境下，有什么个人使用的好的中转方案？请推荐](https://www.nodeseek.com/post-1040-1)
+
+[收个联通流量转发-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1020677-1-1.html)
+
+[还有上海联通9929流量转发的车吗-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1140236-1-1.html)
+
+[联通用户买联通入口的iepl是不是伪需求](https://www.nodeseek.com/post-302936-1)
+
+[联通有必要上专线吗](https://www.nodeseek.com/post-301018-1)
 
 #### HTTP
 - [GG](https://ny.bijia.me/)
