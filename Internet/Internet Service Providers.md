@@ -12,6 +12,8 @@
 
 ## ISPs in different regions
 ### Mainland China
+[维基百科](https://zh.wikipedia.org/zh-cn/%E4%B8%AD%E5%9B%BD%E4%BA%92%E8%81%94%E7%BD%91%E9%AA%A8%E5%B9%B2%E7%BD%91)
+
 [^china-sjlleo]
 - China Telecom (CT, 中国电信)
   - CTGNet (AS23764)
@@ -39,7 +41,21 @@
 
 Quality: CN2 GIA > CMIN2 (AS58807) > CUII Backbone (AS9929) > CMI (AS58453) > CU Backbone (AS4837) > CN2 GT > CT Backbone (AS4134) [^china-quality]
 
+- [互联网交换中心 - 维基百科](https://zh.wikipedia.org/wiki/%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A4%E6%8D%A2%E4%B8%AD%E5%BF%83#%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86)
+- 国际出口：北上广
+
+[sjlleo/local-ISPs-to-CN: Network connectivity between your local ISPs and China / 您的本地运营商和中国的网络互联情况](https://github.com/sjlleo/local-ISPs-to-CN/blob/cd760ca23cc9d1e4981af8993ab42a67885cc2f6/report_zh_CN.md) ([国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996))[^china-sjlleo]
+
 Discussions:
+- 2012-05 [中国电信上海分公司-上海交通大学教务处](https://jwc.sjtu.edu.cn/info/1222/9200.htm)
+
+  > 互联网国际出口带宽112.5G，占中国电信总出口带宽40.4%
+- 2015-02 [出口带宽看看吧，说上海最快是不是这个原因 - V2EX](https://staging.v2ex.com/t/172418)
+- 2022-11 [一些关于中国五大运营商国际网络出口的记录 -- Kayla の Home](https://www.imkayla.cn/Blog/1969.HAHA)
+- 2023-01 [互联网国际出口（中国内地） - 知乎](https://zhuanlan.zhihu.com/p/600406970)
+
+  电信：
+  > 目前上海国际节点设计能力为12x2.5G；广州国际节点设计能力为12x2.5G；北京的能力稍微薄弱些，只有6x2.5G。到2019年的扩容计划是上海和广州分别增加到20x2.5G，北京到8x2.5G。并恢复北京汇聚层和接入层双节点互备保护结构，并增加上海和广州汇聚层与接入层之间的互连线路总带宽。
 - 2023-08 [【求科普】有没有老哥科普下各个线路](https://www.nodeseek.com/post-20083-1)
 
   > 就说美西，GIA $8000/Gbps，9929 $6000/Gbps，CMI $4000/Gbps，4837 $2000/Gbps，你看看商家卖价多少，宽带标的多少，算一下就知道超售比例了。
@@ -64,7 +80,7 @@ Discussions:
   > 
   > 4837晚高峰稳定性较差、丢包率较高，并且它也不是被作为精品线路来卖的，签约单价很大程度上会决定线路的拥堵程度  
   > 而CMIN2和CN2GIA都是被作为精品线路来卖的，签约单价都比较高，晚高峰的稳定性也是难分伯仲的，至于长时间考验线路这个确实没办法，CMIN2毕竟是新出来对标CN2GIA的，但终究是拿来和CN2GIA竞争的，移动也没理由糟蹋这线路，只能说CN2GIA还是以前霸主当太久了，认知的改变是需要时间的
-
+- 2024-05 [【转】科普各个出海线路 | HZK's Blog](https://blog.zekun.fun/2024/%E6%96%87%E6%A1%A3%E6%95%99%E7%A8%8B/%E3%80%90%E8%BD%AC%E3%80%91%E7%A7%91%E6%99%AE%E5%90%84%E4%B8%AA%E5%87%BA%E6%B5%B7%E7%BA%BF%E8%B7%AF/)
 - 2024-07 [有无懂哥科普线路4837、CMI、cn2、GIA、GT、cmin2、9929、cmi知识](https://www.nodeseek.com/post-137012-1)
 
   > 普通线路一般是cmi 4837 163通过接入国外线路连接机器，美西一般能直连到美西peer，但香港这种就不一定了，特别是电信这种的，不买优化线路会给你绕美；且优先级较低，晚高峰丢包厉害
@@ -72,6 +88,8 @@ Discussions:
   > 优化线路一般是三大直接接入机房，高qos等级，美西优化不明显（便宜），但香港能做到直连（死贵），丢包多少取决于你投多少钱，据说高等级qos的163要比CN2GIA还要好
   > 
   > 精品线路那就是cn2gia 9929（老网，算是吧） cmin2了，香港基本上天价，我记得ctgcn2得 40刀每月每M吧，这个也有缺点，一是贵，二是国内路由奇葩，特别是电信，北方城市会有163到北京，cn2到上海再出国的奇葩路由，延迟不一定比优化线路低，主打一个稳。
+- 2024-08 [china-net/Internationally-connected: 中国的国际网络互联状态介绍](https://github.com/china-net/Internationally-connected)
+  - 电信广州出口 1.8Tbps
 
 [^china-quality]: [CN2 GIA＞AS9929＞CN2 GT＞AS4837,这个排名靠谱吗 - 全球主机交流论坛](https://hostloc.com/thread-953685-1-1.html)
 
@@ -126,4 +144,4 @@ Name | 混合拨号
 - 阿里云
 
 
-[^china-sjlleo]: [sjlleo/local-ISPs-to-CN: Network connectivity between your local ISPs and China / 您的本地运营商和中国的网络互联情况](https://github.com/sjlleo/local-ISPs-to-CN/blob/main/report_zh_CN.md) ([国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996))
+[^china-sjlleo]: [sjlleo/local-ISPs-to-CN: Network connectivity between your local ISPs and China / 您的本地运营商和中国的网络互联情况](https://github.com/sjlleo/local-ISPs-to-CN/blob/cd760ca23cc9d1e4981af8993ab42a67885cc2f6/report_zh_CN.md) ([国内至国际骨干Tier1 ISPs线路整理（2022年更新篇） - 知乎](https://zhuanlan.zhihu.com/p/451683996))
