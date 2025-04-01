@@ -376,6 +376,8 @@ http {
 
   The "X-Forwarded-For" client request header field with the `$remote_addr` variable appended to it, separated by a comma. If the "X-Forwarded-For" field is not present in the client request header, the `$proxy_add_x_forwarded_for` variable is equal to the `$remote_addr` variable.
 
+  [reverse proxy - How can I get nginx not to override x-forwarded-for when proxying? - Server Fault](https://serverfault.com/questions/1090749/how-can-i-get-nginx-not-to-override-x-forwarded-for-when-proxying)
+
 - Connections
 
   [http - Why does nginx `proxy_pass` close my connection? - Stack Overflow](https://stackoverflow.com/questions/46771389/why-does-nginx-proxy-pass-close-my-connection)
@@ -384,7 +386,27 @@ http {
   - [`proxy_buffering off;`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering)
   - `X-Accel-Buffering: no`
 
+    Although this looks good for decoupling, things become shitty when multiple reverse proxying are present. Would you rather pass `X-Accel-Buffering` to every proxy and cost some traffic, or just set `proxy_buffering off;` for every endpoint in the config?
+
+    - `proxy_pass_header X-Accel-Buffering;`
+
+      [How to turn off buffering on Nginx Server for Server sent event - Stack Overflow](https://stackoverflow.com/questions/61029079/how-to-turn-off-buffering-on-nginx-server-for-server-sent-event)
+
     [SSE response taking a long time - IE, what am I doing wrong? - tokio-rs/axum - Discussion #2694](https://github.com/tokio-rs/axum/discussions/2694)
+
+- Headers
+  - [`proxy_pass_request_headers`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass_request_headers)
+    - Default `on`
+
+    [Forward request headers from nginx proxy server - Stack Overflow](https://stackoverflow.com/questions/19751313/forward-request-headers-from-nginx-proxy-server)
+  - [`proxy_pass_header`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass_header)
+  - [`proxy_set_header`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_set_header)
+  - [`add_header`](https://nginx.org/en/docs/http/ngx_http_headers_module.html)
+  - How to pass or set a header, or, set the default value for a header?
+    - Different locations, e.g. `/intra/`
+    - Inheritance?
+
+      [Adding and using header (HTTP) in nginx - Stack Overflow](https://stackoverflow.com/questions/11973047/adding-and-using-header-http-in-nginx)
 
 [Nginx: reverse proxy passing client IP to the server - Server Fault](https://serverfault.com/questions/920030/nginx-reverse-proxy-passing-client-ip-to-the-server)
 
