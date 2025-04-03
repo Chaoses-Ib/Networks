@@ -313,16 +313,38 @@ http {
 
 ## HTTP
 ### [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
+- [`location`](https://nginx.org/en/docs/http/ngx_http_core_module.html#location)
+  - Regex or prefix (default)
+  - Exact matching: `=`
+
+    e.g. `location = /abc`
+  
+    [Nginx location matches - Stack Overflow](https://stackoverflow.com/questions/5239131/nginx-location-matches)
+  - Regex: `~` (partial match)
+  - Regex i: `~*`
+  - Prefix (block regex): `^~`
+
+  > The matching is performed against a normalized URI, after decoding the text encoded in the "`%XX`" form, resolving references to relative path components "`.`" and "`..`", and possible [compression](https://nginx.org/en/docs/http/ngx_http_core_module.html#merge_slashes) of two or more adjacent slashes into a single slash.
+
+  [Guide on how to use regex in Nginx location block section? - Stack Overflow](https://stackoverflow.com/questions/59846238/guide-on-how-to-use-regex-in-nginx-location-block-section)
+
 - Trailing slashes
+
+  > If a location is defined by a prefix string that ends with the slash character, and requests are processed by one of [proxy\_pass](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass), [fastcgi\_pass](https://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_pass), [uwsgi\_pass](https://nginx.org/en/docs/http/ngx_http_uwsgi_module.html#uwsgi_pass), [scgi\_pass](https://nginx.org/en/docs/http/ngx_http_scgi_module.html#scgi_pass), [memcached\_pass](https://nginx.org/en/docs/http/ngx_http_memcached_module.html#memcached_pass), or [grpc\_pass](https://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_pass), then the special processing is performed. In response to a request with URI equal to this string, but without the trailing slash, a permanent redirect with the code 301 will be returned to the requested URI with the slash appended. If this is not desired, an exact match of the URI and location could be defined like this:
+  ```nginx
+  location /user/ {
+      proxy_pass http://user.example.com;
+  }
+
+  location = /user {
+      proxy_pass http://login.example.com;
+  }
+  ```
 
   [proxy - using trailing slashes in nginx configuration - Server Fault](https://serverfault.com/questions/607615/using-trailing-slashes-in-nginx-configuration)
 
   [Nginx trailing slash in proxy pass url - Stack Overflow](https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url)
   > As stated in [nginx documentation](http://nginx.org/r/proxy_pass) if `proxy_pass` used without URI (i.e. without path after server:port) nginx will put URI from original request exactly as it was with all double slashes, `../` and so on.
-
-- Exact matching: `location = /abc`
-  
-  [Nginx location matches - Stack Overflow](https://stackoverflow.com/questions/5239131/nginx-location-matches)
 
 - [`root`](https://nginx.org/en/docs/http/ngx_http_core_module.html#root)
 
