@@ -99,6 +99,9 @@ Rule sets:
 [Notebook](Clash.ipynb)
 
 ## [Clash.Meta](https://github.com/MetaCubeX/mihomo/tree/Alpha)
+- `scoop install mihomo`
+- Configuration directory (`-d`) defaults to `~/.config/mihomo`
+
 [Clash.Meta Docs](https://wiki.metacubex.one/)
 
 [配置详解](https://wiki.metacubex.one/config/)

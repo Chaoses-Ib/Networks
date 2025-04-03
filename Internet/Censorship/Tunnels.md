@@ -4,6 +4,7 @@
 - HTTPS
   - [Trojan](https://trojan-gfw.github.io/trojan/protocol)
   - NaiveProxy
+  - [AnyTLS](#anytls)
 - SOCKS
   - SOCKS4
     - SOCKS4a
@@ -12,6 +13,7 @@
   - ShadowsocksR (SSR)
 - [VMess](https://www.v2ray.com/developer/protocols/vmess.html)  
 - [VLESS](https://xtls.github.io/config/features/vless.html)  
+- [mieru](#mieru)
 - QUIC
   - [Hysteria](#hysteria)
   - TUIC
@@ -19,6 +21,8 @@
   - [如何找到一个适合 REALITY 配置的目标网站？ - Issue #2005 - XTLS/Xray-core](https://github.com/XTLS/Xray-core/issues/2005)
 - Snell
 - [Tor](https://github.com/torproject/torspec/blob/main/tor-spec.txt)
+- WireGuard
+- [SSH](#ssh)
 - MTProto (Telegram only)
 
 [硬核翻墙系列5：协议分析 - 万人往 - Medium](https://medium.com/@kathylynch87532/%E7%A1%AC%E6%A0%B8%E7%BF%BB%E5%A2%99%E7%B3%BB%E5%88%975-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90-e59e6802c332)
@@ -74,9 +78,23 @@ Discussions:
   > 用AEAD 插件simple-obfs 或者v2ray-plugin被封的概率要低太多
 - 2022-11 [小鸡全部被墙，原版ss已经末路了吗？-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1102924-1-1.html)
 
+### [mieru](https://github.com/enfein/mieru)
+[欢迎试用我开发的翻墙工具【見える】 - 新-品葱](https://pincong.rocks/article/36417)
+
+### AnyTLS
+- [Protocol](https://github.com/anytls/anytls-go/blob/main/docs/protocol.md)
+- [anytls-go](https://github.com/anytls/anytls-go/)
+  - [新兴协议最大的问题还是生态问题 - Issue #3](https://github.com/anytls/anytls-go/issues/3)
+- Clash
+  - [listener](https://wiki.metacubex.one/config/inbound/listeners/anytls/)
+  - [proxy](https://wiki.metacubex.one/config/proxies/anytls/)
+
 ### [Hysteria](https://github.com/apernet/hysteria/blob/master/PROTOCOL.md)
 - [Hysteria 是多倍发包吗？ - Hysteria 2](https://v2.hysteria.network/zh/docs/misc/Hysteria-Brutal/)
+- Can [`disableUDP`](https://v2.hysteria.network/zh/docs/advanced/Full-Server-Config/#udp) but doesn't support TCP?
 - 需要域名、未过期的 TLS 证书
+- [hy2 速度 比hy1慢 - apernet/hysteria](https://github.com/apernet/hysteria/discussions/637)
+- [傳輸UDP的做法可以更好 - Issue #952](https://github.com/apernet/hysteria/issues/952)
 
 Servers:
 - [Hysteria](https://github.com/HyNetwork/hysteria)
@@ -130,6 +148,15 @@ Discussions:
 - 2024-07 [建议 Xray 支持 Hysteria 协议 - Issue #3547 - XTLS/Xray-core](https://github.com/XTLS/Xray-core/issues/3547)
 
   > 我使用 VPS 自建节点（成本在40美元/年），但是 IP 被封是常见的事情，天天换 IP 根本不现实，所以挂 Cloudflare 是必然选择。但后果就是晚上网速非常慢，看YouTube 视频更是不用想。而 Hysteria2 则解决了这个问题，让我很烂的 VPS 也可以在晚上发挥作用。
+- 2024-07 [做了几次测速，之后用不了了："accepting stream failed: timeout: no recent network activity" - Issue #1156](https://github.com/apernet/hysteria/issues/1156)
+- 2024-07 [hy协议替代方式 - 开发调优 - LINUX DO](https://linux.do/t/topic/139268)
+
+### SSH
+- 2023-02 [似乎使用 SSH 也会被封 - V2EX](https://v2ex.com/t/917202)
+
+  > ssh 1g 流量妥妥封，最早的翻墙就是直接 22 端口开个 ssh tunnel
+
+  > 看来很多人都没经历过 Google 刚退出中国那会儿的翻墙技术啊。那会儿最常用的就是用国外 vps 或者 GAE 的 ssh 隧道，早就阻断 ssh 长时间和大流量了。
 
 ## Servers
 - [V2Ray](https://github.com/v2fly/v2ray-core)
@@ -169,6 +196,7 @@ Trojan-only:
 - [Trojan-Go](https://github.com/p4gefau1t/trojan-go) (discontinued)
 
 NaiveProxy-only:
+- [NaiveProxy: Make a fortune quietly](https://github.com/klzgrad/naiveproxy)
 - [NaiveProxy Server: Caddy with forward proxy](https://github.com/jonssonyan/naive)
 
 MTProto-only:
@@ -199,7 +227,7 @@ Windows:
   Supported protocols: HTTP(S), SOCKS5, Shadowsocks(R), VMess, Trojan, Snell
 
   - Clash.Meta
-    - Supported protocols: HTTP(S), SOCKS5, Shadowsocks(R), VMess, VLESS, Trojan, Snell, TUIC, Hysteria
+    - Supported protocols: HTTP(S), SOCKS5, Shadowsocks(R), VMess, VLESS, Trojan, Snell, TUIC, Hysteria, mieru, AnyTLS, WireGuard, SSH
 
 - sing-box
 
