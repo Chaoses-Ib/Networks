@@ -148,6 +148,8 @@ Services:
 
 On Windows, Nginx can start multiple instances, but `quit` can only quit the last instance.
 
+[nginx-ext: Rest Api to manage Nginx Remotly with configuration consistency check](https://github.com/MyJetTools/nginx-ext)
+
 ## Modules
 [NGINX Modules](https://www.f5.com/pdf/product-overview/2019-04-24-NGINX-Modules-datasheet.pdf)
 
@@ -161,8 +163,11 @@ Rust:
 ## Configs
 - [misc-conf: Nom parser for nginx/apache configuration](https://github.com/metaworm/misc-conf)
 - [nginx-config: An (unofficial) nginx configuration parser](https://github.com/tailhook/nginx-config) (discontinued)
+  - [ilya-epifanov/nginx-config](https://github.com/ilya-epifanov/nginx-config)
   - [nginx-config-mod: A command-line utility and a rust library to validate and make certain tweaks/rewrites of nginx configs](https://github.com/tailhook/nginx-config-mod) (discontinued)
+- [rust-nginx-config-parser: Config parser for the nginx config format written in Rust](https://github.com/daniel1302/rust-nginx-config-parser)
 - [webserver-config: A Rust crate for generating configuration files for web servers.](https://git.codespace.cz/oohost/webserver-config)
+- [etcd-nginx: Reads values from Etcd and generates nginx conf files.](https://github.com/tolerable-tech/etcd-nginx)
 
 Nginx 不肯加强对变量的支持，导致盛行使用第三方工具生成配置。
 
