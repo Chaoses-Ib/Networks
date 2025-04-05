@@ -39,8 +39,17 @@ Content-Type: text/plain
 
 - [Protocol Extensions](https://tus.io/protocols/resumable-upload#protocol-extensions)
   - Creation
+    - The Server MUST acknowledge a successful upload creation with the `201 Created` status.
+      - Clients that assert 2xx: tus-js-client
+      - Clients that assert 201: Rust tus_async_client
     - Response's `Location` depends request's `Host`
   - Expiration (unfinished uploads only)
+  - Checksum
+    - tusd: Not supported
+
+      [Compute the MD5 hash of the file for Azure Storage - Issue #1187 - tus/tusd](https://github.com/tus/tusd/issues/1187)
+
+- Instant upload (秒传): try upload at hash + create at hash (by pre-create hook)
 
 Servers:
 - Go: [tusd: Reference server implementation in Go of tus: the open protocol for resumable file uploads](https://github.com/tus/tusd)
@@ -60,6 +69,20 @@ Servers:
     - [hook.proto](https://github.com/tus/tusd/blob/eff0a435fcbba04edede33a80f69811588aaa0f5/pkg/hooks/grpc/proto/hook.proto#L35)
     - `finishUploadIfComplete()`: `!info.SizeIsDeferred && info.Offset == info.Size`
       - But `Offset` becomes `0` after finish?
+
+        <details><del>
+
+        This also causes the client to reupload the file even if the server returned the same ID.
+
+        A workaround is to return [208 Already Reported](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/208) to the client and check manually. Unfortunately, some clients may require 201 to be returned.
+
+        Another workaround is to modify `.info` file.
+        </del></details>
+
+        No, it's always 0 in `.info` file for `FileStore`. `writeInfo()` is only called by `NewUpload()` and `DeclareLength()`. The `Offset` is read from the size of the file when `GetUpload()`.
+
+        It's `NewUpload()` that removes existing files. A solution is to try to upload before creating one.
+
   - Download
     - `-disable-download`
     - Only files with `.info` can be downloaded.
@@ -96,19 +119,22 @@ Servers:
 
 Clients:
 - [tus-js-client: A pure JavaScript client for the tus resumable upload protocol](https://github.com/tus/tus-js-client)
+  - [lib/upload.ts](https://github.com/tus/tus-js-client/blob/d658d01bee3a716ad9546fabfde7963d73c7c7f2/lib/upload.ts)
 - [tus-py-client: A Python client for the tus resumable upload protocol](https://github.com/tus/tus-py-client) (`tuspy`, `tusclient`, [Notebook](tus.ipynb))
   - requests / aiohttp
 - Rust
-  - [tus\_client: A Rust native client library to interact with tus enabled endpoints](https://github.com/jonstodle/tus_client)
-    - [tus\_async\_client](https://github.com/zryambus/tus_async_client)
+  - [tus_client: A Rust native client library to interact with tus enabled endpoints](https://github.com/jonstodle/tus_client)
+    - [tus_async_client](https://github.com/zryambus/tus_async_client)
       - All tests deleted
-    - [tus\_client\_extra: A Rust native client library to interact with tus enabled endpoints - provides an extra output of HTTP headers](https://github.com/Bysness/tus_client_extra)
+    - [tus_client_extra: A Rust native client library to interact with tus enabled endpoints - provides an extra output of HTTP headers](https://github.com/Bysness/tus_client_extra)
   - [tus: rust implenetation of https://tus.io](https://github.com/richo/tus)
   - [web\_sys\_resumable: Resumable uploads for `web_sys::file`](https://github.com/littlebenlittle/web_sys_resumable)
   - [tus-rust: Rust implementation of the tus resumable upload protocol. http://tus.io](https://github.com/rio/tus-rust)
 
 ## Others
-[Resumable.js: A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads via the HTML5 File API.](https://github.com/23/resumable.js) (discontinued)
+- [Resumable.js: A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads via the HTML5 File API.](https://github.com/23/resumable.js) (discontinued)
+- [daffodil: 一个代码简单、易读、界面美观、支持多数据源动态切，换基于SpringBoot的后台管理系统的maven项目，采用技术SpringBoot、SpingDataJpa、Shiro、Redis、Flowable、thymeleaf、bootstrap、layer、fontawesome等。 - Gitee.com](https://gitee.com/mengtjq/daffodil)
+  - daffodil-easyfile：文件上传（实现大文件分片上传、续传、秒传功能）
 
 [post - resume uploads using HTTP? - Stack Overflow](https://stackoverflow.com/questions/1830130/resume-uploads-using-http)
 
