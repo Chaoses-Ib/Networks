@@ -168,6 +168,9 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 另一方可能同时会将 ACK 和 FIN 合并到一起发送。
 
+[network programming - Does TCP endpoint that has sent a FIN, still send keepalive? - Stack Overflow](https://stackoverflow.com/questions/18110239/does-tcp-endpoint-that-has-sent-a-fin-still-send-keepalive)
+> Keep-alive packets MUST only be sent when no data or acknowledgement packets have been received for the connection within an interval.
+
 [c - Is there a way to detect that TCP socket has been closed by the remote peer, without reading from it? - Stack Overflow](https://stackoverflow.com/questions/17705239/is-there-a-way-to-detect-that-tcp-socket-has-been-closed-by-the-remote-peer-wit)
 
 ### Reusing

@@ -72,6 +72,8 @@
 - [Transmission Control Protocol (TCP)](Transport/TCP/README.md)
   - [Congestion Control](Transport/TCP/Congestion%20Control.md)
   - [SYN Flood Attack](Transport/TCP/SYN%20Flood%20Attack.md)
+  - [Connection Flood Attack](Transport/TCP/Connection%20Flood.md)
+  - [RST Flood Attack](Transport/TCP/RST%20Flood.md)
 - [KCP](Transport/KCP.md)
 - [QUIC](Transport/QUIC/README.md)
   - [Congestion control](Transport/QUIC/Congestion.md)
@@ -116,7 +118,7 @@ Python:
 - [File Sharing](Application/File%20Sharing.md)
 - [Search Engines](Application/Search/README.md)
 
-## OS
+## [OS](OS/README.md)
 - [Linux](OS/Linux/README.md)
 - [Windows](OS/Windows/README.md)
   - [Windows Sockets (Winsock)](OS/Windows/Winsock.md)
@@ -127,7 +129,7 @@ Python:
 - [Short Message Service](Telephone/SMS.md)
 - [Telephone Services](Telephone/Services.md)
 
-## Security
+## [Security](Security/README.md)
 - [Rate Limiting](Security/Rate.md)
 - [Firewalls](Security/Firewalls/README.md)
   - [Linux](Security/Firewalls/Linux/README.md)
