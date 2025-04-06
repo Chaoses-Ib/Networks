@@ -55,6 +55,7 @@
   - [Domain Names](Internet/DNS/Domain%20Names.md)
   - [DNS Hosting Services](Internet/DNS/Hosting.md)
   - [Reverse DNS Lookup](Internet/DNS/Reverse%20DNS%20Lookup.md)
+  - [Cache](Internet/DNS/Cache.md)
   - [DNS Spoofing](Internet/DNS/DNS%20Spoofing.md)
 - [Captive Portal](Internet/Captive%20Portal.md)
 - [Internet Censorship](Internet/Censorship/README.md)

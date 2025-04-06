@@ -77,8 +77,16 @@ Discussions:
 ## 阿里云
 > 阿里云的 DNS 解析在各方面的体验都很不错，例如修改配置后就能很快更新、配置平台访问速度快、站点不会被国内的运营商污染等等，这些优点反过来可是说尽是 Cloudflare 的缺点。
 
+[《DNS稳定保障系列4--阿里云DNS稳定性武功秘籍揭秘》 - 知乎](https://zhuanlan.zhihu.com/p/99516129)
+
+[公网权威解析免费版和付费版DNS的差别\_云解析DNS(DNS)-阿里云帮助中心](https://help.aliyun.com/zh/dns/details)
+
 免费版：
+- Record types: A, AAAA, CNAME, NS, MX, SRV, TXT (512), CAA, 显性URL, 隐性URL, SVCB, HTTPS
 - DNS集群：国内4个，境外0个（海外域名解析慢）
+- dns(1-32).hichina.com, ns(1-8).alidns.com
+- 无 cache，修改后可即时查询到新的 record
+- DNS解析峰值: 不超过2万次/秒
 
 个人版：
 - 【基础能力】支持设置A、AAAA、CNAME、MX、NS、TXT、SRV、CAA类型记录，支持IPv4、IPv6、域名等类型地址按轮询/权重规则解析应答；
@@ -102,3 +110,21 @@ Discussions:
 - 【辅助DNS】支持Slave DNS与自建DNS进行主从同步；
 
 DNS攻击防御
+
+[阿里云DNS服务器地址大全（免费+付费） -- 阿里云百科](https://www.aliyunbaike.com/dns/4856/)
+
+API: [通过阿里云CLI,OpenAPI Explorer和SDK调用DNS API-阿里云帮助中心](https://help.aliyun.com/zh/dns/quick-start-1)
+
+Tools:
+- [yyqian/aliyun-ddns: 利用阿里云解析的 API 实现动态域名解析的功能](https://github.com/yyqian/aliyun-ddns)
+- Python: [使用阿里云 DNS API 实现 DDNS | 汪广鑫の小pò站](https://wgxls.site/posts/aliyundnsapi-ddns/)
+- [ljwlaji/AliyunDDNS: 利用阿里云的DNS API 实现自动解析DNS的功能](https://github.com/ljwlaji/AliyunDDNS)
+
+## 腾讯云
+[移动解析HttpDNS\_移动互联网域名解析\_域名防劫持-腾讯云](https://cloud.tencent.com/product/httpdns)
+> 移动解析 HTTPDNS 基于 HTTP 协议向腾讯云的 DNS 服务器发送域名解析请求，是面向多端应用，包括移动端APP/PC客户端应用的域名解析服务，可以避免**域名劫持和跨网访问问题**，实现精准调度，解决移动互联网服务中域名解析异常带来的困扰。
+
+> HTTPDNS 目的在于解决移动互联网中 DNS 解析异常、域名劫持的问题：
+> - 移动 DNS 的现状：运营商 LocalDNS 出口根据权威 DNS 目标 IP 地址进行 NAT，或将解析请求转发到其他 DNS 服务器，导致权威 DNS 无法正确识别运营商的 LocalDNS IP，引发域名解析错误、流量跨网。
+> - 域名被劫持的后果：网站无法访问（无法连接服务器）、访问到钓鱼网站等。
+> - 解析结果跨域、跨省、跨运营商、国家的后果：网站访问缓慢甚至无法访问。
