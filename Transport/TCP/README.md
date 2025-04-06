@@ -1,4 +1,4 @@
-# Transmission Control Protocol
+# Transmission Control Protocol (TCP)
 **Transmission Control Protocol (TCP)** provides reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications running on hosts communicating via an IP network.[^wiki]
 
 ## Services

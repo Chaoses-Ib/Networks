@@ -1,5 +1,5 @@
 # Transport Layer
-[Transport layer - Wikipedia](https://en.wikipedia.org/wiki/Transport_layer)
+[Wikipedia](https://en.wikipedia.org/wiki/Transport_layer)
 
 ## Transport services
 [^topdown]
@@ -14,6 +14,9 @@
 - Security
 
 [^topdown]: Computer Networking：A Top-Down Approach
+
+## System integration
+TCP 的硬件和系统集成使得它能够被更好地优化，但反过来也更容易被审查，降低了可靠性。
 
 ## Libraries
 ### C++
