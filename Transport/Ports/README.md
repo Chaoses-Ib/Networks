@@ -15,6 +15,46 @@
 
 [RouterOS 端口扫描防御 | 華鳥風月](https://blog.9-ch.com/post/homelab-ros-anti-scan/)
 
+[常用游戏（应用）端口及屏蔽方法\_朝南\_新浪博客](https://blog.sina.com.cn/s/blog_705c9d0601011r8x.html)
+
+## ISPs
+[4444 端口之谜 - V2EX](https://v2ex.com/t/971720)
+```
+接到电信运营商的通知，为了增强网络安全性，中国电信将于北京时间 2017 年 09 月 28 日 00:00 开始在全国范围的 IDC 机房电信链路网络出口添加病毒防护策略，屏蔽部分端口（详细参看下列清单），届时对这些端口的访问将被阻断。建议您提前检查您的业务中是否包含下述端口的服务，提前更换端口以免受到影响。
+目的端口：137-139 ，协议：TCP/UDP
+目的端口：593 ，协议：TCP/UDP
+目的端口：445 ，协议：TCP/UDP
+目的端口：4444 ，协议：TCP/UDP
+目的端口：135 ，协议：TCP/UDP
+目的端口：3332 ，协议：TCP
+目的端口：9996 ，协议：TCP/UDP
+目的端口：6669 ，协议：TCP
+目的端口：1434 ，协议：TCP/UDP
+目的端口：3127-3130 ，协议：TCP
+目的端口：42 ，协议：TCP
+目的端口：1068 ，协议：TCP/UDP
+目的端口：5554 ，协议：UDP
+目的端口：17185 ，协议：UDP目的端口：137-139 ，协议：TCP/UDP
+目的端口：593 ，协议：TCP/UDP
+目的端口：445 ，协议：TCP/UDP
+目的端口：4444 ，协议：TCP/UDP
+目的端口：135 ，协议：TCP/UDP
+目的端口：3332 ，协议：TCP
+目的端口：9996 ，协议：TCP/UDP
+目的端口：6669 ，协议：TCP
+目的端口：1434 ，协议：TCP/UDP
+目的端口：3127-3130 ，协议：TCP
+目的端口：42 ，协议：TCP
+目的端口：1068 ，协议：TCP/UDP
+目的端口：5554 ，协议：UDP
+目的端口：17185 ，协议：UDP
+```
+[IDC 机房电信链路端口屏蔽说开来（常见端口分析） - VirCloud's Blog - Learning&Sharing](https://vircloud.net/operations/ct-hielded.html)
+
+[简单测试本地运营商屏蔽了哪些 TCP 端口 - V2EX](https://www.v2ex.com/t/509732)
+
+[电信为什么要屏蔽80端口，有可能解除屏蔽吗？ - 知乎](https://www.zhihu.com/question/21367235)
+
 ## Ephemeral ports
 [Wikipedia](https://en.wikipedia.org/wiki/Ephemeral_port)
 
