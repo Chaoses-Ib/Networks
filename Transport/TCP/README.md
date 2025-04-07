@@ -1,6 +1,10 @@
 # Transmission Control Protocol (TCP)
 **Transmission Control Protocol (TCP)** provides reliable, ordered, and error-checked delivery of a stream of octets (bytes) between applications running on hosts communicating via an IP network.[^wiki]
 
+[TCP 的那些事儿（上） | 酷 壳 - CoolShell](https://coolshell.cn/articles/11564.html)
+
+[TCP 的那些事儿（下） | 酷 壳 - CoolShell](https://coolshell.cn/articles/11609.html)
+
 ## Services
 - Connection-oriented service
 - Reliable data transfer
@@ -163,15 +167,69 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
    确认号为 server_isn + 1
 
 关闭连接：
-1. 一方发送 FIN，收到 ACK
-2. 另一方之后也发送 FIN，收到 ACK
+1. 一方发送 FIN (`FIN_WAIT1`)，收到 ACK (`FIN_WAIT2`)
+2. 另一方之后也发送 FIN，收到 ACK (`TIME_WAIT`, `CLOSED`)
 
 另一方可能同时会将 ACK 和 FIN 合并到一起发送。
 
-[network programming - Does TCP endpoint that has sent a FIN, still send keepalive? - Stack Overflow](https://stackoverflow.com/questions/18110239/does-tcp-endpoint-that-has-sent-a-fin-still-send-keepalive)
-> Keep-alive packets MUST only be sent when no data or acknowledgement packets have been received for the connection within an interval.
+- Sequence number randomization
+
+  [tcpip - TCP sequence number randomization - Server Fault](https://serverfault.com/questions/704799/tcp-sequence-number-randomization)
+
+  [Do you know what TCP sequence number randomization is? You better : r/networking](https://www.reddit.com/r/networking/comments/3hac61/do_you_know_what_tcp_sequence_number/)
+
+- 理论上来说谁先发送 FIN 在结果上没有区别
+  - 但实践中通常由客户端先发送 FIN，如果是服务端先发送 FIN，有可能会被防火墙误以为客户端在使用无效数据包进行恶意攻击，屏蔽客户端新连接；收到客户端 FIN 较晚，在客户端端口复用的情况下可能会出现问题
+
+    [c++ - Windows TCP connection failures and retransmissions - Stack Overflow](https://stackoverflow.com/questions/64378720/windows-tcp-connection-failures-and-retransmissions)
+  - 但如果客户端先发送 FIN，也可能会被 NAT/firewall 过早关闭而无法再与服务端使用同一连接通讯
+
+  [云风的 BLOG: skynet 处理 TCP 连接半关闭问题](https://blog.codingnow.com/2021/02/skynet_tcp_halfclose.html)
+
+  [→Reusing](#reusing)
+
+- [linux - What is it happening if a port is constantly (since one or more days) in `FIN_WAIT1`? - Super User](https://superuser.com/questions/1411397/what-is-it-happening-if-a-port-is-constantly-since-one-or-more-days-in-fin-wai)
+
+  [linux - How do I get rid of sockets in FIN\_WAIT1 state? - Server Fault](https://serverfault.com/questions/7689/how-do-i-get-rid-of-sockets-in-fin-wait1-state)
+
+  [linux下TCP在FIN\_WAIT1状态能持续多久及TCP假连接问题 - 知乎](https://zhuanlan.zhihu.com/p/337662796)
+
+- [tcp - Why are connections in `FIN_WAIT2` state not closed by the Linux kernel? - Server Fault](https://serverfault.com/questions/738300/why-are-connections-in-fin-wait2-state-not-closed-by-the-linux-kernel)
+
+  [大量 FIN\_WAIT2 状态的 TCP 连接不会被切断 - Issue #87 - zhboner/realm](https://github.com/zhboner/realm/issues/87)
+
+  [一个TCP FIN\_WAIT2状态细节引发的感慨\_final wait 2 tcp-CSDN博客](https://blog.csdn.net/dog250/article/details/81256550)
+  > tcp_fin_timeout (integer; default: 60; since Linux 2.2)  
+  > This specifies how many seconds to wait for a final FIN packet before the socket is forcibly closed. This is  
+  > strictly a violation of the TCP specification, but required to prevent denial-of-service attacks. In Linux 2.2,  
+  > the default value was 180.
+
+  > 连接在FINWAIT-2超时后并不会进入TIMEWAIT状态，也不会发送reset，而是直接默默消失。
+
+  [网络分析流量FIN\_WAIT\_2状态解释\_fin-wait-2-CSDN博客](https://blog.csdn.net/ximenjianxue/article/details/117735333)
+  > 但是除此之外，如果应用层是执行shutdown（SHUT_WR）操作关闭了套接口的发送，TCP连接还可进行接收操作，此种情况下的TCP连接处于FIN_WAIT_2状态不受tcp_fin_timeout的时间限制，将会永久的等待对端去关闭连接或者本地使用close关闭或者重启OS。
+
+- Maximum segment lifetime ([Wikipedia](https://en.wikipedia.org/wiki/Maximum_segment_lifetime))
+
+  > The specification calls for this value to be used for the "time-wait" interval, the minimum time a system must keep the socket in the `TIME_WAIT` *state* before designating the socket closed, thus preventing the socket from being re-used before that interval.
+
+  > In Linux, the time-wait interval is defined by the `TCP_TIMEWAIT_LEN`, hard-coded as 60 seconds. Linux implements several possible optimizations to shorten the `TIME_WAIT` state through *recycling*, down to a minimum of 3.5s in recent kernels.
+
+  Windows: [TcpTimedWaitDelay](https://learn.microsoft.com/en-us/biztalk/technical-guides/settings-that-can-be-modified-to-improve-network-performance#adjust-the-maxuserport-and-tcptimedwaitdelay-settings), 120 by default
+
+  NAT 可能会在十几秒内复用端口。
+
+  [network protocols - Setting TIME\_WAIT TCP - Stack Overflow](https://stackoverflow.com/questions/337115/setting-time-wait-tcp)
 
 [c - Is there a way to detect that TCP socket has been closed by the remote peer, without reading from it? - Stack Overflow](https://stackoverflow.com/questions/17705239/is-there-a-way-to-detect-that-tcp-socket-has-been-closed-by-the-remote-peer-wit)
+
+### Keepalive
+[Wikipedia](https://en.wikipedia.org/wiki/Keepalive#TCP_keepalive)
+
+尽管关闭接收与否本身不会发送消息，但不关闭接收时会发送 keepalive，实际上是一种基于时间的，默认不关闭接收的协议。
+
+[network programming - Does TCP endpoint that has sent a FIN, still send keepalive? - Stack Overflow](https://stackoverflow.com/questions/18110239/does-tcp-endpoint-that-has-sent-a-fin-still-send-keepalive)
+> Keep-alive packets MUST only be sent when no data or acknowledgement packets have been received for the connection within an interval.
 
 ### Reusing
 [linux - `tcp_tw_reuse` vs `tcp_tw_recycle` : Which to use (or both)? - Stack Overflow](https://stackoverflow.com/questions/6426253/tcp-tw-reuse-vs-tcp-tw-recycle-which-to-use-or-both)
@@ -186,6 +244,13 @@ Windows:
 [windows - What are `CLOSE_WAIT` and `TIME_WAIT` states? - Super User](https://superuser.com/questions/173535/what-are-close-wait-and-time-wait-states)
 
 [Does Windows support tcp `TIME_WAIT` reuse? - Server Fault](https://serverfault.com/questions/760076/does-windows-support-tcp-time-wait-reuse)
+
+[TCP 的那些事儿（上） | 酷 壳 - CoolShell](https://coolshell.cn/articles/11564.html)
+> 如果是tcp_tw_recycle被打开了话，会假设对端开启了tcp_timestamps，然后会去比较时间戳，如果时间戳变大了，就可以重用。但是，如果对端是一个NAT网络的话（如：一个公司只用一个IP出公网）或是对端的IP被另一台重用了，这个事就复杂了。建链接的SYN可能就被直接丢掉了（你可能会看到connection time out的错误）
+
+[NAT网络下TCP连接建立时可能SYN包被服务器忽略-tcp\_tw\_recycle | 趁着年轻](http://chenzhenianqing.com/articles/1150.html)
+
+[从Nat到TCP\_TW - Code Life](https://vsxen.github.io/2020/02/25/tcp_nat/)
 
 ### Connection limit
 [TCP/IP concurrent connections - Microsoft Q&A](https://learn.microsoft.com/en-us/answers/questions/482793/tcp-ip-concurrent-connections)

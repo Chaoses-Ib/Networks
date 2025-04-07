@@ -61,6 +61,7 @@ The malicious client can either simply not send the expected `ACK`, or by spoo
   - Right-seq: 伪造 SYN ACK，检测服务端 RST 后客户端是否重连
     - 依赖客户端重试行为，破坏了 TCP 的可靠性
     - 云彩网络: 需要重连两次
+  - 连接丢弃，检测客户端是否换端口重连
 
   [什么是SYN Flood？如何防御SYN Flood？ - 华为](https://info.support.huawei.com/info-finder/encyclopedia/zh/SYN+Flood.html)
 

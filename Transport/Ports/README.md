@@ -64,6 +64,8 @@
 
 - Linux: 32768~60999
 
+[Is it a bad thing to see many [TCP Port numbers reused]?](https://osqa-ask.wireshark.org/questions/17955/is-it-a-bad-thing-to-see-many-tcp-port-numbers-reused/)
+
 ## Port reusing
 ### Load balancing
 [The `SO_REUSEPORT` socket option \[LWN.net\]](https://lwn.net/Articles/542629/)
