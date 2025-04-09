@@ -143,9 +143,11 @@ Tools:
 ## Windows
 [Domain Name System - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/dns/dns-start-page)
 
+`ws2_32.dll`:
 - [getaddrinfo](https://learn.microsoft.com/en-us/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfo)
 - [GetAddrInfoExW](https://learn.microsoft.com/en-us/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfoexw)
 
+`dnsapi.dll`:
 - [`DnsQuery_A`](https://learn.microsoft.com/en-us/windows/win32/api/windns/nf-windns-dnsquery_a)
 
   [Windows-classic-samples/Samples/Win7Samples/netds/dns/dnsquery/DNSQuery.Cpp](https://github.com/microsoft/Windows-classic-samples/blob/main/Samples/Win7Samples/netds/dns/dnsquery/DNSQuery.Cpp)
