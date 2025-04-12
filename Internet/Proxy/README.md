@@ -95,6 +95,8 @@ HTTP:
 
 [各种端口转发工具的使用方法 - Y4er的博客](https://y4er.com/posts/port-forwarding/)
 
+[linux - How can I set a proxy for Wget? - Stack Overflow](https://stackoverflow.com/questions/11211705/how-can-i-set-a-proxy-for-wget)
+
 ## Services
 Name | HTTP | SOCKS | Comment
 --- | --- | --- | ---

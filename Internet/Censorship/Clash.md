@@ -99,7 +99,17 @@ Rule sets:
 [Notebook](Clash.ipynb)
 
 ## [Clash.Meta](https://github.com/MetaCubeX/mihomo/tree/Alpha)
-- `scoop install mihomo`
+- [使用预编译二进制](https://wiki.metacubex.one/startup/)
+  - `scoop install mihomo`
+  - Linux
+    ```sh
+    wget http://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-alpha-84cd0ef.gz
+    gunzip mihomo-linux-amd64-alpha-84cd0ef.gz
+    mv mihomo-linux-amd64-alpha-84cd0ef m
+    dd if=/dev/zero bs=1 count=1 >> m
+    chmod +x m
+    ./m -d cm -f config.yaml
+    ```
 - Configuration directory (`-d`) defaults to `~/.config/mihomo`
 
 [Clash.Meta Docs](https://wiki.metacubex.one/)
