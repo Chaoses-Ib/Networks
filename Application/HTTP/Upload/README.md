@@ -49,7 +49,22 @@ Content-Type: text/plain
 
       [Compute the MD5 hash of the file for Azure Storage - Issue #1187 - tus/tusd](https://github.com/tus/tusd/issues/1187)
 
+- Resuming
+  - Variable content
+    - If HEAD `offset == length`, skip, otherwise conitnue at `offset`: [tus-js-client](https://github.com/tus/tus-js-client/blob/d658d01bee3a716ad9546fabfde7963d73c7c7f2/lib/upload.ts#L748)
+    - If HEAD `length != upload.length`, error, otherwise continue at `offset`: tus_async_client
+
+    Better to use different ids, e.g. the same id with different suffixes.
+
 - Instant upload (秒传): try upload at hash + create at hash (by pre-create hook)
+
+- Compression
+
+  With instant upload:
+  1. Get file info at hash, if not compelete:
+  2. Compression
+  3. Upload at hash with suffix (including level)
+  4. Decompress at `post-finish`/`pre-finish`
 
 Servers:
 - Go: [tusd: Reference server implementation in Go of tus: the open protocol for resumable file uploads](https://github.com/tus/tusd)
@@ -86,7 +101,7 @@ Servers:
   - Download
     - `-disable-download`
     - Only files with `.info` can be downloaded.
-  - Hooks
+  - [Hooks](https://tus.github.io/tusd/advanced-topics/hooks/)
     - Files
     - HTTP
     - gRPC: Bad interface, all in one `InvokeHook`
