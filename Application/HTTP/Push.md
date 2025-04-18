@@ -134,8 +134,14 @@ JS:
   [Can Server Sent Events (SSE) with EventSource pass parameter by POST - Stack Overflow](https://stackoverflow.com/questions/34261928/can-server-sent-events-sse-with-eventsource-pass-parameter-by-post)
 
 - [mpetazzoni/sse.js: A flexible Server-Sent Events EventSource polyfill for Javascript](https://github.com/mpetazzoni/sse.js)
-
+  - [1.5 KB](https://bundlephobia.com/package/sse.js)
+  - `headers: {'content-type': 'application/json'}`
+- [eventsource-client: A modern, streaming server-sent events/eventsource client](https://github.com/rexxars/eventsource-client)
+  - [2.2 KB](https://bundlephobia.com/package/eventsource-client)
 - [eventsource: EventSource client for Node.js and Browser (polyfill)](https://github.com/EventSource/eventsource)
+  - [2.8 KB](https://bundlephobia.com/package/eventsource)
+
+  > The module attempts to implement an absolute minimal amount of features/changes beyond the specification.
 
 - React
   - [react-hooks-sse: Subscribe to an SSE endpoint with React Hooks](https://github.com/samouss/react-hooks-sse)
