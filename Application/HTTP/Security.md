@@ -1,5 +1,16 @@
 # HTTP Security
-## [→Authentication](https://github.com/Chaoses-Ib/InformationSecurity/tree/main/Access%20Control/Authentication/Tokens#http-basic-authentication)
+Servers:
+- [→Nginx](Servers/Nginx/README.md#security)
+
+## Authorization
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Authorization)
+
+[rest - Basic HTTP and Bearer Token Authentication - Stack Overflow](https://stackoverflow.com/questions/22229996/basic-http-and-bearer-token-authentication)
+
+[设置账户后 下载 401 安卓浏览器 - Issue #465 - sigoden/dufs](https://github.com/sigoden/dufs/issues/465)
+> Some browsers do not send the authorization header, resulting in a 401 error.
+
+### [→Basic authentication](https://github.com/Chaoses-Ib/InformationSecurity/blob/main/Access%20Control/Authentication/Tokens/Basic.md)
 
 ## Cookies
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)

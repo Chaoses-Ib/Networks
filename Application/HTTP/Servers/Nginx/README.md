@@ -21,6 +21,8 @@ Books:
 
 [h5bp/server-configs-nginx: Nginx HTTP server boilerplate configs](https://github.com/h5bp/server-configs-nginx)
 
+[Migrating from IIS to Nginx | Murray's Blog](https://blog.ligos.net/2019-03-09/Migrating-From-IIS-to-Nginx.html)
+
 ## Build
 [Building nginx from Sources](https://nginx.org/en/docs/configure.html)
 - `This module is not built by default.` *27
@@ -486,6 +488,44 @@ error_log  logs/error.log  debug;
 
 - `Server: nginx/1.27.0`
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
+
+### Auth
+- [→HTTP Basic Authentication](https://github.com/Chaoses-Ib/InformationSecurity/blob/main/Access%20Control/Authentication/Tokens/Basic.md#servers)
+- [`ngx_http_auth_request_module`](https://nginx.org/en/docs/http/ngx_http_auth_request_module.html)
+  - 2xx
+  - 401/403
+  ```nginx
+  location = /auth {
+      proxy_pass http://127.0.0.1:8080;
+      proxy_pass_request_body off;
+      proxy_set_header Content-Length "";
+      proxy_set_header X-Original-URI $request_uri;
+
+      proxy_set_header X-Real-IP $remote_addr;
+  }
+
+  location /private/ {
+      auth_request /auth;
+      ...
+  }
+  ```
+  [I wish there were better authentication options with Nginx. The ngx\_http\_auth\_re... | Hacker News](https://news.ycombinator.com/item?id=7641148)
+
+  [`ngx_http_auth_request_module`: log](https://mdounin.ru/hg/ngx_http_auth_request_module/)
+
+  ~~[authentication - nginx `auth_request` with cookie - Stack Overflow](https://stackoverflow.com/questions/55751365/nginx-auth-request-with-cookie)~~
+- [spnego-http-auth-nginx-module: SPNEGO HTTP Authentication Module for nginx](https://github.com/stnoonan/spnego-http-auth-nginx-module)
+- njs
+- lua
+- TLS
+
+  [Client-Side Certificate Authentication with nginx | fardog.io](https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/)
+- Cookies
+
+  [Cookie-based authentication with nginx](https://gist.github.com/rnorth/2031652)
+- [JWT](https://github.com/Chaoses-Ib/InformationSecurity/blob/main/Access%20Control/Authentication/Tokens/JSON%20Web.md) (Plus)
+
+[ways of authentication with Nginx - Stack Overflow](https://stackoverflow.com/questions/72434853/ways-of-authentication-with-nginx)
 
 ### HTTPS
 [Module ngx\_http\_ssl\_module](https://nginx.org/en/docs/http/ngx_http_ssl_module.html)
