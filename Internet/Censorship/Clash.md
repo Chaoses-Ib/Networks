@@ -132,8 +132,13 @@ Desktop:
   - [Clash Verge Rev: Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)](https://github.com/clash-verge-rev/clash-verge-rev)
     - Tauri v2
     - 轻量模式: 655 MiB, 0.95% CPU → 153 MiB, 0.11% CPU
-      - [\[Feature\] 轻量模式加入托盘点击右键的上拉框 - Issue #2789](https://github.com/clash-verge-rev/clash-verge-rev/issues/2789)
-      - [\[Feature\] 增加一个轻量模式的快捷键 - Issue #2808](https://github.com/clash-verge-rev/clash-verge-rev/issues/2808)
+      - 激活: 设置、托盘、热键、首页、自动（最少 1min，默认不开启）
+        - [\[Feature\] 轻量模式加入托盘点击右键的上拉框 - Issue #2789](https://github.com/clash-verge-rev/clash-verge-rev/issues/2789)
+        - [\[Feature\] 增加一个轻量模式的快捷键 - Issue #2808](https://github.com/clash-verge-rev/clash-verge-rev/issues/2808)
+    - 网络
+      - IP 信息、解锁测试
+      - 流量统计
+    - WebDAV 备份
     - [希望可以在全局配置中添加 `prepend-rules` 规则 - Issue #1437](https://github.com/clash-verge-rev/clash-verge-rev/issues/1437)
     - Logs 位于 `%APPDATA%\io.github.clash-verge-rev.clash-verge-rev\logs`，**不会**自动清理，会增大空间占用以及隐私泄露风险。可以调高 Log Level 来避免快速占用大量空间，或者直接调整为 Silent。
     - [clash-verge-rev/UPDATELOG.md](https://github.com/clash-verge-rev/clash-verge-rev/blob/dev/UPDATELOG.md)
