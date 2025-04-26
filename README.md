@@ -23,6 +23,7 @@
 - [Multiple Access Protocols](Link/MAC/README.md)
 - [Address Resolution Protocol](Link/ARP/README.md)
 - [Virtual Private Networks](Link/VPN/README.md)
+- [Statistics](Link/Statistics/README.md)
 
 ## [Internet](Internet/README.md)
 - [IP Addresses](Internet/Addresses.md)
