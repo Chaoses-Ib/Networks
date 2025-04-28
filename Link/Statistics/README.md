@@ -131,12 +131,17 @@
 
 - [nethogs: Linux 'net top' tool](https://github.com/raboof/nethogs)
   - Processes
+  - Traffic statistics not accurate?
+    - [stats for udp? - Issue #226](https://github.com/raboof/nethogs/issues/226)
+      - `-C`
 
 [linux - Monitor network traffic volume over interface - Server Fault](https://serverfault.com/questions/336854/monitor-network-traffic-volume-over-interface)
 
 [如何查看Linux系统网络流量负载情况？ - 云服务器 ECS - 阿里云](https://www.alibabacloud.com/help/zh/ecs/support/query-and-case-analysis-of-linux-network-traffic-load)
 
 [raboof/nethogs links](https://github.com/raboof/nethogs#links)
+
+[networking - How do I find out which process is eating up my bandwidth? - Ask Ubuntu](https://askubuntu.com/questions/2411/how-do-i-find-out-which-process-is-eating-up-my-bandwidth)
 
 ### Period
 - [vnStat: a network traffic monitor for Linux and BSD](https://github.com/vergoh/vnstat) ([Wikipedia](https://en.wikipedia.org/wiki/VnStat))
