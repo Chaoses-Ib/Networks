@@ -9,6 +9,18 @@
 
 [MisakaNo の 小破站 / clash-meta - GitLab](https://gitlab.com/Misaka-blog/clash-meta)
 
+## Relay
+- `dialer-proxy`
+
+  If `B.dialer-proxy: A`, Clash → A → B.
+
+  [dialer-proxy - Clash.Rev Docs](https://merlinkodo.github.io/Clash-Rev-Doc/config/proxies/dialer-proxy/)
+- `type: relay` (deprecated)
+  
+  [链式代理 - 虚空终端 Docs](https://wiki.metacubex.one/config/proxy-groups/relay/)
+
+  [链式代理优化代理速度 | tanglu's blog](https://blog.tanglu.me/chains-proxies/)
+
 ## Proxy groups
 `url-test`:
 - [→Captive portal detection](../Captive%20Portal.md#detection)
