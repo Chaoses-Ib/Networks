@@ -134,6 +134,8 @@ Name | 混合拨号
 [米安网络](https://www.miandns.com/) | ✔️
 [飞网](https://www.fwvps.com/) | ✔️
 
+[动态IP 免费用！免费用！ 全球200+国家，9000W+动态IP，没任何费用！](https://www.nodeseek.com/post-84971-1)
+
 或者任何按量计费的 VPS、IP（弹性公网IP）：
 - 天翼云
   
