@@ -34,6 +34,7 @@
   - [IPv6 Transition Mechanisms](Internet/IPv6/Transition/README.md)
 - [Forwarding](Internet/Forwarding/README.md)
   - [Packet Scheduling](Internet/Forwarding/Scheduling.md)
+- [Routing](Internet/Routing/README.md)
 - [Internet Control Message Protocol](Internet/ICMP/README.md)
   - [Echo and Echo Reply](Internet/ICMP/Echo.md)
 - [Service Discovery](Internet/Discovery/README.md)
