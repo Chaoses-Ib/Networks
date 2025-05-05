@@ -56,6 +56,26 @@ Content-Type: text/plain
 
     Better to use different ids, e.g. the same id with different suffixes.
 
+- Parallel upload
+
+  By default, every chunk will only start upload if the previous one has been completed.
+  - Worse for high-latency and slow start connections
+
+  Parallel uploads:
+  - [Concatenation](https://tus.io/protocols/resumable-upload#concatenation) (parallel uploads)
+
+    Concatenation will upload different chunks to different URLs parallelly, and then concatenate them on the server.
+    - Doesn't support to specify upload URL anymore.
+
+      `cannot use the uploadUrl option when parallelUploads is enabled`
+    - Metadata
+
+      > When parallel uploads are enabled via `parallelUploads`, tus-js-client creates multiple partial uploads. The values from `metadata` are not passed to these partial uploads but only passed to the final upload, which is the concatentation of the partial uploads. In contrast, the values from `metadataForPartialUploads` are only passed to the partial uploads and not the final upload.
+
+      But can't specify different metadata for each chunk.
+  - Why not just utilize offset to do parallel upload, like what parallel downloaders do?
+  - Or just buffer the subsequent `PUT` on the server until the previous one is finished?
+
 - Instant upload (秒传): try upload at hash + create at hash (by pre-create hook)
 
 - Compression
