@@ -1,13 +1,5 @@
 # [axum](https://github.com/tokio-rs/axum)
 Handler:
-- `State` will be cloned for each request.
-
-  [Always store state in an `Arc` by davidpdrsn - Pull Request #1270 - tokio-rs/axum](https://github.com/tokio-rs/axum/pull/1270)
-
-  [Is State cloned for each request? - tokio-rs/axum - Discussion #1911](https://github.com/tokio-rs/axum/discussions/1911)
-
-  `router.with_state(Arc::new(state))`
-
 - [The order of extractors](https://docs.rs/axum/latest/axum/extract/index.html#the-order-of-extractors)
 
   > Extractors always run in the order of the function parameters that is from left to right. The request body is an asynchronous stream that can only be consumed once. Therefore you can only have one extractor that consumes the request body. axum enforces this by requiring such extractors to be the *last* argument your handler takes.
@@ -44,6 +36,64 @@ Static file servers:
 - [How to host SPA files and embed too with axum and rust-embed - Stack Overflow](https://stackoverflow.com/questions/73464479/how-to-host-spa-files-and-embed-too-with-axum-and-rust-embed)
 
 [Demo of Rust and axum web framework with Tokio, Tower, Hyper, Serde](https://github.com/joelparkerhenderson/demo-rust-axum/tree/main)
+
+## Versions
+- [v0.8.0](https://github.com/tokio-rs/axum/releases/tag/axum-v0.8.0)
+
+## State
+- `State` will be cloned for each request.
+
+  [Always store state in an `Arc` by davidpdrsn - Pull Request #1270 - tokio-rs/axum](https://github.com/tokio-rs/axum/pull/1270)
+
+  [Is State cloned for each request? - tokio-rs/axum - Discussion #1911](https://github.com/tokio-rs/axum/discussions/1911)
+
+  `router.with_state(Arc::new(state))`
+
+- [Substates](https://docs.rs/axum/latest/axum/extract/struct.State.html#substates)
+  - Closure (`Send + Sync + 'static`)
+  - `impl FromRef<AppState> for ApiState`
+    ```rust
+    use axum::{Router, routing::get, extract::{State, FromRef}};
+
+    // the application state
+    #[derive(Clone)]
+    struct AppState {
+        // that holds some api specific state
+        api_state: ApiState,
+    }
+
+    // the api specific state
+    #[derive(Clone)]
+    struct ApiState {}
+
+    // support converting an `AppState` in an `ApiState`
+    impl FromRef<AppState> for ApiState {
+        fn from_ref(app_state: &AppState) -> ApiState {
+            app_state.api_state.clone()
+        }
+    }
+
+    let state = AppState {
+        api_state: ApiState {},
+    };
+
+    let app = Router::new()
+        .route("/", get(handler))
+        .route("/api/users", get(api_users))
+        .with_state(state);
+
+    async fn api_users(
+        // access the api specific state
+        State(api_state): State<ApiState>,
+    ) {
+    }
+
+    async fn handler(
+        // we can still access to top level state
+        State(state): State<AppState>,
+    ) {
+    }
+    ```
 
 ## Error handling
 [axum::error_handling](https://docs.rs/axum/latest/axum/error_handling/index.html)
