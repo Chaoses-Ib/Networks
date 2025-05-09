@@ -367,12 +367,20 @@ http {
   }
   ```
 
-- SPA
+- [`try_files`](https://nginx.org/en/docs/http/ngx_http_core_module.html#try_files)
+
+  > If none of the files were found, an internal redirect to the `uri` specified in the last parameter is made.
+
+  SPA:
   ```nginx
   location / {
     try_files $uri $uri/ /index.html;
   }
   ```
+  
+  Mixed-page app: `/sub/index.html $uri`
+
+  [Nginx "invalid number of arguments in `try_files` directive..." for PHP security - Stack Overflow](https://stackoverflow.com/questions/17349616/nginx-invalid-number-of-arguments-in-try-files-directive-for-php-security)
 
 - Host names
   - `$host`: In this order of precedence: host name from the request line, or host name from the `Host` request header field, or the server name matching a request.
