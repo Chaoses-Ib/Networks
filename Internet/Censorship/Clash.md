@@ -80,6 +80,14 @@ Premium core is proprietary. It has the following additional features:
 - Load your rules with [Rule Providers](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#rule-providers)
 - Monitor Clash usage with a built-in profiling engine. ([Dreamacro/clash-tracing](https://github.com/Dreamacro/clash-tracing))
 
+## Rules
+[路由规则 - 虚空终端 Docs](https://wiki.metacubex.one/config/rules/)
+
+- `PROCESS-NAME`
+  - 大小写不敏感，但是是完整匹配，需要包含扩展名
+    - [\[Feature\] 支持 域名关键字 通配 和 程序关键字 通配 - Issue #846 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/846)
+  - ~~[\[Bug\] 太多的 process not found - Issue #613 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/613)~~
+
 ### [Rule Providers](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#rule-providers)
 [如何优雅地为 Clash 添加自定义代理规则？这是你要看的最后一篇教程 - V2EX](https://v2ex.com/t/949462)
 
@@ -88,6 +96,7 @@ Rule sets:
 - [Loyalsoldier/clash-rules](https://github.com/Loyalsoldier/clash-rules)
 - [blackmatrix7/ios_rule_script/rule/Clash](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash)
 - [FantasticMao 的 Clash 规则集](https://github.com/fantasticmao/clash-rules)
+- [maskedeken/clash-rules](https://github.com/maskedeken/clash-rules)
 
 [本文主要是教你怎么定制一下自己的ACL或者clash规则](https://gist.github.com/Teraflopst/d53f1dbc3dcc350154c1beba03290a4b)
 

@@ -31,4 +31,33 @@
 
 [Top 10 Most Popular Torrent Sites](https://torrentfreak.com/top-torrent-sites/)
 
+## Routing
+### Clash
+```yaml
+- PROCESS-NAME,BitComet.exe,BT
+- PROCESS-NAME,qbittorrent.exe,BT
+- PROCESS-NAME,Transmission.exe,BT
+- PROCESS-NAME,transmission.exe,BT
+- PROCESS-NAME,transmission-daemon.exe,BT
+- PROCESS-NAME,transmission-qt.exe,BT
+- PROCESS-NAME,uTorrent.exe,BT
+- PROCESS-NAME,Folx.exe,BT
+- PROCESS-NAME,WebTorrent.exe,BT
+- PROCESS-NAME,WebTorrent Helper.exe,BT
+
+# Maybe also HTTP:
+- PROCESS-NAME,aria2c.exe,BT
+- PROCESS-NAME,fdm.exe,BT
+- PROCESS-NAME,Thunder.exe,BT
+- PROCESS-NAME,NetTransport.exe,BT
+```
+
+[MihomoRules/Source/Addition/DirectProcess.yaml at 919ff01d1e5af2a79c2f749e4311a32695778cc4 - Ckrvxr/MihomoRules](https://github.com/Ckrvxr/MihomoRules/blob/919ff01d1e5af2a79c2f749e4311a32695778cc4/Source/Addition/DirectProcess.yaml#L52C22-L99C28)
+
+[clash 开了代理，怎么写规则，避免 pt 走代理？ - V2EX](https://www.v2ex.com/t/757230)
+
+[如何优雅的让 BT， PT 不走代理 - V2EX](https://v2ex.com/t/917601)
+- [OpenClash BT/PT 直连的几种方式 -- Poly Space](https://www.p-chao.com/2024-02-15/openclash-bt-pt-%E7%9B%B4%E8%BF%9E%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/)
+
+
 [^topdown]: Computer Networking：A Top-Down Approach
