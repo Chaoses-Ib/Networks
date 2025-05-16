@@ -9,6 +9,18 @@
 - [ngosang/trackerslist: Updated list of public BitTorrent trackers](https://github.com/ngosang/trackerslist)
 - [XIU2/TrackersListCollection: 🎈 Updated daily! A list of popular BitTorrent Trackers!](https://github.com/XIU2/TrackersListCollection)
 
+## Clients
+- [BitComet](https://bitcomet.com/)
+  - [Changelog](https://bitcomet.com/en/changelog)
+  - Scoop
+    ```pwsh
+    scoop bucket add xrgzs_sdoog https://github.com/xrgzs/sdoog
+    scoop install xrgzs_sdoog/bitcomet
+    ```
+    蓝奏云、更新及时
+
+[Comparison of BitTorrent clients - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients)
+
 ## Websites
 - [1377x](https://1337x.to/)
 - [RARBG](https://rarbgprx.org/torrents.php)
