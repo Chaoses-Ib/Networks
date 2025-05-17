@@ -19,7 +19,11 @@
     ```
     蓝奏云、更新及时
 
+  [彗星論壇](https://www.cometbbs.com/)
+
 [Comparison of BitTorrent clients - Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients)
+
+## [→NAT](../../Internet/NAT.md#bt)
 
 ## Websites
 - [1377x](https://1337x.to/)

@@ -35,6 +35,7 @@
 - [Forwarding](Internet/Forwarding/README.md)
   - [Packet Scheduling](Internet/Forwarding/Scheduling.md)
 - [Routing](Internet/Routing/README.md)
+- [Network Address Translation (NAT)](Internet/NAT.md)
 - [Internet Control Message Protocol](Internet/ICMP/README.md)
   - [Echo and Echo Reply](Internet/ICMP/Echo.md)
 - [Service Discovery](Internet/Discovery/README.md)
