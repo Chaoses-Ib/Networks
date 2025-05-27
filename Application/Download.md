@@ -21,6 +21,13 @@
 
 ## Libraries
 Rust:
+- [KGet: A modern, lightweight wget clone written in Rust for fast and reliable file downloads from the command line.](https://github.com/davimf721/KGet) ([Docs.rs](https://docs.rs/Kget/latest/kget/index.html))
+  - ~~[Library interface - Issue #2](https://github.com/davimf721/KGet/issues/2)~~
+
+  [After 5 months of development, I finally released KelpsGet v0.1.4 - A modern download manager in Rust : r/rust](https://www.reddit.com/r/rust/comments/1kt69vh/after_5_months_of_development_i_finally_released/)
+
+- [aim: 🎯 A command line download/upload tool with resume.](https://github.com/mihaigalos/aim) ([Docs.rs](https://docs.rs/aim/1.8.6/aim/index.html))
+
 - [downloader: Simple HTTP/HTTPS file downloader crate.](https://github.com/hunger/downloader)
   - Parallel downloading doesn't really work? Much slower than aria2
   - [Panic when used in async application - Issue #11](https://github.com/hunger/downloader/issues/11)
