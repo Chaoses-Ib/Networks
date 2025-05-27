@@ -13,7 +13,9 @@ Servers:
 ### [→Basic authentication](https://github.com/Chaoses-Ib/InformationSecurity/blob/main/Access%20Control/Authentication/Tokens/Basic.md)
 
 ## Cookies
-[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+[Wikipedia](https://en.wikipedia.org/wiki/HTTP_cookie), [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+
+[RFC 2109 - HTTP State Management Mechanism](https://datatracker.ietf.org/doc/html/rfc2109)
 
 ```http
 Set-Cookie: <cookie-name>=<cookie-value>
@@ -126,6 +128,43 @@ See also [CORS](#cross-origin-resource-sharing-cors).
 - `HostOnly`
 
 [Transform P3 P4 P5 vulnerabilities to P1 | Centre d'expertises en cybersécurité](https://www.acceis.fr/transform-p3-p4-p5-vulnerabilities-to-p1/)
+
+### Paths
+[Set-Cookie header - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#pathpath-value)
+> The `path` attribute lets you control what cookies the browser sends based on the different parts of a site. It is not intended as a security measure, and does not protect against unauthorized reading of the cookie from a different path.
+
+[http - How does a browser handle cookie with no path and no domain - Stack Overflow](https://stackoverflow.com/questions/43324480/how-does-a-browser-handle-cookie-with-no-path-and-no-domain)
+> If the server omits the `Path` attribute, the user agent will use the "directory" of the request-uri's path component as the default value.
+
+[How do I set path while saving a cookie value in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/7551113/how-do-i-set-path-while-saving-a-cookie-value-in-javascript)
+
+- `path` is not a security measure, so overly broad path is not an vulnerability either.
+
+  [Cookie security: overly broad path --- CodeQL query help documentation](https://codeql.github.com/codeql-query-help/csharp/cs-web-broad-cookie-path/)
+
+### Management
+[RFC 2109 - HTTP State Management Mechanism](https://datatracker.ietf.org/doc/html/rfc2109#section-4.3.3)
+> If a user agent receives a Set-Cookie response header whose NAME is
+> the same as a pre-existing cookie, and whose `Domain` and `Path`
+> attribute values exactly (string) match those of a pre-existing
+> cookie, the new cookie supersedes the old.  However, if the Set-
+> Cookie has a value for Max-Age of zero, the (old and new) cookie is
+> discarded.  Otherwise cookies accumulate until they expire (resources
+> permitting), at which time they are discarded.
+
+- `Path` must match exactly, empty and `/` are different
+- `HttpOnly` and `SameSite` have no effect
+
+> Because user agents have finite space in which to store cookies, they
+> may also discard older cookies to make space for newer ones, using,
+> for example, a least-recently-used algorithm, along with constraints
+> on the maximum number of cookies that each origin server may set.
+
+[Rewrite Existing Client Cookie | DevCentral](https://community.f5.com/discussions/technicalforum/rewrite-existing-client-cookie/255936)
+
+[http - How to handle multiple cookies with the same name? - Stack Overflow](https://stackoverflow.com/questions/4056306/how-to-handle-multiple-cookies-with-the-same-name)
+
+[http - How do cookies work with domains, paths and overriding? - Stack Overflow](https://stackoverflow.com/questions/18460968/how-do-cookies-work-with-domains-paths-and-overriding)
 
 ### Expiration
 - [`Expires=<date>`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#expiresdate)
