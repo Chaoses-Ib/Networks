@@ -127,6 +127,30 @@ See also [CORS](#cross-origin-resource-sharing-cors).
 
 [Transform P3 P4 P5 vulnerabilities to P1 | Centre d'expertises en cybersécurité](https://www.acceis.fr/transform-p3-p4-p5-vulnerabilities-to-p1/)
 
+### Expiration
+- [`Expires=<date>`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#expiresdate)
+
+  > If unspecified, the cookie becomes a **session cookie**. A session finishes when the client shuts down, after which the session cookie is removed.
+  > 
+  > Warning: Many web browsers have a *session restore* feature that will save all tabs and restore them the next time the browser is used. Session cookies will also be restored, as if the browser was never closed.
+
+  > The `Expires` attribute is set by the server with a value relative to its own internal clock, which may differ from that of the client browser. Firefox and Chromium-based browsers internally use an expiry (max-age) value that is adjusted to compensate for clock difference, storing and expiring cookies based on the time intended by the server. The adjustment for clock skew is calculated from the value of the [`DATE`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Date) header. Note that the specification explains how the attribute should be parsed, but does not indicate if/how the value should be corrected by the recipient.
+
+- [`Max-Age=<number>`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie#max-agenumber)
+
+  > Indicates the number of seconds until the cookie expires. A zero or negative number will expire the cookie immediately. If both `Expires` and `Max-Age` are set, `Max-Age` has precedence.
+
+  [Cookie Expires and Max-Age attributes now have upper limit  |  Blog  |  Chrome for Developers](https://developer.chrome.com/blog/cookie-max-age-expires)
+  > Chrome caps the expiration date to the maximum allowed value: 400 days (34560000 seconds) from the time the cookie was set. Cookies that request an expiration date further out than 400 days aren't rejected; their expiration date is set to 400 days instead.
+
+[http - Why was `Max-Age` introduced for cookies when we already had `Expires`? - Stack Overflow](https://stackoverflow.com/questions/74765575/why-was-max-age-introduced-for-cookies-when-we-already-had-expires)
+
+[HTTP Cookies: What's the difference between Max-age and Expires? - Peter Coles](https://mrcoles.com/blog/cookies-max-age-vs-expires/)
+
+[security - What is the best way to implement "remember me" for a website? - Stack Overflow](https://stackoverflow.com/questions/244882/what-is-the-best-way-to-implement-remember-me-for-a-website)
+
+[网站登录如何实现"记住我"功能](https://blog.isayme.org/posts/issues-71/)
+
 ### Libraries
 - [cookie-rs: HTTP cookie parsing and cookie jar management for Rust.](https://github.com/rwf2/cookie-rs)
   - [`split_parse()`](https://docs.rs/cookie/latest/cookie/struct.Cookie.html#method.split_parse)
