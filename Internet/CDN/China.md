@@ -222,17 +222,34 @@ Pricing:
 
 [CDN-境内境外回源路径-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1883314)
 
+[内容分发网络 CDN 日志服务\_腾讯云](https://cloud.tencent.com/document/product/228/6316)
+- 状态码为 0，hit 或 miss 都可能出现，超时？
+- 响应时间长可能只是由于境外访问，回源慢，而不是服务器负载高
+
+[CDN 访问日志分析](https://www.tencentcloud.com/zh/document/product/614/42748)
+
 ## [多吉云](https://www.dogecloud.com/)
-- 融合：**腾讯云**、阿里云、华为云、网宿等
+- 融合：**[腾讯云](#腾讯云)**、[阿里云](#阿里云)、华为云、网宿等
 - [价格](https://www.dogecloud.com/price?product=cdn)
   - 免费：每月 20G（HTTP/HTTPS）、200万次
   - 0.11~0.07元/G，境外 0.22元/G
 
     怎么谈到原价的一半的？
+  - HTTP/HTTPS 请求 0/0.04元/万次（阿里云 0.05/0.15元/万次）
+
+    [【融合CDN】HTTPS 请求数计费公告 - 多吉云](https://www.dogecloud.com/announcement/18)
   - > 月流量超 5T 可联系客服免除 HTTPS 请求数费用
 - [缓存规则配置](https://docs.dogecloud.com/cdn/manual-config-cache-rules)
 - 流量封顶
+  - 只能对各个域名进行单独限制
+  - 50 GB/h -> 5.5元/h \* 域名
 - [IP 访问频率限制](https://docs.dogecloud.com/cdn/manual-config-ip-qps)
+  - > 被 QPS 限制拦截的 HTTPS 请求不会进行请求数计费。但需要特别注意的是，当请求被“域名防盗链”规则优先拦截后，无论是否超过 QPS 限制，都将进行 HTTPS 请求数计费。
+    - 拦截的请求仍然会被计入请求数统计，可能导致误判攻击规模、损失
+  - 只能对各个域名进行单独限制
+  - [NAT](../NAT.md)
+  - 50 QPS/s -> 0.72元/h \* IP \* 域名，比起流量更难有效限制，虽然已经比阿里云好了太多
+  - 日志状态码是 514，而不是 429
 - DDoS 免单
 
 - 业务类型

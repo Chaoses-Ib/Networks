@@ -10,6 +10,18 @@ A **content delivery network (content distribution network, CDN)** is a geograph
 
 如果网站的访问频率很低，有可能导致缓存经常失效，需要回源，反而降低了访问速度。
 
+## Security
+- 回源
+  - 缓存
+- 禁用/减少 HTTPS 请求
+- IP QPS 限制
+- 带宽限制/封顶
+- 流量封顶
+- Referer 防盗链
+- User-Agent 黑白名单
+- IP 黑白名单
+- 禁用后付费
+
 ## Services
 - [Cloudflare](#cloudflare)
 
