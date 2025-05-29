@@ -215,6 +215,11 @@ Pricing:
 - 账单详情的表格有点离谱，列那么多列宽还那么大，横向滚动5屏才能看完
 
 ## [腾讯云](https://cloud.tencent.com/product/cdn)
+Pricing:
+- [计费常见问题](https://www.tencentcloud.com/zh/document/product/228/36179)
+  - > CDN 只有下行流量会产生费用，上行流量不收费
+  - > 不可以免除攻击带来的流量/带宽费用。当您的域名因被恶意攻击或流量被恶意盗刷等原因而造成高带宽或超大流量消耗时，可能需要承担产生远高于平时消费金额的账单，为尽量避免此类潜在风险，您可采取以下措施：……
+
 [腾讯 cdn 使用体会 - V2EX](https://www.v2ex.com/t/648835)
 
 [垃圾腾讯云CDN：从入门到放弃？](https://vonng.com/cn/blog/cloud/cdn/)
@@ -248,9 +253,11 @@ Pricing:
     - 拦截的请求仍然会被计入请求数统计，可能导致误判攻击规模、损失
   - 只能对各个域名进行单独限制
   - [NAT](../NAT.md)
-  - 50 QPS/s -> 0.72元/h \* IP \* 域名，比起流量更难有效限制，虽然已经比阿里云好了太多
+  - 50 QPS/s -> 0.72元/h \* IP \* 节点 \* 域名，比起流量更难有效限制，虽然已经比阿里云好了太多
   - 日志状态码是 514，而不是 429
-- DDoS 免单
+- [IP 黑白名单配置](https://docs.dogecloud.com/cdn/manual-config-ip-rule)
+  - 存在隐性数量限制
+- DDoS 可能免单
 
 - 业务类型
 

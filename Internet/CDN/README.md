@@ -13,14 +13,32 @@ A **content delivery network (content distribution network, CDN)** is a geograph
 ## Security
 - 回源
   - 缓存
+    - SPA route problem
+  - 动静分离
+    - OSS
 - 禁用/减少 HTTPS 请求
+  - [TLS version](https://github.com/Chaoses-Ib/Cryptology/blob/main/Protocols/Transport/README.md#versions): 1.3
 - IP QPS 限制
+  - Web bundle
+  - 触发黑名单
 - 带宽限制/封顶
 - 流量封顶
+- 屏蔽/独立托管海外
+  - [DNS 分线路解析](../DNS/Hosting.md#分线路解析)
+    - 腾讯 DNSPod: [119.29.29.29](http://119.29.29.29/)
+  - 海外 CDN
 - Referer 防盗链
 - User-Agent 黑白名单
+- URL 鉴权
+  - 可用于溯源
 - IP 黑白名单
+  - 可能存在数量限制
+  - Auto
 - 禁用后付费
+- 访问模式
+  - TLS fingerprint
+
+大部分 CDN 只计下行流量费用。
 
 ## Services
 - [Cloudflare](#cloudflare)
