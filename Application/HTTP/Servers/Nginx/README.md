@@ -330,6 +330,39 @@ http {
 
 ## HTTP
 ### [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
+- Virtual servers
+  - [`server_name`](https://nginx.org/en/docs/http/ngx_http_core_module.html#server_name)
+  
+    [Server names](https://nginx.org/en/docs/http/server_names.html)
+
+    > The `default_server` parameter, if present, will cause the server to become the default server for the specified `*address*`:`*port*` pair. If none of the directives have the `default_server` parameter then the first server with the `*address*`:`*port*` pair will be the default server for this pair.
+
+    [Is `server_name` really needed for `default_server`? (Nginx) - Server Fault](https://serverfault.com/questions/1062957/is-server-name-really-needed-for-default-server-nginx)
+    > The only time NGINX looks at the [`server_name`](http://nginx.org/en/docs/http/ngx_http_core_module.html#server_name) directive and [`listen`](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen)'s `default_server` parameter during processing the configuration is when there is more than one `server` block [`listen`](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen)ing on the same \[`ip_address`:\]`port`. (It's also worth pointing out that there can be more than one `default_server` declaration in one config - one per \[`ip_address`:\]`port`.)
+  
+  - Blocking default server
+    ```nginx
+    server {
+      listen      80 default_server;
+      listen      443 ssl default_server;
+
+      # Wildcard, any domain is served
+      server_name _;
+
+      # Close the connection
+      return      444;
+      ssl_reject_handshake on;
+
+      access_log off;
+      log_not_found off;
+    }
+    ```
+    [nginx - Best way to prevent default server? - Server Fault](https://serverfault.com/questions/420351/best-way-to-prevent-default-server)
+
+    [`ssl_reject_handshake`](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_reject_handshake)
+  
+  [How nginx processes a request](https://nginx.org/en/docs/http/request_processing.html)
+
 - [`location`](https://nginx.org/en/docs/http/ngx_http_core_module.html#location)
   - Regex or prefix (default)
   - Exact matching: `=`
