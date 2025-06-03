@@ -90,6 +90,9 @@ UDP:
 
 HTTP:
 - [traefik: The Cloud Native Application Proxy](https://github.com/traefik/traefik)
+  - Go
+
+  [Is is just me but Traefik is so hard to understand : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1cmbl22/is_is_just_me_but_traefik_is_so_hard_to_understand/)
 - [Sōzu: HTTP reverse proxy, configurable at runtime, fast and safe, built in Rust. It is awesome!](https://github.com/sozu-proxy/sozu)
 - [Weldr: A HTTP 1.1 proxy written in Rust using tokio.](https://github.com/hjr3/weldr) (discontinued)
 

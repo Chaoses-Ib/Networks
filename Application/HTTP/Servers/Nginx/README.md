@@ -58,6 +58,8 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 - `nginx windows pcre zlib openssl configure language:yaml`
 
 ## Distributions
+[nginx.org/en/CHANGES](https://nginx.org/en/CHANGES)
+
 - Ubuntu
   ```sh
   nginx version: nginx/1.18.0 (Ubuntu)
@@ -117,6 +119,9 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 ## Windows
 [nginx for Windows](https://nginx.org/en/docs/windows.html)
 
+- > Although several workers can be started, only one of them actually does any work.
+  - Use `worker_processes  1;`
+  - Port multiplexing: Nginx, [Caddy](../Caddy/README.md)
 - > Only the `select()` and `poll()` (1.15.9) connection processing methods are currently used, so high performance and scalability should not be expected.
   - [hello, nginx for windows problem with multithreading : r/nginx](https://www.reddit.com/r/nginx/comments/1adqgmw/hello_nginx_for_windows_problem_with/)
 - > The UDP proxy functionality is not supported.
@@ -132,6 +137,8 @@ configure arguments: --with-cc=cl --builddir=objs.msvc8 --with-debug --prefix= -
 - LZMA2: 1.26 MiB
 
 Distributions:
+- [OpenResty](OpenResty.md#windows)
+  - Faster
 - Kitty: [nginx for Windows](http://nginx-win.ecsds.eu/)
 - Kevin Worthington: [Nginx for Windows - 32-bit and 64-bit - free, easy-to-use setup packages](https://kevinworthington.com/nginx-for-windows/)
 
@@ -154,6 +161,9 @@ On Windows, Nginx can start multiple instances, but `quit` can only quit the las
 [NGINX Modules](https://www.f5.com/pdf/product-overview/2019-04-24-NGINX-Modules-datasheet.pdf)
 
 [NGINX Extras](https://nginx-extras.getpagespeed.com/)
+
+- [`ngx_devel_kit`: Nginx Development Kit - an Nginx module that adds additional generic tools that module developers can use in their own modules](https://github.com/vision5/ngx_devel_kit)
+- [FRiCKLE/ngx\_coolkit: collection of small and useful nginx add-ons.](https://github.com/FRiCKLE/ngx_coolkit)
 
 ### Bindings
 Rust:
@@ -469,15 +479,19 @@ real_ip_recursive on;
 
 ### [→HTTP/2](../../HTTP2.md#nginx)
 
-## Lua
-[Lua | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/dynamic-modules/lua/)
-
-- [OpenResty: A dynamic web platform based on NGINX and LuaJIT](https://openresty.org/)
-  - [lua-nginx-module: Embed the Power of Lua into NGINX HTTP servers](https://github.com/openresty/lua-nginx-module)
-
-  [Pushing Nginx to its limit with Lua](https://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua)
-
 ## Logs
+[Module `ngx_http_log_module`](https://nginx.org/en/docs/http/ngx_http_log_module.html)
+
+```nginx
+log_format combined '$remote_addr - $remote_user [$time_local] '
+                    '"$request" $status $body_bytes_sent '
+                    '"$http_referer" "$http_user_agent"';
+
+access_log /spool/logs/nginx-access.log compression buffer=32k;
+```
+
+[Configuring Logging | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
+
 [NGINX Access Logs and Error Logs | DigitalOcean](https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs)
 
 [Debugging NGINX | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/debugging/)
@@ -492,6 +506,13 @@ error_log  logs/error.log  debug;
 - [access\_log\_parser: A library of Rust parsers for reading access logs in a strongly-typed way](https://github.com/dmikusa/access_log_parser)
 - [pff: "Ban Not Fail" PoC](https://github.com/dmilith/pff)
 
+## Performance
+- [→HTTPS](#https)
+
+[Tuning NGINX for Performance](https://www.f5.com/company/blog/nginx/tuning-nginx)
+
+[Optimize NGINX for static file download : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/jr8e0i/optimize_nginx_for_static_file_download/)
+
 ## Security
 - [`user`](https://nginx.org/en/docs/ngx_core_module.html#user)
 
@@ -500,7 +521,26 @@ error_log  logs/error.log  debug;
   [linux - Nginx displaying failed (13: Permission denied) when trying to access new site - Server Fault](https://serverfault.com/questions/947301/nginx-displaying-failed-13-permission-denied-when-trying-to-access-new-site)
 
 - `Server: nginx/1.27.0`
+- [ModSecurity-nginx: ModSecurity v3 Nginx Connector](https://github.com/owasp-modsecurity/ModSecurity-nginx)
+  - No pre-built binaries
+  - [Windows](https://github.com/owasp-modsecurity/ModSecurity-nginx/blob/fd28e6ae3bc9e3e33e5ab177afce5c24af41a6ed/win32/README.md)
 - [ngx\_waf: Handy, High performance, ModSecurity compatible Nginx firewall module & 方便、高性能、兼容 ModSecurity 的 Nginx 防火墙模块](https://github.com/ADD-SP/ngx_waf)
+  - No pre-built binaries
+- [p0pr0ck5/lua-resty-waf: High-performance WAF built on the OpenResty stack](https://github.com/p0pr0ck5/lua-resty-waf) (discontinued)
+- [leeyiw/ngx\_lua\_anticc: HTTP flood attacks mitigation tool for Nginx](https://github.com/leeyiw/ngx_lua_anticc) (discontinued)
+- IP
+  - Blocking
+
+    [Blocking IPs with Nginx -- DreamHost Knowledge Base](https://help.dreamhost.com/hc/en-us/articles/216456127-Blocking-IPs-with-Nginx)
+
+    [How to block multiple ip addresses? : r/nginx](https://www.reddit.com/r/nginx/comments/1005i93/how_to_block_multiple_ip_addresses/)
+
+    [IP range blocking with nginx-lua.](https://groups.google.com/g/openresty-en/c/G916sAMSOPY)
+  - [hamishforbes/lua-resty-iputils: Utility functions for working with IP addresses in Openresty](https://github.com/hamishforbes/lua-resty-iputils)
+
+[Mitigating DDoS Attacks with NGINX -- NGINX Community Blog](https://blog.nginx.org/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus)
+
+[mintyYuki/nginx-conf: Nginx configuration to prevent DDoS Layer7 attacks.](https://github.com/mintyYuki/nginx-conf)
 
 ### Auth
 - [→HTTP Basic Authentication](https://github.com/Chaoses-Ib/InformationSecurity/blob/main/Access%20Control/Authentication/Tokens/Basic.md#servers)
@@ -545,6 +585,8 @@ error_log  logs/error.log  debug;
 
 [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html)
 
+[NGINX SSL Termination | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/)
+
 ```nginx
 worker_processes auto;
 
@@ -574,13 +616,41 @@ http {
 
 [nginx HTTPS serving with same config as HTTP - Server Fault](https://serverfault.com/questions/10854/nginx-https-serving-with-same-config-as-http)
 
+Performance:
+- ~7% of HTTP
+  
+  [Nginx performance drops significantly when I enable https (slower 30 times than http only) & 12 times slower than Apache https - Server Fault](https://serverfault.com/questions/933627/nginx-performance-drops-significantly-when-i-enable-https-slower-30-times-than)
+- `ssl_prefer_server_ciphers  on;`
+
+  [Why 'ssl_prefer_server_ciphers off'? - Issue #260 - mozilla/server-side-tls](https://github.com/mozilla/server-side-tls/issues/260)
+- Static > dynamic + cache (v1.27.4) > dynamic
+
+  [Optimizing Resource Usage for Complex SSL Configurations in NGINX -- NGINX Community Blog](https://blog.nginx.org/blog/optimizing-resource-usage-for-complex-ssl-configurations)
+
+  [Beta Branch - update nginx 1.27.4 default with optional SSL cert cache support in 140.00beta01 | Centmin Mod Community Support Forums](https://community.centminmod.com/threads/update-nginx-1-27-4-default-with-optional-ssl-cert-cache-support-in-140-00beta01.27383/)
+- Caddy?
+
+[Optimizing HTTPS on Nginx | {bjørn:johansen}](https://bjornjohansen.com/optimizing-https-nginx/)
+
+[performance - how to reduce ssl time of website - Stack Overflow](https://stackoverflow.com/questions/36672261/how-to-reduce-ssl-time-of-website/36678211)
+
 ### Rate limiting
 - [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
   - `limit_rate`, `limit_except`
 - [ngx_http_limit_conn_module](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html)
   - `limit_conn`, `limit_zone`
 - [ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)
-  - `limit_req`
+  - `limit_req zone=mylimit burst=20 [nodelay|delay=10];`
+
+    > For most deployments, we recommend including the `burst` and `nodelay` parameters to the `limit_req` directive.
+  - `rate=(\d+)r/([sm])`
+  - Always happens after TLS handshake?
+  - 503 even not reach the limit ~~on Windows (at least v1.27.0~1.28.0 and OpenResty)~~?
+
+    [Nginx for Windows - `limit_req` works wrong - Server Fault](https://serverfault.com/questions/1110094/nginx-for-windows-limit-req-works-wrong)
+
+    [throttling - nginx rate limit doesn't work as expected - Super User](https://superuser.com/questions/1767609/nginx-rate-limit-doesnt-work-as-expected)
+    > In the example, the rate cannot exceed 10 requests per second. NGINX actually tracks requests at millisecond granularity, so this limit corresponds to 1 request every 100 milliseconds (ms). Because we are not allowing for bursts (see the [next section](https://blog.nginx.org/blog/rate-limiting-nginx#bursts)), this means that a request is rejected if it arrives less than 100ms after the previous permitted one.
 
   [Rate Limiting with NGINX -- NGINX Community Blog](https://blog.nginx.org/blog/rate-limiting-nginx)
 
@@ -592,8 +662,77 @@ http {
 
 [Nginx 中的两种限流方式|nginx, limit\_req,limit\_conn,白名单|cyj](https://chenyongjun.vip/articles/81)
 
+- Lua
+  - [openresty/lua-resty-limit-traffic: Lua library for limiting and controlling traffic in OpenResty/ngx\_lua](https://github.com/openresty/lua-resty-limit-traffic)
+
+    > This library provides more flexible alternatives to NGINX's standard modules [ngx\_limit\_req](http://nginx.org/en/docs/http/ngx_http_limit_req_module.html) and [ngx\_limit\_conn](http://nginx.org/en/docs/http/ngx_http_limit_conn_module.html). For example, the Lua-based limiters provided by this library can be used in any contexts like right before the downstream SSL handshaking procedure (as with `ssl_certificate_by_lua`) or right before issuing backend requests.
+
+    - Can happen after or before TLS handshake
+      - [ngx.ctx with `ssl_certificate_by_lua` - Issue #57 - openresty/lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic/issues/57)
+
+      [Rate limiting in `ssl_certificat_by_lua`](https://groups.google.com/g/openresty-en/c/e7JTg9vLngg)
+    - [feature: new module resty.limit.rate by timebug - Pull Request #27 - openresty/lua-resty-limit-traffic](https://github.com/openresty/lua-resty-limit-traffic/pull/27)
+      - [upyun/lua-resty-limit-rate: Lua module for limiting request rate for OpenResty/ngx\_lua, using the "token bucket" method.](https://github.com/upyun/lua-resty-limit-rate)
+    
+    ```lua
+    # demonstrate the usage of the resty.limit.req module (alone!)
+    http {
+        lua_shared_dict my_limit_req_store 100m;
+
+        server {
+            location / {
+                access_by_lua_block {
+                    local limit_req = require "resty.limit.req"
+
+                    -- limit the requests under 200 req/sec with a burst of 100 req/sec,
+                    -- that is, we delay requests under 300 req/sec and above 200
+                    -- req/sec, and reject any requests exceeding 300 req/sec.
+                    local lim, err = limit_req.new("my_limit_req_store", 200, 100)
+                    if not lim then
+                        ngx.log(ngx.ERR,
+                                "failed to instantiate a resty.limit.req object: ", err)
+                        return ngx.exit(500)
+                    end
+
+                    -- the following call must be per-request.
+                    -- here we use the remote (IP) address as the limiting key
+                    local key = ngx.var.binary_remote_addr
+                    local delay, err = lim:incoming(key, true)
+                    if not delay then
+                        if err == "rejected" then
+                            return ngx.exit(503)
+                        end
+                        ngx.log(ngx.ERR, "failed to limit req: ", err)
+                        return ngx.exit(500)
+                    end
+
+                    if delay >= 0.001 then
+                        -- the 2nd return value holds the number of excess requests
+                        -- per second for the specified key. for example, number 31
+                        -- means the current request rate is at 231 req/sec for the
+                        -- specified key.
+                        local excess = err
+
+                        -- the request exceeding the 200 req/sec but below 300 req/sec,
+                        -- so we intentionally delay it here a bit to conform to the
+                        -- 200 req/sec rate.
+                        ngx.sleep(delay)
+                    end
+                }
+            }
+        }
+    }
+    ```
+  - [OpenResty(nginx扩展)实现防CC攻击 - moeyy](https://moeyy.xlog.app/openrestynginx-kuo-zhan-shi-xian-fang-cc-gong-ji-md)
 - [traffic-accounting-nginx-module: Monitor the incoming and outgoing traffic metrics in realtime for NGINX](https://github.com/Lax/traffic-accounting-nginx-module)
   - [dvershinin/traffic-accounting-nginx-module: Monitor the incoming and outgoing traffic metrics in realtime for NGINX](https://github.com/dvershinin/traffic-accounting-nginx-module/tree/master)
+- Redis
+  - [weserv/rate-limit-nginx-module: A Redis backed rate limit module for Nginx web servers.](https://github.com/weserv/rate-limit-nginx-module)
+  - [TiVo/lua-resty-rate-limit](https://github.com/TiVo/lua-resty-rate-limit) (discontinued)
 - [bigplum/Nginx-limit-traffic-rate-module: Limiting rate by given variables(like $request\_uri, $remote\_addr, etc..).](https://github.com/bigplum/Nginx-limit-traffic-rate-module) (discontinued)
 
   > Limit_traffic_rate module provides a method to limit the total download rate by client IP or download URL, even there are several connections.
+
+[nginx - How to mitigate ddos attack by automatically adding the attacker IP into the deny list? - Super User](https://superuser.com/questions/1731198/how-to-mitigate-ddos-attack-by-automatically-adding-the-attacker-ip-into-the-den)
+
+[security - Rate-limit nginx based on a prior request - Server Fault](https://serverfault.com/questions/832403/rate-limit-nginx-based-on-a-prior-request)
