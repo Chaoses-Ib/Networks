@@ -168,7 +168,11 @@ On Windows, Nginx can start multiple instances, but `quit` can only quit the las
 ### Bindings
 Rust:
 - [ngx-rust: Rust binding for NGINX](https://github.com/nginxinc/ngx-rust)
-- [nginx-rs: Nginx module written in Rust](https://github.com/dcoles/nginx-rs) (discontinued)
+  - [Windows support? - Issue #100 - nginx/ngx-rust](https://github.com/nginx/ngx-rust/issues/100)
+- [G-Core/nginx-rust: Nginx API bindings for Rust.](https://github.com/G-Core/nginx-rust)
+- [dcoles/nginx-rs: Nginx module written in Rust](https://github.com/dcoles/nginx-rs) (discontinued)
+- [ghostnumber7/nginx-rs](https://github.com/ghostnumber7/nginx-rs) (discontinued)
+- [oowl/nginx-rust: write nginx module by rust](https://github.com/oowl/nginx-rust) (discontinued)
 
 ## Configs
 - [misc-conf: Nom parser for nginx/apache configuration](https://github.com/metaworm/misc-conf)
