@@ -523,6 +523,14 @@ log_format combined '$remote_addr - $remote_user [$time_local] '
 access_log /spool/logs/nginx-access.log compression buffer=32k;
 ```
 
+Linux:
+```nginx
+error_log /var/log/nginx/error.log;
+http {
+    access_log /var/log/nginx/access.log;
+}
+```
+
 [Configuring Logging | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
 
 [NGINX Access Logs and Error Logs | DigitalOcean](https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs)
@@ -532,6 +540,8 @@ access_log /spool/logs/nginx-access.log compression buffer=32k;
 error_log  logs/error.log  debug;
 ```
 [linux - best way to debug nginx rewrite rules in config file? - Server Fault](https://serverfault.com/questions/333048/best-way-to-debug-nginx-rewrite-rules-in-config-file)
+
+[nginx : access.log and error.log file empty - Stack Overflow](https://stackoverflow.com/questions/32299582/nginx-access-log-and-error-log-file-empty)
 
 - [rhit: A nginx log explorer](https://github.com/Canop/rhit)
 - [logutil: A Rust-based tool designed to analyze Nginx access logs](https://github.com/s00d/logutil)

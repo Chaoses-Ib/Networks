@@ -140,4 +140,5 @@ Python:
 - [Firewalls](Security/Firewalls/README.md)
   - [Linux](Security/Firewalls/Linux/README.md)
   - [Windows](Security/Firewalls/Windows/README.md)
+  - [CrowdSec](Security/Firewalls/CrowdSec.md)
 - [Metasploit](Security/Metasploit/README.md)

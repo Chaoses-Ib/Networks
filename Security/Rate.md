@@ -14,7 +14,37 @@ Rust:
 Tools:
 - [Fail2Ban: Daemon to ban hosts that cause multiple authentication errors](https://github.com/fail2ban/fail2ban) ([Wikipedia](https://en.wikipedia.org/wiki/Fail2ban))
   - OS: Linux
-  - [Adapting fail2ban for nginx](https://forum.nginx.org/read.php?11,223078,247238)
+    - `apt install fail2ban`
+    - [\[BR\]: fail2ban does not start on some debian/ubuntu systems - backend should probably be set to systemd on all systemd-based distros - Issue #3292 - fail2ban/fail2ban](https://github.com/fail2ban/fail2ban/issues/3292#issuecomment-1142503461)
+      - [\[BR\]: Failed during configuration: Have not found any log file for sshd jail - Issue #3567 - fail2ban/fail2ban](https://github.com/fail2ban/fail2ban/issues/3567)
+  - `/etc/fail2ban`
+  - fail2ban-client
+  - `jail.conf`
+    - Defaults
+      - SSH servers
+      - HTTP servers
+        - Apache, Nginx, PHP, lighttpd
+        - Proxy: squid, 3proxy
+      - Webmail and groupware servers
+      - Web applications
+      - FTP servers
+      - Mail servers
+      - DNS servers
+      - Others
+        - SQL servers
+  - Nginx
+    - [`filter.d/nginx-limit-req.conf`](https://github.com/fail2ban/fail2ban/blob/master/config/filter.d/nginx-limit-req.conf)
+    - [BlockChainCaffe/Nginx-Fail2Ban-filters: A set of optional Fail2Ban filters for Nginx](https://github.com/BlockChainCaffe/Nginx-Fail2Ban-filters)
+  
+    [Survive DDOS attack with Nginx's and fail2ban](https://easyengine.io/tutorials/nginx/fail2ban/)
+
+    [Adapting fail2ban for nginx](https://web.archive.org/web/20240907040327/https://forum.nginx.org/read.php?11,223078,247238)
+
+  [How To Protect SSH with Fail2Ban on Ubuntu 20.04 | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-20-04)
+
+  [Guide to fail2ban - It works, but it's quite complicated : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1hnd6cj/guide_to_fail2ban_it_works_but_its_quite/)
+- [→CrowdSec](Firewalls/CrowdSec.md)
+- [SSHGuard](https://www.sshguard.net/) ([GitHub](https://github.com/sshguard/sshguard/))
 - [IPBan: Since 2011, IPBan is the worlds most trusted, free security software to block hackers and botnets. With both Windows and Linux support, IPBan has your dedicated or cloud server protected. Upgrade to IPBan Pro today and get a discount. Learn more at ↓](https://github.com/digitalruby/ipban)
   - OS: Windows Server 2016 or newer
   - [IPBan Pro](https://ipban.com/) (paid)

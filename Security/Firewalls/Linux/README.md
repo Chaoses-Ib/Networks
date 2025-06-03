@@ -50,6 +50,15 @@ But why isn't this built-in?
 
 - But why not add a `--persistent` flag at least? Isn't this much better than `iptables-save` if there are some programs will automatically modify the rules?
 
+### IP sets
+```sh
+-A CROWDSEC_CHAIN -m set --match-set crowdsec-blacklists-0 src -m comment --comment "CrowdSec: CAPI" -j DROP
+```
+
+[linux - How to check multiple list from IPSet in IPTables with a single rule? - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/511814/how-to-check-multiple-list-from-ipset-in-iptables-with-a-single-rule)
+
+[Traffic shaping with iptables, ipset and tc (--match-set and --set-mark) - Server Fault](https://serverfault.com/questions/845949/traffic-shaping-with-iptables-ipset-and-tc-match-set-and-set-mark)
+
 ## Libraries
 Rust:
 - [yaa110/rust-iptables: Rust bindings for iptables](https://github.com/yaa110/rust-iptables)

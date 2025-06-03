@@ -41,3 +41,10 @@ Libraries:
   - [rust-public-ip: Find the public IP address of a device](https://github.com/avitex/rust-public-ip)
   - [public-ip-address: Rust crate to retrieve public IP address and geolocation data. 🦀](https://github.com/ghztomash/public-ip-address)
   - [16Hexa/nginx-control](https://github.com/16Hexa/nginx-control)
+
+## Blocklists
+- [CrowdSec blocklists](../Security/Firewalls/CrowdSec.md#decisions)
+
+  [IP Lookup](https://app.crowdsec.net/cti)
+- [firehol/blocklist-ipsets: ipsets dynamically updated with firehol's update-ipsets.sh script](https://github.com/firehol/blocklist-ipsets)
+- [ProxyDB - Proxies By IP](https://proxydb.net/by_ip)
