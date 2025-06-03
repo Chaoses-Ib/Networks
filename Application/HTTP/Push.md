@@ -75,6 +75,8 @@ event: usermessage
 data: {"username": "bobby", "time": "02:34:11", "text": "Hi everyone."}
 ```
 
+[→Keepalive](Connections.md#sse)
+
 [基于 SSE 协议实现任务进度条的实时显示------Vue2 + Spring Boot 实践一、引言 在 Web 应用开发中 - 掘金](https://juejin.cn/post/7332403912269856807)
 
 [html - WebSockets vs. Server-Sent events/EventSource - Stack Overflow](https://stackoverflow.com/questions/5195452/websockets-vs-server-sent-events-eventsource)
