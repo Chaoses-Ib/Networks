@@ -302,6 +302,17 @@ http {
 ### Templates
 [Understanding Config Templates | NGINX Documentation](https://docs.nginx.com/nginx-management-suite/nim/about/templates/config-templates/)
 
+### Include
+[`include file | mask;`](https://nginx.org/en/docs/ngx_core_module.html#include)
+```nginx
+include mime.types;
+include vhosts/*.conf;
+```
+
+[nginx split large configuration file - Server Fault](https://serverfault.com/questions/707955/nginx-split-large-configuration-file)
+
+[best practices - Using "include" in Nginx server block and where to save the includes? - Server Fault](https://serverfault.com/questions/950857/using-include-in-nginx-server-block-and-where-to-save-the-includes)
+
 ### Inheritance
 [Understanding the Nginx Configuration Inheritance Model](https://blog.martinfjordvald.com/understanding-the-nginx-configuration-inheritance-model/)
 > The behaviour of an array directive is that if you define multiple directives in the same context you will add to the values, but if you define multiple directives in different contexts then the lower context will replace the higher context ones. This means that you need to sometimes double define a value if you want it present in multiple context.

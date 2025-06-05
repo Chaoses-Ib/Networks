@@ -112,4 +112,6 @@ Name | HTTP | SOCKS | Comment
 ~~梦代理~~ |
 [亮数据](https://www.bright.cn/proxy-types)
 
+[永久免费公共代理池 (proxy.scdn.io)](https://proxy.scdn.io/)
+
 See also [ISP servers](../Internet%20Service%20Providers.md#servers).
