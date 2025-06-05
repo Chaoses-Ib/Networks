@@ -40,8 +40,64 @@ A **content delivery network (content distribution network, CDN)** is a geograph
 
 大部分 CDN 只计下行流量费用。
 
+## Implementations
+- Nginx
+
+- [Apache Traffic Control: An Open Source implementation of a Content Delivery Network](https://github.com/apache/trafficcontrol) (inactive)
+
+- [GoEdge CDN - 制作自己的CDN - GoEdge CDN | 自建CDN](https://goedge.cloud/)
+  - [TeaOSLab/EdgeAdmin: CDN & WAF集群管理系统。](https://github.com/TeaOSLab/EdgeAdmin)
+  - [TeaOSLab/EdgeNode: GoEdge边缘节点](https://github.com/TeaOSLab/EdgeNode)
+  - [TeaOSLab/EdgeAPI: GoEdge API节点](https://github.com/TeaOSLab/EdgeAPI)
+  - 支持 TCP/UDP
+  - Pricing: [专业版](https://goedge.cloud/commercial)
+    - 可访问性监控, 消息通知, 日志系统, 多租户, 可视化, 批量操作
+    - HTTP/3
+    - 商业版IP库
+    - 对象存储
+    - 边缘计算
+    - 支付接口
+    - 智能DNS, 更多DNS服务商
+    - DDoS高防IP
+    - 永久在线、5秒盾全站防护、L2节点、URL鉴权等
+    - 移动过墙
+
+    [GoEdgeCalc v1.0 - CDN面板注册机 - 资源 - 奶昔论坛](https://forum.naixi.net/thread-112-1-1.html)
+    - [发个 goedge 注册机源码玩玩 无聊改着玩的~ 还有网页在线生成版（附源码）~](https://www.nodeseek.com/post-138464-1)
+  - [GoEdge开发路线图 - 文档 - GoEdge CDN | 自建CDN](https://goedge.cloud/docs/Roadmap.md)
+
+- [Cdnfly - 自建cdn|防CC攻击|cdn软件|cdn系统](https://www.cdnfly.com/)
+  - OpenResty, Vue
+  - [Docs](https://doc.cdnfly.com/): sometimes `源服务器连接错误`
+  - 支持 TCP/UDP
+  - ~8k users
+    - [违规通知 - 失控论坛](https://lt.scdn.io/d/138-wei-gui-tong-zhi)
+  - Security
+
+    [cdnfly 5.1.13版本存在高危安全漏洞-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1171679-1-1.html)
+  - Pricing
+    - [LoveesYe/cdnflydadao: CDN](https://github.com/LoveesYe/cdnflydadao)
+
+      [记录一次安装cdnfly开心版-THsInk](https://www.thsink.com/notes/1165/)
+
+  [自建cdn 有推荐 ？ 测试了cdnfly有坑 - VPS综合讨论 - 全球主机交流论坛备用站 - HOSTLOC.NET](https://www.hostloc.net/thread-210997-1-1.html)
+
+  Services:
+  - [失控的防御系统-老登互联网科技](https://www.cdn1.vip/)
+    - PHP
+
+- [BangTeng/kangle: A light, high-performance web server/reverse proxy.](https://github.com/BangTeng/kangle) (discontinued)
+- [ziggornif/gimme: A self hosted CDN solution written in Go](https://github.com/ziggornif/gimme) (discontinued)
+
+[Selfhosted Content Delivery Network (CDN) : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/4v5e6m/selfhosted_content_delivery_network_cdn/)
+
+[Open source CDN Server? : r/opensource](https://www.reddit.com/r/opensource/comments/1cdsxgj/open_source_cdn_server/)
+
+[推荐个cdn系统给我-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-1053613-1-1.html)
+
 ## Services
 - [Cloudflare](#cloudflare)
+- [Affordable CDN by CDNsun | Content Delivery Network](https://cdnsun.com/)
 
 [→China CDNs](China.md)
 
