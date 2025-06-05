@@ -66,21 +66,6 @@
 
 [Is it a bad thing to see many [TCP Port numbers reused]?](https://osqa-ask.wireshark.org/questions/17955/is-it-a-bad-thing-to-see-many-tcp-port-numbers-reused/)
 
-## Port reusing
-### Load balancing
-[The `SO_REUSEPORT` socket option \[LWN.net\]](https://lwn.net/Articles/542629/)
-- The `SO_REUSEPORT` implementation distributes connections evenly across all of the threads (or processes) that are blocked in `accept()` on the same port.
-- The other noteworthy point is that there is a [defect](https://lwn.net/Articles/542738/) in the current implementation of TCP `SO_REUSEPORT`. If the number of listening sockets bound to a port changes because new servers are started or existing servers terminate, it is possible that incoming connections can be dropped during the three-way handshake.
-
-Go: [reusing tcp ports](https://seankhliao.com/blog/12020-07-04-reusing-tcp-ports/)
-
-### Protocol demultiplexing
-HTTP/HTTPS:
-- [axum-server-dual-protocol: Host a HTTP and HTTPS server on the same port with `axum-server`](https://github.com/daxpedda/axum-server-dual-protocol)
-
-### HTTP routing
-Nginx: [Nginx: How do I forward an HTTP request to another port? - Server Fault](https://serverfault.com/questions/536576/nginx-how-do-i-forward-an-http-request-to-another-port)
-
 ## Port leak
 - TCP port leak
 - UDP port leak

@@ -47,6 +47,9 @@ Rust:
   [Rust 实现带 BBR 的高效魔改 KCP](https://danglingpointer.fun/posts/KCP)
 - [en/kcp-rs: A KCP implementation in Rust](https://github.com/en/kcp-rs) (discontinued)
 
+Go:
+- [xtaci/smux: A Stream Multiplexing Library for golang with least memory usage(like TDMA)](https://github.com/xtaci/smux)
+
 ## Tools
 - [kcptun: A Quantum-Safe Secure Tunnel based on QPP, KCP, FEC, and N:M multiplexing.](https://github.com/xtaci/kcptun)
   - `scoop install kcptun`
