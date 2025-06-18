@@ -116,6 +116,8 @@ Python:
 - [WebSocket](Application/WS/README.md)
   - [Libraries](Application/WS/Libraries/README.md)
   - [Socket.IO](Application/WS/Socket.IO.md)
+- [WebRTC](Application/WebRTC/README.md)
+  - [WebTorrent](Application/WebRTC/WebTorrent.md)
 - [→Secure Shell](https://github.com/Chaoses-Ib/InformationSecurity/blob/main/Access%20Control/SSH/README.md)
 - [Peer-to-peer](Application/P2P/README.md)
   - [BitTorrent](Application/P2P/BitTorrent.md)
@@ -131,6 +133,7 @@ Python:
   - [Windows Sockets (Winsock)](OS/Windows/Winsock.md)
 - [Hyper-V](OS/Hyper-V/README.md)
 - [Windows Subsystem for Linux 2 (WSL2)](OS/WSL2/README.md)
+- [Browsers](OS/Browsers/README.md)
 
 ## Telephone
 - [Short Message Service](Telephone/SMS.md)
