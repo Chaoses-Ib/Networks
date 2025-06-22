@@ -77,6 +77,18 @@ Applications:
 
     > IP is banned if it violates nginx's user set request limit more than 5 times in a minute.
 
+### Installation
+How to auto add new datasources/parsers/scenarios like in a fresh installation?
+- [wizard.sh](https://github.com/crowdsecurity/crowdsec/blob/master/wizard.sh)
+
+  [Manual installation | CrowdSec](https://docs.crowdsec.net/u/user_guides/building/)
+- Reinstall: `apt remove --purge` + `apt install`
+
+  The instance need to be enrolled again.
+
+### Collections
+- `cscli collections list`
+
 ### Datasources
 `/etc/crowdsec/acquis.yaml`:
 ```yaml
@@ -128,8 +140,15 @@ labels:
 ## Remediation Components (bouncers)
 [Introduction | CrowdSec](https://docs.crowdsec.net/u/bouncers/intro)
 
+- `cscli bouncers list`
+
 [Remediation Components for Threat Response | CrowdSec Hub](https://app.crowdsec.net/hub/remediation-components):
 - [crowdsecurity/cs-firewall-bouncer: Crowdsec bouncer written in golang for firewalls](https://github.com/crowdsecurity/cs-firewall-bouncer)
+  - [Manual installation](https://doc.crowdsec.net/u/bouncers/firewall/#manual-installation)
+    - `cscli bouncers add crowdsec-firewall-bouncer`
+    - `sudo systemctl enable --now crowdsec-firewall-bouncer`
+    - `cscli bouncer inspect crowdsec-firewall-bouncer`
+  - `/var/log/crowdsec-firewall-bouncer.log`
   
   iptables:
   ```sh
