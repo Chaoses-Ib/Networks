@@ -168,7 +168,7 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
 
 关闭连接：
 1. 一方发送 FIN (`FIN_WAIT1`)，收到 ACK (`FIN_WAIT2`)
-2. 另一方之后也发送 FIN，收到 ACK (`TIME_WAIT`, `CLOSED`)
+2. 另一方（`CLOSE_WAIT`）之后也发送 FIN（`LAST_ACK`），收到 ACK (`TIME_WAIT`, `CLOSED`)
 
 另一方可能同时会将 ACK 和 FIN 合并到一起发送。
 
@@ -209,6 +209,11 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
   [网络分析流量FIN\_WAIT\_2状态解释\_fin-wait-2-CSDN博客](https://blog.csdn.net/ximenjianxue/article/details/117735333)
   > 但是除此之外，如果应用层是执行shutdown（SHUT_WR）操作关闭了套接口的发送，TCP连接还可进行接收操作，此种情况下的TCP连接处于FIN_WAIT_2状态不受tcp_fin_timeout的时间限制，将会永久的等待对端去关闭连接或者本地使用close关闭或者重启OS。
 
+  [Oracle Commerce Guided Search - Configuring `FIN_WAIT_2` timeout on Windows](https://docs.oracle.com/cd/E70265_01/common.11-3/EndecaperfTuning/html/tperf_configuring_socket_timeout_on_windows.xmltask_2014678A9AE64628B2A4A7F31BC3BA5F.html)
+  > The Registry entry that controls this setting is `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters`. You need to specify the `TcpFinWait2Delay` value for the above entry in the registry. The default value is 240s.
+  > 
+  > Restart your system for the change to take effect.
+
 - Maximum segment lifetime ([Wikipedia](https://en.wikipedia.org/wiki/Maximum_segment_lifetime))
 
   > The specification calls for this value to be used for the "time-wait" interval, the minimum time a system must keep the socket in the `TIME_WAIT` *state* before designating the socket closed, thus preventing the socket from being re-used before that interval.
@@ -220,6 +225,11 @@ $$\text{LastByteSent}-\text{LastByteAcked}\le\text{rwnd}$$
   NAT 可能会在十几秒内复用端口。
 
   [network protocols - Setting TIME\_WAIT TCP - Stack Overflow](https://stackoverflow.com/questions/337115/setting-time-wait-tcp)
+
+[netstat(8) - Linux man page](https://linux.die.net/man/8/netstat)
+- State
+
+  [c++ - Socket programming, what about `CLOSE_WAIT`, `FIN_WAIT_2` and `LISTENING`? - Stack Overflow](https://stackoverflow.com/questions/27820811/socket-programming-what-about-close-wait-fin-wait-2-and-listening)
 
 [c - Is there a way to detect that TCP socket has been closed by the remote peer, without reading from it? - Stack Overflow](https://stackoverflow.com/questions/17705239/is-there-a-way-to-detect-that-tcp-socket-has-been-closed-by-the-remote-peer-wit)
 
