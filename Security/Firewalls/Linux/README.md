@@ -62,6 +62,10 @@ iptables v1.8.4 (nf_tables)
   iptables -X
   ```
 
+- [iptables - Difference between SNAT and Masquerade - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/21967/difference-between-snat-and-masquerade)
+
+[netfilter/iptables project homepage - Documentation about the netfilter/iptables project](https://www.netfilter.org/documentation/index.html)
+
 ### Persisting rules
 ```sh
 sudo apt install iptables-persistent

@@ -3,11 +3,25 @@
 
 [Wikipedia:IP addresses are not people - Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:IP_addresses_are_not_people)
 
+## CLI
+- `hostname -I` (`--all-ip-addresses`)
+
+  > Display all network addresses of the host. This option enumerates all configured addresses on all network inter‐faces. The loopback interface and IPv6 link-local addresses are omitted. Contrary to option -i, this option does not depend on name resolution. Do not make any assumptions about the order of the output.
+
+- `ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1`
+
+[How to display IP address of eth0 interface using a shell script? - Ask Ubuntu](https://askubuntu.com/questions/560412/how-to-display-ip-address-of-eth0-interface-using-a-shell-script)
+
+[networking - How can I display the IP address of an interface? - Server Fault](https://serverfault.com/questions/195273/how-can-i-display-the-ip-address-of-an-interface)
+
 ## Echo services
 HTTP:
 - [查看我的 IP 地址 | 查询本机 IP 地址及归属地 | 查看 DNS 出口 IP | 查看递归 DNS 信息 | 测试 CDN 命中节点 | Sukka | https://ip.skk.moe](https://ip.skk.moe/)
 - [BGP.Tools](https://bgp.tools/)
 - [Wikipedia:Get my IP address - Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Get_my_IP_address?withJS=MediaWiki:Get-my-ip.js)
+- [http://ip.me](https://ip.me/)
+  - Netherlands
+  - `curl -s ip.me`
 - [ipify - A Simple Public IP Address API](https://www.ipify.org/)
   - http://api.ipify.org
   - https://api.ipify.org
@@ -22,7 +36,7 @@ HTTP:
 - https://ipv4.ping0.cc
   - SpartanHost
 - China
-  - http://myip.ipip.net/ (Text, 0.26s)
+  - http://myip.ipip.net/ (Natural text, 0.26s)
   - https://2024.ip138.com/ (HTML, 0.11s)
   - https://2024.ipchaxun.com/ (JSON)
     - （海外）腾讯云, 0.14s

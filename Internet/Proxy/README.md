@@ -43,7 +43,7 @@ Rust:
 - [relayport-rs: Rust library for relaying network traffic.](https://github.com/mtelahun/relayport-rs)
 
 ## Tools
-- Linux: iptables/nftables
+- Linux: [iptables/nftables](#iptablesnftables)
 
 - Windows: netsh
 
@@ -99,6 +99,29 @@ HTTP:
 [各种端口转发工具的使用方法 - Y4er的博客](https://y4er.com/posts/port-forwarding/)
 
 [linux - How can I set a proxy for Wget? - Stack Overflow](https://stackoverflow.com/questions/11211705/how-can-i-set-a-proxy-for-wget)
+
+### [iptables/nftables](../../Security/Firewalls/Linux/README.md)
+```sh
+sysctl net.ipv4.conf.eth0.forwarding
+sysctl net.ipv4.conf.eth0.forwarding=1
+# if forwarding to/from localhost, also:
+# sysctl net.ipv4.conf.eth0.route_localnet=1
+```
+```sh
+# To rewrite the destination IP of the packet (and back in the reply packet):
+# Cannot use DNS names
+iptables -t nat -A PREROUTING -i eth0 -p tcp -m tcp --dport 8080 -j DNAT --to-destination 216.34.181.45:80
+# To rewrite the source IP of the packet to the IP of the gateway (and back in the reply packet):
+# Do not use $(curl -s ip.me)
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source $(hostname -I)
+```
+[Basic iptables NAT port forwarding - Server Fault](https://serverfault.com/questions/326493/basic-iptables-nat-port-forwarding)
+
+[linux - How can I port forward with iptables? - Server Fault](https://serverfault.com/questions/140622/how-can-i-port-forward-with-iptables)
+
+[How To Forward Ports through a Linux Gateway with Iptables | DigitalOcean](https://www.digitalocean.com/community/tutorials/fhow-to-forward-ports-through-a-linux-gateway-with-iptables)
+
+[Linux Port Forwarding with iptables | Contabo Blog](https://contabo.com/blog/linux-port-forwarding-with-iptables/)
 
 ## Services
 Name | HTTP | SOCKS | Comment
