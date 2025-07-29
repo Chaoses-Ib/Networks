@@ -21,6 +21,20 @@
 
   [链式代理优化代理速度 | tanglu's blog](https://blog.tanglu.me/chains-proxies/)
 
+## Tunnels
+[流量隧道 - 虚空终端 Docs](https://wiki.metacubex.one/config/tunnels/)
+
+```yaml
+tunnels:
+- tcp/udp,127.0.0.1:6553,8.8.8.8:53,proxy
+# or:
+- network: [tcp, udp]
+  address: 127.0.0.1:6553
+  target: 8.8.8.8:53
+  proxy: proxy
+```
+- `target` can't be 127.0.0.1, but the IP of the host if you want to access it?
+
 ## Proxy groups
 `url-test`:
 - [→Captive portal detection](../Captive%20Portal.md#detection)
@@ -82,6 +96,12 @@ Premium core is proprietary. It has the following additional features:
 
 ## Rules
 [路由规则 - 虚空终端 Docs](https://wiki.metacubex.one/config/rules/)
+
+- `IP`
+
+  e.g. `IP-CIDR,1.1.1.1/32,DIRECT`
+
+  [IP规则 - Clash.Rev Docs](https://merlinkodo.github.io/Clash-Rev-Doc/config/rules/ipcidr/)
 
 - `PROCESS-NAME`
   - 大小写不敏感，但是是完整匹配，需要包含扩展名
