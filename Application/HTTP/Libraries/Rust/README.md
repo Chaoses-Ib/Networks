@@ -8,6 +8,8 @@
     - Sync
   - [isahc: The practical HTTP client that is fun to use.](https://github.com/sagebind/isahc)
     - Sync/Async
+  - [http-rs/surf: Fast and friendly HTTP client framework for async Rust](https://github.com/http-rs/surf)
+    - isahc, async-h1, hyper, `window.fetch`
 
   Libraries:
   - [hyper: An HTTP library for Rust](https://github.com/hyperium/hyper)

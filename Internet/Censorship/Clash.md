@@ -9,6 +9,14 @@
 
 [MisakaNo の 小破站 / clash-meta - GitLab](https://gitlab.com/Misaka-blog/clash-meta)
 
+## Protocols
+Outbound:
+- [HTTP](https://github.com/MetaCubeX/mihomo/blob/Alpha/adapter/outbound/http.go)
+  - 支持指定 `headers`，但不支持 path？
+  - 不支持传递 real IP
+
+[\[Feature\] Support Proxy Protocol - Issue #1107 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/1107)
+
 ## Relay
 - `dialer-proxy`
 

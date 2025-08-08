@@ -40,6 +40,9 @@ Books:
 
 [nginxinc/docker-nginx: Official NGINX Dockerfiles](https://github.com/nginxinc/docker-nginx)
 
+[nginx-proxy/nginx-proxy: Automated nginx proxy for Docker containers using docker-gen](https://github.com/nginx-proxy/nginx-proxy)
+- [Raw TCP/IP Support - nginx-proxy/nginx-proxy - Discussion #1631](https://github.com/nginx-proxy/nginx-proxy/discussions/1631)
+
 [jirutka/nginx-binaries: Nginx and njs binaries for Linux (x86\_64, aarch64, ppc64le), macOS and Windows. Linux binaries are static so works on every Linux.](https://github.com/jirutka/nginx-binaries)
 - Windows: myfreeer/nginx-build-msys2
 
@@ -526,6 +529,23 @@ real_ip_recursive on;
 > The `ngx_http_geo_module` module creates variables with values depending on the client IP address.
 
 ### [→HTTP/2](../../HTTP2.md#nginx)
+
+## Stream
+- Debian: `apt -y install libnginx-mod-stream`
+
+  [Debian 12 Bookworm : Nginx : Use Stream module : Server World](https://www.server-world.info/en/note?os=Debian_12&p=nginx&f=12)
+
+  ```
+  [emerg] 88016#88016: dlopen() "nginx/modules/ngx_stream_module.so" failed (nginx/modules/ngx_stream_module.so: cannot open shared object file: No such file or directory) in /etc/nginx/modules-enabled/50-mod-stream.conf:1
+  ```
+  ```nginx
+  load_module /usr/lib/nginx/modules/ngx_stream_module.so;
+  ```
+  [unknown directive "stream" in /etc/nginx/nginx.conf:86 - Server Fault](https://serverfault.com/questions/858067/unknown-directive-stream-in-etc-nginx-nginx-conf86)
+
+Modules:
+- [openresty/stream-lua-nginx-module: Embed the power of Lua into NGINX TCP/UDP servers](https://github.com/openresty/stream-lua-nginx-module)
+- [openresty/stream-echo-nginx-module: TCP/stream echo module for NGINX (a port of ngx\_http\_echo\_module)](https://github.com/openresty/stream-echo-nginx-module)
 
 ## Logs
 [Module `ngx_http_log_module`](https://nginx.org/en/docs/http/ngx_http_log_module.html)

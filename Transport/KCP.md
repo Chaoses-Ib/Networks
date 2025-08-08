@@ -59,6 +59,7 @@ Go:
   - UDP
     - [Please add udp transparent packages such as dns udp packages - Issue #917 - xtaci/kcptun](https://github.com/xtaci/kcptun/issues/917)
     - [希望能增加监听UDP的功能 - Issue #942 - xtaci/kcptun](https://github.com/xtaci/kcptun/issues/942)
+  - [kcp服务端如何接收用户访问的真实Ip - Issue #922](https://github.com/xtaci/kcptun/issues/922)
 - [xkcptun: xkcptun is kcp tunnel for OpenWRT&LEDE, implemented in c language](https://github.com/liudf0716/xkcptun)
 - [dog-tunnel: p2p tunnel,(udp mode work with kcp,https://github.com/skywind3000/kcp)](https://github.com/vzex/dog-tunnel) (discontinued)
 - frp

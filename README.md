@@ -49,6 +49,7 @@
 - [Dynamic Host Configuration Protocol](Internet/DHCP/README.md)
 - [Internet Service Providers](Internet/Internet%20Service%20Providers.md)
 - [Proxy Servers](Internet/Proxy/README.md)
+  - [SOCKS](Internet/Proxy/SOCKS.md)
   - [Pingora](Internet/Proxy/Pingora.md)
 - [Application Acceleration](Internet/Acceleration.md)
 - [Content Delivery Networks](Internet/CDN/README.md)

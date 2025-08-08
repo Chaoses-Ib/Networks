@@ -52,6 +52,17 @@ TCP 的硬件和系统集成使得它能够被更好地优化，但反过来也�
 ### Rust
 - [mio: Metal I/O library for Rust.](https://github.com/tokio-rs/mio)
   - [tokio::net](https://docs.rs/tokio/latest/tokio/net/index.html)
+    - Shutdown on `Drop`
+
+      [Does tokio TcpStream require special cancellation handling? - help - The Rust Programming Language Forum](https://users.rust-lang.org/t/does-tokio-tcpstream-require-special-cancellation-handling/131918)
+      > In short, dropping the `TcpStream` does everything that `shutdown` does (closing write direction), and in fact it does *more* than what `shutdown` does (it closes the read direction too).
+
+      [rust - Is it possible to close a TcpListener in Tokio? - Stack Overflow](https://stackoverflow.com/questions/48334079/is-it-possible-to-close-a-tcplistener-in-tokio)
+
+      [How to close tcp connection when using tokio - help - The Rust Programming Language Forum](https://users.rust-lang.org/t/how-to-close-tcp-connection-when-using-tokio/66533)
+
+      [Tokio AsyncReadExt `read_exact` method hangs indefinately - The Rust Programming Language Forum](https://users.rust-lang.org/t/tokio-asyncreadext-read-exact-method-hangs-indefinately/123618)
+    - [tcp-handler: A Rust crate for conveniently transfering `bytes` bufs through `tokio` TCP stream.](https://github.com/xuxiaocheng0201/tcp-handler/)
 
 Discussions:
 - [How to fake a connection refused in rust? - Stack Overflow](https://stackoverflow.com/questions/65828567/how-to-fake-a-connection-refused-in-rust)

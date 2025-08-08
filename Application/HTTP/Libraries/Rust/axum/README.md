@@ -24,11 +24,16 @@ Router:
 IP:
 - [`Router::into_make_service_with_connect_info()`](https://docs.rs/axum/latest/axum/struct.Router.html#method.into_make_service_with_connect_info)
 - [axum-client-ip: A client IP address extractor for Axum](https://github.com/imbolc/axum-client-ip)
+- [axum-proxied](https://github.com/bheesham/axum-proxied)
+  - PROXY protocol
+- [hyper\_server::proxy\_protocol - Rust](https://docs.rs/hyper-server/latest/hyper_server/proxy_protocol/index.html)
 
 [Community Projects](https://github.com/tokio-rs/axum/blob/main/ECOSYSTEM.md)
 - [axum-limit: This crate provides an efficient rate limiting mechanism using token buckets, specifically designed for asynchronous web applications with a strong focus on extractor-based rate limits.](https://github.com/gengteng/axum-limit)
 
 [axum-server: High level server designed to be used with axum framework.](https://github.com/programatik29/axum-server)
+
+[postel: A performant high level server for hyper](https://github.com/warlock-labs/postel)
 
 Static file servers:
 - [axum/examples/static-file-server at main - tokio-rs/axum](https://github.com/tokio-rs/axum/tree/main/examples/static-file-server)

@@ -1,10 +1,12 @@
 # Proxy Servers
 [Wikipedia](https://en.wikipedia.org/wiki/Proxy_server)
 
+- Cross-protocol proxy is not widely supported
+
 ## Proxy protocols
 - HTTP
 - HTTPS
-- SOCKS
+- [SOCKS](SOCKS.md)
   - SOCKS4
     - SOCKS4a
   - SOCKS5
@@ -27,8 +29,7 @@
     Forwarded: for="[2001:db8::1234]"
     ```
 
-- PROXY protocol
-  - [mmproxy-rs: Rust implementation of TCP + UDP Proxy Protocol (aka. MMProxy)](https://github.com/saiko-tech/mmproxy-rs)
+- [PROXY protocol](#proxy-protocol)
 
 [Security 101: X-Forwarded-For vs. Forwarded vs PROXY | System Overlord](https://systemoverlord.com/2020/03/25/security-101-x-forwarded-for-vs-forwarded-vs-proxy.html)
 
@@ -36,9 +37,87 @@
 
 [X-Real-IP should probably be preferred over X-Forwarded-For in \_extraClientIP directive? - Issue #1670 - akka/akka-http](https://github.com/akka/akka-http/issues/1670)
 
+#### PROXY protocol
+[haproxy.org/download/1.8/doc/proxy-protocol.txt](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
+- Human-readable header format (Version 1): `PROXY TCP4 255.255.255.255 255.255.255.255 65535 65535\r\n`
+- Binary header format (version 2)
+  ```c
+  struct proxy_hdr_v2 {
+      uint8_t sig[12];  /* hex 0D 0A 0D 0A 00 0D 0A 51 55 49 54 0A */
+      uint8_t ver_cmd;  /* protocol version and command */
+      uint8_t fam;      /* protocol family and address */
+      uint16_t len;     /* number of following bytes part of the header */
+  };
+  union proxy_addr {
+      struct {        /* for TCP/UDP over IPv4, len = 12 */
+          uint32_t src_addr;
+          uint32_t dst_addr;
+          uint16_t src_port;
+          uint16_t dst_port;
+      } ipv4_addr;
+      struct {        /* for TCP/UDP over IPv6, len = 36 */
+            uint8_t  src_addr[16];
+            uint8_t  dst_addr[16];
+            uint16_t src_port;
+            uint16_t dst_port;
+      } ipv6_addr;
+      struct {        /* for AF_UNIX sockets, len = 216 */
+            uint8_t src_addr[108];
+            uint8_t dst_addr[108];
+      } unix_addr;
+  };
+  ```
+
+[Use the PROXY protocol to preserve a client's IP address](https://www.haproxy.com/blog/use-the-proxy-protocol-to-preserve-a-clients-ip-address)
+
+- [Nginx](../../Application/HTTP/Servers/Nginx/README.md#stream)
+  - `listen 80 proxy_protocol;`
+  - [`proxy_protocol on;`](https://nginx.org/en/docs/stream/ngx_stream_proxy_module.html#proxy_protocol)
+    - v1
+    - v2: [#1639 (Add support for writing PROXY protocol v2 to upstream) -- nginx](https://trac.nginx.org/nginx/ticket/1639)
+
+  [Accepting the PROXY Protocol | NGINX Documentation](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/)
+- [cloudflare/mmproxy: the magical PROXY protocol gateway](https://github.com/cloudflare/mmproxy)
+
+  > mmproxy sits near the application, receives the proxy-protocol enabled connections from the load balancer, spoofs the client IP addresses, and sends traffic directly to the application. From application point of view the traffic look identically like it would have originated from the remote client.
+
+  - Linux only
+
+    [mmproxy alternative for Windows](https://www.windowsphoneinfo.com/threads/mmproxy-alternative-for-windows.1017579/)
+
+  Ports:
+  - Rust
+    - [mmproxy-rs: Rust implementation of TCP + UDP Proxy Protocol (aka. MMProxy)](https://github.com/saiko-tech/mmproxy-rs)
+    - [b23r0/udppp: Rust implementation of UDP protocol MMProxy](https://github.com/b23r0/udppp)
+  - Go: [path-network/go-mmproxy: Golang implementation of MMProxy](https://github.com/path-network/go-mmproxy)
+
+Rust:
+- [ppp: A Proxy Protocol Parser written in Rust.](https://github.com/misalcedo/ppp)
+  - TLV fields
+- [proxy-protocol: HAProxy PROXY protocol implementation in Rust.](https://github.com/Proximyst/proxy-protocol) (inactive)
+  - Used by Realm (v2 by default)
+- [proxy-header: Parser and encoder for HAProxy PROXY protocol](https://github.com/tibordp/proxy-header)
+  - [TLV](https://docs.rs/proxy-header/latest/proxy_header/enum.Tlv.html) enums
+  - [`ParseConfig`](https://docs.rs/proxy-header/latest/proxy_header/struct.ParseConfig.html)
+  - [`ProxiedStream`](https://docs.rs/proxy-header/latest/proxy_header/io/index.html)
+    - [`ProxiedStream` with optional header - Issue #4](https://github.com/tibordp/proxy-header/issues/4)
+
+      > This method will read from the stream until a proxy header is found, or the stream is closed. If the stream is closed before a proxy header is found, this method will return an [`io::Error`](https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html "struct std::io::error::Error") with [`io::ErrorKind::UnexpectedEof`](https://doc.rust-lang.org/nightly/std/io/error/enum.ErrorKind.html#variant.UnexpectedEof "variant std::io::error::ErrorKind::UnexpectedEof").
+  - Used by proxide
+- [ikkerens/fake\_haproxy: A connection forwarder that adds a haproxy v1 header to every connection](https://github.com/ikkerens/fake_haproxy)
+
+Go:
+- [go-proxyproto: A Go library implementation of the PROXY protocol, versions 1 and 2.](https://github.com/pires/go-proxyproto)
+
 ## Libraries
 Rust:
 - [→Pingora](Pingora.md)
+- Oxy
+
+  [Oxy](https://blog.cloudflare.com/tag/oxy/)
+
+  [Oxy is Cloudflare's Rust-based next generation proxy framework](https://blog.cloudflare.com/introducing-oxy/)
+- [proxide: The rust reverse proxy server](https://github.com/ramiroaisen/proxide)
 - Realm
 - [relayport-rs: Rust library for relaying network traffic.](https://github.com/mtelahun/relayport-rs)
 
@@ -49,9 +128,16 @@ Rust:
 
 - SSH
 
-- [→Nginx](/Application/HTTP/Servers/Nginx/README.md)
+- [→Nginx](/Application/HTTP/Servers/Nginx/README.md#stream)
   - HTTP, TCP, UDP (Linux)
+    - Cannot proxy TCP to HTTP or vice versa
+
+      [ruby on rails - Forward TCP connection to HTTP on Nginx - Stack Overflow](https://stackoverflow.com/questions/15193239/forward-tcp-connection-to-http-on-nginx)
+
+      [tcp to http proxy via nginx - Server Fault](https://serverfault.com/questions/1020333/tcp-to-http-proxy-via-nginx)
+    - [Bridge between quic stream and tcp - Issue #146](https://github.com/nginx/nginx/issues/146)
   - Listen port range
+  - [nginx\_tcp\_proxy\_module: add the feature of tcp proxy with nginx, with health check and status monitor](https://github.com/yaoweibin/nginx_tcp_proxy_module)
 
 - [Envoy: Cloud-native high-performance edge/middle/service proxy](https://github.com/envoyproxy/envoy)
   - HTTP, [UDP](https://www.envoyproxy.io/docs/envoy/latest/configuration/listeners/udp_filters/udp_proxy)
@@ -60,6 +146,9 @@ Rust:
   - TCP, HTTP, UDP (Paid)
 
     [Haproxy support udp - Help! - HAProxy community](https://discourse.haproxy.org/t/haproxy-support-udp/10147)
+  - [Upstream http proxy support - Issue #1542 - haproxy/haproxy](https://github.com/haproxy/haproxy/issues/1542)
+
+- [bytedance/G3: Enterprise-oriented Generic Proxy Solutions](https://github.com/bytedance/g3)
 
 - [Realm: A network relay tool](https://github.com/zhboner/realm)
   - TCP, UDP
@@ -74,6 +163,7 @@ Rust:
   [改了一点realm , 顺便说说目前常见的转发工具-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-837814-1-1.html)
 
 - [rsproxy: A simple, command-line TCP/UDP proxy server](https://github.com/neosmart/rsproxy) (discontinued)
+- [r2lay: A simple TCP relay made in Rust](https://github.com/fusetim/r2lay)
 
 - [rinetd: 📡 TCP/UDP port redirector](https://github.com/samhocevar/rinetd) (discontinued)
   - [rinetd.conf](https://github.com/samhocevar/rinetd/blob/main/rinetd.conf)
@@ -84,6 +174,9 @@ Rust:
 - [NPS: 一款轻量级、高性能、功能强大的内网穿透代理服务器。支持tcp、udp、socks5、http等几乎所有流量转发，可用来访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析、内网socks5代理等等......，并带有功能强大的web管理端。a lightweight, high-performance, powerful intranet penetration proxy server, with a powerful web management terminal.](https://github.com/ehang-io/nps) (discontinued)
   - Go
   - [端口范围映射](https://ehang-io.github.io/nps/#/feature?id=%e7%ab%af%e5%8f%a3%e8%8c%83%e5%9b%b4%e6%98%a0%e5%b0%84)
+
+- [em-proxy: EventMachine Proxy DSL for writing high-performance transparent / intercepting proxies in Ruby](https://github.com/igrigorik/em-proxy) (discontinued)
+- [Jire/rs-proxy: a simple, cross-platform, multi-client TCP proxy for Old-school RS2/JS5](https://github.com/Jire/rs-proxy)
 
 - [→Tunnels](../Censorship/Tunnels.md)
   - [→Clash](../Censorship/Clash.md#tunnels)
@@ -128,6 +221,29 @@ iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source $(hostname -I)
 [How To Forward Ports through a Linux Gateway with Iptables | DigitalOcean](https://www.digitalocean.com/community/tutorials/fhow-to-forward-ports-through-a-linux-gateway-with-iptables)
 
 [Linux Port Forwarding with iptables | Contabo Blog](https://contabo.com/blog/linux-port-forwarding-with-iptables/)
+
+## TCP over HTTP
+- Waste some header bytes.
+- Can reduce the handshake cost of short TCP connections.
+- Can buffer requests and responses.
+- Works with CDN.
+- With HTTPS, effectively TCP with TLS.
+- With HTTP/3, effectively TCP over QUIC.
+
+Tools:
+- Rust
+  - [tcp-over-http: A TCP proxy using HTTP - Reach SSH behind a Nginx reverse proxy](https://github.com/julianbuettner/tcp-over-http)
+  - [xnuter/http-tunnel: HTTP(S) Tunnel and TCP Proxy](https://github.com/xnuter/http-tunnel)
+
+    [Writing a Modern HTTP(S) Tunnel in Rust](https://dzone.com/articles/writing-a-modern-https-tunnel-in-rust)
+  - [morfca/layline: A utility to tunnel network connections over HTTP.](https://github.com/morfca/layline)
+    - `X-Forwarded-For`
+  - [myzhang1029/penguin-rs: A fast TCP/UDP tunnel, transported over HTTP WebSocket.](https://github.com/myzhang1029/penguin-rs)
+- Go
+  - [chisel: A fast TCP/UDP tunnel over HTTP](https://github.com/jpillora/chisel)
+  - Clash
+- C
+  - [NateChoe1/tcp-over-http: TCP over HTTP](https://github.com/NateChoe1/tcp-over-http)
 
 ## Services
 Name | HTTP | SOCKS | Comment
