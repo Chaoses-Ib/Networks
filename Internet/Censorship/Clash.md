@@ -115,6 +115,7 @@ Premium core is proprietary. It has the following additional features:
   - 大小写不敏感，但是是完整匹配，需要包含扩展名
     - [\[Feature\] 支持 域名关键字 通配 和 程序关键字 通配 - Issue #846 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/846)
   - ~~[\[Bug\] 太多的 process not found - Issue #613 - MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo/issues/613)~~
+  - 对 SOCKS 端口连接同样有效，可通过 `IN-TYPE` 过滤，例如 `AND,((RULE-SET,BT),(NOT,((IN-TYPE,SOCKS/HTTP)))),BT`。
 
 ### [Rule Providers](https://github.com/Dreamacro/clash/wiki/Clash-Premium-Features#rule-providers)
 [如何优雅地为 Clash 添加自定义代理规则？这是你要看的最后一篇教程 - V2EX](https://v2ex.com/t/949462)
