@@ -27,6 +27,14 @@
 [Resurrecting a dead torrent tracker and finding 3M peers | Hacker News](https://news.ycombinator.com/item?id=44301686)
 
 ## Clients
+- File moving
+  - In-client moving
+    - qBittorrent: Set location ([Relocate Feature - Issue #439 - qbittorrent/qBittorrent](https://github.com/qbittorrent/qBittorrent/issues/439))
+  - Hardlinking
+
+    [Is there a torrent client that always makes a hardlink of finished downloads? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/klzqgc/is_there_a_torrent_client_that_always_makes_a/)
+
+Clients:
 - [qBittorrent](#qbittorrent)
 - [Transmission](https://transmissionbt.com/) ([GitHub](https://github.com/transmission/transmission), inactive)
   - No RSS
@@ -98,6 +106,20 @@ Close source:
   - Relative path (against Default Save Path)
 - Search plugins ([GitHub](https://github.com/qbittorrent/search-plugins))
   - [Unofficial search plugins - qbittorrent/search-plugins Wiki](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins)
+- BT session shutdown timeout is -1 by default, which may be very long
+
+  10 sec may be better.
+
+  [qBittorrent stuck at shutting down : r/qBittorrent](https://www.reddit.com/r/qBittorrent/comments/1gdhkgg/qbittorrent_stuck_at_shutting_down/)
+
+  [Slow closing of qBittorrent and saving state (help needed). \\\\ Slow closing of qBittorrent and saving state (help needed) : r/qBittorrent](https://www.reddit.com/r/qBittorrent/comments/1l6kzbp/%D0%BC%D0%B5%D0%B4%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B7%D0%B0%D0%BA%D1%80%D1%8B%D1%82%D0%B8%D0%B5_qbittorrent_%D0%B8_%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5/?tl=en)
+  > I have 5+k torrents, my client takes more than 60s to close.
+
+  [Why does qBit take longer to shut down than it used to? : r/qBittorrent](https://www.reddit.com/r/qBittorrent/comments/x332da/why_does_qbit_take_longer_to_shut_down_than_it/)
+
+HTTP API:
+- Rust
+  - [Koro33/qbit-api-rs: A asynchronous Rust wrapper for qBittorrent Web API](https://github.com/koro33/qbit-api-rs)
 
 [生产力篇 | qbittorrent深入浅出：从零到生产力 - scio - 见证学习与成长](https://blog.scio.icu/index.php/archives/12/)
 
