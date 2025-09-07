@@ -115,7 +115,7 @@ Path:
 
 [Is there a way to save to season-specific folders with the RSS downloader? : r/qBittorrent](https://www.reddit.com/r/qBittorrent/comments/fqk562/is_there_a_way_to_save_to_seasonspecific_folders/?show=original)
 
-## [→NAT](../../Internet/NAT.md#bt)
+## [→NAT](../../../Internet/NAT.md#bt)
 
 ## Websites
 - [1377x](https://1337x.to/)
