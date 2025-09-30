@@ -94,6 +94,8 @@ Servers:
     - `-behind-proxy` 不支持 `X-Forwarded-Port`
     - [Wrong URL when new upload is created - Issue #136](https://github.com/tus/tusd/issues/136)
       - [Add note about port of X-Forwarded-Host to nginx.conf example by Chaoses-Ib - Pull Request #1190](https://github.com/tus/tusd/pull/1190)
+
+        `pre-create` and `post-create` hooks work fine, but other hooks will be redirected to 80/443.
     - Caddy: [Tusd behind Caddy Webserver? - Issue #444](https://github.com/tus/tusd/issues/444)
   - [HTTP/2](https://tus.github.io/tusd/getting-started/configuration/#http2)
   - HTTP/3
