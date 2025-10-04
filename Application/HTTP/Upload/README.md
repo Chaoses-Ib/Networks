@@ -145,28 +145,34 @@ Servers:
 - .NET: [tusdotnet: .NET server implementation of the Tus protocol for resumable file uploads. Read more at https://tus.io](https://github.com/tusdotnet/tusdotnet)
 
 - Rust
-  - tusd-types
+  - [tusd-control](https://github.com/16Hexa/tusd-control)
   - Rocket: [Meteoritus: A tus server integration for Rocket framework](https://github.com/kallebysantos/meteoritus)
   - [rustus: TUS protocol implementation in Rust.](https://github.com/s3rius/rustus)
     - [Application examples? - Issue #139 - s3rius/rustus](https://github.com/s3rius/rustus/issues/139)
     - [Embedding in other programs - Issue #157 - s3rius/rustus](https://github.com/s3rius/rustus/issues/157)
     - [Implement expiration extension - Issue #13 - s3rius/rustus](https://github.com/s3rius/rustus/issues/13)
+  - [tus-rust: Rust implementation of the tus resumable upload protocol. http://tus.io](https://github.com/rio/tus-rust) (discontinued)
 
 - JS: [tus-node-server: Node.js tus server, standalone or integrable in any framework, with disk, S3, and GGC stores.](https://github.com/tus/tus-node-server)
 
 Clients:
 - [tus-js-client: A pure JavaScript client for the tus resumable upload protocol](https://github.com/tus/tus-js-client)
+  - [API reference](https://github.com/tus/tus-js-client/blob/main/docs/api.md)
   - [lib/upload.ts](https://github.com/tus/tus-js-client/blob/d658d01bee3a716ad9546fabfde7963d73c7c7f2/lib/upload.ts)
 - [tus-py-client: A Python client for the tus resumable upload protocol](https://github.com/tus/tus-py-client) (`tuspy`, `tusclient`, [Notebook](tus.ipynb))
   - requests / aiohttp
 - Rust
   - [tus_client: A Rust native client library to interact with tus enabled endpoints](https://github.com/jonstodle/tus_client)
+    - `default_headers()`
+    - `x-http-method-override`
     - [tus_async_client](https://github.com/zryambus/tus_async_client)
       - All tests deleted
+      - [16Hexa/tus_async_client](https://github.com/16Hexa/tus_async_client)
     - [tus_client_extra: A Rust native client library to interact with tus enabled endpoints - provides an extra output of HTTP headers](https://github.com/Bysness/tus_client_extra)
   - [tus: rust implenetation of https://tus.io](https://github.com/richo/tus)
+    - `default_headers()`
+    - `async upload(impl Read)` (PATCH only)
   - [web\_sys\_resumable: Resumable uploads for `web_sys::file`](https://github.com/littlebenlittle/web_sys_resumable)
-  - [tus-rust: Rust implementation of the tus resumable upload protocol. http://tus.io](https://github.com/rio/tus-rust)
 
 ## Others
 - [Resumable.js: A JavaScript library for providing multiple simultaneous, stable, fault-tolerant and resumable/restartable uploads via the HTML5 File API.](https://github.com/23/resumable.js) (discontinued)
