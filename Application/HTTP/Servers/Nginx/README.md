@@ -358,6 +358,7 @@ include vhosts/*.conf;
     [Is `server_name` really needed for `default_server`? (Nginx) - Server Fault](https://serverfault.com/questions/1062957/is-server-name-really-needed-for-default-server-nginx)
     > The only time NGINX looks at the [`server_name`](http://nginx.org/en/docs/http/ngx_http_core_module.html#server_name) directive and [`listen`](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen)'s `default_server` parameter during processing the configuration is when there is more than one `server` block [`listen`](http://nginx.org/en/docs/http/ngx_http_core_module.html#listen)ing on the same \[`ip_address`:\]`port`. (It's also worth pointing out that there can be more than one `default_server` declaration in one config - one per \[`ip_address`:\]`port`.)
   
+  - Multiple server names are separated by sapces, not commas
   - Blocking default server
     ```nginx
     server {
@@ -499,6 +500,17 @@ include vhosts/*.conf;
     [Forward request headers from nginx proxy server - Stack Overflow](https://stackoverflow.com/questions/19751313/forward-request-headers-from-nginx-proxy-server)
   - [`proxy_pass_header`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass_header)
   - [`proxy_set_header`](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_set_header)
+
+    > These directives are inherited from the previous configuration level if and only if there are no `proxy_set_header` directives defined on the current level.
+
+    Default:
+    ```nginx
+    proxy_set_header Host       $proxy_host;
+    proxy_set_header Connection close;
+    ```
+    - `proxy_set_header Host $host;`
+
+      [reverse proxy - Make nginx to pass hostname of the upstream when reverseproxying - Server Fault](https://serverfault.com/questions/598202/make-nginx-to-pass-hostname-of-the-upstream-when-reverseproxying)
   - [`add_header`](https://nginx.org/en/docs/http/ngx_http_headers_module.html)
   - How to pass or set a header, or, set the default value for a header?
     - Different locations, e.g. `/intra/`
@@ -511,6 +523,15 @@ include vhosts/*.conf;
 ### [ngx_http_realip_module](https://nginx.org/en/docs/http/ngx_http_realip_module.html)
 > This module is not built by default, it should be enabled with the `--with-http_realip_module` configuration parameter.
 
+`X-Real-IP`:
+```nginx
+set_real_ip_from  127.0.0.1;
+set_real_ip_from  8.8.8.8;
+real_ip_header    X-Real-IP;
+real_ip_recursive on;
+```
+
+`X-Forwarded-For`:
 ```nginx
 set_real_ip_from  192.168.1.0/24;
 set_real_ip_from  192.168.2.1;
@@ -521,9 +542,18 @@ real_ip_recursive on;
 
 - `set_real_ip_from address | CIDR | unix:;` 
 
+- `real_ip_header field | X-Real-IP | X-Forwarded-For | proxy_protocol;`
+- `real_ip_recursive on;`
+
+  > nginx was grabbing the last IP address in the chain by default because that was the only one that was assumed to be trusted. But with the new `real_ip_recursive` enabled and with multiple `set_real_ip_from` options, you can define multiple trusted proxies and it will fetch the last non-trusted IP.
+
+  [reverse proxy - nginx `real_ip_header` and `X-Forwarded-For` seems wrong - Server Fault](https://serverfault.com/questions/314574/nginx-real-ip-header-and-x-forwarded-for-seems-wrong)
+
 - `geo` also has a `proxy` parameter
 
 [http headers - NGinx `$proxy_add_x_forwarded_for` and `real_ip_header` - Stack Overflow](https://stackoverflow.com/questions/29279084/nginx-proxy-add-x-forwarded-for-and-real-ip-header)
+
+[reverse proxy - Forwarding real remote IP to proxied server with nginx - Server Fault](https://serverfault.com/questions/837915/forwarding-real-remote-ip-to-proxied-server-with-nginx)
 
 ### [ngx_http_geo_module](https://nginx.org/en/docs/http/ngx_http_geo_module.html)
 > The `ngx_http_geo_module` module creates variables with values depending on the client IP address.
