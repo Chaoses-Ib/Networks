@@ -1,6 +1,10 @@
 # QUIC
 [Wikipedia](https://en.wikipedia.org/wiki/QUIC)
 
+[QUIC's (hidden) Super Powers - Media over QUIC](https://moq.dev/blog/quic-powers/)
+
+[The Illustrated QUIC Connection: Every Byte Explained](https://quic.xargs.org/)
+
 [硬核观察 | 微软前高管解释了为什么 Windows 10 删除了开机声音 - Linux中国](https://mp.weixin.qq.com/s/9xWcuE5AuebtB-pP_JyyAQ)
 
 QUIC 协议正式发布了 RFC 9000，成为 IETF 标准
