@@ -139,29 +139,7 @@ Path:
 
 ## [→NAT](../../../Internet/NAT.md#bt)
 
-## Websites
-- [1377x](https://1337x.to/)
-- [RARBG](https://rarbgprx.org/torrents.php)
-- [The Pirate Bay](https://thepiratebay.org)
-
-  [Wikipedia](https://en.wikipedia.org/wiki/The_Pirate_Bay)
-- [RuTracker.org](https://rutracker.org)
-- [YTS.mx](https://yts.mx/)
-
-  Movies.
-- [Nyaa](https://nyaa.si/)
-
-  CJK content, especially manga and anime.
-- [動漫花園](https://www.dmhy.org/)
-- [Library Genesis](https://libgen.fun/)
-
-  Books.
-
-[Comparison of BitTorrent sites](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_sites)
-
-[Top 10 Most Popular Torrent Sites](https://torrentfreak.com/top-torrent-sites/)
-
-[Unofficial search plugins - qbittorrent/search-plugins Wiki](https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins)
+## [→Search](Search.typ)
 
 ## Routing
 ### Clash
