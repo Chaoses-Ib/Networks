@@ -66,6 +66,7 @@
   - [Tunnels](Internet/Censorship/Tunnels.md)
   - [Services](Internet/Censorship/Services.md)
   - [Clash](Internet/Censorship/Clash.md)
+- [Tor](Internet/Tor/README.typ)
 - [Geolocation](Internet/Geolocation/README.md)
 
 ## [Transport](Transport/README.md)
