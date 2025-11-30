@@ -140,25 +140,7 @@ Tools:
 - [ksubdomain: 无状态子域名爆破工具](https://github.com/knownsec/ksubdomain) (discontinued)
   - Brute force enumeration
 
-## Windows
-[Domain Name System - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/dns/dns-start-page)
-
-`ws2_32.dll`:
-- [getaddrinfo](https://learn.microsoft.com/en-us/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfo)
-- [GetAddrInfoExW](https://learn.microsoft.com/en-us/windows/win32/api/ws2tcpip/nf-ws2tcpip-getaddrinfoexw)
-
-`dnsapi.dll`:
-- [`DnsQuery_A`](https://learn.microsoft.com/en-us/windows/win32/api/windns/nf-windns-dnsquery_a)
-
-  [Windows-classic-samples/Samples/Win7Samples/netds/dns/dnsquery/DNSQuery.Cpp](https://github.com/microsoft/Windows-classic-samples/blob/main/Samples/Win7Samples/netds/dns/dnsquery/DNSQuery.Cpp)
-- [`DnsQueryEx`](https://learn.microsoft.com/en-us/windows/win32/api/windns/nf-windns-dnsqueryex)
-
-  Rust: notgull/async-dns
-- [`DnsQueryRaw`](https://learn.microsoft.com/en-us/windows/win32/api/windns/nf-windns-dnsqueryraw)
-
-[c++ - How does one specify a specific DNS server to query using DnsQuery? - Stack Overflow](https://stackoverflow.com/questions/8931824/how-does-one-specify-a-specific-dns-server-to-query-using-dnsquery)
-
-[Query DNS using specific DNS servers in .NET - Stack Overflow](https://stackoverflow.com/questions/1565055/query-dns-using-specific-dns-servers-in-net)
+## [→Windows](../Windows.typ)
 
 ## Firewalls
 - [Pi-hole: Network-wide Ad Blocking](https://pi-hole.net/) ([GitHub](https://github.com/pi-hole/pi-hole))

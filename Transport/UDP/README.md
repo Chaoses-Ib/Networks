@@ -37,7 +37,7 @@ Circumvention:
 - [Secure Reliable Transport (SRT) Protocol](https://github.com/Haivision/srt)
 
   [draft-sharabayko-srt-01](https://datatracker.ietf.org/doc/html/draft-sharabayko-srt-01)
-- [DNS](../../Internet/DNS/README.md)
+- [DNS](../../Internet/Name/DNS/README.md)
 - [DHCP](../../Internet/DHCP/README.md)
 
 [grasshopper: A secure chained relayer for UDP](https://github.com/xtaci/grasshopper)

@@ -24,7 +24,7 @@ A **content delivery network (content distribution network, CDN)** is a geograph
 - 带宽限制/封顶
 - 流量封顶
 - 屏蔽/独立托管海外
-  - [DNS 分线路解析](../DNS/Hosting.md#分线路解析)
+  - [DNS 分线路解析](../Name/DNS/Hosting.md#分线路解析)
     - 腾讯 DNSPod: [119.29.29.29](http://119.29.29.29/)
   - 海外 CDN
 - Referer 防盗链
