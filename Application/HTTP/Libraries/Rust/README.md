@@ -75,3 +75,40 @@ Tower-based:
   - 主要价值在于防止通过特定请求放大 DoS 攻击，对于靠流量攻击的场景作用很小。
 
 - [tower-fault: A library for injecting various faults into a `tower::Service`.](https://github.com/nmoutschen/tower-fault)
+
+## Static file servers
+- [`tower_http::services::ServeDir`](https://docs.rs/tower-http/latest/tower_http/services/struct.ServeDir.html)
+  - `precompressed` only
+- [static-web-server: A cross-platform, high-performance and asynchronous web server for static files-serving. ⚡](#static-web-server)
+
+Compile-time:
+- [rust-embed-for-web: Rust Macro which embeds files into your executable. A fork of `rust-embed` with a focus on usage on web servers.](https://github.com/SeriousBug/rust-embed-for-web)
+
+Tools:
+- [miniserve: 🌟 For when you really just want to serve some files over HTTP right now!](https://github.com/svenstaro/miniserve)
+  - [Is it possible to include as library with existing actix project? - Issue #43](https://github.com/svenstaro/miniserve/issues/43)
+- [binserve: A fast production-ready static web server with TLS (HTTPS), routing, hot reloading, caching, templating, and security in a single-binary you can set up with zero code.](https://github.com/mufeedvh/binserve)
+  - Actix Web
+- [weihanglo/sfz: A simple static file serving command-line tool written in Rust.](https://github.com/weihanglo/sfz) (discontinued)
+
+### [static-web-server](https://github.com/static-web-server/static-web-server)
+> A cross-platform, high-performance and asynchronous web server for static files-serving. ⚡
+
+- [Docs.rs](https://docs.rs/static-web-server/)
+  
+  [Publish to crates.io to allow use as a library - Issue #188](https://github.com/static-web-server/static-web-server/issues/188)
+- Benchmarks
+  - [Add in memory cache to SWS - Issue #242](https://github.com/static-web-server/static-web-server/issues/242)
+
+  [Speed comparison - Issue #90](https://github.com/static-web-server/static-web-server/issues/90)
+
+  [Much slower than sfz - Issue #146](https://github.com/static-web-server/static-web-server/issues/146)
+
+  [SWS benchmarks with several web servers by joseluisq - Pull Request #155](https://github.com/static-web-server/static-web-server/pull/155)
+  - [Question regarding the benchmarks - Issue #156](https://github.com/static-web-server/static-web-server/issues/156)
+- `async-compression`
+  - [Custom compressed MIME types - Issue #594](https://github.com/static-web-server/static-web-server/issues/594)
+  - [Prioritize compression algorithms - Issue #593](https://github.com/static-web-server/static-web-server/issues/593)
+- [Ability to download zip, tar etc? - Issue #67](https://github.com/static-web-server/static-web-server/issues/67)
+  - [Support tarzst directory download format - Issue #547](https://github.com/static-web-server/static-web-server/issues/547)
+- [Content-type negotiation for images - Issue #94](https://github.com/static-web-server/static-web-server/issues/94)
