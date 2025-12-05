@@ -49,6 +49,11 @@ China:
 Tools:
 - [frp: A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.](https://github.com/fatedier/frp)
 - [rathole: A lightweight and high-performance reverse proxy for NAT traversal, written in Rust. An alternative to frp and ngrok.](https://github.com/rapiz1/rathole)
+  - Inactive
+  - `lib.rs`
+  - `scoop install rathole`
+
+  [rathole - 一个轻量级开源内网穿透工具，高吞吐、低占用，类 frp 工具 - 大家的板块 / 青蛙的应用 - 小众软件官方论坛](https://meta.appinn.net/t/topic/75337)
 - [EasyTier: A simple, decentralized mesh VPN with WireGuard support.](https://github.com/EasyTier/Easytier)
 
   > 只適合海外的網絡環境 國内別説公網IP了 P2P一堆都打不起來
@@ -62,6 +67,7 @@ Tools:
 
 Discussions:
 - 2022-10 [有没有 傻瓜式的软件可以在没有公网 ip 的情况 实现 微软 远程桌面 - V2EX](https://www.v2ex.com/t/885731)
+- 2024-01 [Expose a service behind a restrictive firewall with Fast reverse proxy (FRP) and a VM in a VPS : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/19bbloa/expose_a_service_behind_a_restrictive_firewall/)
 
 ### Hole punching
 [Wikipedia](https://en.wikipedia.org/wiki/Hole_punching_(networking))
