@@ -348,8 +348,20 @@ include vhosts/*.conf;
 
 ## HTTP
 ### [ngx_http_core_module](https://nginx.org/en/docs/http/ngx_http_core_module.html)
+- One port can only be listened once per `server_name`, even there are no location conflict.
+
+  ```log
+  nginx: [warn] conflicting server name "example.com" on 0.0.0.0:80, ignored
+  ```
+
 - Virtual servers
   - [`server_name`](https://nginx.org/en/docs/http/ngx_http_core_module.html#server_name)
+    - `""` (default if no `server_name`): Allow requests without the `Host` header.
+    - `_` is merely used to disallow requests without the `Host` header.
+
+      > Note that there is no way to specify the catch-all name or the default server using the [`server_name`](https://nginx.org/en/docs/http/ngx_http_core_module.html#server_name) directive. This is a property of the [`listen`](https://nginx.org/en/docs/http/ngx_http_core_module.html#listen) directive and not of the [`server_name`](https://nginx.org/en/docs/http/ngx_http_core_module.html#server_name) directive.
+    - Only one server (per port) can use the same server name, including `""` and `_`.
+      - However, other invalid names (e.g. `--` and `!@#`) can be used instead of `_`.
   
     [Server names](https://nginx.org/en/docs/http/server_names.html)
 
@@ -392,6 +404,15 @@ include vhosts/*.conf;
   - Regex: `~` (partial match)
   - Regex i: `~*`
   - Prefix (block regex): `^~`
+  - `location` can be nested, but the inner path is not relative to the outer path.
+    
+    > I'm confused a little... If inner URLs are not relative to the outer URLs then what is the purpose of nesting locations...?
+    > 
+    > It's just because the nested location can inherit some properties from the outer location.
+
+    [Nested locations in nginx - Stack Overflow](https://stackoverflow.com/questions/34839823/nested-locations-in-nginx)
+
+    [nginx and nested locations - Zakame::Blog](https://zakame.net/blog/2017/07/nginx-and-nested-locations.html)
 
   > The matching is performed against a normalized URI, after decoding the text encoded in the "`%XX`" form, resolving references to relative path components "`.`" and "`..`", and possible [compression](https://nginx.org/en/docs/http/ngx_http_core_module.html#merge_slashes) of two or more adjacent slashes into a single slash.
 
