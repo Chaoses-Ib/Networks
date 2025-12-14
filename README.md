@@ -99,6 +99,7 @@ Python:
 - [Hypertext Transfer Protocol (HTTP)](Application/HTTP/README.md)
   - [Connections](Application/HTTP/Connections.md)
   - [Request Methods](Application/HTTP/Methods.md)
+  - [HTTP Headers](Application/HTTP/Headers.typ)
   - [Upload](Application/HTTP/Upload/README.md)
   - [Server Push](Application/HTTP/Push.md)
   - [Security](Application/HTTP/Security.md)
