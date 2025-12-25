@@ -52,6 +52,7 @@ Tools:
   - Inactive
   - `lib.rs`
   - `scoop install rathole`
+  - `wget https://ghfast.top/https://github.com/rathole-org/rathole/releases/download/v0.5.0/rathole-x86_64-unknown-linux-gnu.zip`
 
   [rathole - 一个轻量级开源内网穿透工具，高吞吐、低占用，类 frp 工具 - 大家的板块 / 青蛙的应用 - 小众软件官方论坛](https://meta.appinn.net/t/topic/75337)
 - [EasyTier: A simple, decentralized mesh VPN with WireGuard support.](https://github.com/EasyTier/Easytier)
