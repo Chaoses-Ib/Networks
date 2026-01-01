@@ -450,7 +450,18 @@ include vhosts/*.conf;
   }
   ```
 
+  - `root`/`alias` is applied before `index`, so `index` should be the path relative to `root`/`alias`.
+    - `index` should not start with `/` (if using `alias`).
+  - `alias` is relative to prefix, and should not start with `/` but end with `/`.
+
+  [#97 (`try_files` and `alias` problems) -- nginx](https://trac.nginx.org/nginx/ticket/97)
+
 - [`try_files`](https://nginx.org/en/docs/http/ngx_http_core_module.html#try_files)
+
+  ```nginx
+  try_files file ... uri;
+  try_files file ... =code;
+  ```
 
   > If none of the files were found, an internal redirect to the `uri` specified in the last parameter is made.
 
@@ -464,6 +475,10 @@ include vhosts/*.conf;
   Mixed-page app: `/sub/index.html $uri`
 
   [Nginx "invalid number of arguments in `try_files` directive..." for PHP security - Stack Overflow](https://stackoverflow.com/questions/17349616/nginx-invalid-number-of-arguments-in-try-files-directive-for-php-security)
+
+  If `root`/`alias` is configured incorrectly,
+  it is likely to cause the following error:
+  `rewrite or internal redirection cycle while internally redirecting to "/index.html"`
 
 - Host names
   - `$host`: In this order of precedence: host name from the request line, or host name from the `Host` request header field, or the server name matching a request.
