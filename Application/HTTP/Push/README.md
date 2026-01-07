@@ -19,7 +19,7 @@
 
 - Pushlet (iframe / htmlfile streaming)
 
-- [→WebSocket](../WS/README.md)
+- [→WebSocket](../../WS/README.md)
 
 - [→Push API](#push-api)
 
@@ -75,7 +75,7 @@ event: usermessage
 data: {"username": "bobby", "time": "02:34:11", "text": "Hi everyone."}
 ```
 
-[→Keepalive](Connections.md#sse)
+[→Keepalive](../Connections.md#sse)
 
 [基于 SSE 协议实现任务进度条的实时显示------Vue2 + Spring Boot 实践一、引言 在 Web 应用开发中 - 掘金](https://juejin.cn/post/7332403912269856807)
 
@@ -101,7 +101,7 @@ Cons:
 - > In practice since everything that can be done with SSE can also be done with Websockets, Websockets is getting a lot more attention and love, and many more browsers support Websockets than SSE.
 
 - > Since SSE is fully in HTTP, it's more subject to being mucked with by various middleware layers, browser caching, proxies, etc.
-  - Nginx: [proxy_buffering](Servers/Nginx/README.md#ngx_http_proxy_module)
+  - Nginx: [proxy_buffering](../Servers/Nginx/README.md#ngx_http_proxy_module)
   - [Server side events buffered until connection close? - tokio-rs/axum - Discussion #2891](https://github.com/tokio-rs/axum/discussions/2891)
 
 Discussions:
@@ -153,10 +153,6 @@ JS:
   - [useEventSource | VueUse](https://vueuse.org/core/useEventSource/)
   - [vue-sse: A Vue plugin for using Server-Sent Events (EventSource).](https://github.com/tserkov/vue-sse)
 - [sveltekit-sse: Server Sent Events with SvelteKit](https://github.com/razshare/sveltekit-sse)
-
-Rust:
-- [eventsource-stream: A basic building block for building an Eventsource from a Stream of bytes array like objects](https://github.com/jpopesculian/eventsource-stream)
-  - [reqwest-eventsource: Helper to build an Eventsource using reqwest](https://github.com/jpopesculian/reqwest-eventsource)
 
 Python:
 - [sseclient: Pure-Python Server Side Events (SSE) client](https://github.com/mpetazzoni/sseclient)
