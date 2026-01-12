@@ -1,3 +1,5 @@
+#import "@local/ib:0.1.0": *
+#md(`
 # [Pingora](https://github.com/cloudflare/pingora)
 > A library for building fast, reliable and evolvable network services.
 
@@ -20,3 +22,4 @@
 - [serve static file - Issue #40 - cloudflare/pingora](https://github.com/cloudflare/pingora/issues/40)
 - [pandora-web-server: A modular and configurable web server](https://github.com/pandora-web-server/pandora-web-server)
 - [Pingora as modern server host - Issue #332 - cloudflare/pingora](https://github.com/cloudflare/pingora/issues/332)
+`)

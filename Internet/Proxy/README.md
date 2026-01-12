@@ -111,7 +111,7 @@ Go:
 
 ## Libraries
 Rust:
-- [→Pingora](Pingora.md)
+- [→Pingora](Pingora/README.typ)
 - Oxy
 
   [Oxy](https://blog.cloudflare.com/tag/oxy/)
