@@ -1,3 +1,5 @@
+#import "@local/ib:0.1.0": *
+#md(```
 # Port Reusing
 ## Load balancing
 [The `SO_REUSEPORT` socket option \[LWN.net\]](https://lwn.net/Articles/542629/)
@@ -7,6 +9,7 @@
 Go: [reusing tcp ports](https://seankhliao.com/blog/12020-07-04-reusing-tcp-ports/)
 
 ## Protocol demultiplexing
+```)
 Only TCP/UDP demultiplexing is natively and widely supported. Third-party implementations for other protocols are not as good as them.
 
 Pros:
@@ -20,8 +23,26 @@ Cons:
 - Limited external control (firewall, proxy, CDN, etc.)
 
 Tools:
-- [yrutschle/sslh: Applicative Protocol Multiplexer (e.g. share SSH and HTTPS on the same port)](https://github.com/yrutschle/sslh)
+- #a[sslh: Applicative Protocol Multiplexer (e.g. share SSH and HTTPS on the same port)][https://github.com/yrutschle/sslh]
   - HTTP, TLS/SSL (including SNI and ALPN), SSH, OpenVPN, tinc, XMPP, SOCKS5, custom regex
+  - GPL-2
+
+- #a[rpxy-l4: An L4 reverse proxy with protocol multiplexer, written in Rust][https://github.com/junkurihara/rust-rpxy-l4]
+  - Rust, library
+  - HTTP, TLS, SSH
+    - #a[SOCKS5 protocol multiplexing - Issue \#136][https://github.com/junkurihara/rust-rpxy-l4/issues/136]
+  - UDP: QUIC, WireGuard
+
+Tools written in Go:
+- #a[caddy-l4: Layer 4 (TCP/UDP) app for Caddy][https://github.com/mholt/caddy-l4]
+  - RDP, OpenVPN, Postgres, PROXY, QUIC, SOCKS, SSH, TLS, WinBox, WireGuard, XMPP
+- #a[cmux: Connection multiplexer for GoLang: serve different services on the same port!][https://github.com/soheilhy/cmux]
+  (discontinued)
+  - SSH, HTTP, HTTPS, gRPC, Go RPC, custom
+- Clash: #a[`mixed`][https://wiki.metacubex.one/config/inbound/listeners/mixed/]
+  - HTTP, HTTPS, SOCKS5 (TCP/UDP)
+  - Single outbound
+#md(```
 - [SapphicCode/protoplex: A protocol multiplexer in Go](https://github.com/SapphicCode/protoplex)
   - SSH, HTTP, TLS, OpenVPN, SOCKS4 / SOCKS5
 - [jamescun/switcher: Run SSH and HTTP(S) on the same port](https://github.com/jamescun/switcher)
@@ -49,3 +70,4 @@ HTTP/HTTPS:
 
 ## HTTP routing
 Nginx: [Nginx: How do I forward an HTTP request to another port? - Server Fault](https://serverfault.com/questions/536576/nginx-how-do-i-forward-an-http-request-to-another-port)
+```)

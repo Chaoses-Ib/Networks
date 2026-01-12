@@ -117,8 +117,11 @@ Rust:
   [Oxy](https://blog.cloudflare.com/tag/oxy/)
 
   [Oxy is Cloudflare's Rust-based next generation proxy framework](https://blog.cloudflare.com/introducing-oxy/)
+- rpxy-l4
+  - Protocol demultiplexing
 - [proxide: The rust reverse proxy server](https://github.com/ramiroaisen/proxide)
 - Realm
+- X1r0z/pivot-rs
 - [relayport-rs: Rust library for relaying network traffic.](https://github.com/mtelahun/relayport-rs)
 
 ## Tools
@@ -161,6 +164,7 @@ Rust:
   [一个全新的流量转发工具:Realm | 刺客博客 - 刺客博客](https://cikeblog.com/realm.html)
 
   [改了一点realm , 顺便说说目前常见的转发工具-美国VPS综合讨论-全球主机交流论坛 - Powered by Discuz!](https://hostloc.com/thread-837814-1-1.html)
+- [X1r0z/pivot-rs: A lightweight port-forwarding and socks proxy tool written in Rust 🦀](https://github.com/X1r0z/pivot-rs)
 
 - [rsproxy: A simple, command-line TCP/UDP proxy server](https://github.com/neosmart/rsproxy) (discontinued)
 - [r2lay: A simple TCP relay made in Rust](https://github.com/fusetim/r2lay)
@@ -193,6 +197,7 @@ HTTP:
 
   [Is is just me but Traefik is so hard to understand : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1cmbl22/is_is_just_me_but_traefik_is_so_hard_to_understand/)
 - [Sōzu: HTTP reverse proxy, configurable at runtime, fast and safe, built in Rust. It is awesome!](https://github.com/sozu-proxy/sozu)
+- [junkurihara/rpxy: A simple and ultrafast http reverse proxy serving multiple domain names and terminating TLS for http/1.1, 2 and 3, written in Rust](https://github.com/junkurihara/rust-rpxy)
 - [Weldr: A HTTP 1.1 proxy written in Rust using tokio.](https://github.com/hjr3/weldr) (discontinued)
 
 [各种端口转发工具的使用方法 - Y4er的博客](https://y4er.com/posts/port-forwarding/)

@@ -73,7 +73,7 @@
 
 ## [Transport](Transport/README.md)
 - [Ports](Transport/Ports/README.md)
-  - [Port Reusing](Transport/Ports/Reusing.md)
+  - [Port Reusing](Transport/Ports/Reusing.typ)
   - [Port Hopping](Transport/Ports/Hopping.md)
 - [Socket Addresses](Transport/Addresses.md)
 - [User Datagram Protocol](Transport/UDP/README.md)
