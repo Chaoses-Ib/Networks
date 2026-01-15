@@ -6,7 +6,7 @@
 ## Proxy protocols
 - HTTP
 - HTTPS
-- [SOCKS](SOCKS.md)
+- [SOCKS](SOCKS.typ)
   - SOCKS4
     - SOCKS4a
   - SOCKS5
