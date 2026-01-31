@@ -140,7 +140,7 @@ Python:
 ## [OS](OS/README.md)
 - [Linux](OS/Linux/README.md)
 - [Windows](OS/Windows/README.md)
-  - [Windows Sockets (Winsock)](OS/Windows/Winsock.md)
+  - [Windows Sockets (Winsock)](OS/Windows/Winsock/README.typ)
 - [Hyper-V](OS/Hyper-V/README.md)
 - [Windows Subsystem for Linux 2 (WSL2)](OS/WSL2/README.md)
 - [Browsers](OS/Browsers/README.md)

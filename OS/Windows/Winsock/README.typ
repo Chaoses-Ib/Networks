@@ -1,7 +1,12 @@
-# Windows Sockets (Winsock)
+#import "@local/ib:0.1.0": *
+#title[Windows Sockets (Winsock)]
+#md(`
 [Windows Sockets 2 - Win32 apps | Microsoft Learn](https://learn.microsoft.com/en-us/windows/win32/winsock/windows-sockets-start-page-2)
 
-![](images/Winsock/image.png)[^winter]
+`)
+#image("../images/Winsock/image.png")
+#footnote[Windows Internals v6]
+#md(```
 
 ## AFD.SYS
 [Recon2015-20 Steven Vittitoe Reverse Engineering Windows AFD.sys](https://recon.cx/2015/slides/recon2015-20-steven-vittitoe-Reverse-Engineering-Windows-AFD-sys.pdf)
@@ -47,14 +52,17 @@ C++:
 - [libuv: Cross-platform asynchronous I/O](https://github.com/libuv/libuv)
   - Node.js
 - [wepoll: fast epoll for windows 🎭](https://github.com/piscisaureus/wepoll)
+```)
 
 Rust:
-- [Mio: Metal I/O library for Rust.](https://github.com/tokio-rs/mio)
+- #a[Mio: Metal I/O library for Rust.][https://github.com/tokio-rs/mio]
   - Tokio
-- [polling: Portable interface to epoll, kqueue, event ports, and wepoll](https://github.com/smol-rs/polling)
-  - > Previously, this crate used the `wepoll` library for polling. `wepoll` uses a similar AFD-based strategy for polling.
+- #a[polling: Portable interface to epoll, kqueue, event ports, and wepoll][https://github.com/smol-rs/polling]
+  - #q[Previously, this crate used the `wepoll` library for polling.
+    `wepoll` uses a similar AFD-based strategy for polling.]
   - Used by smol, async-std
 
+#md(```
 ## Windows Sockets 2
 Windows Sockets 2 (Winsocck 2, `Ws2_32.dll`)
 
@@ -81,3 +89,4 @@ Windows Sockets 2 (Winsocck 2, `Ws2_32.dll`)
 
 
 [^winter]: Windows Internals v6
+```)
