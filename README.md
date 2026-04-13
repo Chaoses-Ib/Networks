@@ -120,7 +120,7 @@ Python:
   - [Servers](Application/HTTP/Servers/README.md)
     - [Nginx](Application/HTTP/Servers/Nginx/README.md)
       - [OpenResty](Application/HTTP/Servers/Nginx/OpenResty.md)
-      - [Cache](Application/HTTP/Servers/Nginx/Cache.md)
+      - [Cache](Application/HTTP/Servers/Nginx/Cache.typ)
       - [Index](Application/HTTP/Servers/Nginx/Index.md)
     - [Caddy](Application/HTTP/Servers/Caddy/README.md)
 - [WebSocket](Application/WS/README.md)
