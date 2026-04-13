@@ -104,6 +104,7 @@ Python:
   - [Request Methods](Application/HTTP/Methods.md)
   - [HTTP Headers](Application/HTTP/Headers.typ)
   - [Upload](Application/HTTP/Upload/README.md)
+  - [Cache](Application/HTTP/Cache/RAEDME.typ)
   - [Server Push](Application/HTTP/Push/README.md)
     - [Server-sent Events (SSE)](Application/HTTP/Push/SSE/README.typ)
   - [Security](Application/HTTP/Security.md)
