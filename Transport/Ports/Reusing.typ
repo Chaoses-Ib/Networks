@@ -29,6 +29,7 @@ Tools:
 
 - #a[rpxy-l4: An L4 reverse proxy with protocol multiplexer, written in Rust][https://github.com/junkurihara/rust-rpxy-l4]
   - Rust, library
+    (but not on crates.io)
   - HTTP, TLS, SSH
     - #a[SOCKS5 protocol multiplexing - Issue \#136][https://github.com/junkurihara/rust-rpxy-l4/issues/136]
   - UDP: QUIC, WireGuard

@@ -104,6 +104,8 @@ Rust:
 
       > This method will read from the stream until a proxy header is found, or the stream is closed. If the stream is closed before a proxy header is found, this method will return an [`io::Error`](https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html "struct std::io::error::Error") with [`io::ErrorKind::UnexpectedEof`](https://doc.rust-lang.org/nightly/std/io/error/enum.ErrorKind.html#variant.UnexpectedEof "variant std::io::error::ErrorKind::UnexpectedEof").
   - Used by proxide
+- #a[michaelklishin/proxy-protocol-rs: A Proxy Protocol implementation for Rust][https://github.com/michaelklishin/proxy-protocol-rs]
+  - axum integration
 - [ikkerens/fake\_haproxy: A connection forwarder that adds a haproxy v1 header to every connection](https://github.com/ikkerens/fake_haproxy)
 
 Go:

@@ -24,9 +24,14 @@ Router:
 IP:
 - [`Router::into_make_service_with_connect_info()`](https://docs.rs/axum/latest/axum/struct.Router.html#method.into_make_service_with_connect_info)
 - [axum-client-ip: A client IP address extractor for Axum](https://github.com/imbolc/axum-client-ip)
+- #a[michaelklishin/proxy-protocol-rs: A Proxy Protocol implementation for Rust][https://github.com/michaelklishin/proxy-protocol-rs]
+  - ```rs ConnectInfo<ProxyConnectInfo>```
 - [axum-proxied](https://github.com/bheesham/axum-proxied)
   - PROXY protocol
 - [hyper\_server::proxy\_protocol - Rust](https://docs.rs/hyper-server/latest/hyper_server/proxy_protocol/index.html)
+  (discontinued)
+
+#a[Code search results: `axum /(?-i)PROXY/ protocol language:Rust`][https://github.com/search?q=axum%20%2F(%3F-i)PROXY%2F%20protocol%20language%3ARust&ref=opensearch&type=code&p=1]
 
 [Community Projects](https://github.com/tokio-rs/axum/blob/main/ECOSYSTEM.md)
 - [axum-limit: This crate provides an efficient rate limiting mechanism using token buckets, specifically designed for asynchronous web applications with a strong focus on extractor-based rate limits.](https://github.com/gengteng/axum-limit)
